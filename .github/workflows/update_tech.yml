@@ -5,7 +5,8 @@ on:
     # 매일 한국시간 오전 9시(UTC 00:00)에 실행
     - cron: '0 0 * * *'
   workflow_dispatch:
-    # 깃허브 웹에서 수동으로도 즉시 작동시킬 수 있게 설정
+permissions:
+  contents: write   # 깃허브 웹에서 수동으로도 즉시 작동시킬 수 있게 설정
 
 jobs:
   update-data:
