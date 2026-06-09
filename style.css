@@ -19,8 +19,9 @@
     --color-cooling: #00ffd0;         /* 네온 민트 (냉각) */
     --color-ondevice: #ff007f;        /* 네온 핑크 (온디바이스) */
     --color-space: #ffaa00;           /* 네온 골드 (우주통신) */
+    --color-quantum: #7c3aed;         /* 네온 바이올렛 (양자컴퓨터) */
     
-    --accent-color: #3b82f6;          /* 기본 파란색 */
+    --accent-color: #3b82f6;          /* 기본 악센트 */
     --font-sans: 'Outfit', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
     
     /* 기술 성숙도 배지 컬러 */
@@ -301,7 +302,7 @@ body {
 
 .nav-scroll-wrapper {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.45rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
 }
@@ -318,14 +319,14 @@ body {
 .tab-btn {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
+    gap: 0.4rem;
+    padding: 0.55rem 0.85rem;
     background: transparent;
     border: 1px solid transparent;
     border-radius: 30px;
     color: var(--text-secondary);
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
     white-space: nowrap;
@@ -407,6 +408,9 @@ body {
 
 .article-card.cat-space::before { background: var(--color-space); }
 .article-card.cat-space { border-top: 1px solid rgba(255, 170, 0, 0.05); }
+
+.article-card.cat-quantum::before { background: var(--color-quantum); }
+.article-card.cat-quantum { border-top: 1px solid rgba(124, 58, 237, 0.05); }
 
 .article-card:hover {
     transform: translateY(-5px);

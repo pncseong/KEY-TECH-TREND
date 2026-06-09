@@ -18,7 +18,8 @@ const categoryClassMap = {
     "AI 로봇 (AI & Robotics)": "cat-ai-robotics",
     "데이터센터 냉각 (Thermal & Cooling)": "cat-cooling",
     "온디바이스 AI (On-Device AI)": "cat-ondevice",
-    "우주 통신 (Space & LEO Comm.)": "cat-space"
+    "우주 통신 (Space & LEO Comm.)": "cat-space",
+    "양자 컴퓨터 (Quantum Computing)": "cat-quantum"
 };
 
 // 초기 데이터 로딩
