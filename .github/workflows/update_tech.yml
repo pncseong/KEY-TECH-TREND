@@ -30,6 +30,7 @@ jobs:
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: |
+        python init_db.py
         python run_pipeline.py
 
     - name: 업데이트된 파일 저장 및 깃허브 푸시
