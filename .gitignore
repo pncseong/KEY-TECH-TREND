@@ -1,0 +1,9 @@
+.env
+tech_monitor.db
+tech_monitor.db-journal
+__pycache__/
+*.pyc
+*.lnk
+*.ps1
+test_dedup.py
+check_db.py

@@ -2,11 +2,13 @@ name: 5대 핵심 기술 대시보드 자동 업데이트
 
 on:
   schedule:
-    # 매일 한국시간 오전 9시(UTC 00:00)에 실행
+    # 매일 한국시간 오전 9시 18분(UTC 00:18)에 실행 (지연 실행 방지를 위해 18분으로 빗겨 설계)
     - cron: '18 0 * * *'
   workflow_dispatch:
+    # 깃허브 웹에서 수동으로도 즉시 작동시킬 수 있게 설정
+
 permissions:
-  contents: write   # 깃허브 웹에서 수동으로도 즉시 작동시킬 수 있게 설정
+  contents: write
 
 jobs:
   update-data:

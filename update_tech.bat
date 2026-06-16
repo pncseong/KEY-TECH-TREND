@@ -15,6 +15,19 @@ cd /d "c:\Users\백남철\.antigravity\KEY TECH TREND"
 
 echo.
 echo ==================================================
+echo 4. 깃허브(GitHub) 자동 배포 검사...
+echo ==================================================
+git status >nul 2>&1
+if %errorlevel% equ 0 (
+    echo 깃허브(GitHub)에 최신 데이터를 자동 업로드하는 중...
+    git add data.js data.json
+    git commit -m "Auto-update tech data: %date% %time%"
+    git push origin main
+    echo 깃허브 배포가 완료되었습니다.
+) else (
+    echo [정보] 현재 폴더는 Git 저장소가 아닙니다.
+)
+echo ==================================================
 echo [완료] 최신 데이터 갱신 작업이 성공적으로 끝났습니다!
 echo 대시보드(index.html) 창으로 가셔서 [F5] 새로고침을 누르세요.
 echo ==================================================

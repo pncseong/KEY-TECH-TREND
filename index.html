@@ -106,7 +106,19 @@
     </div>
 
     <!-- 스크립트 로드 -->
-    <script src="data.js"></script>
+    <script>
+        (function() {
+            var script = document.createElement('script');
+            // 로컬 파일 실행(file:) 시에는 쿼리스트링(?v=...)이 붙으면 파일을 로드하지 못하므로 분기 처리합니다.
+            if (window.location.protocol === 'file:') {
+                script.src = 'data.js';
+            } else {
+                script.src = 'data.js?v=' + new Date().getTime();
+            }
+            script.async = false; // app.js가 실행되기 전 반드시 순차 실행되도록 보장
+            document.head.appendChild(script);
+        })();
+    </script>
     <script src="app.js"></script>
 </body>
 </html>

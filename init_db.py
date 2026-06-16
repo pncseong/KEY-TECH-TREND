@@ -44,7 +44,6 @@ initial_categories = [
         "keywords": ["온디바이스 AI", "On-Device AI", "NPU", "신경망처리장치", "에지 AI", "Edge AI", "AI 가속기", "Neural Processing"],
         "priority": 7
     },
-        # 45~55번째 줄 모양새를 아래처럼 맞춰주세요
     {
         "name": "우주 통신 (Space & LEO Comm.)",
         "keywords": ["저궤도 위성", "LEO Satellite", "위성 통신", "우주 인터넷", "Space Internet", "6G 위성", "위성 안테나"],

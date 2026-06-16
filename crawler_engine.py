@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 import os
 import re
+from difflib import SequenceMatcher
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(base_dir, 'tech_monitor.db')
@@ -129,6 +130,42 @@ def parse_arxiv(category_id, keyword):
         
     return articles
 
+def clean_title(title):
+    """뉴스 제목에서 대괄호, 소괄호, 언론사명 꼬리표를 제거하여 순수 제목만 정제"""
+    if not title:
+        return ""
+    
+    # 1. 괄호와 괄호 안 텍스트 제거 ([, (, 【, <)
+    title = re.sub(r'\[.*?\]', '', title)
+    title = re.sub(r'\(.*?\)', '', title)
+    title = re.sub(r'【.*?】', '', title)
+    title = re.sub(r'<.*?>', '', title)
+    
+    # 2. 끝 부분의 언론사 꼬리표 제거 (예: - 연합뉴스, | 서울경제, : 충청뉴스)
+    title = re.sub(r'\s*[-|│:|｜]\s*[A-Za-z가-힣0-9\s]+$', '', title)
+    
+    # 3. 말줄임표나 불필요한 특수문자 제거 및 공백 정리
+    title = re.sub(r'\.{2,}', '', title)
+    title = re.sub(r'\s+', ' ', title).strip()
+    
+    return title
+
+def is_duplicate_by_title(cursor, category_id, cleaned_title, threshold=0.65):
+    """최근 3일 이내에 동일 카테고리에 등록된 기사 중 제목 유사도가 threshold 이상인 기사가 있는지 검사"""
+    cursor.execute(
+        """
+        SELECT title FROM articles 
+        WHERE category_id = ? AND published_at >= datetime('now', '-3 days')
+        """,
+        (category_id,)
+    )
+    rows = cursor.fetchall()
+    for row in rows:
+        existing_cleaned = clean_title(row[0])
+        if SequenceMatcher(None, cleaned_title, existing_cleaned).ratio() >= threshold:
+            return True
+    return False
+
 def is_duplicate_url(cursor, url):
     """이미 데이터베이스에 존재하는 URL인지 확인"""
     cursor.execute("SELECT id FROM articles WHERE source_url = ?", (url,))
@@ -164,24 +201,43 @@ def crawl_and_store():
             paper_items = parse_arxiv(cat_id, kw)
             all_fetched.extend(paper_items[:3])
             
-        # 중복 제거 및 DB 저장
+        # 중복 제거 및 DB 저장 (메모리 내 중복 및 DB 내 유사 기사 제거)
+        inserted_titles = []
         for item in all_fetched:
             if not item["source_url"]:
                 continue
                 
-            if not is_duplicate_url(cursor, item["source_url"]):
-                try:
-                    cursor.execute(
-                        """
-                        INSERT INTO articles (category_id, title, source_url, published_at, content_raw)
-                        VALUES (?, ?, ?, ?, ?)
-                        """,
-                        (item["category_id"], item["title"], item["source_url"], item["published_at"], item["content_raw"])
-                    )
-                    new_articles_count += 1
-                except sqlite3.IntegrityError as e:
-                    # 동시성 문제 등으로 예외 처리
-                    pass
+            if is_duplicate_url(cursor, item["source_url"]):
+                continue
+                
+            cleaned_title = clean_title(item["title"])
+            
+            # 1. 방금 수집하여 메모리에 있는 기사들과의 유사도 중복 검사
+            is_mem_dup = False
+            for mem_title in inserted_titles:
+                if SequenceMatcher(None, cleaned_title, mem_title).ratio() >= 0.65:
+                    is_mem_dup = True
+                    break
+            if is_mem_dup:
+                continue
+                
+            # 2. DB에 이미 존재하는 최근 3일 이내 기사들과의 유사도 중복 검사
+            if is_duplicate_by_title(cursor, cat_id, cleaned_title, threshold=0.65):
+                continue
+                
+            try:
+                cursor.execute(
+                    """
+                    INSERT INTO articles (category_id, title, source_url, published_at, content_raw)
+                    VALUES (?, ?, ?, ?, ?)
+                    """,
+                    (item["category_id"], item["title"], item["source_url"], item["published_at"], item["content_raw"])
+                )
+                new_articles_count += 1
+                inserted_titles.append(cleaned_title)
+            except sqlite3.IntegrityError as e:
+                # 동시성 문제 등으로 예외 처리
+                pass
         
     conn.commit()
     conn.close()

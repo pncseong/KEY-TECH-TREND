@@ -79,7 +79,8 @@ def get_gemini_analysis(title, content):
         model = genai.GenerativeModel('gemini-2.5-flash')
         response = model.generate_content(
             prompt,
-            generation_config={"response_mime_type": "application/json"}
+            generation_config={"response_mime_type": "application/json"},
+            request_options={"timeout": 10.0}
         )
         
         result = json.loads(response.text)
