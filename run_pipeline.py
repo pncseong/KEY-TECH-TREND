@@ -27,19 +27,40 @@ def export_to_json():
     # 2. 아티클 및 인사이트 데이터 가져오기 (인사이트가 있는 것 우선, 발행일 내림차순)
     # 기왕이면 인사이트가 생성된 기사들 위주로 대시보드에 노출
     cursor.execute("""
-        SELECT 
-            a.id,
-            a.category_id,
-            a.title,
-            a.source_url,
-            a.published_at,
-            i.summary,
-            i.tech_stage,
-            i.investment_impact,
-            i.key_tickers
-        FROM articles a
-        LEFT JOIN insights i ON a.id = i.article_id
-        ORDER BY i.investment_impact DESC, a.published_at DESC
+        SELECT * FROM (
+            SELECT 
+                a.id,
+                a.category_id,
+                a.title,
+                a.source_url,
+                a.published_at,
+                i.summary,
+                i.tech_stage,
+                i.investment_impact,
+                i.key_tickers
+            FROM articles a
+            INNER JOIN insights i ON a.id = i.article_id
+
+            UNION ALL
+
+            SELECT * FROM (
+                SELECT 
+                    a.id,
+                    a.category_id,
+                    a.title,
+                    a.source_url,
+                    a.published_at,
+                    NULL as summary,
+                    NULL as tech_stage,
+                    NULL as investment_impact,
+                    NULL as key_tickers
+                FROM articles a
+                WHERE a.id NOT IN (SELECT article_id FROM insights)
+                ORDER BY a.published_at DESC
+                LIMIT 30
+            )
+        )
+        ORDER BY investment_impact DESC, published_at DESC
     """)
     
     rows = cursor.fetchall()
