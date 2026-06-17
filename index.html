@@ -120,7 +120,11 @@
             // data.js가 완전히 로드 및 실행된 후 app.js를 로드하여 순서를 보장합니다.
             script.onload = function() {
                 var appScript = document.createElement('script');
-                appScript.src = 'app.js';
+                if (window.location.protocol === 'file:') {
+                    appScript.src = 'app.js';
+                } else {
+                    appScript.src = 'app.js?v=' + new Date().getTime();
+                }
                 appScript.async = false;
                 document.body.appendChild(appScript);
             };
