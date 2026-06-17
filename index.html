@@ -115,10 +115,18 @@
             } else {
                 script.src = 'data.js?v=' + new Date().getTime();
             }
-            script.async = false; // app.js가 실행되기 전 반드시 순차 실행되도록 보장
+            script.async = false;
+            
+            // data.js가 완전히 로드 및 실행된 후 app.js를 로드하여 순서를 보장합니다.
+            script.onload = function() {
+                var appScript = document.createElement('script');
+                appScript.src = 'app.js';
+                appScript.async = false;
+                document.body.appendChild(appScript);
+            };
+            
             document.head.appendChild(script);
         })();
     </script>
-    <script src="app.js"></script>
 </body>
 </html>
