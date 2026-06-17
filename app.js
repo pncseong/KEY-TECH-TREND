@@ -22,11 +22,17 @@ const categoryClassMap = {
     "양자 컴퓨터 (Quantum Computing)": "cat-quantum"
 };
 
-// 초기 데이터 로딩
-document.addEventListener("DOMContentLoaded", () => {
+// 초기 데이터 로딩 및 이벤트 바인딩
+function init() {
     fetchData();
     setupEventListeners();
-});
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+} else {
+    init();
+}
 
 // data.json 가져오기
 async function fetchData() {
