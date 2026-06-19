@@ -7,6 +7,7 @@ from datetime import datetime
 import os
 import re
 from difflib import SequenceMatcher
+import time
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(base_dir, 'tech_monitor.db')
@@ -196,10 +197,12 @@ def crawl_and_store():
             # Google News 수집 (최대 10개)
             news_items = parse_google_news(cat_id, kw)
             all_fetched.extend(news_items[:10])
+            time.sleep(1.5)  # 구글 뉴스 API 호출 후 1.5초 대기
             
             # arXiv 논문 수집 (최대 3개)
             paper_items = parse_arxiv(cat_id, kw)
             all_fetched.extend(paper_items[:3])
+            time.sleep(3.0)  # arXiv API 호출 후 3.0초 대기 (공식 가이드 준수)
             
         # 중복 제거 및 DB 저장 (메모리 내 중복 및 DB 내 유사 기사 제거)
         inserted_titles = []

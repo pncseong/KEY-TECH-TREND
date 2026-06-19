@@ -108,8 +108,8 @@ def run_full_pipeline():
     # 2. AI 분석 실행
     try:
         from llm_analyzer import analyze_articles
-        # 신규 카테고리를 모두 완벽히 분석하기 위해 한도를 100개로 상향
-        analyzed_count = analyze_articles(limit=100)
+        # API 비용 최적화를 위해 한도를 30개로 제한 (주요 핵심 기사 우선 분석)
+        analyzed_count = analyze_articles(limit=30)
         print(f"-> 2단계 AI 요약 및 인사이트 분석 완료 (신규 분석: {analyzed_count}개)")
     except Exception as e:
         print(f"-> 2단계 AI 분석 실패: {e}")
