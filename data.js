@@ -1,5 +1,5 @@
 window.techData = {
-  "last_updated": "2026-07-03 08:20:58",
+  "last_updated": "2026-07-03 09:17:46",
   "categories": [
     {
       "id": 1,
@@ -2399,6 +2399,32 @@ window.techData = {
       ]
     },
     {
+      "id": 5712,
+      "category_id": 8,
+      "title": "아마존, 우주 인터넷 '레오' 상용 서비스 위한 위성 확보…주가 강세 - 마켓인",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1RaTExQklyWmNWaWREdG51NFhhRk9QUmExdkpVX1JaV3lUV2pkTHhOSWU2b3pZV05tMFRMOWgtb1daeEs4S25rYkxHS3VqOTFOcHZmLThQWUprUFZMcmZmcWtPQllTMTlacnVqOUwxTWU1WjQ?oc=5",
+      "published_at": "2026-07-02T19:16:14",
+      "summary": "1. 아마존이 저궤도 위성 인터넷 서비스 '프로젝트 카이퍼(LEO)'의 상용 서비스를 위해 필요한 위성을 성공적으로 확보했습니다.\n2. 이번 위성 확보 소식은 아마존의 우주 인터넷 서비스 상업화가 임박했음을 시사하며, 관련 기술 개발 및 인프라 구축에 속도를 내고 있습니다.\n3. 해당 소식은 아마존 주가 강세로 이어졌으며, 우주 산업 및 통신 시장에 미칠 파급력에 대한 기대감을 반영하고 있습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "AMZN"
+      ]
+    },
+    {
+      "id": 5719,
+      "category_id": 8,
+      "title": "SKT, AI·6G 보안 겨냥 양자암호 기술 공개…무선·위성 QKD까지 확장 - 비즈트리뷴",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1RVHVuNHVWZGFuSEhnODlSdGtiN3lHb1FJRUMyTEFNNDBHcENIQjNSZ2Nrd0RHSEdvLUwzeFVYeHRZbkV5YlZUTnoyQlJzZWtlcEFVLXdFVFkwWU5RN2oxbUJITW9lMlFPRy0wS0F4MjQ?oc=5",
+      "published_at": "2026-07-02T13:09:29",
+      "summary": "1. SKT는 AI 및 6G 시대의 핵심 보안 기술로 양자암호 기술을 공개하며, 미래 통신 인프라 보안 시장 선점을 위한 전략적 움직임을 보이고 있습니다.\n2. 특히 무선 및 위성 QKD(양자 키 분배) 기술로의 확장을 통해 육상뿐만 아니라 다양한 통신 환경에서의 고도화된 보안 솔루션 제공 가능성을 제시하고 있습니다.\n3. 이는 향후 데이터 보안 및 국가 안보에 필수적인 기술 경쟁력 확보를 위한 SKT의 중장기 투자로, 관련 통신 보안 시장 성장에 기여할 잠재력을 가집니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 8,
+      "key_tickers": [
+        "017670"
+      ]
+    },
+    {
       "id": 5732,
       "category_id": 9,
       "title": "양자컴퓨터 시대 온다…SKT·KT, 양자보안 상용화 경쟁 - 뉴스토마토",
@@ -2410,6 +2436,40 @@ window.techData = {
       "key_tickers": [
         "017670",
         "030200"
+      ]
+    },
+    {
+      "id": 5727,
+      "category_id": 9,
+      "title": "\"말로만 듣던 양자 컴퓨터\"…눈앞에 펼쳐진 미래 기술 - 한국경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE52bFFhVlE0YTdiVE1RUXNZQ3dVNXVnSnhlRWhZRHp5bUQySFdPNkJMdGo5WjlRd2YzdjZ2NHhGczc1NHZIb0xwd3RmazdFU3BGN01QN1JqbVd0QdIBVEFVX3lxTE9hZ2I5WVdKaGRkaHhiVVpjUlI2X2hJZkRtUHNtRXJRNHh3cy14aFJteHJ1Vl9RVTFFSEdtbnRXWWRjSWNmUHhuZjhrS3BUNG9ocWw0QQ?oc=5",
+      "published_at": "2026-07-02T04:40:41",
+      "summary": "1. 양자 컴퓨터는 기존 컴퓨팅의 한계를 넘어설 잠재력을 가진 차세대 미래 기술로, 기술 개발이 가속화되며 실현 가능성에 대한 기대감이 증폭되고 있습니다.\n2. 아직 상용화 초기 단계는 아니지만, 이론적 연구를 넘어 실제 구현 및 실험실 증명 단계가 활발히 진행되며 시장의 관심을 집중시키고 있습니다.\n3. 향후 반도체, AI, 신소재, 암호화, 금융 등 광범위한 산업 분야에 혁명적인 변화를 가져올 파괴적 기술로, 장기적 관점의 초기 기술 투자 기회 모색이 중요합니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 8,
+      "key_tickers": [
+        "IBM",
+        "GOOGL",
+        "MSFT",
+        "IONQ",
+        "RGTI",
+        "005930",
+        "000660"
+      ]
+    },
+    {
+      "id": 5728,
+      "category_id": 9,
+      "title": "통신 3사, 양자컴퓨터 위협 맞설 '양자보안' 경쟁 - 아시아타임즈",
+      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9lbXlBU1ZHY1N5eUc1Q19nX1JqbTFQNzlyeUVmWlp2QzIzMy1URWhjYzZmNTlKcW90NjhnaGhwS3FSRDJOSEFmT2RqNTVsc2JIZG10dUQ1OWFzVDFBc0E?oc=5",
+      "published_at": "2026-07-02T01:36:00",
+      "summary": "1. 통신 3사가 양자컴퓨터의 위협에 선제적으로 대응하기 위해 '양자보안' 기술 개발 및 도입 경쟁에 본격적으로 나서고 있습니다.\n2. 이는 미래 통신 네트워크와 중요 데이터의 보안을 강화하고, 다가올 양자 시대에 대비한 필수적인 인프라 투자로 판단됩니다.\n3. 현재 암호화 체계의 한계를 극복하고 차세대 보안 시장을 선점하기 위한 기술 주도권 확보가 통신사들의 핵심 과제로 부상하고 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 8,
+      "key_tickers": [
+        "017670",
+        "030200",
+        "032640"
       ]
     },
     {
@@ -2439,6 +2499,37 @@ window.techData = {
         "MSFT",
         "GOOGL",
         "NVDA"
+      ]
+    },
+    {
+      "id": 5723,
+      "category_id": 8,
+      "title": "[논문] Toward a Unified Security and Privacy Framework for AI-Native 6G Networks",
+      "source_url": "https://arxiv.org/abs/2607.01019v1",
+      "published_at": "2026-07-01T14:52:04Z",
+      "summary": "1. 6G 네트워크는 AI 통합으로 전례 없는 서비스 가능성을 제공하지만, 통신, 컴퓨팅, 센싱, AI의 결합으로 인한 고도로 이질적이고 파편화된 보안 및 개인정보보호 문제를 야기합니다.\n2. 본 논문은 이러한 복잡성을 해결하기 위해 교차 계층적 관점에서 AI-native 6G 네트워크의 통합 보안 및 개인정보보호 프레임워크와 위협 분류 체계를 제안하며, 기존의 단편적인 접근 방식의 한계를 극복하고자 합니다.\n3. 이는 안전하고 상호운용 가능하며 신뢰할 수 있는 6G 생태계를 구축하기 위한 필수적인 선행 연구로, 미래 6G 인프라 및 서비스의 핵심 기반 기술이며, 관련 기술 개발 및 표준화 노력에 대한 장기적인 투자 가치를 시사합니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 8,
+      "key_tickers": [
+        "005930",
+        "NOK",
+        "ERIC",
+        "QCOM",
+        "NVDA"
+      ]
+    },
+    {
+      "id": 5711,
+      "category_id": 8,
+      "title": "[클릭 e종목]이리디움 품는 로켓랩…“위성통신 진출 교두보 확보” - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE40c19hN3QxWGNJcXNkTnhuRlBVcFRKUktobTcySllwV2tTMFNLbkJfY08xeTR6d0FBcWFHMFhWSFNHNF9GWDZ3U3BmMndReTg?oc=5",
+      "published_at": "2026-06-30T22:35:02",
+      "summary": "1. 로켓랩(Rocket Lab)이 위성통신 서비스 기업인 이리디움(Iridium)과의 협력을 통해 위성통신 시장으로의 진출 교두보를 확보했습니다.\n2. 이번 전략적 움직임은 로켓랩이 단순 위성 발사 서비스를 넘어 위성통신 인프라 및 서비스 분야로 사업 영역을 확장하려는 의지를 보여줍니다.\n3. 해당 파트너십 또는 인수를 통해 로켓랩은 위성 제조 및 발사 역량과 결합하여 위성통신 가치 사슬 전반에 걸쳐 경쟁력을 강화할 것으로 예상됩니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "RKLB",
+        "IRDM"
       ]
     },
     {
@@ -7319,6 +7410,20 @@ window.techData = {
       ]
     },
     {
+      "id": 5805,
+      "category_id": 9,
+      "title": "아이온큐 4.4% 급락 속 '유럽 양자 컴퓨팅 강자' IQM, 나스닥 데뷔 - 글로벌이코노믹",
+      "source_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOT21lNTIwTnQ5Q181NXEyQUUzS1pDNzhiYXNTRm5OY3UzSHNwRzQyc2d2dlZERmx4dllsWjhsSy1ISTR5MGNITjdhLXhXNHpudUFyZm5La0xsOWRLcm1Ub0ZSSHJOZi0xWk9HUGxHa2JYSmtEX0hTRjd4ZkZSMWVwbVZHU2ExZFlW?oc=5",
+      "published_at": "2026-07-02T22:09:36",
+      "summary": "1. 유럽의 양자 컴퓨팅 선도 기업인 IQM이 미국 나스닥 시장에 상장하며 글로벌 양자 컴퓨팅 투자 옵션을 확대합니다.\n2. IQM의 나스닥 데뷔는 기존 주요 양자 컴퓨팅 기업인 아이온큐(IonQ)의 주가 급락과 동시에 발생하여, 양자 컴퓨팅 시장의 높은 변동성과 투자 위험성을 시사합니다.\n3. 이번 상장은 양자 컴퓨팅 산업의 성장세를 반영하지만, 동시에 시장의 투자 심리가 개별 기업의 실적과 기술 상용화 진전에 따라 민감하게 반응할 수 있음을 보여줍니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "IONQ",
+        "IQM"
+      ]
+    },
+    {
       "id": 5734,
       "category_id": 9,
       "title": "IQM 퀀텀 컴퓨터, 나스닥서 ’IQMX’로 거래 시작 - Investing.com 한국어",
@@ -7341,12 +7446,39 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 5720,
+      "category_id": 8,
+      "title": "SK텔레콤, 퀀텀코리아서 AI·6G 대비…차세대 양자암호 기술 총출동 - 이지경제",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1idW11ZWdJa09oZ1N0bGlVX2FISVM2Z0ZteHplRU9PbjlXY29sanpPX0NGTmVENlR5RlpUWmJkVVQ4STIwa3pLaGdDYldBelFUQXJENWZfVXNZR3J3MExDcXFGbndsbjlSMjBVOHJR?oc=5",
+      "published_at": "2026-07-02T05:52:55",
+      "summary": "1. SK텔레콤은 '퀀텀코리아' 행사에서 AI 및 6G 시대에 대비한 차세대 양자암호 기술들을 대거 공개하며 미래 통신 보안 시장에서의 리더십을 강화할 계획이다.\n2. 이는 급변하는 통신 환경, 특히 AI와 6G 네트워크의 고도화에 필수적인 데이터 보안 및 정보 보호 역량을 선제적으로 확보하려는 전략적 움직임으로 해석된다.\n3. SK텔레콤의 양자암호 기술 전시는 관련 기술의 상용화 가능성을 엿볼 수 있게 하며, 국내외 양자 기술 생태계 조성 및 투자 활성화에 긍정적인 영향을 미칠 것으로 예상된다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "017670"
+      ]
+    },
+    {
       "id": 5748,
       "category_id": 9,
       "title": "MIT 석학 아이작 추앙 \"현재 양자컴 안 유용해…韓 반도체가 양자혁명 열쇠\" - 뉴시스",
       "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9Gall1U0tLcEdpQl9HMmVMaGc5R1ZnVWdQQ0JkOElmUTBSM2U3WVZJbTVjQWRlUjNnUldfekJRLW4tUDZOU3lWN1IxLUFVNTJzak1hN18wSXprN0prMjh3T9IBeEFVX3lxTFBuRjNtRk15YkFCaFNCTUF4cG1EbVJhUmN5X0xMYzJaaTUtZGdJSEw1OV9NTHpxNTVldnJSaWJDeE4xTHhhcWdzRHRsczdURWp5NjVtX1hvYURYS0dldEhhZmRZclI4Wlp4Vkt2Vl8xekc2c0FNSmM3UQ?oc=5",
       "published_at": "2026-07-02T05:14:46",
       "summary": "1. MIT 석학은 현재 양자 컴퓨터가 유용하지 않음을 강조하며, 기술의 초기 단계를 명확히 했습니다.\n2. 양자 혁명의 열쇠가 한국 반도체에 있다고 언급, 차세대 컴퓨팅 기술 발전에 있어 한국의 첨단 반도체 기술의 핵심적인 역할을 강조했습니다.\n3. 이는 양자 컴퓨팅 자체의 상용화까지는 시간이 더 필요하지만, 그 기반 기술로서 반도체 산업의 중요성을 부각시키며 장기적인 투자 관점을 제시합니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 7,
+      "key_tickers": [
+        "005930",
+        "000660"
+      ]
+    },
+    {
+      "id": 5726,
+      "category_id": 9,
+      "title": "\"반도체 강한 韓, 양자 혁명서 특별한 역할 할 것\" - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5FeGtDQUhGQndNcjdSREo4N1l6MTc2R3hLYlpsZGhMNUoxeTlKdzRDdVN2NmNkTlNULTJOZXh4dGg0UmoxbVVvTmxURUtYSXc?oc=5",
+      "published_at": "2026-07-02T04:55:51",
+      "summary": "1. 한국의 강력한 반도체 역량이 다가오는 양자 혁명에서 중요한 역할을 할 것이라는 전망입니다.\n2. 이는 기존 반도체 제조 및 기술력이 양자 컴퓨팅과 같은 차세대 기술 분야에서 경쟁 우위로 작용할 수 있음을 시사합니다.\n3. 미래 기술 패권 경쟁에서 한국이 핵심 플레이어가 될 잠재력을 강조하며, 반도체 산업의 확장 가능성을 제시합니다.",
       "tech_stage": "Laboratory",
       "investment_impact": 7,
       "key_tickers": [
@@ -7393,6 +7525,17 @@ window.techData = {
         "IBM",
         "IONQ"
       ]
+    },
+    {
+      "id": 5729,
+      "category_id": 9,
+      "title": "AI 다음은 양자컴퓨터입니다 - 네이버 프리미엄콘텐츠",
+      "source_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxONUdrN3RuN2VJUmFmT2szY2ZGd180TGdwX2oweWREQUY1ZXJodzA1VllsbXRjcWJWR3JSLWdzV0dfWXJIX3pzRHZPaUxCUTMzVm1GbVRfQ0twN2dVenlJZTJYbjFOTk1kTXphWllXaEtWQ3R5ODZVNUxhMnl4ZkZFbVpoM0tQbnZIZ2tJ?oc=5",
+      "published_at": "2026-07-01T12:31:00",
+      "summary": "1. AI 다음은 양자컴퓨터입니다 - 네이버 프리미엄콘텐츠 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": []
     },
     {
       "id": 5754,
@@ -7443,6 +7586,31 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 5804,
+      "category_id": 8,
+      "title": "로켓랩(RKLB.N) 이디리움 인수..저궤도 위성 통신 확보 - 알파경제",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9OaUlyVzdqN2ZIR0JUNVhSRVlGbjBPVXFzbGVsbGNlb2NFdTFQZFR1ZnRrZUlZeDZIRlhCNlJEZ1pEc1dhcVJ0eFRHTkJmM1RrUmVmTHV4YnBoZTFWVzNQZFdGTHMyM18xUkdURDlR?oc=5",
+      "published_at": "2026-06-30T22:54:25",
+      "summary": "1. 로켓랩(RKLB)의 '이디리움' 인수는 저궤도 위성 통신(LEO Satellite Communication) 시장에서의 입지 강화 및 사업 영역 확장을 목표로 합니다.\n2. 이번 인수를 통해 로켓랩은 위성 발사 및 제조를 넘어 통신 서비스 제공 역량을 확보하거나 기존 서비스를 강화하여 수직 통합 효과를 창출할 것으로 예상됩니다.\n3. 이는 우주 산업 내 통합 솔루션 제공 트렌드를 반영하며, 로켓랩의 장기적인 성장 동력 확보 및 경쟁 심화가 예상되는 저궤도 위성 통신 시장에서의 전략적 우위 확보에 기여할 것입니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 7,
+      "key_tickers": [
+        "RKLB",
+        "IRDM"
+      ]
+    },
+    {
+      "id": 5709,
+      "category_id": 8,
+      "title": "로켓랩, 스페이스X에 도전장…위성·통신 ‘이리듐’ 품는다 - 경향신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBZMlpoOGdmajd0cVdCbnd3S0YtTmFGQ1hoeUNYV0ZlZkdPakNVWFpiQ3Z3TVJrTmh0QVhWMEgwYzRtZ05GaV9rMVljT2x2bWdIbUNmMHk4UmFrUdIBX0FVX3lxTE03dkoxSkNyUWhzWXNFWHNVdGE4SmRMam5uQU50LUw0TGtiN1Ytc3NhUkhlWkVjTE4wN01ZU3h2YnhINEhxby1MOXZmckVfaTd3OXlUTERlbTF2ZUVPeUtv?oc=5",
+      "published_at": "2026-06-30T11:45:00",
+      "summary": "1. 로켓랩, 스페이스X에 도전장…위성·통신 ‘이리듐’ 품는다 - 경향신문 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": []
+    },
+    {
       "id": 5504,
       "category_id": 9,
       "title": "“양자컴퓨터 시대 보안 위협 대비”… 과기부, 전문 인력 620명 양성 - 조선비즈 - Chosunbiz",
@@ -7463,6 +7631,22 @@ window.techData = {
       "tech_stage": "Pilot",
       "investment_impact": 7,
       "key_tickers": []
+    },
+    {
+      "id": 5703,
+      "category_id": 8,
+      "title": "S. Korea joins space race late: How much of the final frontier can Seoul claim? - 네이트",
+      "source_url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5NSUV1UTRENGFqUlhGYzZhZ0tjb29LVXBsYUVTRlZqRHJHVVRsX2p1QWJrcTNQaFg5azZsRUdoZUo3UHk3SnlrOVZHcVpnaVJDVS00?oc=5",
+      "published_at": "2026-06-30T05:18:00",
+      "summary": "1. 한국이 뒤늦게 글로벌 우주 경쟁에 참여하고 있으며, 이는 국가적 차원의 새로운 성장 동력 확보를 위한 전략적 움직임을 시사합니다.\n2. 후발주자로서 우주 산업 내 입지를 구축하기 위해 위성, 발사체 기술 개발 및 인프라 구축에 상당한 투자와 노력이 필요할 것으로 예상됩니다.\n3. 우주 개발은 위성 통신, 우주 탐사, 자원 활용 등 광범위한 첨단 기술 분야에 걸쳐 장기적인 성장 기회를 제공하며 관련 산업 전반에 파급 효과를 가져올 잠재력을 가집니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "012450",
+        "047810",
+        "079550",
+        "073570"
+      ]
     },
     {
       "id": 5514,
@@ -15068,6 +15252,32 @@ window.techData = {
       ]
     },
     {
+      "id": 5718,
+      "category_id": 8,
+      "title": "우주 해킹도 막는다…SKT, 6G·위성 양자보안 시동 - 경제타임스",
+      "source_url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5CZjR1UWEzOTlrVG8ycnl6WklPSDhDUDBLNHBkYzVfaXh4bjM3WDlsQkhKaHM1MmtqUW02VUZSb0ZIUkpyc2RwbUVkbWxtZ1l3WTZr?oc=5",
+      "published_at": "2026-07-02T03:57:11",
+      "summary": "1. SK텔레콤이 6G 네트워크와 위성 통신 분야에 양자보안 기술을 적용하는 연구 및 개발을 '시동'했다고 발표했습니다.\n2. 이는 우주 공간에서의 해킹 위협 등 미래 통신 환경의 고도화된 보안 문제를 선제적으로 해결하기 위한 전략적 움직임입니다.\n3. 차세대 통신 인프라의 핵심인 6G 및 위성 통신의 보안을 강화함으로써, SKT는 미래 통신 시장에서의 기술 리더십을 확보하려는 포석으로 해석됩니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 6,
+      "key_tickers": [
+        "017670",
+        "030200",
+        "032640"
+      ]
+    },
+    {
+      "id": 5708,
+      "category_id": 8,
+      "title": "[논문] Studying Ionosphere Using SKA-Low and SKA-Mid",
+      "source_url": "https://arxiv.org/abs/2607.01045v1",
+      "published_at": "2026-07-01T15:07:45Z",
+      "summary": "1. Studying Ionosphere Using SKA-Low and SKA-Mid 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 6,
+      "key_tickers": []
+    },
+    {
       "id": 5525,
       "category_id": 9,
       "title": "[Gov & Now] \"양자 과학 현실이 된다\"…세계 12개국 한자리에, 퀀텀 코리아 개최 - ebn.co.kr",
@@ -15378,6 +15588,17 @@ window.techData = {
       "key_tickers": [
         "MSFT"
       ]
+    },
+    {
+      "id": 5806,
+      "category_id": 9,
+      "title": "IQM, 단기간 내 오류 내성 양자 컴퓨팅 구현 가능성 제시 - 벤처타임즈",
+      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBEaUMxeUNocE1XaVBKRVlBUVBUTHJJTko1cndLN3p0MDZOd1dCLUxVcm5UUHZxb09NMkRrTEVHTEFBcl9aWDJmMGdGc3VyZkxrMGFEb2RkS2NoQVNWQ2VIQUk3a1RuUQ?oc=5",
+      "published_at": "2026-06-25T00:00:00",
+      "summary": "1. IQM, 단기간 내 오류 내성 양자 컴퓨팅 구현 가능성 제시 - 벤처타임즈 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 6,
+      "key_tickers": []
     },
     {
       "id": 4729,
@@ -19500,6 +19721,17 @@ window.techData = {
       ]
     },
     {
+      "id": 5714,
+      "category_id": 8,
+      "title": "아마존, 9일 인터넷 위성 첫 발사…스페이스X '스타링크'와 경쟁 본격화 - 동아사이언스",
+      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE80anhTMW1IR2RuNzZHV1NUVzQyT05vSDBHcWl1ZXFVV0MwSUY2d25FZ3R5MzN2VXlGX1YyOFV3aS1qdnk5WUJEOXFUZTBvQnB5OTBUUQ?oc=5",
+      "published_at": "2026-01-07T16:43:40",
+      "summary": "1. 아마존, 9일 인터넷 위성 첫 발사…스페이스X '스타링크'와 경쟁 본격화 - 동아사이언스 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 6,
+      "key_tickers": []
+    },
+    {
       "id": 3294,
       "category_id": 9,
       "title": "“中 칭화대 떠나 한국행” 세계적 석학 김기환 교수…‘양자정보과학’ 발전 이끈다 - v.daum.net",
@@ -19655,6 +19887,17 @@ window.techData = {
       "summary": "1. 2개월 만에 2000% 주가 급등?! 양자 알고리즘 & 하이브리드 플랫폼 기업 ‘퀀텀 컴퓨팅 (Quantum Computing, QUBT)’ - 네이버 프리미엄콘텐츠 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
       "tech_stage": "Pilot",
       "investment_impact": 6,
+      "key_tickers": []
+    },
+    {
+      "id": 5710,
+      "category_id": 8,
+      "title": "산·바다서도 터지고 요금 싸... 스페이스X ‘위성폰’ 태풍 온다 - 조선일보",
+      "source_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQNGNHWGdMRm5WczRtdDZ0SGhZWlJEU1IzTFVscEFfM2RsSWNZdXh2ODBiSHZBMy1ZUFpMYjFCNm9wRlhyVmNVME9POVp5WV9KVjBxRGhWQXBfZ1FJTnE3b0FQNUc1MVkzSEEtQzBqU2c3NnEtU3lHWHJzMjZkRHYyamVFQQ?oc=5",
+      "published_at": "2026-07-02T10:06:03",
+      "summary": "1. 산·바다서도 터지고 요금 싸... 스페이스X ‘위성폰’ 태풍 온다 - 조선일보 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 5,
       "key_tickers": []
     },
     {
@@ -19942,6 +20185,17 @@ window.techData = {
       "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9IeTZ5OGFKTEV1azRmX2g2YThBQkhWdEZwdTZkeUJLcVMyMTdudWZDdVNrclR5NkNBODhDVzlPenFaWWFCTzBhZDVLbkpoMVRDa3NvRUtXRG8tb0I1YmtqRGxyNkxabVBF0gFoQVVfeXFMT0h5Nnk4YUpMRXVrNGZfaDZhOEFCSFZ0RnB1NmR5QktxUzIxN251ZkN1U2tyVHk2Q0E4OENXOU96cVpZYUJPMGFkNUtuSmgxVENrc29FS1dEby1vQjVia2pEbHI2TFptUEU?oc=5",
       "published_at": "2026-06-25T03:50:58",
       "summary": "1. IQM, 양자 오류 정정 분야의 이정표 달성… 단기간 내 오류 내성 양자 컴퓨팅 구현 가능성 제시 - 글로벌 비즈 뉴스 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 5,
+      "key_tickers": []
+    },
+    {
+      "id": 5722,
+      "category_id": 8,
+      "title": "종이보다 가벼운 전자파 흡수소재…6G·위성통신 잡음 줄인다 - 동아사이언스",
+      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5udzQ2aDFDYnZhNEt2bmFQVEZocFhKX2xNMWN3T3RuTHB4QWdkWW9yY2NnUmxicTlhdVhFV0xpd0Zvb19oekNDek5saFhLcUVaZnJmNA?oc=5",
+      "published_at": "2026-06-25T03:20:00",
+      "summary": "1. 종이보다 가벼운 전자파 흡수소재…6G·위성통신 잡음 줄인다 - 동아사이언스 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
       "tech_stage": "Pilot",
       "investment_impact": 5,
       "key_tickers": []
@@ -21368,6 +21622,17 @@ window.techData = {
       "source_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1tTDdubDhoNUgzMGZYUU56bUVUUVVTSks5TUk3ME9kWUMyYUxpQ1E3Rmh0dTcwN19OcE1mdm85SnFYX2t4UF9POUtoUkJLMVdaa1d1THlKR1BsdGVtWmhreEs1Z3l3ZE9meGFhc1piWUFldms1SUZ2Y2RZQzdyalE?oc=5",
       "published_at": "2026-06-15T00:00:00",
       "summary": "1. \"고래와 대화하는 시대 올까?\"...AI 로봇, 고래 언어 해독 나선다 - YTN 사이언스 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 5,
+      "key_tickers": []
+    },
+    {
+      "id": 5705,
+      "category_id": 8,
+      "title": "한전, 공기업 최초 재난 안전 대응강화를 위한 위성통신 시스템 도입 추진 - 정필",
+      "source_url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1wVW4xSzRLM3lqeUcwVzdHRUp4c3dvMmpqcDA0aklIZmhZWk5FMkRrc1RldlJ6c21wc2k1T0JnRmVDMEV0NTg4?oc=5",
+      "published_at": "2026-06-14T23:58:00",
+      "summary": "1. 한전, 공기업 최초 재난 안전 대응강화를 위한 위성통신 시스템 도입 추진 - 정필 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
       "tech_stage": "Pilot",
       "investment_impact": 5,
       "key_tickers": []
@@ -23760,6 +24025,17 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 5713,
+      "category_id": 8,
+      "title": "[WEEKEND 스토리] 스페이스X 이후 우주산업 투자 판도가 바뀐다 - 뉴스임팩트",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ZOGFaLXV0UUh1UnV3a2dkS0JCQWdGMXR5Rk5TcEJIVUtBUmdNUC1Ca0JnNzhnSXV3YWI5MHFubnZuZ0FMSkUxU0JKSkVZcW1IZDlhb3BGSDVDX0dyVU02VHdyS19ZbHNnUnNfZXZaaUw1UQ?oc=5",
+      "published_at": "2026-07-02T21:30:00",
+      "summary": "1. 스페이스X 이후 우주산업 투자 판도가 바뀐다 - 뉴스임팩트 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 4,
+      "key_tickers": []
+    },
+    {
       "id": 5746,
       "category_id": 9,
       "title": "\"2030년까지 100큐비트 양자프로세서 실증\" - v.daum.net",
@@ -23804,6 +24080,17 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 5721,
+      "category_id": 8,
+      "title": "SKT, 30km 무선 양자암호 뚫었다… 위성·6G 초공간 보안 선점 박차 - 뉴스드림",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9Wai04VEFtQk1sVUl2emhfbzR2QWp3X1NDRWJ5VXVqWUFXQl90Y093U2FSa202YlVVZVBOa09UVmFDUUpDeWI5RndUS044dFVGbXQ5RGhqb2lETmU3NEtjdC1pX292cEJpR1M00gFuQVVfeXFMTm9iNXpfQ05ISHk4OUdqSmh0bW0tVlBvVWhEZ3NmSllOaHE2QmVPSFdTWjBQVkMweVhCRFA4UkZOVUNCWWN6aDFCWlNNdTM1bi0tRXlkY1VJWmNnZGtENGdOd0U0UnlWYlpSVFYxQXc?oc=5",
+      "published_at": "2026-07-02T00:09:27",
+      "summary": "1. SKT, 30km 무선 양자암호 뚫었다… 위성·6G 초공간 보안 선점 박차 - 뉴스드림 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 4,
+      "key_tickers": []
+    },
+    {
       "id": 5742,
       "category_id": 9,
       "title": "[논문] Brownian ratchets and pumps universally simulate many-body active dynamics",
@@ -23821,6 +24108,17 @@ window.techData = {
       "source_url": "https://arxiv.org/abs/2607.01221v1",
       "published_at": "2026-07-01T17:56:09Z",
       "summary": "1. Type IIB Axion--Dilaton Wormholes and the BPS Limit Hessian 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 4,
+      "key_tickers": []
+    },
+    {
+      "id": 5707,
+      "category_id": 8,
+      "title": "[논문] First Gamma-Ray Burst Observations with SVOM",
+      "source_url": "https://arxiv.org/abs/2607.01090v1",
+      "published_at": "2026-07-01T15:46:40Z",
+      "summary": "1. First Gamma-Ray Burst Observations with SVOM 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
       "tech_stage": "Laboratory",
       "investment_impact": 4,
       "key_tickers": []
@@ -23844,6 +24142,17 @@ window.techData = {
       "published_at": "2026-07-01T07:43:00",
       "summary": "1. 국립부경대, ‘산업 데이터 양자컴퓨팅 전환’ 사업 참여기관 선정 - 국제신문 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
       "tech_stage": "Pilot",
+      "investment_impact": 4,
+      "key_tickers": []
+    },
+    {
+      "id": 5725,
+      "category_id": 8,
+      "title": "[논문] Measurement-Based Characterization and Statistical Modeling of 6G Urban Low-Altitude A2G Channels across FR1 and FR3",
+      "source_url": "https://arxiv.org/abs/2607.00541v1",
+      "published_at": "2026-07-01T07:33:11Z",
+      "summary": "1. Measurement-Based Characterization and Statistical Modeling of 6G Urban Low-Altitude A2G Channels across FR1 and FR3 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Laboratory",
       "investment_impact": 4,
       "key_tickers": []
     },
@@ -27914,12 +28223,56 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 5715,
+      "category_id": 8,
+      "title": "[논문] No evidence of vorticity production from initially irrotational turbulent gravitational collapse",
+      "source_url": "https://arxiv.org/abs/2607.01207v1",
+      "published_at": "2026-07-01T17:46:27Z",
+      "summary": "1. No evidence of vorticity production from initially irrotational turbulent gravitational collapse 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 3,
+      "key_tickers": []
+    },
+    {
+      "id": 5706,
+      "category_id": 8,
+      "title": "[논문] GPU-Parallel Linearization Error Bounds for Real-Time Robust Optimal Control of Nonlinear and Neural Network Dynamics",
+      "source_url": "https://arxiv.org/abs/2607.01203v1",
+      "published_at": "2026-07-01T17:42:37Z",
+      "summary": "1. GPU-Parallel Linearization Error Bounds for Real-Time Robust Optimal Control of Nonlinear and Neural Network Dynamics 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 3,
+      "key_tickers": []
+    },
+    {
+      "id": 5716,
+      "category_id": 8,
+      "title": "[논문] Interpretation of the binned SNe Ia Master Sample data via a scalar quintessence component: phantom transition?",
+      "source_url": "https://arxiv.org/abs/2607.01199v1",
+      "published_at": "2026-07-01T17:32:58Z",
+      "summary": "1. Interpretation of the binned SNe Ia Master Sample data via a scalar quintessence component: phantom transition? 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 3,
+      "key_tickers": []
+    },
+    {
       "id": 5751,
       "category_id": 9,
       "title": "[논문] Non-Clifford Benchmarking via Ensemble Feature Selection",
       "source_url": "https://arxiv.org/abs/2607.01180v1",
       "published_at": "2026-07-01T17:11:26Z",
       "summary": "1. Non-Clifford Benchmarking via Ensemble Feature Selection 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 3,
+      "key_tickers": []
+    },
+    {
+      "id": 5724,
+      "category_id": 8,
+      "title": "[논문] Lightweight Vision-Aided Beam Tracking for Cross-Environment mmWave Communications",
+      "source_url": "https://arxiv.org/abs/2607.00936v1",
+      "published_at": "2026-07-01T13:40:24Z",
+      "summary": "1. Lightweight Vision-Aided Beam Tracking for Cross-Environment mmWave Communications 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
       "tech_stage": "Laboratory",
       "investment_impact": 3,
       "key_tickers": []
@@ -28573,6 +28926,17 @@ window.techData = {
         "LMT",
         "PL"
       ]
+    },
+    {
+      "id": 5704,
+      "category_id": 8,
+      "title": "LEO 위성 시장 규모, 산업 통계, 2035년 - Business Research Insights",
+      "source_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOOV9HcnlhLXFJRHcxN1VNc3RkSVA2SFJtaWo4NzRYck1acFNvc3pWZ2l2SmxKT1R2cGdCdnVlTmFRMEJNRE1ybk9YRi1IMlUyZmNXcHUtaEhKa1pKTVg2WlN2Zzk1SGxZM0xpQjhIU2pRQTJEUGFMcW1PLVR1c1V2anpaSmVUQVN5N0VUcjBWcw?oc=5",
+      "published_at": "2026-06-13T07:00:00",
+      "summary": "1. LEO 위성 시장 규모, 산업 통계, 2035년 - Business Research Insights 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Laboratory 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 3,
+      "key_tickers": []
     },
     {
       "id": 3558,
@@ -29259,6 +29623,17 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 5717,
+      "category_id": 8,
+      "title": "[논문] Coarse geometry of homeomorphism groups: Classifying countable Stone spaces",
+      "source_url": "https://arxiv.org/abs/2607.01196v1",
+      "published_at": "2026-07-01T17:30:34Z",
+      "summary": "1. 본 논문은 비국소 콤팩트 위상 그룹에 대한 기하학적 그룹 이론의 도구를 개발하는 순수 수학 분야의 이론적 연구입니다.\n2. 가산 스톤 공간(countable Stone spaces)의 동형사상 그룹(homeomorphism groups)을 세 가지 거친 동치 분류(coarse equivalence classes)로 나누고, 이들이 실제 거친 동치 클래스임을 증명합니다.\n3. 특정 그룹 클래스가 해밍 큐브(Hamming cube)와 준등거리(quasi-isometric)임을 보이며, 무한 해밍 그래프들이 bi-Lipschitz 동치임을 증명하는 등 고도로 추상적인 수학적 분류 및 관계를 규명합니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 1,
+      "key_tickers": []
+    },
+    {
       "id": 5243,
       "category_id": 9,
       "title": "초전도 직전의 신호…KAIST, 전자 '숨은 질서' 포착 - 충청일보",
@@ -29859,6 +30234,61 @@ window.techData = {
       ]
     },
     {
+      "id": 5768,
+      "category_id": 1,
+      "title": "'유리기판 전쟁' 승부수 던진 삼성전기···日 스미토모와 4800억 동맹 - 서울파이낸스",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBQM2Rtbm1GM2FkdG00LUotZ0VxX3M4dWRIOVlFT25WUEtFdGxHWURIWVBtV0tibVZIOXRfNy1zX05YUHU3UGZacTNFZ3g1b0VkN09zdi1GdV93UnhlaEl6aEx6NnMwR0N1UGc?oc=5",
+      "published_at": "2026-07-02T23:30:21",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 5761,
+      "category_id": 1,
+      "title": "한투證 “삼성전자, HBM 경쟁력 회복할 것…목표가 59만원 상향” - 조선비즈 - Chosunbiz",
+      "source_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQSkhHMkNYS0V6WllEaDdoc0lTODJKQWFLSXVHWmphc29UaEtsOGxwcHA2a1paUmVIekFIdFEwbE5CY3ZBY2dGYXNOZ1BjaUNmQzBVRFZhb1l5X3hMY1VyaWtGV0ZRMDNGb3daQUlZT0N0cTlkenByWTNVc05lU2hqMGpHNnI4RFdn0gGcAUFVX3lxTE9NeUdUY1BhcG5NZk9NQVl3aEpsR0J4QS14V1R2akxpRFFpVDZCR3ltZ2pEeEtlY2hGOXVndzR1YVZ6N19JcU9RejBac0hnaFFrTWFseTRUTE5YT0hkQ2wyRzJwMWFwUXplcnphZ3ptS0FzcDJqVk9VNWFGRV9Mc0NGN3JiWTZjR01lclFFR0xac1ZnVDdsVnZjZGxMcg?oc=5",
+      "published_at": "2026-07-02T23:27:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 5775,
+      "category_id": 2,
+      "title": "블루산업개발, '폐배터리 순환경제' 승부수…새만금 거점 확보 나선다 - 네이트",
+      "source_url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5IbFZqTEdBSW5JV0ZzaloyU2lPRlJBTTh1cDllTUs1d1IzaWVkV3dsR0hUYmM5UVZFZEUwRzJBcGZVYmFkZGFfNkZLWXlGVU1YRlVR?oc=5",
+      "published_at": "2026-07-02T22:59:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 5787,
+      "category_id": 5,
+      "title": "세계 최대 로봇·AI 축제 ‘로보컵’ 인천 개막…45개국 2천879명 참가 - 기호일보",
+      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9ZVVpSVkpkSWI0ci1KcEtJUEllRzl1ZG1QaG04SUc0UTY5SUNJVlFabk95aHJMdDNOSzJCMTZseGpQY25jM3lKWlQwOUpMQVBuQ1ZCSF9lRkY5M3prOEtTTHRROFdDZDF0b09kck5SSQ?oc=5",
+      "published_at": "2026-07-02T22:53:23",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 5783,
+      "category_id": 5,
+      "title": "\"같이 살까?\" 외로움 달래줄 '훈남·훈녀' 로봇 - MBC 뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBsa18yZ1ZiR2tzMEVsSHk1dVVRbUZzeGxrT1A3TS15NTMtSUFkdW43NkdMLWpWaXgtM0JzU25BaXNDQVhuZ1poS0dfNlltTkFITkxkLVh4ZXJncmV2cEdnLUM3ZWcyczlJdGdUTG5TRVJDMExlOHVya1Rn?oc=5",
+      "published_at": "2026-07-02T22:34:30",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
       "id": 5688,
       "category_id": 7,
       "title": "[일렉트로니카 상하이 2026] K-팹리스, 세계 최대 中 시장 노크 - 디지털투데이",
@@ -29936,11 +30366,33 @@ window.techData = {
       "key_tickers": []
     },
     {
-      "id": 5713,
-      "category_id": 8,
-      "title": "[WEEKEND 스토리] 스페이스X 이후 우주산업 투자 판도가 바뀐다 - 뉴스임팩트",
-      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ZOGFaLXV0UUh1UnV3a2dkS0JCQWdGMXR5Rk5TcEJIVUtBUmdNUC1Ca0JnNzhnSXV3YWI5MHFubnZuZ0FMSkUxU0JKSkVZcW1IZDlhb3BGSDVDX0dyVU02VHdyS19ZbHNnUnNfZXZaaUw1UQ?oc=5",
-      "published_at": "2026-07-02T21:30:00",
+      "id": 5781,
+      "category_id": 5,
+      "title": "\"튀김 로봇은 옛말\"…외식업계 ‘피지컬 AI’ 시대 열린다 - 데일리안",
+      "source_url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE83WmNjWGdrOFJyUXlqUFlJRGgzU05yYUVuZjhyZWFvSmlQbXJuS1Z4dEtFRTFIX2otTnlkeGJvUWNpVGVadVB1MHlSdU1zVVhhSkJpWVU4RdIBkAJBVV95cUxQcXpocmt2SktSMHc0T25pWGhMa1dfd2xMWC1NV0UxRFRyeVp1bzJLbkZlYUVwZVkwUUZiTFN4aW1wWTc3dnVPczd2Q2FQM1NPWEdMNk1mNlRvd0t2TlVkMmRJY3NuWUlhelo4SFhOOHRwSHpsajRVNVlGQmVlQXhVWkt0bWRxM05nalB2UTZuVkZlemhiTUtZRzJnS0lhTndzaHYxVUhZNWJJemt3Sm1IeFFPZTQ5cUFHa2JtQVVULXQ0U2dZemcxRnA3VTQ1SThhZ0JiVk0zajRrbjJua2FhNTR6WnNhc2dSNVBQQ1hzZlVBVWJmbEN1bDl2MFhFUi1rMmZJQmZaa0ZJUTB3SzRmYg?oc=5",
+      "published_at": "2026-07-02T21:43:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 5777,
+      "category_id": 3,
+      "title": "차세대 원전 SMR, 28개국 전문가가 미국에 모인 이유는? - 에너지안전신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1iUl80VE5MTjdoTDR4NWI0SXJDN0M0VHBtX1pDd0I0d19RUkktX2xsSjBQQ3pQTTFzeDZmUnhnUVlpYlUtVjRLV0lweklOZElaRW91YVk4MjF5RXR6V25IUnk4N24?oc=5",
+      "published_at": "2026-07-02T21:18:57",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 5769,
+      "category_id": 1,
+      "title": "Samsung Electro-Mechanics, Sumitomo Chemical Unit Form Joint Venture for Glass Substrates - 알파경제",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5oWHBDMmwzRVZuS01Fam4zRjF6TjNPOEM5bFNfajh1UExoWjR6Z09OLUlNaVZUM2dVeDF4UWxJSnZDMFp5ekMzN2hNWnZCeWdLeHp4TDluWkE5Z0Z4WHZvZkpRYjM0NE1iUG00RXB3?oc=5",
+      "published_at": "2026-07-02T21:15:00",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
@@ -30002,11 +30454,11 @@ window.techData = {
       "key_tickers": []
     },
     {
-      "id": 5712,
-      "category_id": 8,
-      "title": "아마존, 우주 인터넷 '레오' 상용 서비스 위한 위성 확보…주가 강세 - 마켓인",
-      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1RaTExQklyWmNWaWREdG51NFhhRk9QUmExdkpVX1JaV3lUV2pkTHhOSWU2b3pZV05tMFRMOWgtb1daeEs4S25rYkxHS3VqOTFOcHZmLThQWUprUFZMcmZmcWtPQllTMTlacnVqOUwxTWU1WjQ?oc=5",
-      "published_at": "2026-07-02T19:16:14",
+      "id": 5778,
+      "category_id": 3,
+      "title": "원안위, SMR 안전규제체계 구축 속도…산학연과 '머리 맞대' - 인사이트N파워",
+      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5hcHUyeW56bWtUZnJYNVFIblUyYzc0X09Jb2xER25FWEZGQnVHNHB3QnR0TFA0SkJFOGFpazdQZDZTTkZ1aThFZ2lyNTVtTC1rUzFPMWw2dWpsOWVhLXo4UXV4Mk5VUQ?oc=5",
+      "published_at": "2026-07-02T16:22:26",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
@@ -30046,17 +30498,6 @@ window.techData = {
       "key_tickers": []
     },
     {
-      "id": 5719,
-      "category_id": 8,
-      "title": "SKT, AI·6G 보안 겨냥 양자암호 기술 공개…무선·위성 QKD까지 확장 - 비즈트리뷴",
-      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1RVHVuNHVWZGFuSEhnODlSdGtiN3lHb1FJRUMyTEFNNDBHcENIQjNSZ2Nrd0RHSEdvLUwzeFVYeHRZbkV5YlZUTnoyQlJzZWtlcEFVLXdFVFkwWU5RN2oxbUJITW9lMlFPRy0wS0F4MjQ?oc=5",
-      "published_at": "2026-07-02T13:09:29",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
       "id": 5632,
       "category_id": 5,
       "title": "최고 AI 로봇 가린다…로보컵 인천서 개막 - v.daum.net",
@@ -30090,6 +30531,17 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 5771,
+      "category_id": 1,
+      "title": "GERMANY SEMICONDUCTORS INFINEON - 네이트",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBvUUNiOC1Jay1ZN0ZKd3JJeGFLOWoyUE9CTGNrdGF5bTBaRTdGcGxQcWhoS2lkczR0OXZNUnRSTUY1eUhheHd0RUdtc25YTjhHSHNWdkx4aFBnVmZNRUNHaQ?oc=5",
+      "published_at": "2026-07-02T12:10:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
       "id": 5655,
       "category_id": 5,
       "title": "Longsys Achieves One Million Monthly mSSD Production Capacity, Accelerating Edge AI Storage Deployment - KIPOST",
@@ -30106,83 +30558,6 @@ window.techData = {
       "title": "삼성전기, 유리기판 승부수…日 스미토모와 합작법인 'GlaSSEM' 설립 - 테크월드",
       "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8tR1JEZ05nNjVjUUdWWmc0NjFmTzJEajB3amFxRW9zeG55U0JoTGczNUh0VXVYWjJGOXN0U2NqdXBZeGtXQm5WZUJobThqY29fengtWWtrNktpbXVUb1E3VGRiSFduNzB5?oc=5",
       "published_at": "2026-07-02T11:03:27",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 5628,
-      "category_id": 5,
-      "title": "[로보컵 2026] 우보 비서 회장 “로봇도시 경쟁력은 사람…인재 양성·R&D 투자해야” - 인천일보",
-      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1kN2NjM1hHd1hVOW5uRnVfOTlsbjlfaHRtcjFRem9zTUMtREVNby1XLXFVY21SMGVLRkhBaUFTS0RfSU1kWUVtNTRrTTJROFFHSFNXbEVYNllVeUJHWnJEU1lpaHk3R1VpTXNBU0d6MGg?oc=5",
-      "published_at": "2026-07-02T10:56:00",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 5620,
-      "category_id": 5,
-      "title": "[로보컵 2026] 닷새간 송도서 로봇 월드컵…최신 기술·연구 결과 겨룬다 - 인천일보",
-      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1HLS1sQTZnS3FMU3VhSm01eC1IUjBJbDg2RmNFRFgyVF9TWVk5WUJ2eVJZaUJRaWwwWFQzRXlpTG0wQ0h6M0ZEMTVhU1NGcDFsMlB0NU01UzRibGEyZ3drcUhJQklNU3hRRVZJTzZCSkQ?oc=5",
-      "published_at": "2026-07-02T10:55:00",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 5645,
-      "category_id": 5,
-      "title": "SKF 주가 오늘 급등, 휴머노이드 로봇 합작투자 영향 - Investing.com 한국어",
-      "source_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE83aGs4dVMyTWRPT1pyQzROQWNrcGtaUVQxcldCS3dpS2w0bVRHV1pLREJndmlieHcwV1BFVjZkeVdDdkQwVkY1amFDZmdaeGNxWWVzRVc0TXB3bEQzOFpKQ2hRWTVpZ1VNWVYzMHllWkc4THhDeDZZ?oc=5",
-      "published_at": "2026-07-02T10:08:00",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 5710,
-      "category_id": 8,
-      "title": "산·바다서도 터지고 요금 싸... 스페이스X ‘위성폰’ 태풍 온다 - 조선일보",
-      "source_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQNGNHWGdMRm5WczRtdDZ0SGhZWlJEU1IzTFVscEFfM2RsSWNZdXh2ODBiSHZBMy1ZUFpMYjFCNm9wRlhyVmNVME9POVp5WV9KVjBxRGhWQXBfZ1FJTnE3b0FQNUc1MVkzSEEtQzBqU2c3NnEtU3lHWHJzMjZkRHYyamVFQQ?oc=5",
-      "published_at": "2026-07-02T10:06:03",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 5610,
-      "category_id": 4,
-      "title": "트라나솔라, 탠덤 태양광 모듈 세계 최고 출력 907W 달성 - 이투뉴스",
-      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAyQzYxc2FqQXVaaVZraVVZRFNHTnp2cUFkbGs2TU91YTlCZWlzb0pzWjdxLTh3OXJMUGFwc2c1VXFqajJyTE5wWVY0NUlMdW1fLXZJVDUxaGJDb2RaMVYzTjN5OFVybDTSAWtBVV95cUxOcUdyTjBzYUtuX1VucUZsOHk5ekRZZUJnLTRoMUhLTFJTcHNaZnIyNklKYW9TekRCYlNFYWxyMy15UFl5b3pLWGJuOW05YVBWeVpsSHdXVFBxTUsxalRyVzNEZzhlS1M0RDZMaw?oc=5",
-      "published_at": "2026-07-02T10:02:34",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 5613,
-      "category_id": 4,
-      "title": "트리나솔라, 페로브스카이트 탠덤 모듈 907W 달성…세계 최고 출력 - IT타임스",
-      "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5nS21yd0RFQm5xNUZJdHBYMUIzeWJkMVhyTjludlJUX1BwSE9xWGx3WjNaRVdKRWo4N0R2Ung0TGFmUU90MmZjM2VBcWp4M3AySjdvajlPLW8yVDM2MnpsT1F1LU1tZXFP?oc=5",
-      "published_at": "2026-07-02T09:44:52",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 5580,
-      "category_id": 2,
-      "title": "블루산업개발, 새만금 거점 배터리 재활용 사업 진출 추진 - Chosunbiz",
-      "source_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZkEyN1NkNHRGcE9BeVlJZnE2Q1p0a1htUWE4Z3N1YmQ0dERER2FNa2dhckc5THcwajVra0hXa3dvSl9laldxMTI1MWFvWnZmRzlHX2JBbzJ4ZGR6VXpkcFI1ZVdqZlVXdnlwTG0xaGdERzJ5bmZaLS1kejJkU0YtUVgzbDdPRXdJ?oc=5",
-      "published_at": "2026-07-02T09:35:24",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
