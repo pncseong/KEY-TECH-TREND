@@ -1,0 +1,19 @@
+# GitHub Pages Jekyll Build Configuration
+exclude:
+  - tech_monitor.db
+  - tech_monitor.db-journal
+  - schedule_job.log
+  - update_tech.bat
+  - schedule_job.bat
+  - run_pipeline.py
+  - send_email_report.py
+  - init_db.py
+  - crawler_engine.py
+  - llm_analyzer.py
+  - db_schema.sql
+  - venv/
+  - .venv/
+  - __pycache__/
+  - .github/
+  - TECH.docx
+  - TECH_extracted.txt
