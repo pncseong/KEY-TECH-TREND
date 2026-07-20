@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>KEY TECH TREND MONITOR - 지능형 기술 투자 대시보드</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,22 +124,15 @@
     <script>
         (function() {
             var script = document.createElement('script');
-            // 로컬 파일 실행(file:) 시에는 쿼리스트링(?v=...)이 붙으면 파일을 로드하지 못하므로 분기 처리합니다.
-            if (window.location.protocol === 'file:') {
-                script.src = 'data.js';
-            } else {
-                script.src = 'data.js?v=' + new Date().getTime();
-            }
+            // 캐시 강제 차단을 위해 버전 파라미터를 무조건 주입합니다.
+            var vParam = '?v=' + new Date().getTime();
+            script.src = 'data.js' + vParam;
             script.async = false;
             
             // data.js가 완전히 로드 및 실행된 후 app.js를 로드하여 순서를 보장합니다.
             script.onload = function() {
                 var appScript = document.createElement('script');
-                if (window.location.protocol === 'file:') {
-                    appScript.src = 'app.js';
-                } else {
-                    appScript.src = 'app.js?v=' + new Date().getTime();
-                }
+                appScript.src = 'app.js' + vParam;
                 appScript.async = false;
                 document.body.appendChild(appScript);
             };
