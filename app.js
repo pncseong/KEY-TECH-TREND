@@ -394,9 +394,15 @@ function escapeHTML(str) {
 function updateDebugInfo(renderedList) {
     const dbg = document.getElementById('debug-info');
     if (dbg && renderedList) {
-        const first = renderedList[0] ? `[탑: ${renderedList[0].title.slice(0, 8)}... (${formatDate(renderedList[0].published_at)})]` : '[탑: 없음]';
-        const fileLoc = decodeURIComponent(window.location.pathname).split('/').pop(); // 파일명만 노출하거나 전체 노출
-        const fullPath = decodeURIComponent(window.location.pathname);
-        dbg.textContent = `[진단] 경로: ${fullPath} | 기사수: ${renderedList.length} / ${state.allArticles.length} | 정렬: ${state.sortBy === 'impact' ? '중요도' : '최신순'} | ${first}`;
+        // 날짜 파싱이 안 되는 (0 또는 NaN인) 기사 개수 검사
+        const invalidCount = renderedList.filter(a => {
+            const dateStr = a.published_at;
+            if (!dateStr) return true;
+            const cleaned = String(dateStr).trim().replace(' ', 'T');
+            return isNaN(new Date(cleaned).getTime());
+        }).length;
+
+        const top3 = renderedList.slice(0, 3).map(a => `${a.title.slice(0,6)}(${formatDate(a.published_at)}/S:${a.investment_impact})`).join(' | ');
+        dbg.textContent = `[진단] 깨진날짜: ${invalidCount}개 | 정렬: ${state.sortBy === 'impact' ? '중요도' : '최신순'} | 탑3: ${top3}`;
     }
 }
