@@ -213,10 +213,24 @@ function getFilteredArticles() {
         sortedResult.sort((a, b) => {
             const parseTime = (dateStr) => {
                 if (!dateStr) return 0;
-                const d = new Date(dateStr);
+                const cleaned = String(dateStr).trim().replace(' ', 'T');
+                const d = new Date(cleaned);
                 return isNaN(d.getTime()) ? 0 : d.getTime();
             };
-            return parseTime(b.published_at) - parseTime(a.published_at);
+            
+            const timeA = parseTime(a.published_at);
+            const timeB = parseTime(b.published_at);
+            
+            // 날짜 변환이 실패했을 때를 대비하여 안전한 문자열 사전식 비교로 백업 처리
+            if (timeA === 0 || timeB === 0) {
+                const strA = String(a.published_at || "").trim().replace(' ', 'T');
+                const strB = String(b.published_at || "").trim().replace(' ', 'T');
+                if (strB > strA) return 1;
+                if (strB < strA) return -1;
+                return 0;
+            }
+            
+            return timeB - timeA;
         });
     }
 
