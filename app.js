@@ -99,7 +99,9 @@ function setupEventListeners() {
             target.classList.add('active');
             
             state.sortBy = target.dataset.sortBy;
+            console.log("Sort mode changed to:", state.sortBy);
             renderArticles();
+            renderStats();
         });
     });
 }
@@ -196,18 +198,23 @@ function getFilteredArticles() {
         return true;
     });
 
-    // 5. 정렬 기준 적용
+    // 5. 정렬 기준 적용 (복사본을 만들어서 원본 순서 훼손 차단)
+    const sortedResult = [...filtered];
     if (state.sortBy === 'impact') {
-        filtered.sort((a, b) => (b.investment_impact || 0) - (a.investment_impact || 0));
+        sortedResult.sort((a, b) => (b.investment_impact || 0) - (a.investment_impact || 0));
     } else if (state.sortBy === 'date') {
-        filtered.sort((a, b) => {
-            const dateA = a.published_at ? new Date(a.published_at) : new Date(0);
-            const dateB = b.published_at ? new Date(b.published_at) : new Date(0);
-            return dateB - dateA;
+        sortedResult.sort((a, b) => {
+            const dateA = a.published_at || "";
+            const dateB = b.published_at || "";
+            return dateB.localeCompare(dateA); // 문자열 역순 (최신순)
         });
     }
 
-    return filtered;
+    console.log(`[정렬 진단] 모드: ${state.sortBy} | 상위 3개 날짜/점수:`, 
+        sortedResult.slice(0, 3).map(a => `(${a.published_at} / Impact: ${a.investment_impact})`)
+    );
+
+    return sortedResult;
 }
 
 // 대시보드 통계 수치 갱신
