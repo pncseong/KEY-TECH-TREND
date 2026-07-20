@@ -173,10 +173,17 @@ function getFilteredArticles() {
             return false;
         }
         
-        // 2. 영향도 점수 필터링
-        const impact = article.investment_impact || 0;
-        if (impact < state.minImpact) {
-            return false;
+        // 2. 영향도 점수 필터링 (점수가 평가되지 않은 None/null 기사도 minImpact=1 인 기본 필터 상태에서는 노출되도록 허용)
+        const impact = article.investment_impact;
+        if (impact !== null && impact !== undefined) {
+            if (impact < state.minImpact) {
+                return false;
+            }
+        } else {
+            // 영향도 점수가 None(평가안됨)인 마이너 기사는 최소 영향도가 1점일 때 보여줍니다.
+            if (state.minImpact > 1) {
+                return false;
+            }
         }
         
         // 3. 기술 성숙도 필터링
