@@ -353,6 +353,7 @@ function renderArticles() {
     });
     
     lucide.createIcons();
+    updateDebugInfo();
 }
 
 // XSS 방지용 HTML 이스케이프
@@ -364,4 +365,11 @@ function escapeHTML(str) {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
+}
+
+function updateDebugInfo() {
+    const dbg = document.getElementById('debug-info');
+    if (dbg) {
+        dbg.textContent = `[진단] 기사수: ${state.allArticles.length}개 | 정렬: ${state.sortBy === 'impact' ? '중요도' : '최신순'}`;
+    }
 }
