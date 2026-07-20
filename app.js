@@ -213,7 +213,9 @@ function getFilteredArticles() {
         sortedResult.sort((a, b) => {
             const dateA = a.published_at || "";
             const dateB = b.published_at || "";
-            return dateB.localeCompare(dateA); // 문자열 역순 (최신순)
+            if (dateB > dateA) return 1;
+            if (dateB < dateA) return -1;
+            return 0;
         });
     }
 
@@ -360,7 +362,7 @@ function renderArticles() {
     });
     
     lucide.createIcons();
-    updateDebugInfo();
+    updateDebugInfo(filtered);
 }
 
 // XSS 방지용 HTML 이스케이프
@@ -374,9 +376,10 @@ function escapeHTML(str) {
         .replace(/'/g, '&#039;');
 }
 
-function updateDebugInfo() {
+function updateDebugInfo(renderedList) {
     const dbg = document.getElementById('debug-info');
-    if (dbg) {
-        dbg.textContent = `[진단] 기사수: ${state.allArticles.length}개 | 정렬: ${state.sortBy === 'impact' ? '중요도' : '최신순'}`;
+    if (dbg && renderedList) {
+        const first = renderedList[0] ? `[탑: ${renderedList[0].title.slice(0, 8)}... (${formatDate(renderedList[0].published_at)})]` : '[탑: 없음]';
+        dbg.textContent = `[진단] 기사수: ${renderedList.length}개 / ${state.allArticles.length}개 | 정렬: ${state.sortBy === 'impact' ? '중요도' : '최신순'} | ${first}`;
     }
 }
