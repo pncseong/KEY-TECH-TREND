@@ -6,7 +6,8 @@ const state = {
     selectedCategory: 'all',
     searchQuery: '',
     minImpact: 1,
-    selectedStage: 'all'
+    selectedStage: 'all',
+    sortBy: 'impact'
 };
 
 // 카테고리 이름과 CSS 클래스 맵핑
@@ -87,6 +88,19 @@ function setupEventListeners() {
         state.selectedStage = e.target.value;
         renderArticles();
         renderStats();
+    });
+
+    // 4. 정렬 탭 버튼 이벤트
+    const sortTabs = document.querySelectorAll('.sort-tab');
+    sortTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            sortTabs.forEach(t => t.classList.remove('active'));
+            const target = e.currentTarget;
+            target.classList.add('active');
+            
+            state.sortBy = target.dataset.sortBy;
+            renderArticles();
+        });
     });
 }
 
@@ -181,6 +195,19 @@ function getFilteredArticles() {
         
         return true;
     });
+
+    // 5. 정렬 기준 적용
+    if (state.sortBy === 'impact') {
+        filtered.sort((a, b) => (b.investment_impact || 0) - (a.investment_impact || 0));
+    } else if (state.sortBy === 'date') {
+        filtered.sort((a, b) => {
+            const dateA = a.published_at ? new Date(a.published_at) : new Date(0);
+            const dateB = b.published_at ? new Date(b.published_at) : new Date(0);
+            return dateB - dateA;
+        });
+    }
+
+    return filtered;
 }
 
 // 대시보드 통계 수치 갱신
