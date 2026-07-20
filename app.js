@@ -381,6 +381,8 @@ function updateDebugInfo(renderedList) {
     const dbg = document.getElementById('debug-info');
     if (dbg && renderedList) {
         const first = renderedList[0] ? `[탑: ${renderedList[0].title.slice(0, 8)}... (${formatDate(renderedList[0].published_at)})]` : '[탑: 없음]';
-        dbg.textContent = `[진단] 기사수: ${renderedList.length}개 / ${state.allArticles.length}개 | 정렬: ${state.sortBy === 'impact' ? '중요도' : '최신순'} | ${first}`;
+        const fileLoc = decodeURIComponent(window.location.pathname).split('/').pop(); // 파일명만 노출하거나 전체 노출
+        const fullPath = decodeURIComponent(window.location.pathname);
+        dbg.textContent = `[진단] 경로: ${fullPath} | 기사수: ${renderedList.length} / ${state.allArticles.length} | 정렬: ${state.sortBy === 'impact' ? '중요도' : '최신순'} | ${first}`;
     }
 }
