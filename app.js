@@ -211,11 +211,12 @@ function getFilteredArticles() {
         sortedResult.sort((a, b) => (b.investment_impact || 0) - (a.investment_impact || 0));
     } else if (state.sortBy === 'date') {
         sortedResult.sort((a, b) => {
-            const dateA = a.published_at || "";
-            const dateB = b.published_at || "";
-            if (dateB > dateA) return 1;
-            if (dateB < dateA) return -1;
-            return 0;
+            const parseTime = (dateStr) => {
+                if (!dateStr) return 0;
+                const d = new Date(dateStr);
+                return isNaN(d.getTime()) ? 0 : d.getTime();
+            };
+            return parseTime(b.published_at) - parseTime(a.published_at);
         });
     }
 
