@@ -167,7 +167,7 @@ function renderCategories() {
 
 // 필터링 적용된 기사 리스트 계산
 function getFilteredArticles() {
-    return state.allArticles.filter(article => {
+    const filtered = state.allArticles.filter(article => {
         // 1. 카테고리 필터링
         if (state.selectedCategory !== 'all' && String(article.category_id) !== state.selectedCategory) {
             return false;
