@@ -1,5 +1,5 @@
 window.techData = {
-  "last_updated": "2026-08-19 09:16:13",
+  "last_updated": "2026-08-20 09:16:15",
   "categories": [
     {
       "id": 1,
@@ -180,6 +180,20 @@ window.techData = {
       "investment_impact": 10,
       "key_tickers": [
         "NVDA",
+        "005930",
+        "000660"
+      ]
+    },
+    {
+      "id": 13204,
+      "category_id": 7,
+      "title": "[분석] \"中 반도체 쓰지마\" 韓엔 기회···트럼프 AI 거래, 문제는 딥시크와 친구들 - 여성경제신문",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9vcjhQZjJfM05aaHZKUXozRHM5Mnd4SkhVeTl2czhKUUd2QXpVQmxXT3pDbzc4WEVJZUh4RWpGcTZCQm5OZTZUaU1PT0dKeUF0NTYwSk1nS3pDT1UxQTNXckJhQ2U3bmdDd1ZuQVc1ejc0cVk?oc=5",
+      "published_at": "2026-08-19T12:30:00",
+      "summary": "1. 미국이 중국 반도체 사용을 제한함에 따라 한국 반도체 기업들에게 중요한 사업 기회가 발생하고 있음을 시사합니다.\n2. 트럼프 행정부의 AI 관련 정책이 한국 반도체 산업에 긍정적인 영향을 미칠 수 있으며, 이는 AI 구동에 필수적인 고급 반도체 수요와 연결됩니다.\n3. 중국 AI 기업(딥시크 등)과의 경쟁 구도 속에서 지정학적 리스크가 한국 기업에게 유리하게 작용, 글로벌 반도체 공급망 재편의 수혜를 기대할 수 있습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 9,
+      "key_tickers": [
         "005930",
         "000660"
       ]
@@ -3230,6 +3244,92 @@ window.techData = {
         "QBTS",
         "IBM",
         "GOOGL"
+      ]
+    },
+    {
+      "id": 13010,
+      "category_id": 1,
+      "title": "[모닝 리포트] HBM 검사 핵심 부품 급성장…레이언스, 영업익 흑자전환 기대 - 뉴스핌",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1xR0VjN1VDNUZlMUxZOEhaS0Vuc2ZHYmg2UVFDa3hZV0hMS1pWRlRSekpiemttblExazA0dl8yQTN6ZXdzaVoyWU5yNlJ2THV5cllIOGl1LXpGZUJX?oc=5",
+      "published_at": "2026-08-19T23:57:00",
+      "summary": "1. HBM(고대역폭 메모리) 시장의 급격한 성장에 따라 핵심 검사 부품 산업이 동반 성장하고 있습니다.\n2. 관련 기업인 레이언스는 HBM 검사 부품 시장 확대를 바탕으로 영업이익 흑자 전환이 기대되고 있습니다.\n3. 이는 AI 및 고성능 컴퓨팅 수요 증가로 인한 HBM 생산 증가와 그에 따른 품질 관리 및 검사 기술의 중요성이 부각되고 있음을 의미합니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "263220",
+        "000660",
+        "005930"
+      ]
+    },
+    {
+      "id": 13091,
+      "category_id": 4,
+      "title": "AI 전장 칩→시스템으로…SK하이닉스, 네이처에 랙·포드 CPO 청사진 제시 - 아주경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE44OFZJcWhQdG5rbGN2YW53dzBSZVBsbVNGeXRNcl9WVmJiOFNMOXRwUkpDTDRId1I3SHBfemNMeF8tb0J2cXNReVU3d3JRR3R4bFByTXFhYmRWd9IBWEFVX3lxTE9MV01qMXlUalAzbzE2TTdueUwxV2FwLTcyLWxjZlZLdkNwZHN6dFU4NmRTUzB5ZTI5NkhOWlI4c1V2RWlSOU5BWEh5NkxydVE4dE9qX3N6RHc?oc=5",
+      "published_at": "2026-08-19T23:49:26",
+      "summary": "1. SK하이닉스가 학술지 네이처를 통해 AI 전장 칩을 시스템화하는 미래 비전과 랙·포드 CPO(Co-Packaged Optics) 기술 청사진을 제시했습니다.\n2. 이는 SK하이닉스가 단순 메모리 공급을 넘어 AI 가속기 및 AI 시스템 통합 솔루션 제공업체로 나아가려는 장기적인 전략적 방향을 보여줍니다.\n3. 고성능 AI 컴퓨팅 환경을 위한 차세대 패키징 기술인 CPO 도입을 통해 전력 효율성 증대와 데이터 전송 속도 향상을 목표로 합니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 8,
+      "key_tickers": [
+        "000660",
+        "005930",
+        "NVDA"
+      ]
+    },
+    {
+      "id": 13039,
+      "category_id": 2,
+      "title": "'1조 ESS' 세 번째 승부 온다…1·2차 주도권 내준 LG엔솔, '오창 LFP' 승부수 - 네이트",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE41ZVBTc1FTeVhlbDJ6RTBtZlZGNE1JZGZHTDJudUlfRXlxSnZ2V0xzYkItcFVrSWVBVXZVYjRsMnB4dEZROEZYM2RfZUJ5eWVDQjZRRko5ME40ek5vaUxlRA?oc=5",
+      "published_at": "2026-08-19T21:02:00",
+      "summary": "1. LG에너지솔루션은 1조 원 규모의 ESS(에너지저장장치) 시장에서 이전 두 차례의 실패를 딛고 세 번째 재도전에 나섭니다.\n2. 이번 승부수는 오창 공장에서 생산하는 LFP(리튬인산철) 배터리로, 이는 원가 경쟁력과 안전성을 앞세워 시장 주도권을 되찾기 위한 전략적 전환입니다.\n3. 해당 기술 전환은 글로벌 ESS 시장의 판도를 변화시키고, 특히 저가형 및 대용량 ESS 시장에서의 LG에너지솔루션의 경쟁력 강화에 기여할 것으로 예상됩니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "373220",
+        "006400",
+        "005930"
+      ]
+    },
+    {
+      "id": 13178,
+      "category_id": 6,
+      "title": "에어컨 만들던 삼성 광주공장…AI 데이터센터 냉각기지 변신 - 미주중앙일보",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBIckFmTHc1UzlhYWE3ejkzeFR4WnhfSzZWY2FqNWhJYjkybjVyRVFDZVpWOFFNOHBIZnJtRTdjWkw3b240MHpUYmxSeGNXNmNpNmNYaU9uUTFxOF9hQjFaUEF3?oc=5",
+      "published_at": "2026-08-19T15:02:00",
+      "summary": "1. 삼성 광주공장이 에어컨 생산에서 AI 데이터센터 냉각기지로 전환됩니다. 이는 인공지능 인프라 구축의 핵심 요소인 냉각 솔루션 시장에 삼성의 전략적 진출을 의미합니다.\n2. 이번 변화는 AI 기술 발전에 따른 고성능 데이터센터의 폭발적인 증가와 전력 효율성 및 발열 관리의 중요성이 커지는 시장 트렌드에 삼성전자가 적극적으로 대응하고 있음을 보여줍니다.\n3. 삼성은 기존 공조 기술 및 생산 역량을 활용하여 AI 데이터센터에 필수적인 첨단 냉각 솔루션 사업으로 포트폴리오를 확장함으로써, 새로운 성장 동력을 확보하고 관련 시장에서의 입지를 강화할 것으로 예상됩니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "005930",
+        "NVDA"
+      ]
+    },
+    {
+      "id": 13041,
+      "category_id": 2,
+      "title": "포스코, 중국 ‘배터리 소재 시장’ 뚫었다 - hidomin.com",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE16aTYyQ2hiZnoxUVctQjVvSnRoOTdXaFFaVDEtMEZsOWVIcWV4N3VtSmVSYlZ6ckVhYWtYZHNPTVJScVd5N3g5c0RsTHdfMm5aQUh3WVc5aE90XzJRVnFjSm1vd3AteDd0dFE?oc=5",
+      "published_at": "2026-08-19T11:29:00",
+      "summary": "1. 포스코가 중국 배터리 소재 시장에 성공적으로 진출했음을 시사하는 정보입니다.\n2. 이는 포스코가 글로벌 배터리 공급망 내에서 중국 시장 점유율을 확대하려는 전략적 움직임을 나타냅니다.\n3. 본 정보는 배터리 소재 분야에서 포스코의 상업적 활동 및 매출 기여 가능성을 보여줍니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "005490"
+      ]
+    },
+    {
+      "id": 13046,
+      "category_id": 2,
+      "title": "포스코그룹, 중국 롱바이그룹에 배터리급 리튬 공급…이차전지소재 협력 확대 - IT타임스",
+      "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9fR2N2LTB6aXlSd2M1REY4X21OV3lkWGZkV2JJd2dnaHlpUjZ6QTBtQmgyWWtOZHlWVkNuVkpvM3RoczZCTzAzQksyUm1yU3BTR1FrWEE2NzFvb1lvcVJ4WXVDM29tcGti?oc=5",
+      "published_at": "2026-08-19T09:41:58",
+      "summary": "1. 포스코그룹이 이차전지 핵심 생산 기업인 중국 롱바이그룹에 배터리급 리튬을 공급하기로 합의했다.\n2. 이번 협력은 이차전지 핵심소재인 리튬의 안정적인 공급망을 구축하고 포스코그룹의 이차전지 소재 사업을 글로벌 시장으로 확대하는 중요한 단계이다.\n3. 이는 포스코그룹이 철강을 넘어 이차전지 소재 분야에서 상업적 역량을 강화하고 주요 공급자로서의 입지를 확고히 하고 있음을 보여준다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "005490",
+        "003670"
       ]
     },
     {
@@ -10081,6 +10181,107 @@ window.techData = {
         "TSM",
         "005930",
         "006400"
+      ]
+    },
+    {
+      "id": 13138,
+      "category_id": 5,
+      "title": "\"한국피아이엠, 휴머노이드 경량화 수혜…티타늄 MIM 경쟁력\" - iM증권 - 뉴스핌",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9lR3h0Q25kbjRtUGpnb0lyWDd6bWlNSklJUDUwZFdOR2tiYzhLWHFmMzNUWVNUZEZ5UGVXeGpsV1QtejhCcDJKN2tYWHVsdEtoT0h5cERTYkRVd1Aw?oc=5",
+      "published_at": "2026-08-20T00:00:00",
+      "summary": "1. \"한국피아이엠, 휴머노이드 경량화 수혜…티타늄 MIM 경쟁력\" - iM증권 - 뉴스핌 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": []
+    },
+    {
+      "id": 13103,
+      "category_id": 5,
+      "title": "현대위아, 고객 800여명 초청해 '주차로봇' 시연…사업 확대 가속화 - 머니투데이 - 머니투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB3S3M4S1ZPNWxJNTYyRDRaZk55bFlFTWJWTHlyT2VEek9tU2x5Q0d6QWd1Y0lQa1RHdmpualNnMDFmN0pVcFpsZk9pSDNCcFl3NjVOT3h3bEVYQ1dlQjI5c1A0MkpnNnZzc0ZqU9IBckFVX3lxTE9sTElacjc5M0RIT2h0Y3hQVWxUa2FWcHdENGdzRkhjUExEN09xcDlTQ0lxLWFJUXJ4cWJCYWRDVXFncmpGX3V2WERpa3NfX1RxbTVKZmhTVksxRmdtdWFpM1dOSWR4MnNFMThaY1duamlZQQ?oc=5",
+      "published_at": "2026-08-19T23:55:34",
+      "summary": "1. 현대위아가 800여 명의 고객을 초청하여 주차 로봇 시연회를 개최, 해당 기술의 시장 출시 및 사업 확대를 가속화하려는 강력한 의지를 표명했습니다.\n2. 대규모 고객 시연은 기술이 단순 연구 단계를 넘어 실제 환경 적용 가능성을 검증하고 상용화를 위한 '파일럿' 단계에 진입했음을 시사합니다.\n3. 주차 로봇 사업 가속화는 현대위아가 로봇 솔루션 분야에서 새로운 성장 동력을 확보하고, 미래 모빌리티 및 스마트 인프라 시장에서 경쟁력을 강화할 기회가 될 것으로 예상됩니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "011210"
+      ]
+    },
+    {
+      "id": 13063,
+      "category_id": 3,
+      "title": "대한전선, HVDC 해저케이블 매설로봇 국산화...외산 의존도 낮춘다 - 데일리안",
+      "source_url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNNjJOeFExN0RvbUR6WjUtc0htVnhNQnExOFRHMldmcksxckZ5MnB6ZFBzc1MtLTRVRFJfemY1YUdvT003bjl0VVV1REFwT2VIbXJIbzFKd1hVVDF3M0pCUGp1dUVvZE0yWlFXbGlZbWZCZnF5dVF1MmhTN1Z1X3FiczNpeDRVWElrVWpFX2loTXR1OWtDNVluNXJ6eEMyWUt6MUhqU18tWXVmNnU0OERRQWVmc2dFTVkxSDVFWXdaVE9Xa1JHQzFYTnZGc0s4M25tSDlRTWIzUnNDWWxNY09wY2RQMnZmSG9ic2I4dnVvX3c4NW5YOG1EYnJDUGdTMDBwdzI4?oc=5",
+      "published_at": "2026-08-19T23:54:00",
+      "summary": "1. 대한전선이 HVDC 해저케이블 매설 로봇 국산화에 성공하여 외산 장비 의존도를 낮출 계획입니다.\n2. 이는 해저케이블 시공의 효율성을 높이고 유지보수 비용을 절감하여 대한전선의 시장 경쟁력을 강화할 것으로 기대됩니다.\n3. 해상풍력 발전 확대로 인한 HVDC 해저케이블 수요 증가에 대응하여 국내 전력망 인프라 구축 역량 강화에 기여할 전망입니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "001440",
+        "000620"
+      ]
+    },
+    {
+      "id": 13226,
+      "category_id": 9,
+      "title": "한국첨단소재, IBM 이어 아이온큐까지…'코리아퀀텀' 양자컴퓨터 교차검증 - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBzXzloRXVhXzI2SzZSY0FsZHZzVkluTU1CQ05PdzExemVNZWlXd1BCamljUzc0MDFIcDZidEFzZDlMUW5VUFFWSXhjU1NVUFE?oc=5",
+      "published_at": "2026-08-19T23:49:27",
+      "summary": "1. 한국첨단소재, IBM 이어 아이온큐까지…'코리아퀀텀' 양자컴퓨터 교차검증 - v.daum.net 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": []
+    },
+    {
+      "id": 13009,
+      "category_id": 1,
+      "title": "SK하이닉스, HBM 넘어 ‘빛으로 연결’…차세대 AI 인프라 CPO 청사진 제시 - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5CRUhwdzQxY1VGOUVSQlVXcjRmazd0N3RkU3FBb3U4WGlJSkZLQkZxODJZc1ZYOEo3X3VmRFZ2SlQ4bFN1Q1AwUmpYb1JxUFU?oc=5",
+      "published_at": "2026-08-19T23:28:06",
+      "summary": "1. SK하이닉스, HBM 넘어 ‘빛으로 연결’…차세대 AI 인프라 CPO 청사진 제시 - v.daum.net 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "000660"
+      ]
+    },
+    {
+      "id": 13089,
+      "category_id": 4,
+      "title": "SK하이닉스, HBM 넘어 ‘빛으로 연결’…차세대 AI 인프라 CPO 청사진 제시 - 이투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBhQ2l4Ulljd21ZT2p3WEgySW82OF9sMjRyY01lSC00dnBfXzFkQmdFb1dIcFlUMDdra1ppNW5GajFRODA3Q2VUMFhmNVhGN1RjSHFUbQ?oc=5",
+      "published_at": "2026-08-19T23:27:00",
+      "summary": "1. SK하이닉스, HBM 넘어 ‘빛으로 연결’…차세대 AI 인프라 CPO 청사진 제시 - 이투데이 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "000660"
+      ]
+    },
+    {
+      "id": 13025,
+      "category_id": 1,
+      "title": "\"베센트와 싸우지 말라\"…금리 급락에 주가 상승, 반도체는 빠진 이유 [김현석의 월스트리트나우] - 한국경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wQXNMRE5RTTRqUVN1Z1dSR1Y2QVN3NEZrNHdRMldPVV9Tc0luQWdBeWk4c3Z5Q2UwMDBtQVdRTlVFRFNXd0R0ZGRMemg3TWhRQl9vcENmSjlRdw?oc=5",
+      "published_at": "2026-08-19T22:49:02",
+      "summary": "1. \"베센트와 싸우지 말라\"…금리 급락에 주가 상승, 반도체는 빠진 이유  - 한국경제 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": []
+    },
+    {
+      "id": 13203,
+      "category_id": 7,
+      "title": "세레브라스, 혁신적인 AI 가속기 ‘CS-4’ 공개… GPU 대비 최대 30배 빠른 추론 속도 - 인공지능신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5FMTZmU2dLZi1wS1R6NFNWRGxhUTZldGRpdEUxNnpadGwtVnZRM3NCbkJidy1ueTJ4RDRkVHNxdndURnVpbGJLYXhHc19KNmRqZlFsSWp6Vk5QampLSTFTZFJiTVBBeE0?oc=5",
+      "published_at": "2026-08-19T12:48:12",
+      "summary": "1. 세레브라스(Cerebras)가 기존 GPU 대비 최대 30배 빠른 추론(Inference) 속도를 제공하는 AI 가속기 'CS-4'를 공개했습니다.\n2. 이 기술은 대규모 AI 모델의 실시간 처리 및 운영 비용 절감에 크게 기여할 수 있는 잠재력을 가지며, AI 반도체 시장의 효율성 경쟁을 심화시킬 것입니다.\n3. CS-4의 등장은 AI 가속기 시장, 특히 추론 부문에서 GPU 중심의 기존 시장에 새로운 도전과 경쟁 구도를 형성할 수 있는 중요한 기술적 진전입니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 7,
+      "key_tickers": [
+        "NVDA",
+        "INTC",
+        "AMD"
       ]
     },
     {
@@ -20289,6 +20490,78 @@ window.techData = {
       ]
     },
     {
+      "id": 13234,
+      "category_id": 9,
+      "title": "한국첨단소재, '코리아퀀텀'에 아이온큐 추가… 2종 양자 실기기 검증 - supple.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5BRS1wLXJrN2tpdmVjS1RvYkRuYkw0MXJLclZra252Y25wei1Oczd2VWV4QlRVVTF2VVlnWk1EeWgxaHdWR1N3cDJERzZRM2hGVjJYZmxIbWtTYUtf?oc=5",
+      "published_at": "2026-08-19T23:46:57",
+      "summary": "1. 한국첨단소재(코리아퀀텀)가 글로벌 양자 컴퓨팅 선두 기업인 IonQ의 양자 실기기를 추가하여 총 2종의 양자 실기기 검증에 착수했습니다.\n2. 이는 양자 컴퓨팅 기술의 이론적 연구를 넘어 실제 하드웨어를 활용한 검증 및 실용화 단계로 진입했음을 시사하며, 다양한 양자 아키텍처 탐색의 일환으로 볼 수 있습니다.\n3. 이번 협력은 국내 양자 생태계에서 한국첨단소재의 기술적 역량을 강화하고, 양자 컴퓨팅의 상업적 적용 가능성을 탐색하는 중요한 발걸음으로 평가됩니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 6,
+      "key_tickers": [
+        "IONQ"
+      ]
+    },
+    {
+      "id": 13090,
+      "category_id": 4,
+      "title": "SK하이닉스, 차세대 AI 연결기술 '네이처 일렉트로닉스' 게재 - yna.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE54YTRUWTNnN0h5aUJCQ3N6MmNUM3A1a3Z2RjMwYmdnOXVYdVdxbzZSMy1KZFZsZ2ZfRXA2Rl9ncEtGdExvM3FrYmo0OE9ma3NWN0ZiWlM1ZUMxMDjSAWBBVV95cUxQNEpVWDB4QUhGYkRmOHdXR0dLcjBpWDBnVTJqQklUaXBFLW5zQzZ0b0VIa0Y2Z05JRlZ5Yk1MQkxvT1NockF4VkxiQjloX0d5UjdXcmFvRWFkV3hQRXotd0M?oc=5",
+      "published_at": "2026-08-19T23:45:19",
+      "summary": "1. SK하이닉스가 차세대 인공지능(AI) 연결 기술에 대한 혁신적인 연구 성과를 발표했습니다.\n2. 해당 연구 결과는 권위 있는 학술지 '네이처 일렉트로닉스'에 게재되어 기술의 학술적 가치와 원천성을 인정받았습니다.\n3. 이는 SK하이닉스가 미래 AI 시대의 핵심 기술 선점 및 기술 리더십 강화를 위한 장기적인 R&D 투자에 집중하고 있음을 시사합니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 6,
+      "key_tickers": [
+        "000660",
+        "005930",
+        "NVDA"
+      ]
+    },
+    {
+      "id": 13232,
+      "category_id": 9,
+      "title": "수백 개 양자 칩 하나로 연결한다...초저온 모듈 확장 기술 검증 - 지티티코리아",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBnVVE4N2dka1hkcE1UdFloTGl0MmdjZXZSbzJQRzYxU1ZqY0lld3RqNjBKcGc0X1VHMU1RQ1FhQ2EyZlVTV3ZDNE5uUEhIVlhjY0JPTnVnQmZ3RHJGUmNkajJWWUlEalB6UWc?oc=5",
+      "published_at": "2026-08-19T23:40:00",
+      "summary": "1. 수백 개 양자 칩 하나로 연결한다...초저온 모듈 확장 기술 검증 - 지티티코리아 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 6,
+      "key_tickers": []
+    },
+    {
+      "id": 13202,
+      "category_id": 7,
+      "title": "듀오스 테크놀로지, 뉴 APR 에너지 지분 매각으로 6000만 달러 확보 - datatooza.com",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5zWUJLMUxrNUFyREZUVnN4V09KRXJVczJxVHdGQVZrSHU5aFk4djU2NEI4VzBkSjQzcmtZMFBJalJjWnR3WjdId0hEeHhXX2VkX05ZQkNMTVFla09lMy1UVkU4TkdtM1hCeGxpMzFvNUZ6VGM?oc=5",
+      "published_at": "2026-08-19T20:52:03",
+      "summary": "1. 듀오스 테크놀로지, 뉴 APR 에너지 지분 매각으로 6000만 달러 확보 - datatooza.com 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 6,
+      "key_tickers": []
+    },
+    {
+      "id": 13159,
+      "category_id": 6,
+      "title": "45도 물로 서버 식힌다… 냉각 기술 빠르게 진화 - 조선일보",
+      "source_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZExrQUFxTE5raE5QZlVFR2M5Z2NucXQyMGxxN1JQcUZSVVVvMzF1Yno1eS1zdjIwVmtnb2l5Sm4wRW9wSWgzNjVYVmhCQllDdEJiVmZMWHRVQ1RCT2ZiOGdWNTY2YnJFaF95cjdtOUw2QXczUEpodFlPSDEtU2poczMtYw?oc=5",
+      "published_at": "2026-08-19T15:36:00",
+      "summary": "1. 45도 물로 서버 식힌다… 냉각 기술 빠르게 진화 - 조선일보 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 6,
+      "key_tickers": []
+    },
+    {
+      "id": 13172,
+      "category_id": 6,
+      "title": "티에스다이나믹, 배터리 화재 막는 난연·단열 시트 특허 등록 - 머니투데이 - 머니투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5qZTdwcmFFd0FYUVlOZmdfZkwwSGltd2Y4SzljQmFLUTZPbXVKU0s1QVAycTh1WWljTEt1M0dkcGI3Y3Z5d2cyUml5amZXVG04RXdVZkFnMjdxRHFsci1fOWYwQnlhVkxIekNxM0NhRWdNQdIBckFVX3lxTE5qZTdwcmFFd0FYUVlOZmdfZkwwSGltd2Y4SzljQmFLUTZPbXVKU0s1QVAycTh1WWljTEt1M0dkcGI3Y3Z5d2cyUml5amZXVG04RXdVZkFnMjdxRHFsci1fOWYwQnlhVkxIekNxM0NhRWdNQQ?oc=5",
+      "published_at": "2026-08-19T07:49:21",
+      "summary": "1. 티에스다이나믹, 배터리 화재 막는 난연·단열 시트 특허 등록 - 머니투데이 - 머니투데이 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 6,
+      "key_tickers": []
+    },
+    {
       "id": 12888,
       "category_id": 5,
       "title": "머스크도 “인상적”이라 한 중국 휴머노이드 로봇 1호주 ‘유니트리’ 상장 - 조선비즈 - Chosunbiz",
@@ -26419,6 +26692,17 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 13061,
+      "category_id": 3,
+      "title": "대한전선, HVDC 해저케이블 매설 ROV 국산화 추진 - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9Jd0FpeFFkNzR5Ymx2RFlXY1ZRczRfc1QzSUtKZTVvTlRsODRQcHAtcThieklkMUZqNU1lYnBkS0lvTUhiQ1FfZDBnMUlzUEk?oc=5",
+      "published_at": "2026-08-19T23:51:03",
+      "summary": "1. 대한전선, HVDC 해저케이블 매설 ROV 국산화 추진 - v.daum.net 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 5,
+      "key_tickers": []
+    },
+    {
       "id": 12989,
       "category_id": 9,
       "title": "SGA솔루션즈-키페어, ‘PQC 제로트러스트’ 협력…공공·금융·국방 시장 공략 - 데일리시큐",
@@ -32012,6 +32296,63 @@ window.techData = {
       "summary": "1. Glass Substrate: The Upcoming Game Changer for AI - 테크월드 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
       "tech_stage": "Pilot",
       "investment_impact": 5,
+      "key_tickers": []
+    },
+    {
+      "id": 13065,
+      "category_id": 3,
+      "title": "LS일렉트릭-LS전선, 유럽 시장 정조준…AIDC 솔루션 수요 공략 - 지디넷코리아",
+      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBfZTBhYnNjUWRFZFQ0QjJKb295T1cxal9PeF9uRUVrTFh2QnRPRURHRU9OS2daZTctV000VGdtWW9RR1FCYUU3RjNwNzlKTEhWNHFBZnJR?oc=5",
+      "published_at": "2026-08-19T23:59:02",
+      "summary": "1. LS일렉트릭-LS전선, 유럽 시장 정조준…AIDC 솔루션 수요 공략 - 지디넷코리아 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 4,
+      "key_tickers": []
+    },
+    {
+      "id": 13105,
+      "category_id": 5,
+      "title": "대한전선, 해저케이블 시공 핵심 '수중로봇' 국산화 나선다 - 아시아경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpYjlWRklBQ3JrVDAwRUJTRm85RGltTHItQmp1OWFnR012S1pVcGhYRzFiZFU1YUtqOWdTYmItaFVGVlAyVVdJdVNHQmE1b3lHSDFfa0lBc1M2a291R2FWaA?oc=5",
+      "published_at": "2026-08-19T23:48:34",
+      "summary": "1. 대한전선, 해저케이블 시공 핵심 '수중로봇' 국산화 나선다 - 아시아경제 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 4,
+      "key_tickers": []
+    },
+    {
+      "id": 13212,
+      "category_id": 8,
+      "title": "파라타항공, A330에 저궤도 위성 기내 와이파이 도입 추진 - edaily.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNTWMxY2RtWkdFLVV6VGpUamRlemtQc3pTTWFaS1lXSk9kSExuME9oVnZEcExXTG1jWkdsU1Fpb2JQdWNaQVl6SEFsMy1vZjJOT2ZwZ2hhdmJkNndHV0J5eFIwODN3SnlqejJ3R2pLX0RLbVZDR25Cc1cxNEtRb3NsZw?oc=5",
+      "published_at": "2026-08-19T14:11:25",
+      "summary": "1. 파라타항공, A330에 저궤도 위성 기내 와이파이 도입 추진 - edaily.co.kr 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 4,
+      "key_tickers": []
+    },
+    {
+      "id": 13218,
+      "category_id": 8,
+      "title": "해운 현대글로비스 자동차운반선 찾은 스페이스X…스타링크 현장 방문 - 글로벌뉴스통신GNA",
+      "source_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE10WnNFQk8yOWdiUk9xMXl5UXhVRDZPdGJMT25LdnBPQWpNazk3X2R0bW00QVhmTG4zNGkxNkFaeUxFVGdGb1JfU1NvdU5LamV4NFVoV2R4QUQ4NzVjYWFJbzJ0QU1iMS1MWTcwLVhoamxvNHAt?oc=5",
+      "published_at": "2026-08-19T12:38:38",
+      "summary": "1. 스페이스X의 스타링크 팀이 현대글로비스의 자동차운반선을 방문하여 해운 분야로의 서비스 확장 가능성을 시사합니다.\n2. 이는 스타링크 위성 인터넷 서비스가 선박 내 통신 환경 개선 및 운항 효율성 증대에 기여할 수 있음을 나타냅니다.\n3. 현대글로비스와 같은 해운 물류 기업은 스타링크 도입을 통해 스마트 선박 구현 및 데이터 기반의 운영 최적화를 추진할 수 있습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 4,
+      "key_tickers": [
+        "086280"
+      ]
+    },
+    {
+      "id": 13213,
+      "category_id": 8,
+      "title": "‘중국판 스타링크’ 24번째 위성군 쏘아 올려...“고빈도 발사 능력 입증” - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9xQWw1ckM1eHJ1VDlVV2VoQlBtWkE4VW1VQjkzWnItcnFhVFhqMm4tT0w5czJhekg2M3E5dktGeG1seURiRWZNTE1WSlNxdGs?oc=5",
+      "published_at": "2026-08-19T09:00:37",
+      "summary": "1. ‘중국판 스타링크’ 24번째 위성군 쏘아 올려...“고빈도 발사 능력 입증” - v.daum.net 관련 최신 트렌드가 보고되었습니다.\n2. 이 분석 결과는 해당 분야의 기술적 발전 흐름에 중요한 지표가 될 수 있습니다.\n3. 투자 관점에서 Pilot 단계의 특성을 보이고 있어, 향후 시장 영향력을 지속 추적할 필요가 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 4,
       "key_tickers": []
     },
     {
@@ -40363,330 +40704,330 @@ window.techData = {
       ]
     },
     {
-      "id": 12858,
+      "id": 13067,
+      "category_id": 3,
+      "title": "LS일렉트릭·LS전선, HVDC·AI 데이터센터 앞세워 유럽 전력망 공략 - 네이트",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE13aTV2YTFrRzRvU1lSVmF0dEExNGdqd01udTBaVzJrNDg2Q3FEc2M5YkNWSC1EWmZTalZReXNKZW1rSkU2MzhSMjhLZFVxNUFfd2RGLU9jYzIwcUY4OGNqVA?oc=5",
+      "published_at": "2026-08-19T23:48:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13064,
+      "category_id": 3,
+      "title": "대한전선, 해저케이블 시공 핵심 '수중로봇' 국산화 나선다 - core.asiae.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vcGMxM19EYjhmRmZUTXJiQ2xTMzRPOEdXWGFBSmpubENuUU1TbG15NkcxMWE4RXVHV0piQjNhR2E0bWpITENQVDNoMWQ0ZDZWSm9GWnBiNWRaMmVfcU5DNGJ3?oc=5",
+      "published_at": "2026-08-19T23:48:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13102,
       "category_id": 5,
-      "title": "잘나가는 ETF 열어보니 죄다 로봇…한 달 수익률 1~4위 싹쓸이 - v.daum.net",
-      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5CcW9WSHpzSy14UEVoV2VYRjB5dnBMRnBkYjNLVEJWcXhxdmFfWVhXMnMwZGR1VWFUY0tZLUNRUFAzMXVwdFRyWmpQR3RkeFE?oc=5",
-      "published_at": "2026-08-18T23:21:38",
+      "title": "현대위아, 공동주택 주차로봇 본격화…건설·시공사 초청 시연 - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9hUWNZcnhiTVBKUWJGdVl3Qmx4b011U25WY1lQMDFvTGt4Sk1BVThqWG91ZVdVUURrMDVKNFRqSTc2TXdjVFh3V3dYTWlWTUk?oc=5",
+      "published_at": "2026-08-19T23:47:49",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12913,
+      "id": 13068,
+      "category_id": 3,
+      "title": "LS일렉트릭, LS전선과 차세대 전력망 기술 총망라…유럽 사업 확대 - 데일리안",
+      "source_url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOWW84bFFaNV9IVVpqMUlUM2FzdUZBcDQ5eTVCaTJjbUVBV19ZNV9RUW5FYnllckZkX0tETHJtMDJncVFqeE5VaUFYOFloNktYbzFHcjB2NTk0UGtZV3pIRnhNR0xmWUQ0bmc2czRjWVFKZU9Gd09SdTVLSEl1bzZKV2dqSVBUTUhHaG9YVTBLeEtnMlBWd0hhZXBBYmRJdEQ5TG5wZjhpTFdIZXZ0X3RObHRDX2szQWFTTnQ2QWtqOTZpLXN3eERlNjRDajZnSHhjVDd3R1VINkt3YXcxVUNOQ1VYRWpDOXQ1TnhETGpXWkxFMkF3RC05dVRQb2FEZkhCckFN?oc=5",
+      "published_at": "2026-08-19T23:45:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13073,
+      "category_id": 3,
+      "title": "LS일렉트릭·LS전선 유럽 전력망 정조준…HVDC부터 데이터센터까지 총공세 - 아주경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5QLVdfdFZqWHRYOUVoU3U0X1JqdXNTUG1QLUZOY1BfQl96X3E4bDllTElhZHcyajVlbnNwZEdyZTJ5TVg4QWN3T0RrUXVsUGNsT29DYTd4c0xnUdIBWEFVX3lxTE0walYxTS02blNYUmFrcHRyX213X3hIVGZCTnNGNURrWmhmNzVHN0VUWFFTTmMyMzdCTDVVdkRPaGlpSjdyYUNYbVVfaW9RTVhDTzM2ZFJ3ZXQ?oc=5",
+      "published_at": "2026-08-19T23:41:06",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13151,
       "category_id": 5,
-      "title": "매디슨 황이 찾은 LG전자, 엔비디아와 로보틱스 협업 가속화 : 네이버 블로그 - Naver Blog",
-      "source_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOWkJTQ3FBaEJWcFZ2Y2k4SXVyN2lXdU5DczU2OGQzUE1yVTBOamcyRzZyWVl5SF9aWUZGV2V0eEEyVDR1am5mNkxpNThZVVRtSmd0ejlVRzRnc1JVSHBLY2gyLU56TExqM0RZYW8zSTkwbGUwZXVkOXhBaVFUSjYtOTBMNE9xeW40WlBvZEhucw?oc=5",
-      "published_at": "2026-08-18T23:20:52",
+      "title": "레인보우-빅웨이브, 두 로보틱스社 북미 시장 진출 협력 MOU - 아시아경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1zSjVOMVZiT1RLOWFnYXZMVUJUekw0LUFsZ25yV0piUFd6aWstSHVXbzVjUnU5UzBta0ZfTDU4SnBBZW9vOTN2clN1WlZpNktjNDh1MHl1ODVzRG9SQUhlRw?oc=5",
+      "published_at": "2026-08-19T23:39:14",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12857,
+      "id": 13104,
       "category_id": 5,
-      "title": "LG전자, 엔비디아 손잡은 이유 있네…1년 만에 12년치 데이터 확보 - v.daum.net",
-      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1UVEw5LTk2aG9KOGIxeEhDb194Wk9xUVlWbzlfYjVEb3Ntemc0X1pvYXVRY0NoVnBtTmJqanlkd3YxNVpzREZsOU0wZk9HSTA?oc=5",
-      "published_at": "2026-08-18T22:31:54",
+      "title": "HL로보틱스, 자율주행 로봇 ‘파키·스탠’ 앞세워 주차·물류시장 공략 - 이투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5LR3AxTGVwZXR2bTFOOS0wRmUwRDUxMnNaMHpnSVI1RFBocm4zcE1IZU1pOVhKeU5pc3dJNDNja0lqVHNqVjZwaWJpQlJzZmNwd1JzdA?oc=5",
+      "published_at": "2026-08-19T23:35:00",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12860,
-      "category_id": 5,
-      "title": "중국 로봇, 화려한 시연 넘어 상업성 검증 시험대 - 글로벌이코노믹",
-      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNT3FybU9tODJINGQ2TC1xQktjdW52Y3pLLWkxNjVxdjN1RGNDTDBiYmZyTnlOMzhfOVl6WWJHVUF2T1JGRlJha3RMT1J0VjMyZ0FQWE9SU0tXMGNlVTVCbURPQXRDRTkzR1VELUw5YUphbUlwQ2RHRWpEanBuUUV0WHRaUUc1TjA?oc=5",
-      "published_at": "2026-08-18T21:08:32",
+      "id": 13047,
+      "category_id": 3,
+      "title": "美 SMR 기업 카이로스파워, 협력체 출범...삼성물산도 합류 By The Guru - Investing.com 한국어",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE91UjdzR1VhVkhJdmU1cXRUY3JySEUyYmlOSnNhaGdna2JRU1JoU3BHQjV1bmJhMVkwUVBjQmpUcEJJd3J5eEkwTlRPZ3BCLUkyZTQ3SnR0Q3AzWnd1S2NkNUp4SzdpTzdOdUdNRUt4d1I?oc=5",
+      "published_at": "2026-08-19T23:24:00",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12809,
-      "category_id": 1,
-      "title": "미국 반도체 지수 5% 급락…장기금리 상승에 SK하닉 ADR 9%↓ - 뉴스1",
-      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBidEs4a1NPT0FOcnBUa3ZrVXVpU1RmQXRjWk12dzdOZnBXaTJib3ZsQ1FfQlcyQ1VRc1Z2bWZFdUIwMEtzUVdYRlRPZ0ZraVoyeXFya1N6X3dwc25UZjhrRkJCNklXQ2fSAWxBVV95cUxPcXgxc216LUIzeGRjWFZSQnJFY3RLSVNCMlZ4aFhyWmFmalpPNmxsMXRNcGo1aVRvWVhzTXVrZ0lHam92cUJrSHY0TmNQTHh6SnRwVFRZRnp5YWU2WHptZTBtdXM3TTNmc0M4b0g?oc=5",
-      "published_at": "2026-08-18T20:45:45",
+      "id": 13066,
+      "category_id": 3,
+      "title": "북미 넘어 유럽으로…LS일렉트릭, LS전선과 ‘시그레 2026’ 참가 - 아시아투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1LUHdkOGV0c2g5M05WWjF5NkpmYkcxU0VTY2dCWWNOU2pxbkludkl0QkIwNGhJaXRXVEVLbVJHRTdCVV93aFZhdGRuNE03eXFVaFZDRXNZOEhfRkRXUVk5X2ZJMVZENkVxeVN3d3J3?oc=5",
+      "published_at": "2026-08-19T23:21:03",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12808,
-      "category_id": 1,
-      "title": "삼전닉스 손잡은 中반도체 회사…검찰, 서울사무실 덮친 까닭 - 중앙일보",
-      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xeGJNMmFEVkFIZzVvMGU1d3RZUXhoR0tQTktIaldUcWtBVmJZMHFCVTJodXhPRV9VcU1zdDdKSGh4TnYtbEZfS25oWmE1ZFgwaVNYLTNn?oc=5",
-      "published_at": "2026-08-18T20:04:24",
+      "id": 13060,
+      "category_id": 3,
+      "title": "LS일렉트릭·LS전선, 유럽 전력시장 공략…HVDC·AI 설루션 공개 - yna.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8ySHZNOW1GZS13VlRPNEkwejkzaFlXTTdpTU9EOURYLXZPdkNWMHdQUVg1QnhPVmg3MXN0VFNLNnlRSjdHX3ZEVUJrY2c1V0JiazdPQnpfNlBucFHSAWBBVV95cUxQU1JzOHp0eTkxLU0yS2l5V3NyX2p5RjBqVmNFZmdFTVpxUko1VmZZVDhQSGFTampmUTB1bXFOQTduUFJuNUxvYms0ZEtZeG1iVmtEcXZTSm5pZlNKcm9mdS0?oc=5",
+      "published_at": "2026-08-19T23:09:39",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12904,
-      "category_id": 5,
-      "title": "[열린마당] 제주 길목, 전기차 감속기 오일 점검이 먼저다 - 한라일보",
-      "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBCemIwYWpsdUVYdEpiZ2pjSFlZbjhpd2JjUWx3R253UDU4Sms3Wm13SmlhV0xycmg4ZVhpV010NlVXVEg5UTZ5OG04SkNSUjFhXzFvY3pscGdzTkVLMnpDRnVRSDVWZjNs?oc=5",
-      "published_at": "2026-08-18T17:00:00",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12801,
-      "category_id": 1,
-      "title": "삼성전자, 업계 최초 ‘CXL 2.0 D램’ 개발 - samsung.com",
-      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9aRHY3RkpUV0Fra05rX1J0aW5hS2JhU0FfQV9nN0hneG1xWXgtUHFKVFl4TDhnUDg0aTJGc29YZU9UcHY2RTUtZ2RHV1RtUHIyTXZFQ3o2dlRWeVRLUm9DbUFiNXh4VmRULXJzaC1adw?oc=5",
-      "published_at": "2026-08-18T16:34:30",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12874,
-      "category_id": 5,
-      "title": "시설 관리도 ‘AI 로봇’으로… 화재·침입 감지 땐 실시간 영상 전송 [호반혁신기술공모전] - 서울신문",
-      "source_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBIcnlzNHRlNktQRmtwd1NrRHFITUh6MWJYQ3QwOTVQOFB4a3JIbERCSnZmNmhxLVJhVVZFd2JkTy13bU9vVlByODItTkNVZjFSdElCYVVxa2RHcUlXYVcyN0Q1NkR5akVOU0kzYTBUZ29XTzI5aV9CbnFHYw?oc=5",
-      "published_at": "2026-08-18T15:42:34",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12910,
-      "category_id": 5,
-      "title": "[BEYOND DGIST] 세상을 바꾸는 기술 창업, 차세대 '유니콘' 향해 뛴다 〈1〉팀로보틱스 - 전자신문",
-      "source_url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9xSU8xM1lHNkwxNnl0VjR2RFBBWmNCdE5lU0Y2ZS1FRzEzVk5mU3Y0T2YyUVNKakJ4TXFzSEtvQUFhdWVCMktqcnh5ZllkUQ?oc=5",
-      "published_at": "2026-08-18T14:00:00",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12983,
+      "id": 13245,
       "category_id": 9,
-      "title": "[속보] 아이온큐·퀀티넘 등 주가 동반 하락…미국 양자컴퓨터주 장초반 일제히 약세 - CBC뉴스",
-      "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1sT055ZU5paXloUVphWkZSdnhRNndma1N1LVZ4N1dIbndZazZ5QWw3RlUxaXV5b0stLWNKdmVmN2FtYXY0OFM2LVNZSFZDdjZVc3FxNHN0QzlNd1FFNTZTbHp1Z0J1NzVY?oc=5",
-      "published_at": "2026-08-18T13:51:06",
+      "title": "과거의 양자정보도 하나로 묶어 측정 가능하다고? - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBzQjB0QW5SekFFU25KUFpqU2Etd2V1LWphYmVfcVRtZFQ5TFVRRER1bHl0cjVpamxLMUJuX1c0RFJOOVB4dTA3WDhjcGE0ems?oc=5",
+      "published_at": "2026-08-19T23:01:47",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12907,
-      "category_id": 5,
-      "title": "서울대 로보틱스연구소 개소…‘인간 중심 로봇’ 만든다 - 조선일보",
-      "source_url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPR0hHMDFtTnNuZkZONXRNUjJuLWZWbjMwZ0hsem41RElhNGdVMzBTUTNpWXYtOTdPaHNqelRNTGh1bF94TVJBNnRoV1VwUENHbEh2MW5HOTZzSnRZdm9FRHRoQTdHSDJnaFdfRTJIbzN6OEQwb0ZpdnZXT1RsOEJ5bF9IZk5pM19zVHRHamFHMFo?oc=5",
-      "published_at": "2026-08-18T12:24:00",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12872,
-      "category_id": 5,
-      "title": "LG '훈련장' 찾은 젠슨 황 딸…'피지컬 AI' 속도 - v.daum.net",
-      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBQUUtIbm12eFBWU3JBNEpINzFnM1gyalBSQnhPY05NTE1LV0loTDNnUTFTR0hkT0Z5WWRrRHpVbTFRNUNhQllCc1VTQ3dVUzA?oc=5",
-      "published_at": "2026-08-18T11:48:12",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12896,
-      "category_id": 5,
-      "title": "상장 이틀 앞둔 유니트리, 사람보다 높이 뛰는 휴머노이드 공개 - 플래텀(Platum)",
-      "source_url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5YeXl1YW14UVQ4bU0xTHFRLUh3Qmh0cVE0eVlKT2VLekdyYWhxMzNTbjlfN3dCSzc1WjlxeEI0aEEwUmlCdVJROQ?oc=5",
-      "published_at": "2026-08-18T11:08:38",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12986,
+      "id": 13247,
       "category_id": 9,
-      "title": "디 웨이브 퀀텀, NTT 도코모와 두 번째 양자컴퓨팅 상용화..신호 부하 65% 감소 - 매일경제 마켓",
-      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9WY29QbU9uaHZCTWRneWZxWUoxd1R3Nm1mMU5LcXItVjFhRThIQ3Jaa0d2QjY4SlI5SUxqMjVvZEhNbDN0ZzBqMzYxUWpza0J4Mnc?oc=5",
-      "published_at": "2026-08-18T11:04:16",
+      "title": "시간 거꾸로 돌려도 똑같은 양자세계…'시계' 붙여 방향 찾았다[과학을읽다] - 네이트",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBQSnVmbEw3bGw3cF9SM1BOQkhJd0VzV1ctdFlfTFZwc0lYam9PVERjejczV1Nfc2dCcVVodlhjcWN6b0VlVGxXNWVCekxGOXg4cmRVNHR4d29iX2VSR21FNg?oc=5",
+      "published_at": "2026-08-19T23:00:00",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12807,
+      "id": 13246,
+      "category_id": 9,
+      "title": "간섭계로 '시공간 양자 상태' 측정 방법 제시 - 파이낸셜뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5KLVdfMW9tX2J1UEJaLTVTYVEzdGNzNlJHS05CNzFONWlVV2I4RHlqaGVQQkxjZkxrbFN4LXRyUDVwZ2l0T0VoQVdzMW9WUHB5dnZLcGhSTnk2Zw?oc=5",
+      "published_at": "2026-08-19T23:00:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13228,
+      "category_id": 9,
+      "title": "IBM, 양자 칩 수백개 잇는 극저온 시스템 구축 첫발 - 전자신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE95Nk9heTFKTHBWTkt5a0xjZ3hIUXlyR3RZU2lYTFR3U0FoY25nUEVlNDdGRkltcXdOc1JkSU0xZU5RTXd2OVBIVTA5MmhCdw?oc=5",
+      "published_at": "2026-08-19T22:57:29",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13100,
+      "category_id": 5,
+      "title": "[비즈나우] 유니트리 '잭팟'…매서운 中 로봇굴기 - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBCVW1GNnIxd25kSnVlaEpnSkw2SUltcTlNeF93WDFWUXNJTFV5LXVDMmN3bTNCNWlpcENLRlB4c2liZVhfZVZ5R3FJUlc2T1E?oc=5",
+      "published_at": "2026-08-19T22:54:02",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13135,
+      "category_id": 5,
+      "title": "[이 시각 세계] 중국 휴머노이드 유니트리, 상장 첫날 460% 급등 - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB4TmdCSkNfZTBBYnJvQW1PbFRVc1lOY3hJZ2RiOFl0TFZWYlhucnZwRXV1WjI4WEpSMXpLbW9kYmFScloyRkJBMU5hUHM3Tk0?oc=5",
+      "published_at": "2026-08-19T22:22:08",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13015,
       "category_id": 1,
-      "title": "[단독] \"한국처럼\" 콕 집어…대만 반도체 노조도 ‘성과급’ 요구 - JTBC",
-      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1WME9VVXFWSVIyWF9KNDYtYU1tVEF2RDRPalNpNlZJaU1GeXV5SUxTTk1seGtwb1NrejFUY1NQR1E4cHFBd0N5S1ZnMGQzZ0JhWGRXOA?oc=5",
-      "published_at": "2026-08-18T10:56:00",
+      "title": "구형 D램, 50% 뛴다…HBM 쏠림이 부른 메모리 역풍 - 글로벌이코노믹",
+      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQck1Eb2RjX1dPS3NmY0RPSnNjSUVmYkxXVEYtQlFZZmVGcWlUZkZ1MXhhMHp1TWlJOUd4cjU3aHBWdDN1N0pvLUlRNUxVRDRvOGJpN2wtVHBfT0U0S3NBenpVaDBVQzhwQXBQMnhkTFZPUEdkY1o0VTJkaEFoZWZJdmxwR2V6Vms?oc=5",
+      "published_at": "2026-08-19T22:16:35",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12887,
+      "id": 13019,
+      "category_id": 1,
+      "title": "인텔, AI 패키징 시장 존재감 확대… TSMC CoWoS 공급 부족이 기회 - 위클리포스트",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9yWmxpT0xGTjBoN3lENlY2QjcwVHJ3U3g2ZUpmdmtORUdkcDRlSzlrRlVoWi1oaS1GSllGejB4d3ctNDVTRmFpQUw3eDZPMGJZNVF4cFp4RWdVN1pKNDNSUm9fYzN4QW93LVpJ?oc=5",
+      "published_at": "2026-08-19T22:13:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13077,
+      "category_id": 3,
+      "title": "신성이엔지, 스타트업과 신사업 시너지...VPP·ESS·데이터센터로 성장축 다변화 - 전기신문",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE14TVdnemJ3ZkdYU3EtZVhoNFNETjI4ZDJLSGNJQ2tTUURyUjItTHNFM1JFb3NpZVVnTmZROFMzUVhuUjhXUjh4bXBwUkN2Vzg0TFNqRTkzOEVNcG9aVVNwaTN0Q1BYSUNKbTYyRTdTWnjSAXBBVV95cUxNeE1XZ3pid2ZHWFNxLWVYaDRTRE4yOGQyS0hjSUNrU1FEclIyLUxzRTNSRW9zaWVVZ05mUThTM1FYblI4V1I4eG1wcFJDdlc4NExTakU5MzhFTXBvWlVTcGkzdENQWElDSm02MkU3U1p4?oc=5",
+      "published_at": "2026-08-19T21:03:47",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13051,
+      "category_id": 3,
+      "title": "두산·SK·HD현대도 꽂힌 '미래 먹거리' SMR…상용화 퍼즐은 - 네이트",
+      "source_url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1FQlBDNWFIb19vVVdJb2dFV3BLWHE2eFpySWhvNHdTNmRjMy03UDA1STJCM1Fld3Z0ZW92cWJoY0s0amZnUTBBRDRrM2JBcTRsTjY4?oc=5",
+      "published_at": "2026-08-19T21:02:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13069,
+      "category_id": 3,
+      "title": "전력 남는데 아파트 정전, 이유 따로 있었다···국책연구기관 진단은 ‘이것’ 때문 - 경향신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBERjczS2QxTEdrM0ZGbWNuTWJXZ2FLMW1nbklaZjVlczh1SDVFbUdEOEprMGxGQ08zc3BtN3M3LUstSUpUSHRsUVBjNFlMMDRJREMtR1RnSGwxUdIBX0FVX3lxTE91Sm9uQTR6MllGSzBkXzY5OTU5Wm55ekZ3RjNNcEd1aFNSbjRwdUlCM1dFbkJXOTAwUHIwN2ZxN2hwWGl1NGpfbF9GZE41Smd1NUNLY1RsbTI3NzV1STB3?oc=5",
+      "published_at": "2026-08-19T21:00:00",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13110,
       "category_id": 5,
-      "title": "[단독] 아틀라스에 K-부품 탑재 추진…소부장 ‘美 기회의 땅’ 열린다 - v.daum.net",
-      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1ORHpQN1VkMVM3eDRzRjhGVnJYWGJjMC1IUGVicmxrTHY1MTNsbXNkYS1oa3BCSmlHbEpJMDB0T3gzVDluRmtxTzZIZ250VXc?oc=5",
-      "published_at": "2026-08-18T10:34:41",
+      "title": "현대차 '공장투입' vs 테슬라 '양산·판매'…채용으로 본 로봇 전략 - v.daum.net",
+      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5tRllUUmRnVFFFemZQYURCTXdBTzFCbjdLSEJWSlBjbll3SVlmZm8ySVRrZDkwMUtzcWV4ZXZqUkNNb2RBRzVZckxab3BPcWs?oc=5",
+      "published_at": "2026-08-19T20:03:03",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12909,
+      "id": 13111,
       "category_id": 5,
-      "title": "로봇에 '3D 눈' 달아준다…클레로보틱스, 글로벌 팁스 선정 - 머니투데이 - 머니투데이",
-      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9TcHhWNkNrWUNOa2ZfU19FOTItcnduVmd6WG9xY2lxRjFRWEdZSDhqVTFkVDNsTnNiS1lBYVpRaTRoVlZHb2NjaUlRRmhnaHpwSWxha1Vpb18yZ2tmcXBkbFgzZi1ibGpYSnfSAW9BVV95cUxQUDJUUkhMRjl5WXQ2Tjc0WDZ6ZkdfODVoeEtHODc4NTJoY29YMHdoLTFHSnRwOEVGRWJFYXU0UXVJU0FhTEpsNUsyeEd4MEMyRU03Y1gtYmd2TkJ1NjRJMnBCSXBnbllCaTJ4YUtnQzg?oc=5",
-      "published_at": "2026-08-18T10:30:00",
+      "title": "Robots speed up sunscreen testing - KBS 뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1xWTV1LVVjNFJETlcwYnhhcEtuWnRVYnRhbzFwNnhmS2RQamNjMm1MQzFwSS1saEJJUzR4V0ducXpjaU5sS2ExRzd6YVN1V25mQU14RUdoS1plMTQ?oc=5",
+      "published_at": "2026-08-19T18:48:00",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12859,
+      "id": 13133,
       "category_id": 5,
-      "title": "'1시간에 커피 202잔 제조'…중국 로봇카페 기네스 인증 - 연합뉴스",
-      "source_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE41NTBIajVlZ3A0aWI5ZTN6bURmSnZ3ak9YaVliMXF1VEhzbkNZOHo1WFp3Vl9FWkRnSVBrOEtoQkQ1SFM4bWw5dmROb0Q5eTBqTHFqSkt4a3dYbFHSAWBBVV95cUxPZFhrSnozZ0tCTC1uSWh0eGNrMHZhU3p2SlNuS3ZtdlN2ckJHaTNQV0RUcFRFbUdaVUt0OFpPWG5nOW5VV3c2SUFlaWFPeEg0anFXTUZWVGVBRFBLX3pCdk4?oc=5",
-      "published_at": "2026-08-18T09:47:13",
+      "title": "휴머노이드 ‘발차기 쇼’는 그만… 中선 토스트 굽고 집안일 한다 - 조선일보",
+      "source_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRm00ZWFQbHhta3RHNS1CMm5Jd1BtNG5aeE1YT3lJbC1lY1UwSU1fb3FiVDZ5TlJvaTA2bk5FZXBuMmdkR0dYNGpzWmVKZXZ5aGh6c18ySm03ZTloUXlUUjdGWDgxSTNZWGZsWWlGU2NzNjZqYkdwdW1pWjdmVC1JWTU3bw?oc=5",
+      "published_at": "2026-08-19T15:52:00",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12902,
+      "id": 13098,
       "category_id": 5,
-      "title": "경복대학교 창업보육센터, 2026년 국방기술 활용 창업경진대회 최우수상 수상 - 경기신문",
-      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5fWGdzQUIxc2tsVXZKVmx6X1JUWHlKUUh2NDNLbWtBUFk2SkdLZks1Z3J0SDltd0ZoY3ctVDNOb0pTc3pvRWV5ald6Z0pPS2JrbVdISXpDemRJTTctWWNUaHNB?oc=5",
-      "published_at": "2026-08-18T09:31:53",
+      "title": "중국 '로봇 1호 상장' 460% 폭등...AI 두뇌 개발 박차 - YTN",
+      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0wOXZwekZNOFZLWUxNMElSNE1IQlNsRWYySU1hS3ZlVkdZaU5EWDZuOUpET3lYbUJma0tMWnJ5WE5HdllIcGNySzhXcHZjYnZ0YmpublBma0lzSGlWYnc?oc=5",
+      "published_at": "2026-08-19T14:12:00",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12938,
+      "id": 13115,
+      "category_id": 5,
+      "title": "하트 그리며 춤추는 로봇…코엑스 홀린 휴머노이드 - 에너지경제신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBQTEwwVmdyNHRUSHE4bFZnamprR1R5Q2hfaER1b20zRFh5X2xTU2ZwYUpnTjA3b1FQOGppOG95LUFrbG5kQXJYTmVJSVhrbnpHUVFKdkNLU0tqVGs?oc=5",
+      "published_at": "2026-08-19T13:56:36",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13236,
+      "category_id": 9,
+      "title": "양자 컴퓨팅(QUBT) 주식, 장부가치 기준으로 볼 때 저평가된 것으로 보인다 - simplywall.st",
+      "source_url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNREY1WmtVd2pPbGNnd1JUVXlfbjZCY2pRYzFudVZ2Ym9VS3RmanVrblRsdVRCUFU4RlNIQWxxd1ItdFFJZjg3NXlVNnZpZTZtbEhzVkduSVpLWXR3SDEyOWU4b1VMTGl0bGZpN1VTMXZ5dm9SZGFFUk95S29mcHM4UENUdnlEdGRabFczZ3BfYUpPVmJKVmfSAZsBQVVfeXFMT2txY3k2Q1JzekVkQVBYNEwxSEpwZVFmdE5qcVBGUHZIWHhrYlREWkFWdGdhQVZpOFNmTThsbkhVbTlQY0JkS1BYem5VTk1qUUVvckUyX0JnalpTSnlub19XUTdXTzF1czVQV2VZVzdtRHVmZGlLdVVYcjJnZ1ZRVlNPNGJtZXNId24zN0N1aWk4VXlmRDhkNkFGUVE?oc=5",
+      "published_at": "2026-08-19T13:47:43",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 13195,
       "category_id": 7,
-      "title": "[인사이트] 퀄컴코리아, 반도체 너머에서 AI의 작동 방식을 설계하다 - Korea IT Times",
-      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBQTEtiQjdFOExJU1JRS1doakZXVUFsRHNWamN4QUdRRjc2bU1OVDdTa3pwSFRtY3ZObGxHZUtRT1pPRWp1Vm1NMWpNUjZLYlo2WlFjaHNXVUtfMno0bmRFVXFjQlNheEs1Y1JqcDd5Nkg?oc=5",
-      "published_at": "2026-08-18T09:26:00",
+      "title": "KT, 국산 NPU·LLM 통합한 기업용 ‘소버린 AI’ 장비 출시 .... 데이터 주권과 AX 도입 한 번에 해결 - 워크투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5mNTVWZ0dNZGc2VzdXTzhuRDR6NklLQlhHU2N4MUdpdFN2b1BNNjk2RDRTbHg0V0x1YnIzUnZJNnhtcjJGdTNxbV9Fd0UtS05GQlFaNWFBakZNZHNXaXdYWHJiWC1vMEJ0NGdmZw?oc=5",
+      "published_at": "2026-08-19T12:14:50",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12982,
+      "id": 13229,
       "category_id": 9,
-      "title": "[단독] 네이버페이, 국내 첫 '양자보안 방벽' 쌓았다 - 한국경제",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5qV0JNMVBPTlhVSi1tWXhuZWFKX21oZy1Ja2RzRVNDTl9STGJQR1lqZmhfZGNQREZOYmFmZEtRdFZEWGRjYjNQNTRKanNVNFZ6SllRZGgxV0NYdw?oc=5",
-      "published_at": "2026-08-18T09:13:50",
+      "title": "IBM, 모듈형 극저온 시스템 첫 실증…오류 내성 양자컴퓨터 구현 속도 낸다 - 지디넷코리아",
+      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1nS3NDX21CUGZQZG5zS1N0ODRTZTJINThsbFhzZF8yeGJVZnQyTmZXdHVudWxub0VEMjF3T0RIaGNSMGxGT3pEWDFVX3hjbENYZmkwSXBR?oc=5",
+      "published_at": "2026-08-19T12:14:27",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 12865,
+      "id": 13141,
       "category_id": 5,
-      "title": "유니트리, 상하이 상장 직전 신형 로봇 ‘슈퍼맨’ 공개...\"우사인 볼트보다 빨라\" - aitimes.com",
-      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9XQ2VDem1DLTMyUjFyQm90UHpZb0lVTXVCc0FUQnVoRXlneFhLRm5mbVkzOHhERERYUjFwb0tKTHlDakFwenkzWDU1V091WEpSMjFwd3FmblhXY0d2YlB6OFZVbEVLcUVjSGc?oc=5",
-      "published_at": "2026-08-18T09:10:45",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12805,
-      "category_id": 1,
-      "title": "\"삼전닉스만 수출주냐\"…반도체 다음은 '면비디아' [한경 프리미엄9 TODAY] - 한국경제",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SQ2ZrQjE3UldTb250Tks0ODktNVBsd1BfV3pydXJZZS1Uek10cnFOTFBpUlNyN0YtbHlzdFlkX0lSWkxlLVN2d1I2aExidTl2eVNtd1kxeXRoZw?oc=5",
-      "published_at": "2026-08-18T09:10:41",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12885,
-      "category_id": 5,
-      "title": "가전서 쌓은 기술력 로봇으로 확장… 엔비디아 동맹으로 가속 - 아시아투데이",
-      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5OS2Y3OE5ndlRaNGprRC1aQm5ucms2QUFHdWZnYi05dDN3LUEweDlUc2JXMENmS3RNdHhDV2VwMHFlSXZFaDN0STRrNFlXOTZrVU9GUjBUVFlNbmJnUUJDaXFYYmlWa2JEZUdfR3NB?oc=5",
-      "published_at": "2026-08-18T09:00:41",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12795,
-      "category_id": 1,
-      "title": "기술유출 55%는 中으로 … 최첨단 HBM 기밀까지 호시탐탐 - 매일경제",
-      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9MYmhyRnRYVmxYUUk2QUZhX2txOUhiRkJZRmduVF85WVZQYXdPRkhOSFhqOU5TamhIaHl1OWJ4V0g1cElTbnFSTE91ckhBcTJDNjlrdA?oc=5",
-      "published_at": "2026-08-18T09:00:29",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 13002,
-      "category_id": 9,
-      "title": "\"뇌가 인지하는 미세 양자 신호 포착\" (주)포커스바이오, 차세대 양자 정보 헬스케어 시스템 '메타트론(Metatron)' 공개 - 엠디저널",
-      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE81UTRfUS1Cdm9YNDEwUTJZbWVzMlZWcVpCMVZkbmJXbTdxSUN0eFNKcFRaVU01d0s2a0o3RlZSWGV3Q3F5LVl0cDVzSV9ZM0VwVldJSnZwMVBRV091WHFRNzVUNExSRlNORkxzbWtR?oc=5",
-      "published_at": "2026-08-18T08:45:46",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12949,
-      "category_id": 7,
-      "title": "포스코DX '토종 AI 반도체' 육성 - v.daum.net",
-      "source_url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE51d2NORXFRVi1aSkxtV08tdElRaWZNMDE3ZjZXS2ZPNTdjTF9NRzBuN3MxOThkS0hrNWdwbmI2WEdLU3V6dFE?oc=5",
-      "published_at": "2026-08-18T08:39:04",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12944,
-      "category_id": 7,
-      "title": "딥엑스 NPU, 과기정통부 ‘혁신제품’ 지정…실시간 추론 연산 수행 - 이투데이",
-      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5KeGVSMXRwLVBJWVJOWjR0SjRoV0hwVS1OTU1xZ3R4bFozdVdrbVY2cGtqU2pLOG4yMElfaEhXQjBfaEhOZ2pzTEZIR2s4QkM4VzJEbA?oc=5",
-      "published_at": "2026-08-18T08:28:00",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 12990,
-      "category_id": 9,
-      "title": "바오밥에이바이오, ‘양자이득 도전연구’ 주관…\"TPD 신약 설계 고도화\" - 약업신문",
-      "source_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5VY3pMdk9pTmdTWGhkZjhRRUU5WjlWQzViSTJMc0NrUXc3RkJsXzhmZnBlMEl4NzVnX3FFLWIyQ09GWUxla1RvY0xsczc1VzJlenZ0emRqSnV5MlF1MWtfRHlhcWg2RGNjR01JdmVXaTlGQ244X1Bz?oc=5",
-      "published_at": "2026-08-18T08:17:00",
+      "title": "38개 팀 격돌…베이징 세계 휴머노이드 로봇 가족 경기 개최 - gukjenews.com",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1UeE5Ua21WSmZGVElMVDMyT3JBTFBfTmcwNl9tTUdSaDctcXAyNWNtZDNFSmpCVlJrU08tcG1TOTdCYXRha0lnVllNZk1IU0k4SnlCX1pYSElldy1zUW5xZDlzVmJmRWFBOXBEaTVB?oc=5",
+      "published_at": "2026-08-19T12:10:31",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
