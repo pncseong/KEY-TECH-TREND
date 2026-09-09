@@ -167,6 +167,28 @@
         </footer>
     </div>
 
+    <!-- 대화면 정밀 엔지니어링 도면 확대 모달 (Blueprint Lightbox Modal) -->
+    <div id="blueprint-modal" class="blueprint-modal" aria-hidden="true" style="display: none;">
+        <div class="blueprint-modal-backdrop" onclick="closeBlueprintModal()"></div>
+        <div class="blueprint-modal-dialog">
+            <div class="blueprint-modal-header">
+                <div class="modal-title-wrap">
+                    <i data-lucide="maximize-2"></i>
+                    <h3 id="blueprint-modal-title">정밀 엔지니어링 단면 구조도 대화면 확대 뷰어</h3>
+                </div>
+                <button class="blueprint-modal-close-btn" onclick="closeBlueprintModal()" title="닫기 (ESC)">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="blueprint-modal-body" id="blueprint-modal-body">
+                <!-- SVG 도면 삽입 영역 -->
+            </div>
+            <div class="blueprint-modal-footer">
+                <span class="modal-tip">💡 순수 벡터(SVG) 규격으로 화면 크기에 관계없이 모든 회로와 수치가 100% 선명하게 표시됩니다. [ESC] 키로 닫을 수 있습니다.</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Mermaid.js 다이어그램 렌더링 라이브러리 -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <script>

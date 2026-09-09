@@ -869,7 +869,10 @@ function renderDeepTechContent() {
                                         <i data-lucide="microchip"></i>
                                         <span>정밀 패키징 공학 단면 구조도 (Engineering Blueprint)</span>
                                     </div>
-                                    <div class="engineering-svg-wrap">
+                                    <div class="engineering-svg-wrap" onclick="openBlueprintModal('${subNode.id}', '${escapeHTML(subNode.name)}')" title="클릭하여 대화면으로 확대">
+                                        <div class="zoom-overlay-hint">
+                                            <i data-lucide="zoom-in"></i> 클릭하여 대화면 확대
+                                        </div>
                                         ${getEngineeringSvg(subNode.id)}
                                     </div>
                                     <p class="img-caption">📌 ${escapeHTML(subNode.name)} 3D 패키징 & 2.5D 인터포저 단면도 (JEDEC 720µm / 2048-bit 버스)</p>
@@ -1037,3 +1040,50 @@ function setupDeepTechGenerator() {
         });
     }
 }
+
+// ================= [대화면 도면 라이트박스 모달 제어 함수] =================
+function openBlueprintModal(nodeId, title) {
+    const modal = document.getElementById('blueprint-modal');
+    const modalTitle = document.getElementById('blueprint-modal-title');
+    const modalBody = document.getElementById('blueprint-modal-body');
+    if (!modal || !modalBody) return;
+
+    const svgHtml = getEngineeringSvg(nodeId);
+    if (!svgHtml) return;
+
+    if (modalTitle) {
+        modalTitle.textContent = title ? `${title} - 정밀 공학 단면도 확대 뷰어` : '정밀 엔지니어링 단면 구조도 대화면 확대 뷰어';
+    }
+    modalBody.innerHTML = svgHtml;
+    modal.style.display = 'flex';
+    
+    // 부드러운 확대 애니메이션
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+    
+    document.body.style.overflow = 'hidden';
+    lucide.createIcons();
+}
+
+function closeBlueprintModal() {
+    const modal = document.getElementById('blueprint-modal');
+    if (!modal) return;
+    
+    modal.classList.remove('active');
+    setTimeout(() => {
+        modal.style.display = 'none';
+        const modalBody = document.getElementById('blueprint-modal-body');
+        if (modalBody) modalBody.innerHTML = '';
+    }, 250);
+    
+    document.body.style.overflow = '';
+}
+
+// ESC 키 입력 시 모달 닫기
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeBlueprintModal();
+    }
+});
+

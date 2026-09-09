@@ -1195,6 +1195,41 @@ body {
     overflow: hidden;
     background: #070c14;
     border: 1px solid rgba(56, 189, 248, 0.2);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.engineering-svg-wrap:hover {
+    border-color: #38bdf8;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+    transform: translateY(-2px);
+}
+
+.zoom-overlay-hint {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.65rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+    z-index: 5;
+}
+
+.engineering-svg-wrap:hover .zoom-overlay-hint {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #7dd3fc;
 }
 
 .engineering-svg-blueprint {
@@ -1202,6 +1237,138 @@ body {
     height: auto;
     display: block;
     user-select: none;
+}
+
+/* ================= [대화면 도면 라이트박스 모달 스타일] ================= */
+.blueprint-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
+}
+
+.blueprint-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.blueprint-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 8, 16, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: zoom-out;
+}
+
+.blueprint-modal-dialog {
+    position: relative;
+    z-index: 10;
+    width: 94vw;
+    max-width: 1380px;
+    max-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    background: #090e1a;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(56, 189, 248, 0.18);
+    overflow: hidden;
+    transform: scale(0.96);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blueprint-modal.active .blueprint-modal-dialog {
+    transform: scale(1);
+}
+
+.blueprint-modal-header {
+    padding: 1rem 1.5rem;
+    background: #0f172a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.modal-title-wrap i {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #38bdf8;
+}
+
+.modal-title-wrap h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin: 0;
+}
+
+.blueprint-modal-close-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94a3b8;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.blueprint-modal-close-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.blueprint-modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #060a12;
+    max-height: calc(94vh - 120px);
+}
+
+.blueprint-modal-body svg {
+    width: 100%;
+    max-width: 1300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.blueprint-modal-footer {
+    padding: 0.75rem 1.5rem;
+    background: #0f172a;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: right;
+}
+
+.modal-tip {
+    font-size: 0.78rem;
+    color: #64748b;
 }
 
 
