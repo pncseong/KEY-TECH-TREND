@@ -633,15 +633,6 @@ function renderDeepTechContent() {
                                     <p class="img-caption">📌 ${escapeHTML(subNode.name)} 공학 구조 조감도</p>
                                 </div>
                             ` : '')}
-
-                            ${tech.diagram ? `
-                                <div class="diagram-box">
-                                    <h4><i data-lucide="share-2"></i> 칩 내부 신호 흐름 벡터 구조도</h4>
-                                    <div class="mermaid-render-area">
-                                        <pre class="mermaid">${tech.diagram}</pre>
-                                    </div>
-                                </div>
-                            ` : ''}
                         </div>
 
                         <!-- 우측 컬럼: 정밀 공학 분석, 스펙, 기업전략, 소부장 밸류체인 -->
@@ -687,17 +678,8 @@ function renderDeepTechContent() {
         });
     });
 
-    // 아이콘 생성 및 Mermaid 다이어그램 렌더링
+    // 아이콘 렌더링
     lucide.createIcons();
-    if (window.mermaid) {
-        try {
-            mermaid.run({
-                querySelector: '.mermaid'
-            });
-        } catch (e) {
-            console.warn('Mermaid render error:', e);
-        }
-    }
 }
 
 // 4. 신규 약어 즉석 백서 생성기 이벤트
