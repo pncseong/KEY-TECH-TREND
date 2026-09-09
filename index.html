@@ -36,10 +36,10 @@
 
         <!-- 메인 뷰 전환 탭 (트렌드 모니터 vs 심층 기술 백서) -->
         <div class="main-view-switcher">
-            <button class="view-btn active" id="btn-view-feed">
+            <button class="view-btn active" id="btn-view-feed" onclick="switchMainView('feed')">
                 <i data-lucide="radio"></i> 실시간 트렌드 모니터
             </button>
-            <button class="view-btn" id="btn-view-deeptech">
+            <button class="view-btn" id="btn-view-deeptech" onclick="switchMainView('deeptech')">
                 <i data-lucide="book-open-check"></i> 심층 기술 백서 (Deep-Tech Dossier)
             </button>
         </div>

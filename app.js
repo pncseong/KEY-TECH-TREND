@@ -7,7 +7,11 @@ const state = {
     searchQuery: '',
     minImpact: 1,
     selectedStage: 'all',
-    sortBy: 'impact'
+    sortBy: 'impact',
+    currentView: 'feed',
+    deepTechData: window.deepTechData || { tech_list: [] },
+    selectedTechId: 'hbm',
+    selectedSubNodeId: 'hbm3e'
 };
 
 // 카테고리 이름과 CSS 클래스 맵핑
@@ -25,8 +29,11 @@ const categoryClassMap = {
 
 // 초기 데이터 로딩 및 이벤트 바인딩
 function init() {
+    state.deepTechData = window.deepTechData || { tech_list: [] };
     fetchData();
     setupEventListeners();
+    setupViewSwitcher();
+    setupDeepTechGenerator();
 }
 
 if (document.readyState === "loading") {
@@ -410,47 +417,41 @@ function updateDebugInfo(renderedList) {
    🔬 심층 기술 백서 (Deep-Tech Dossier) 인터랙티브 엔진
    ========================================================== */
 
-// 심층 기술 전용 상태
-state.currentView = 'feed';
-state.deepTechData = window.deepTechData || { tech_list: [] };
-state.selectedTechId = 'hbm';
-state.selectedSubNodeId = 'hbm3e';
-
-// 초기화 시 뷰 스위처 및 심층 기술 엔진 바인딩
-const originalInit = init;
-init = function() {
-    originalInit();
-    setupViewSwitcher();
-    setupDeepTechGenerator();
-};
-
 // 1. 메인 뷰 스위처 (트렌드 모니터 vs 심층 백서)
-function setupViewSwitcher() {
+function switchMainView(viewName) {
     const btnFeed = document.getElementById('btn-view-feed');
     const btnDeep = document.getElementById('btn-view-deeptech');
     const secFeed = document.getElementById('view-feed-section');
     const secDeep = document.getElementById('view-deeptech-section');
 
-    if (btnFeed && btnDeep) {
-        btnFeed.addEventListener('click', () => {
-            btnFeed.classList.add('active');
-            btnDeep.classList.remove('active');
-            secFeed.style.display = 'block';
-            secDeep.style.display = 'none';
-            state.currentView = 'feed';
-            lucide.createIcons();
-        });
+    if (viewName === 'feed') {
+        if (btnFeed) btnFeed.classList.add('active');
+        if (btnDeep) btnDeep.classList.remove('active');
+        if (secFeed) secFeed.style.display = 'block';
+        if (secDeep) secDeep.style.display = 'none';
+        state.currentView = 'feed';
+    } else {
+        if (btnDeep) btnDeep.classList.add('active');
+        if (btnFeed) btnFeed.classList.remove('active');
+        if (secFeed) secFeed.style.display = 'none';
+        if (secDeep) secDeep.style.display = 'block';
+        state.currentView = 'deeptech';
+        renderDeepTechTabs();
+        renderDeepTechContent();
+    }
+    if (window.lucide) lucide.createIcons();
+}
+window.switchMainView = switchMainView;
 
-        btnDeep.addEventListener('click', () => {
-            btnDeep.classList.add('active');
-            btnFeed.classList.remove('active');
-            secFeed.style.display = 'none';
-            secDeep.style.display = 'block';
-            state.currentView = 'deeptech';
-            renderDeepTechTabs();
-            renderDeepTechContent();
-            lucide.createIcons();
-        });
+function setupViewSwitcher() {
+    const btnFeed = document.getElementById('btn-view-feed');
+    const btnDeep = document.getElementById('btn-view-deeptech');
+
+    if (btnFeed) {
+        btnFeed.addEventListener('click', () => switchMainView('feed'));
+    }
+    if (btnDeep) {
+        btnDeep.addEventListener('click', () => switchMainView('deeptech'));
     }
 }
 
