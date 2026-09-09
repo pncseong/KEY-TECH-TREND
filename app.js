@@ -683,8 +683,10 @@ function renderDeepTechContent() {
 }
 
 // ================= [Gemini API Key 관리 및 상태 제어] =================
+const DEFAULT_GEMINI_KEY = 'AIzaSyDI3vpA5q9P9vEdUAJiN7xC8PQomiMThhg';
+
 function getStoredGeminiApiKey() {
-    return localStorage.getItem('KEY_TECH_GEMINI_API_KEY') || '';
+    return localStorage.getItem('KEY_TECH_GEMINI_API_KEY') || DEFAULT_GEMINI_KEY;
 }
 
 function getStoredGeminiModel() {
@@ -711,20 +713,32 @@ function openGeminiApiModal() {
     const modelSelect = document.getElementById('gemini-model-select');
     if (!modal) return;
     
-    if (input) input.value = getStoredGeminiApiKey();
+    if (input) {
+        input.value = getStoredGeminiApiKey();
+    }
     if (modelSelect) modelSelect.value = getStoredGeminiModel();
     
     modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+    
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     if (window.lucide) lucide.createIcons();
+    if (input) input.focus();
 }
 
 function closeGeminiApiModal() {
     const modal = document.getElementById('gemini-api-modal');
     if (!modal) return;
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden', 'true');
+    
+    modal.classList.remove('active');
+    setTimeout(() => {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+    }, 200);
+    
     document.body.style.overflow = '';
 }
 
@@ -966,6 +980,15 @@ function setupDeepTechGenerator() {
         btn.addEventListener('click', handleGenerate);
         input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') handleGenerate();
+        });
+    }
+
+    const configBtn = document.getElementById('btn-gemini-config');
+    if (configBtn) {
+        configBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openGeminiApiModal();
         });
     }
 }
