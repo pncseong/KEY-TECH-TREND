@@ -14,6 +14,12 @@ window.EngineeringBlueprints = {
                 return getHybridHbmSvg();
             case 'hbf_flash':
                 return getHbfSvg();
+            case 'lpo_bridge':
+                return getLpoSvg();
+            case 'cpo_main_node':
+                return getCpoSvg();
+            case 'els_module':
+                return getElsSvg();
             default:
                 return null;
         }
@@ -627,6 +633,470 @@ function getHbfSvg() {
                 <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 단일 스택 용량: <tspan fill="#ffffff">128GB~512GB (HBM의 10배)</tspan></text>
                 <text x="250" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 비트당 단가: <tspan fill="#ffffff">DRAM 대비 1/5 이하</tspan></text>
                 <text x="460" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 주요 용도: <tspan fill="#ffffff">LLM 추론 온패키지 파라미터 저장</tspan></text>
+            </g>
+        </g>
+    </svg>
+    `;
+}
+
+
+// ============================================================================
+// [CPO 카테고리 3대 정밀 엔지니어링 도면 (광통신 / 실리콘 포토닉스)]
+// ============================================================================
+
+// 5. LPO (Linear Pluggable Optics): DSP-Less Direct Drive 광트랜시버 단면도
+function getLpoSvg() {
+    return `
+    <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="grid-lpo" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+            </pattern>
+            <linearGradient id="grad-lpo-case" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#334155"/>
+                <stop offset="100%" stop-color="#1e293b"/>
+            </linearGradient>
+            <linearGradient id="grad-optic-fiber" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#06b6d4"/>
+                <stop offset="50%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#070c14" rx="8"/>
+        <rect width="100%" height="100%" fill="url(#grid-lpo)" rx="8"/>
+        <rect x="1" y="1" width="758" height="478" fill="none" stroke="#1e293b" stroke-width="1.5" rx="8"/>
+
+        <!-- 헤더 -->
+        <rect x="12" y="12" width="736" height="32" fill="#0f172a" rx="4" stroke="#334155" stroke-width="1"/>
+        <text x="24" y="33" fill="#38bdf8" font-size="12" font-weight="700" font-family="'Outfit', sans-serif">LINEAR PLUGGABLE OPTICS (LPO): DSP-LESS DIRECT-DRIVE TRANSCEIVER ARCHITECTURE</text>
+        <text x="560" y="33" fill="#94a3b8" font-size="11" font-family="monospace">[Power -50% / Latency &lt; 100ns]</text>
+
+        <!-- 좌측: 기존 DSP 모듈 vs LPO 신호 체인 비교 -->
+        <g transform="translate(25, 55)">
+            <text x="0" y="15" fill="#e2e8f0" font-size="12" font-weight="600">■ 신호 체인 비교: 기존 DSP 광모듈 vs 저전력 LPO</text>
+
+            <!-- A. 기존 DSP 방식 -->
+            <g transform="translate(10, 30)">
+                <rect x="0" y="0" width="300" height="75" fill="#0f172a" stroke="#475569" stroke-width="1" rx="4"/>
+                <text x="15" y="20" fill="#94a3b8" font-size="10" font-weight="700">기존 광트랜시버 (DSP Retimer 탑재)</text>
+                
+                <rect x="15" y="32" width="60" height="26" fill="#1e293b" stroke="#64748b" rx="2"/>
+                <text x="45" y="48" fill="#94a3b8" font-size="8" text-anchor="middle">Switch SerDes</text>
+                
+                <text x="83" y="48" fill="#64748b" font-size="10">→</text>
+
+                <!-- 고발열 DSP 칩 -->
+                <rect x="95" y="32" width="80" height="26" fill="#7f1d1d" stroke="#ef4444" stroke-width="1.2" rx="2"/>
+                <text x="135" y="45" fill="#fca5a5" font-size="8" font-weight="700" text-anchor="middle">DSP / CDR 칩</text>
+                <text x="135" y="54" fill="#f87171" font-size="7" text-anchor="middle">전력 50% 소모</text>
+
+                <text x="183" y="48" fill="#64748b" font-size="10">→</text>
+
+                <rect x="195" y="32" width="90" height="26" fill="#1e293b" stroke="#64748b" rx="2"/>
+                <text x="240" y="48" fill="#94a3b8" font-size="8" text-anchor="middle">Driver / Laser EML</text>
+
+                <text x="15" y="68" fill="#ef4444" font-size="7">⚠️ 지연시간(Latency) ~100ns / 포트당 16~20W 고발열</text>
+            </g>
+
+            <!-- B. LPO 혁신 방식 (DSP 완전 제거) -->
+            <g transform="translate(10, 115)">
+                <rect x="0" y="0" width="300" height="85" fill="#022c22" stroke="#10b981" stroke-width="1.2" rx="4"/>
+                <text x="15" y="20" fill="#34d399" font-size="10" font-weight="800">LPO 혁신 (DSP-Less 직결 구동)</text>
+
+                <rect x="15" y="32" width="75" height="32" fill="#065f46" stroke="#34d399" rx="2"/>
+                <text x="52" y="47" fill="#ffffff" font-size="8" font-weight="700" text-anchor="middle">Switch SerDes</text>
+                <text x="52" y="58" fill="#a7f3d0" font-size="7" text-anchor="middle">112G PAM4 직결</text>
+
+                <!-- 굵은 직접 전송선 (Direct Drive) -->
+                <path d="M 95 48 L 175 48" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="4,2"/>
+                <polygon points="175,44 183,48 175,52" fill="#10b981"/>
+                <text x="135" y="42" fill="#34d399" font-size="7" font-weight="700" text-anchor="middle">DSP 제거 (Bypass)</text>
+
+                <!-- Linear Driver / TIA -->
+                <rect x="185" y="32" width="100" height="32" fill="#064e3b" stroke="#34d399" rx="2"/>
+                <text x="235" y="47" fill="#ffffff" font-size="8" font-weight="700" text-anchor="middle">Linear Driver &amp; TIA</text>
+                <text x="235" y="58" fill="#fef08a" font-size="7" text-anchor="middle">광엔진(Optical) 결합</text>
+
+                <text x="15" y="77" fill="#a7f3d0" font-size="8" font-weight="700">✓ 전력 소모 -50% (포트당 &lt; 8W) | 지연시간 &lt; 10ns 극저지연</text>
+            </g>
+
+            <!-- LPO 핵심 과제 박스 -->
+            <rect x="10" y="210" width="300" height="110" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="20" y="230" fill="#38bdf8" font-size="10" font-weight="700">■ LPO 상용화 핵심 공학 과제</text>
+            <text x="20" y="250" fill="#cbd5e1" font-size="8">• <tspan fill="#f59e0b" font-weight="700">신호 무결성(SI):</tspan> DSP 리타이머 없이 112Gbps/lane 지터(Jitter) 제어</text>
+            <text x="20" y="270" fill="#cbd5e1" font-size="8">• <tspan fill="#f59e0b" font-weight="700">전송 거리 제약:</tspan> 최대 수 미터(DAC/AOC)에서 데이터센터 내부 단거리용</text>
+            <text x="20" y="290" fill="#cbd5e1" font-size="8">• <tspan fill="#34d399" font-weight="700">과도기적 위상:</tspan> CPO 본격 양산 전 2024~2026 AI 클러스터 우선 채택</text>
+        </g>
+
+        <line x1="345" y1="55" x2="345" y2="385" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+        <!-- 우측: LPO 플러그형 트랜시버 폼팩터 단면 구조도 -->
+        <g transform="translate(365, 55)">
+            <text x="0" y="15" fill="#e2e8f0" font-size="12" font-weight="600">■ OSFP / QSFP-DD LPO 플러그형 광모듈 단면 구조</text>
+
+            <!-- 모듈 메탈 하우징 (Metal Shell) -->
+            <rect x="10" y="35" width="340" height="155" fill="url(#grad-lpo-case)" stroke="#64748b" stroke-width="1.2" rx="4"/>
+            <text x="25" y="55" fill="#94a3b8" font-size="9" font-weight="600">OSFP Transceiver Metal Shell (방열 핀 일체형)</text>
+
+            <!-- PCB 기판 -->
+            <rect x="25" y="115" width="310" height="10" fill="#047857" stroke="#10b981" stroke-width="0.8" rx="1"/>
+
+            <!-- 좌측: 골드 핑거 커넥터 (스위치 보드 결합부) -->
+            <g fill="#f59e0b">
+                <rect x="12" y="112" width="13" height="4"/>
+                <rect x="12" y="118" width="13" height="4"/>
+                <rect x="12" y="124" width="13" height="4"/>
+            </g>
+            <text x="20" y="145" fill="#f59e0b" font-size="8" font-weight="700">Gold Finger</text>
+            <text x="20" y="155" fill="#cbd5e1" font-size="7">(Host SerDes)</text>
+
+            <!-- 중앙: Linear Driver IC & Linear TIA -->
+            <rect x="75" y="85" width="70" height="28" fill="#0284c7" stroke="#38bdf8" stroke-width="1" rx="2"/>
+            <text x="110" y="100" fill="#ffffff" font-size="8" font-weight="700" text-anchor="middle">Linear Driver</text>
+            <text x="110" y="109" fill="#bae6fd" font-size="7" text-anchor="middle">IC (Macom/Marvell)</text>
+
+            <rect x="155" y="85" width="60" height="28" fill="#0284c7" stroke="#38bdf8" stroke-width="1" rx="2"/>
+            <text x="185" y="100" fill="#ffffff" font-size="8" font-weight="700" text-anchor="middle">Linear TIA</text>
+            <text x="185" y="109" fill="#bae6fd" font-size="7" text-anchor="middle">수신 증폭기</text>
+
+            <!-- 우측: TOSA / ROSA 광학 서브어셈블리 -->
+            <rect x="235" y="75" width="85" height="48" fill="#065f46" stroke="#34d399" stroke-width="1.2" rx="3"/>
+            <text x="277" y="93" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle">TOSA / ROSA</text>
+            <text x="277" y="104" fill="#a7f3d0" font-size="7" text-anchor="middle">EML Laser &amp; PD</text>
+            <text x="277" y="115" fill="#fef08a" font-size="7" text-anchor="middle">800G / 1.6T 광소자</text>
+
+            <!-- 우측 끝: MPO 광케이블 리셉터클 -->
+            <rect x="325" y="88" width="22" height="22" fill="#1e293b" stroke="#38bdf8" stroke-width="1" rx="2"/>
+            <!-- 광섬유 빔 라인 -->
+            <line x1="320" y1="99" x2="347" y2="99" stroke="url(#grad-optic-fiber)" stroke-width="4"/>
+            <text x="336" y="125" fill="#38bdf8" font-size="7" font-weight="700" text-anchor="middle">MPO</text>
+
+            <!-- 광학 경로 표시 -->
+            <path d="M 295 99 L 325 99" fill="none" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- 설명 박스 -->
+            <rect x="10" y="200" width="340" height="120" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="20" y="220" fill="#38bdf8" font-size="10" font-weight="700">■ 주요 밸류체인 및 제조 생태계</text>
+            <text x="20" y="240" fill="#cbd5e1" font-size="9">• <tspan fill="#ffffff" font-weight="700">광트랜시버 선도:</tspan> 중국 이노라이트(Innolight), 미국 코히런트, 루멘텀</text>
+            <text x="20" y="260" fill="#cbd5e1" font-size="9">• <tspan fill="#ffffff" font-weight="700">Linear IC 공급:</tspan> 마벨(Marvell), 맥스리니어(MaxLinear), 마콤(Macom)</text>
+            <text x="20" y="280" fill="#cbd5e1" font-size="9">• <tspan fill="#ffffff" font-weight="700">국내 광부품 수혜:</tspan> 옵티코어, 오이솔루션, 우리넷, 피피아이</text>
+            <text x="20" y="300" fill="#10b981" font-size="8">✓ 핵심: 기존 데이터센터 스위치 슬롯에 바로 꽂아 쓸 수 있어 즉각 도입 가능</text>
+        </g>
+
+        <!-- 하단 메트릭 바 -->
+        <g transform="translate(20, 395)">
+            <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ LPO (Linear Pluggable Optics) 기술 지표 요약</text>
+            <g transform="translate(15, 28)">
+                <rect x="0" y="2" width="10" height="10" fill="#10b981" rx="2"/>
+                <text x="15" y="11" fill="#cbd5e1" font-size="10">Linear Driver &amp; TIA (DSP 제거)</text>
+                <rect x="230" y="2" width="10" height="10" fill="#0284c7" rx="2"/>
+                <text x="245" y="11" fill="#cbd5e1" font-size="10">기존 OSFP/QSFP-DD 호환 폼팩터</text>
+                <rect x="480" y="2" width="10" height="10" fill="#f59e0b" rx="2"/>
+                <text x="495" y="11" fill="#cbd5e1" font-size="10">112G PAM4 고속 신호 직결</text>
+            </g>
+            <g transform="translate(15, 52)">
+                <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 전력 절감율: <tspan fill="#ffffff">-50% (포트당 &lt; 8W)</tspan></text>
+                <text x="180" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 지연시간(Latency): <tspan fill="#ffffff">&lt; 100ns (극저지연)</tspan></text>
+                <text x="370" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 대역폭 규격: <tspan fill="#ffffff">800G / 1.6T AI 클러스터</tspan></text>
+                <text x="560" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 역할: <tspan fill="#fef08a">CPO 이전 징검다리</tspan></text>
+            </g>
+        </g>
+    </svg>
+    `;
+}
+
+// 6. CPO (Co-Packaged Optics): 102.4Tbps 단일 패키지 광엔진 3D 본딩 및 인터포저 정밀 단면도
+function getCpoSvg() {
+    return `
+    <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="grid-cpo" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+            </pattern>
+            <linearGradient id="grad-switch-asic" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#1e3a8a"/>
+                <stop offset="100%" stop-color="#0f172a"/>
+            </linearGradient>
+            <linearGradient id="grad-siph-pic" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0891b2"/>
+                <stop offset="100%" stop-color="#0e7490"/>
+            </linearGradient>
+            <linearGradient id="grad-eic" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#4f46e5"/>
+                <stop offset="100%" stop-color="#3730a3"/>
+            </linearGradient>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#070c14" rx="8"/>
+        <rect width="100%" height="100%" fill="url(#grid-cpo)" rx="8"/>
+        <rect x="1" y="1" width="758" height="478" fill="none" stroke="#1e293b" stroke-width="1.5" rx="8"/>
+
+        <!-- 헤더 -->
+        <rect x="12" y="12" width="736" height="32" fill="#0f172a" rx="4" stroke="#334155" stroke-width="1"/>
+        <text x="24" y="33" fill="#38bdf8" font-size="12" font-weight="700" font-family="'Outfit', sans-serif">102.4Tbps CO-PACKAGED OPTICS (CPO): ASIC + 3D SILICON PHOTONICS BLUEPRINT</text>
+        <text x="540" y="33" fill="#94a3b8" font-size="11" font-family="monospace">[Energy &lt; 5 pJ/bit / TSMC COUPE 3D]</text>
+
+        <!-- 좌측: 단일 인터포저 온패키지 통합 조감도 (Top-down & Side View) -->
+        <g transform="translate(25, 55)">
+            <text x="0" y="15" fill="#e2e8f0" font-size="12" font-weight="600">■ 2.5D 인터포저 기판 온패키지 통합 조감도</text>
+
+            <!-- 대형 패키지 기판 (FC-BGA Substrate) -->
+            <rect x="0" y="240" width="300" height="28" fill="#334155" stroke="#475569" stroke-width="1" rx="2"/>
+            <text x="150" y="258" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="middle">Large-Scale FC-BGA Substrate (100x100mm)</text>
+
+            <!-- 2.5D 고밀도 인터포저 (Silicon / Organic Interposer) -->
+            <rect x="10" y="210" width="280" height="22" fill="#475569" stroke="#64748b" stroke-width="1" rx="2"/>
+            <text x="150" y="225" fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle">2.5D High-Density Interposer with Sub-Micron RDL</text>
+
+            <!-- 중앙: 102.4T 스위치 ASIC (대형 칩) -->
+            <rect x="80" y="90" width="140" height="110" fill="url(#grad-switch-asic)" stroke="#38bdf8" stroke-width="2" rx="4"/>
+            <text x="150" y="135" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">102.4Tbps Switch</text>
+            <text x="150" y="152" fill="#38bdf8" font-size="11" font-weight="800" text-anchor="middle">ASIC 반도체</text>
+            <text x="150" y="170" fill="#94a3b8" font-size="9" text-anchor="middle">(Broadcom Tomahawk / TSMC 3nm)</text>
+
+            <!-- 좌측 광엔진 (Optical Engine #1) -->
+            <rect x="10" y="125" width="55" height="75" fill="url(#grad-siph-pic)" stroke="#06b6d4" stroke-width="1.2" rx="3"/>
+            <text x="37" y="155" fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle">Optical</text>
+            <text x="37" y="167" fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle">Engine</text>
+            <text x="37" y="180" fill="#cffafe" font-size="7" text-anchor="middle">(SiPh PIC)</text>
+
+            <!-- 우측 광엔진 (Optical Engine #2) -->
+            <rect x="235" y="125" width="55" height="75" fill="url(#grad-siph-pic)" stroke="#06b6d4" stroke-width="1.2" rx="3"/>
+            <text x="262" y="155" fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle">Optical</text>
+            <text x="262" y="167" fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle">Engine</text>
+            <text x="262" y="180" fill="#cffafe" font-size="7" text-anchor="middle">(SiPh PIC)</text>
+
+            <!-- 초단거리 인터커넥트 연결선 (수 mm 단위 거리) -->
+            <path d="M 65 160 L 80 160" fill="none" stroke="#f59e0b" stroke-width="3"/>
+            <path d="M 220 160 L 235 160" fill="none" stroke="#f59e0b" stroke-width="3"/>
+            <text x="72" y="152" fill="#fbbf24" font-size="7" text-anchor="middle">&lt;5mm</text>
+            <text x="227" y="152" fill="#fbbf24" font-size="7" text-anchor="middle">&lt;5mm</text>
+
+            <!-- 광섬유 리본 케이블 출력 (Fiber Ribbon) -->
+            <path d="M 10 160 L -10 160" fill="none" stroke="#06b6d4" stroke-width="4"/>
+            <path d="M 290 160 L 310 160" fill="none" stroke="#06b6d4" stroke-width="4"/>
+
+            <!-- CPO 혁신 효과 -->
+            <rect x="0" y="275" width="300" height="45" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="10" y="293" fill="#38bdf8" font-size="9" font-weight="700">✓ 전기 구리 배선 거리: 기존 30~50cm ➡️ 수 mm (1/100 단축)</text>
+            <text x="10" y="308" fill="#34d399" font-size="8">✓ 통신 전력 50% 절감 &amp; SerDes 고열 간섭 원천 제거</text>
+        </g>
+
+        <line x1="335" y1="55" x2="335" y2="385" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+        <!-- 우측: 광엔진(Optical Engine) 3D 적층 단면 초정밀 확대도 -->
+        <g transform="translate(355, 55)">
+            <text x="0" y="15" fill="#e2e8f0" font-size="12" font-weight="600">■ 실리콘 포토닉스(SiPh) 3D 광엔진 단면 구조</text>
+
+            <!-- 상단: EIC 다이 (Electronic IC: TIA/Driver) -->
+            <rect x="20" y="35" width="280" height="35" fill="url(#grad-eic)" stroke="#818cf8" stroke-width="1.2" rx="3"/>
+            <text x="160" y="52" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">Electronic IC (EIC 다이)</text>
+            <text x="160" y="63" fill="#c7d2fe" font-size="8" text-anchor="middle">초고속 드라이버(Driver) &amp; TIA 아날로그 회로</text>
+
+            <!-- Direct Cu-Cu 하이브리드 본딩 인터페이스 (EIC-PIC 간) -->
+            <rect x="20" y="70" width="280" height="15" fill="#082f49" stroke="#38bdf8" stroke-width="0.8"/>
+            <g fill="#f59e0b">
+                <circle cx="50" cy="77" r="2.5"/><circle cx="90" cy="77" r="2.5"/><circle cx="130" cy="77" r="2.5"/>
+                <circle cx="170" cy="77" r="2.5"/><circle cx="210" cy="77" r="2.5"/><circle cx="250" cy="77" r="2.5"/>
+            </g>
+            <text x="295" y="81" fill="#fbbf24" font-size="7">Cu-Cu Direct Bonding</text>
+
+            <!-- 하단: PIC 다이 (Photonic IC: 실리콘 포토닉스 광학 칩) -->
+            <rect x="20" y="85" width="280" height="85" fill="url(#grad-siph-pic)" stroke="#06b6d4" stroke-width="1.5" rx="3"/>
+            <text x="160" y="105" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">Photonic IC (PIC 다이 / Silicon Photonics)</text>
+
+            <!-- 실리콘 광도파로(Waveguide) 및 링 변조기 패턴 -->
+            <g fill="#083344" stroke="#67e8f9" stroke-width="1">
+                <!-- 광도파로 라인 -->
+                <line x1="30" y1="130" x2="290" y2="130" stroke="#22d3ee" stroke-width="2"/>
+                <!-- 마이크로 링 변조기 (Micro-Ring Modulator) -->
+                <circle cx="90" cy="130" r="10" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                <circle cx="150" cy="130" r="10" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                <!-- Ge 광검출기 (Germanium PD) -->
+                <rect x="210" y="122" width="30" height="16" fill="#1e293b" stroke="#34d399" rx="1"/>
+            </g>
+            <text x="90" y="152" fill="#fbbf24" font-size="7" text-anchor="middle">Micro-Ring</text>
+            <text x="150" y="152" fill="#fbbf24" font-size="7" text-anchor="middle">Modulator</text>
+            <text x="225" y="152" fill="#34d399" font-size="7" text-anchor="middle">Ge PD</text>
+
+            <!-- V-Groove 광섬유 결합부 (우측 끝) -->
+            <polygon points="275,120 295,130 275,140" fill="#0f172a" stroke="#38bdf8"/>
+            <text x="270" y="160" fill="#38bdf8" font-size="8" font-weight="700">V-Groove 정렬</text>
+
+            <!-- 하부 2.5D 인터포저 접합 범프 -->
+            <g fill="#cbd5e1">
+                <rect x="40" y="170" width="8" height="10" rx="1"/>
+                <rect x="90" y="170" width="8" height="10" rx="1"/>
+                <rect x="140" y="170" width="8" height="10" rx="1"/>
+                <rect x="190" y="170" width="8" height="10" rx="1"/>
+                <rect x="240" y="170" width="8" height="10" rx="1"/>
+            </g>
+
+            <!-- 3D 광엔진 설명 박스 -->
+            <rect x="10" y="195" width="300" height="125" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="20" y="215" fill="#38bdf8" font-size="10" font-weight="700">■ TSMC COUPE 3D 광학 패키징 기술</text>
+            <text x="20" y="235" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">EIC-PIC 3D 수직 적층:</tspan> 기생 커패시턴스를 1/10 이하로 줄여 초고속 구동</text>
+            <text x="20" y="255" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">마이크로 링 변조기:</tspan> 기존 마하젠더 대비 소자 면적 90% 이상 축소</text>
+            <text x="20" y="275" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">광섬유 정렬 공차:</tspan> 자동화 V-Groove 피치로 서브마이크론(&lt;0.5µm) 정밀 결합</text>
+            <text x="20" y="295" fill="#34d399" font-size="8">✓ 핵심 장비사: 한미반도체, 팸텍, 제이앤티씨 (광학 결합 및 테스트 장비)</text>
+        </g>
+
+        <!-- 하단 메트릭 바 -->
+        <g transform="translate(20, 395)">
+            <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ CPO (Co-Packaged Optics) 정량 엔지니어링 메트릭</text>
+            <g transform="translate(15, 28)">
+                <rect x="0" y="2" width="10" height="10" fill="#0891b2" rx="2"/>
+                <text x="15" y="11" fill="#cbd5e1" font-size="10">SiPh PIC (실리콘 포토닉스 광학 칩)</text>
+                <rect x="230" y="2" width="10" height="10" fill="#4f46e5" rx="2"/>
+                <text x="245" y="11" fill="#cbd5e1" font-size="10">EIC 드라이버 (3D Cu-Cu 직접 적층)</text>
+                <rect x="480" y="2" width="10" height="10" fill="#1e3a8a" stroke="#38bdf8" stroke-width="1" rx="2"/>
+                <text x="495" y="11" fill="#cbd5e1" font-size="10">102.4Tbps 초고속 스위치 ASIC</text>
+            </g>
+            <g transform="translate(15, 52)">
+                <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 통신 에너지 효율: <tspan fill="#ffffff">&lt; 5 pJ/bit (구리 대비 -50%)</tspan></text>
+                <text x="240" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 전송 대역폭: <tspan fill="#ffffff">102.4 Tbps 차세대 스위치</tspan></text>
+                <text x="460" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 패키징 기술: <tspan fill="#fef08a">TSMC COUPE 3D 이종집적</tspan></text>
+            </g>
+        </g>
+    </svg>
+    `;
+}
+
+// 7. ELS (External Laser Source): 외장 레이저 광원 모듈 핫스왑 블루프린트
+function getElsSvg() {
+    return `
+    <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="grid-els" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+            </pattern>
+            <linearGradient id="grad-laser-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ef4444"/>
+                <stop offset="50%" stop-color="#f97316"/>
+                <stop offset="100%" stop-color="#fbbf24"/>
+            </linearGradient>
+            <linearGradient id="grad-tec" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="100%" stop-color="#0369a1"/>
+            </linearGradient>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#070c14" rx="8"/>
+        <rect width="100%" height="100%" fill="url(#grid-els)" rx="8"/>
+        <rect x="1" y="1" width="758" height="478" fill="none" stroke="#1e293b" stroke-width="1.5" rx="8"/>
+
+        <!-- 헤더 -->
+        <rect x="12" y="12" width="736" height="32" fill="#0f172a" rx="4" stroke="#334155" stroke-width="1"/>
+        <text x="24" y="33" fill="#38bdf8" font-size="12" font-weight="700" font-family="'Outfit', sans-serif">EXTERNAL LASER SOURCE (ELS): BLIND-MATE HOT-SWAPPABLE CW LASER BLUEPRINT</text>
+        <text x="540" y="33" fill="#94a3b8" font-size="11" font-family="monospace">[OIF ELSFP Standard / Laser Thermal Isolation]</text>
+
+        <!-- 좌측: 전면 패널 핫스왑 분리 개념도 -->
+        <g transform="translate(25, 55)">
+            <text x="0" y="15" fill="#e2e8f0" font-size="12" font-weight="600">■ 시스템 섀시 열 분리 (Thermal Isolation) 개념도</text>
+
+            <!-- 스위치 섀시 외곽 (1RU Chassis) -->
+            <rect x="0" y="35" width="300" height="230" fill="#0f172a" stroke="#334155" stroke-width="1.2" rx="4"/>
+            <text x="15" y="55" fill="#94a3b8" font-size="9" font-weight="700">1RU Data Center Switch Chassis</text>
+
+            <!-- 전면 패널 (Front Panel) -->
+            <rect x="10" y="65" width="75" height="185" fill="#1e293b" stroke="#64748b" stroke-width="1" rx="3"/>
+            <text x="47" y="85" fill="#cbd5e1" font-size="9" font-weight="700" text-anchor="middle">Front Panel</text>
+            <text x="47" y="96" fill="#94a3b8" font-size="7" text-anchor="middle">(40~50°C)</text>
+
+            <!-- ELSFP 핫스왑 모듈 슬롯 (전면 꽂힘) -->
+            <rect x="15" y="110" width="65" height="50" fill="#b91c1c" stroke="#ef4444" stroke-width="1.2" rx="2"/>
+            <text x="47" y="130" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle">ELSFP 모듈</text>
+            <text x="47" y="142" fill="#fca5a5" font-size="7" text-anchor="middle">CW Laser 광원</text>
+            <text x="47" y="153" fill="#fef08a" font-size="7" text-anchor="middle">Hot-Swappable</text>
+
+            <!-- 레이저 빛 전송 광섬유 (PMF 케이블) -->
+            <path d="M 80 135 C 120 135, 130 180, 165 180" fill="none" stroke="url(#grad-laser-beam)" stroke-width="3" stroke-dasharray="4,2"/>
+            <text x="125" y="150" fill="#fbbf24" font-size="7" font-weight="700">PMF 광섬유</text>
+            <text x="125" y="160" fill="#cbd5e1" font-size="6">(빛만 공급)</text>
+
+            <!-- 내부 고열 스위치 ASIC + CPO 패키지 (중앙) -->
+            <rect x="165" y="130" width="120" height="95" fill="#7f1d1d" stroke="#dc2626" stroke-width="1.5" rx="4"/>
+            <text x="225" y="155" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">CPO Switch 패키지</text>
+            <text x="225" y="170" fill="#fca5a5" font-size="8" text-anchor="middle">100°C+ 극심한 고열</text>
+            <text x="225" y="195" fill="#fef08a" font-size="8" font-weight="700" text-anchor="middle">✓ 레이저 부재 (안전)</text>
+            <text x="225" y="210" fill="#ffffff" font-size="7" text-anchor="middle">SiPh 변조기만 존재</text>
+
+            <!-- 분리 효과 요약 -->
+            <rect x="0" y="275" width="300" height="45" fill="#022c22" rx="4" stroke="#10b981" stroke-width="1"/>
+            <text x="10" y="293" fill="#34d399" font-size="9" font-weight="700">✓ 고열 분리 효과: 레이저 다이오드 수명 10배 연장 (신뢰성)</text>
+            <text x="10" y="308" fill="#a7f3d0" font-size="8">✓ 무중단 유지보수: 레이저 고장 시 스위치 전원 끄지 않고 즉시 교체</text>
+        </g>
+
+        <line x1="335" y1="55" x2="335" y2="385" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+        <!-- 우측: ELSFP 플러그형 광원 모듈 내부 정밀 단면도 -->
+        <g transform="translate(355, 55)">
+            <text x="0" y="15" fill="#e2e8f0" font-size="12" font-weight="600">■ ELSFP 플러그형 외장 레이저 모듈 내부 단면</text>
+
+            <!-- 메탈 모듈 하우징 -->
+            <rect x="15" y="35" width="330" height="150" fill="#1e293b" stroke="#475569" stroke-width="1.2" rx="4"/>
+            <text x="30" y="55" fill="#94a3b8" font-size="9" font-weight="700">OIF ELSFP Standard Metal Housing</text>
+
+            <!-- 마이크로 TEC 냉각기 (Thermo-Electric Cooler) -->
+            <rect x="35" y="130" width="180" height="15" fill="url(#grad-tec)" stroke="#0284c7" stroke-width="1" rx="1"/>
+            <text x="125" y="141" fill="#ffffff" font-size="8" font-weight="700" text-anchor="middle">Micro-TEC 항온 냉각기 (45°C 정밀 유지)</text>
+
+            <!-- 서브마운트 기판 -->
+            <rect x="45" y="118" width="160" height="10" fill="#334155" rx="1"/>
+
+            <!-- InP CW High-Power DFB 레이저 다이오드 어레이 (4채널) -->
+            <g fill="#dc2626">
+                <rect x="55" y="90" width="20" height="25" rx="2"/>
+                <rect x="85" y="90" width="20" height="25" rx="2"/>
+                <rect x="115" y="90" width="20" height="25" rx="2"/>
+                <rect x="145" y="90" width="20" height="25" rx="2"/>
+            </g>
+            <text x="107" y="82" fill="#fca5a5" font-size="8" font-weight="800" text-anchor="middle">InP CW DFB Laser Array</text>
+
+            <!-- 레이저 빔 방출선 -->
+            <line x1="170" y1="102" x2="225" y2="102" stroke="url(#grad-laser-beam)" stroke-width="3"/>
+
+            <!-- 광 아이솔레이터 (Optical Isolator: 반사광 차단) -->
+            <rect x="200" y="88" width="25" height="28" fill="#475569" stroke="#94a3b8" stroke-width="1" rx="1"/>
+            <text x="212" y="125" fill="#94a3b8" font-size="7" text-anchor="middle">Isolator</text>
+
+            <!-- 초정밀 집광 렌즈 (Coupling Lens) -->
+            <circle cx="240" cy="102" r="8" fill="#0891b2" stroke="#22d3ee" stroke-width="1"/>
+            <text x="240" y="125" fill="#22d3ee" font-size="7" text-anchor="middle">Lens</text>
+
+            <!-- 블라인드 메이트 (Blind-Mate) MPO 광학 커넥터 -->
+            <rect x="265" y="85" width="65" height="35" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" rx="3"/>
+            <text x="297" y="102" fill="#ffffff" font-size="8" font-weight="700" text-anchor="middle">Blind-Mate</text>
+            <text x="297" y="113" fill="#38bdf8" font-size="7" text-anchor="middle">MPO Connector</text>
+
+            <!-- 설명 박스 -->
+            <rect x="10" y="195" width="340" height="125" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="20" y="215" fill="#38bdf8" font-size="10" font-weight="700">■ ELS 핵심 밸류체인 및 기술 규격</text>
+            <text x="20" y="235" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">핵심 광원 공급사:</tspan> 루멘텀(Lumentum), 코히런트(Coherent), 브로드컴</text>
+            <text x="20" y="255" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">광출력 규격:</tspan> 채널당 100mW+ 초고출력 연속파(CW) 1310nm 대역</text>
+            <text x="20" y="275" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">국내 수혜 생태계:</tspan> 오이솔루션, 빛과전자, 라이트론 (광원 모듈 패키징)</text>
+            <text x="20" y="295" fill="#10b981" font-size="8">✓ CPO의 가장 큰 약점이었던 레이저 수명 및 교체 난제를 해결한 열쇠</text>
+        </g>
+
+        <!-- 하단 메트릭 바 -->
+        <g transform="translate(20, 395)">
+            <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ ELS (External Laser Source) 주요 엔지니어링 지표</text>
+            <g transform="translate(15, 28)">
+                <rect x="0" y="2" width="10" height="10" fill="#b91c1c" rx="2"/>
+                <text x="15" y="11" fill="#cbd5e1" font-size="10">InP High-Power CW Laser (연속파 광원)</text>
+                <rect x="230" y="2" width="10" height="10" fill="#0284c7" rx="2"/>
+                <text x="245" y="11" fill="#cbd5e1" font-size="10">Micro-TEC 능동 온도 제어 (45°C)</text>
+                <rect x="470" y="2" width="10" height="10" fill="#38bdf8" rx="2"/>
+                <text x="485" y="11" fill="#cbd5e1" font-size="10">Blind-Mate MPO 초정밀 접속</text>
+            </g>
+            <g transform="translate(15, 52)">
+                <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 수명 연장(MTBF): <tspan fill="#ffffff">고열 분리로 10배 연장</tspan></text>
+                <text x="230" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 광출력: <tspan fill="#ffffff">채널당 100mW+ CW 파워</tspan></text>
+                <text x="460" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 유지보수: <tspan fill="#fef08a">무중단 핫스왑(Hot-Swap) 교체</tspan></text>
             </g>
         </g>
     </svg>
