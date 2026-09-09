@@ -472,10 +472,13 @@ function renderDeepTechTabs() {
         `;
         card.addEventListener('click', () => {
             state.selectedTechId = tech.id;
-            if (tech.nodes && tech.nodes.length > 0) {
-                state.selectedSubNodeId = tech.nodes[0].id;
-            }
             renderDeepTechTabs();
+            renderDeepTechContent();
+        });
+        tabsContainer.appendChild(card);
+    });
+}
+
 // 정밀 엔지니어링 SVG 구조 단면도 생성기 (CAD/반도체 공학 규격)
 function getEngineeringSvg(nodeId) {
     if (nodeId === 'hbm4_foundry') {
