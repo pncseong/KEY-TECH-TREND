@@ -235,6 +235,36 @@
           }
         }
       ]
+    },
+    {
+      "id": "glass_core_substrate",
+      "name": "유리 코어 기판 (Glass Core Substrate)",
+      "abbr": "GCS",
+      "badge": "차세대 패키징 기판",
+      "summary": "유리 코어 기판(GCS)은 기존의 유기물(Organic) 기판을 특수 처리된 얇은 유리로 대체한 차세대 반도체 패키징 기판입니다. 실리콘과 유사한 낮은 열팽창계수(CTE)와 우수한 전기적 특성(저유전율)을 바탕으로 AI 가속기, HPC 등 대면적 칩렛 패키지에서 발생하는 기판 휨(Warpage) 현상을 획기적으로 개선하고 초미세 회로 구현을 가능하게 하는 핵심 기술입니다.",
+      "diagram": "graph TD\n    subgraph Glass Core Substrate Value Proposition\n        A[Problem: Advanced Packaging Bottlenecks] --> B{Warpage & Signal Integrity Issues};\n        B --> C[Organic Substrate Limitations<br/>- High CTE: ~17 ppm/°C<br/>- High Dk/Df<br/>- Limited Fine Pitch];\n        D[Solution: Glass Core Substrate] --> E{Key Enabler: TGV};\n        E[Through-Glass Via] --> F[Ultra-Fine Pitch RDL];\n        D --> G[Superior Material Properties<br/>- Low CTE: 3-8 ppm/°C<br/>- Low Dk/Df<br/>- Ultra-Flat Surface];\n        G & F --> H[Benefits<br/>- Near-Zero Warpage<br/>- High I/O Density<br/>- Lower Power Consumption];\n        H --> I[Application: AI/HPC Chiplet Packages];\n    end\n    style C fill:#842029,stroke:#f5c2c7,color:#fff\n    style G fill:#0c4a6e,stroke:#bae6fd,color:#fff",
+      "framework": {
+        "fundamentals": "유리 기판의 핵심 작동 원리는 재료공학적 특성에 기반합니다. 첫째, 열팽창계수(CTE)가 3~8 ppm/°C로 실리콘(Si)의 ~2.6 ppm/°C와 매우 유사하여, 칩과 기판 간의 열팽창 차이로 인한 휨(Warpage) 현상을 기존 유기 기판(CTE ~17 ppm/°C) 대비 80% 이상 억제합니다. 둘째, 유리의 유전율(Dk)은 ~4.0, 유전손실(Df)은 ~0.002 수준으로 유기 기판보다 월등히 낮아 고주파 신호의 손실과 왜곡을 최소화하며, 이는 데이터 전송 속도 향상과 전력 효율 개선으로 직결됩니다. 셋째, 나노미터(nm) 수준의 표면 조도(Ra < 1nm)와 높은 강성(Young's Modulus: ~70 GPa)은 2/2µm 이하의 초미세 재배선층(RDL) 형성을 가능하게 하여 I/O 밀도를 10배 이상 높일 수 있는 기반을 제공합니다.",
+        "process_tech": "1. **유리 코어 준비(Glass Core Prep):** 고순도 보로실리케이트 또는 알루미노실리케이트 유리 원장을 510x515mm 등 표준 사이즈로 절단하고 정밀 세정 및 폴리싱 공정을 거칩니다.\n2. **관통 전극 형성(TGV Formation):** 피코초(ps) 또는 펨토초(fs) 레이저를 이용한 '유도 관통(Laser-Induced Etching)' 방식으로 유리에 마이크로 홀을 형성합니다. 이 방식은 열 손상과 미세 균열을 최소화하며 10:1 이상의 높은 종횡비를 구현하는 핵심 공정입니다.\n3. **TGV 충전 및 RDL 형성(Via Fill & RDL):** 스퍼터링으로 구리 시드층(Seed Layer)을 증착한 후, 전해 도금(Electrochemical Deposition)을 통해 TGV 내부를 구리로 완벽하게 채웁니다. 이후 반도체 노광/식각 공정(SAP)을 통해 표면에 수 마이크로미터 피치의 재배선층(RDL)을 형성합니다.\n4. **빌드업 및 적층(Build-up Layers):** 필요에 따라 폴리머 절연층과 추가적인 RDL 층을 기판 양면에 반복적으로 쌓아 올려 다층 기판 구조를 완성합니다.\n5. **표면 처리 및 개별화(Surface Finish & Singulation):** 칩 실장을 위한 패드에 무전해 니켈/금 도금(ENIG) 등 표면 처리를 진행하고, 레이저 다이싱(Laser Dicing)으로 대형 패널을 개별 칩 기판 단위로 절단하여 최종 제품을 완성합니다.",
+        "bottlenecks": "가장 큰 기술적 난제는 TGV(Through-Glass Via) 형성 공정의 수율과 비용입니다. 레이저 가공 시 발생하는 미세 균열(Micro-crack)은 기판의 장기 신뢰성을 저하시키는 치명적 결함이 될 수 있습니다. 또한, 유리의 취성(Brittleness)으로 인해 핸들링 및 공정 중 파손 위험이 높아 수율 확보가 어렵고, 이는 높은 생산 비용의 원인이 됩니다. 기존 유기 기판 공정 라인과 호환되지 않는 특수 설비(레이저 드릴러, 글래스 핸들러 등)에 대한 대규모 초기 투자 부담도 상용화의 주요 허들로 작용합니다.",
+        "roadmap": "Intel이 2026~2027년 출시 예정인 차세대 데이터센터용 GPU '팔콘 쇼어스(Falcon Shores)'에 유리 기판을 최초로 상용 적용할 계획을 발표하며 기술 로드맵을 주도하고 있습니다. SKC의 자회사 앱솔릭스는 2024년 하반기 미국 조지아 공장 양산을 목표로 하고 있으며, 삼성전기, DNP 등 글로벌 기판 제조사들도 2025~2026년 양산을 목표로 파일럿 라인을 가동하며 고객사 확보에 나서고 있습니다. 초기에는 고가의 AI/서버용 반도체에 한정적으로 적용되다가, 2028년 이후 수율 안정화와 가격 경쟁력 확보를 통해 점차 모바일 AP, 네트워크 장비 등 하이엔드 시장 전반으로 확대될 전망입니다."
+      },
+      "nodes": [
+        {
+          "id": "tgv_glass_core_substrate",
+          "name": "TGV 기반 유리 코어 기판",
+          "tag": "양산 준비 (Pilot Production)",
+          "desc": "TGV(Through-Glass Via, 유리 관통 전극)는 유리 기판의 핵심 기술로, 기판을 수직으로 관통하는 미세한 전기적 통로입니다. 레이저로 유리에 수십 마이크로미터 직경의 홀을 뚫고 구리(Cu)로 채워 형성하며, 칩과 기판, 기판과 PCB 사이의 신호를 전달합니다. TGV는 기존 유기 기판의 관통 전극(PTH) 대비 직경과 피치를 획기적으로 줄일 수 있어 I/O 집적도를 극대화하고, 신호 경로를 단축시켜 전기적 성능(저항, 인덕턴스 감소)을 크게 향상시킵니다. 이를 통해 대면적 칩렛(Chiplet) 구조에서 각 칩렛 간의 초고속/고대역폭 데이터 통신을 가능하게 합니다.",
+          "tech_specs": "TGV 직경: 10 ~ 30 µm | TGV 피치: 40 ~ 100 µm | 종횡비(Aspect Ratio): >10:1 | RDL 선폭/간격: < 2/2 µm | 기판 두께: 100 ~ 500 µm | 최대 패널 사이즈: 510x515 mm",
+          "company_strategy": "Intel은 자체 패키징 기술 리더십 유지를 위해 유리 기판 기술 내재화 및 상용화에 가장 공격적으로 투자하고 있습니다. 앱솔릭스(SKC)는 소재 기술력을 바탕으로 글로벌 칩메이커에 유리 기판을 공급하는 핵심 공급사를 목표로 대규모 양산 설비 투자를 단행했습니다. 삼성전기는 기존 FC-BGA 시장에서의 경쟁력을 차세대 유리 기판으로 확장하여, 삼성전자 및 글로벌 고객사를 확보하려는 전략을 추진 중입니다.",
+          "chain": {
+            "champion": "Intel, NVIDIA, AMD, Samsung Electronics",
+            "equipment": "필옵틱스 (TGV Laser Drilling), 이오테크닉스 (Laser Cutting), 켐트로닉스 (Glass Etching)",
+            "materials": "앱솔릭스(SKC), Corning (미국), SCHOTT (독일), 아사히글라스 (AGC, 일본)"
+          },
+          "image_url": ""
+        }
+      ]
     }
   ]
 }

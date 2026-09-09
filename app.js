@@ -682,21 +682,115 @@ function renderDeepTechContent() {
     lucide.createIcons();
 }
 
-// 4. 신규 약어 즉석 백서 생성기 이벤트
+// ================= [Gemini API Key 관리 및 상태 제어] =================
+function getStoredGeminiApiKey() {
+    return localStorage.getItem('KEY_TECH_GEMINI_API_KEY') || '';
+}
+
+function getStoredGeminiModel() {
+    return localStorage.getItem('KEY_TECH_GEMINI_MODEL') || 'gemini-2.5-pro';
+}
+
+function updateApiStatusBadge() {
+    const badge = document.getElementById('api-status-badge');
+    const key = getStoredGeminiApiKey();
+    if (badge) {
+        if (key) {
+            badge.textContent = '🟢 API 연동됨';
+            badge.className = 'api-status-badge connected';
+        } else {
+            badge.textContent = '⚪ API 키 설정';
+            badge.className = 'api-status-badge disconnected';
+        }
+    }
+}
+
+function openGeminiApiModal() {
+    const modal = document.getElementById('gemini-api-modal');
+    const input = document.getElementById('gemini-api-key-input');
+    const modelSelect = document.getElementById('gemini-model-select');
+    if (!modal) return;
+    
+    if (input) input.value = getStoredGeminiApiKey();
+    if (modelSelect) modelSelect.value = getStoredGeminiModel();
+    
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) lucide.createIcons();
+}
+
+function closeGeminiApiModal() {
+    const modal = document.getElementById('gemini-api-modal');
+    if (!modal) return;
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+function toggleApiKeyVisibility() {
+    const input = document.getElementById('gemini-api-key-input');
+    const icon = document.getElementById('btn-toggle-key-icon');
+    if (!input) return;
+    if (input.type === 'password') {
+        input.type = 'text';
+        if (icon) icon.setAttribute('data-lucide', 'eye-off');
+    } else {
+        input.type = 'password';
+        if (icon) icon.setAttribute('data-lucide', 'eye');
+    }
+    if (window.lucide) lucide.createIcons();
+}
+
+function saveGeminiApiKey() {
+    const input = document.getElementById('gemini-api-key-input');
+    const modelSelect = document.getElementById('gemini-model-select');
+    if (!input) return;
+    
+    const key = input.value.trim();
+    if (!key) {
+        alert('Gemini API Key를 입력해 주세요.');
+        return;
+    }
+    
+    localStorage.setItem('KEY_TECH_GEMINI_API_KEY', key);
+    if (modelSelect) {
+        localStorage.setItem('KEY_TECH_GEMINI_MODEL', modelSelect.value);
+    }
+    
+    updateApiStatusBadge();
+    closeGeminiApiModal();
+    alert('✅ Gemini API Key가 브라우저에 안전하게 저장되었습니다!');
+}
+
+function clearGeminiApiKey() {
+    if (confirm('저장된 Gemini API Key를 삭제하시겠습니까?')) {
+        localStorage.removeItem('KEY_TECH_GEMINI_API_KEY');
+        const input = document.getElementById('gemini-api-key-input');
+        if (input) input.value = '';
+        updateApiStatusBadge();
+        closeGeminiApiModal();
+        alert('API Key가 삭제되었습니다.');
+    }
+}
+
+// 4. 신규 약어 즉석 백서 생성기 이벤트 (Gemini API 실시간 엔지니어링 렌더링)
 function setupDeepTechGenerator() {
     const input = document.getElementById('generator-input');
     const btn = document.getElementById('btn-generate-tech');
+    updateApiStatusBadge();
 
-    const handleGenerate = () => {
+    const handleGenerate = async () => {
         const keyword = input.value.trim();
         if (!keyword) {
-            alert('생성할 기술 약어나 키워드를 입력해 주세요. (예: CoWoS, 유리기판, LPO, BSS)');
+            alert('생성할 기술 약어나 키워드를 입력해 주세요. (예: 유리기판, CoWoS, 뉴로모픽, 전고체배터리)');
             return;
         }
 
         // 이미 존재하는지 확인
         const existing = state.deepTechData.tech_list.find(t => 
-            t.abbr.toUpperCase() === keyword.toUpperCase() || t.id.toLowerCase() === keyword.toLowerCase()
+            (t.abbr && t.abbr.toUpperCase() === keyword.toUpperCase()) || 
+            (t.id && t.id.toLowerCase() === keyword.toLowerCase())
         );
 
         if (existing) {
@@ -708,55 +802,164 @@ function setupDeepTechGenerator() {
             return;
         }
 
-        // 새 기술 생성 안내 및 동적 목업 추가
+        // API Key 확인
+        const apiKey = getStoredGeminiApiKey();
+        if (!apiKey) {
+            alert('즉석 백서 및 정밀 CAD 도면 생성을 위해 구글 Gemini API Key가 필요합니다.\n설정 창을 열어드립니다.');
+            openGeminiApiModal();
+            return;
+        }
+
+        const modelName = getStoredGeminiModel();
+
         btn.disabled = true;
-        btn.innerHTML = '<span>⏳ AI 공학 백서 생성 중...</span>';
+        btn.innerHTML = '<span>⏳ AI 공학 백서 및 CAD 도면 실시간 렌더링 중...</span>';
 
-        setTimeout(() => {
-            const newId = keyword.toLowerCase().replace(/[^a-z0-9]/g, '_');
-            const newTech = {
-                id: newId,
-                name: `${keyword} (차세대 첨단 공학 혁신)`,
-                abbr: keyword.toUpperCase(),
-                badge: '신규 자동생성 백서',
-                summary: `${keyword} 기술의 물리적 원리 및 제조 공정, 공급망 밸류체인을 AI가 정밀 분석한 백서입니다.`,
-                diagram: `graph TD\n    HOST[호스트 시스템] <-->|${keyword} 고속 인터페이스| CORE[${keyword} 핵심 반도체/모듈]\n    CORE --> SUB1[전공정/소재 최적화]\n    CORE --> SUB2[첨단 패키징/소부장 생태계]`,
+        const SYSTEM_INSTRUCTION = `
+당신은 전 세계 최고의 반도체 및 첨단 하드웨어 수석 CAD 설계 엔지니어입니다.
+주어진 첨단 기술 키워드에 대해 학술 백서 수준의 심층 분석 데이터와 함께, 실제 반도체 백서 및 특허 도면과 동일한 고품질의 "정밀 엔지니어링 CAD 단면도(Engineering Blueprint SVG)"를 생성하십시오.
+
+[STRICT SVG BLUEPRINT GUIDELINES]
+모든 blueprint_svg는 반드시 아래의 CAD 블루프린트 설계 규격을 100% 엄격하게 준수해야 합니다:
+1. 루트 태그: <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+2. 배경 그리드:
+   - <rect width="100%" height="100%" fill="#070c14"/>
+   - <pattern id="grid-[tech_id]" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/></pattern>
+   - <rect width="100%" height="100%" fill="url(#grid-[tech_id])"/>
+3. 상단 헤더 (y: 15 ~ 40):
+   - [TECH-CODE-01] 영문 대문자 코드 및 기술 명칭 (font-size="12", font-weight="700", fill="#38bdf8")
+   - 핵심 규격 파라미터 서브타이틀 (font-size="9", fill="#64748b")
+   - 우측 CLICK TO ZOOM 버튼 배지 (x: 620, width: 100, height: 22)
+4. 좌측 메인 기구/단면도 영역 (x: 20 ~ 455, y: 55 ~ 385, width: 435, height: 330):
+   - 배경 박스: fill="#0b1329", stroke="#1e293b", stroke-width="1.5", rx="6"
+   - 단면 적층 레이어 (마이크로미터 단위 두께, 전극 비아 TGV/TSV, 금속 RDL 배선, 실리콘 다이 등 정밀 배치)
+   - 치수선: stroke-dasharray="3,3", 치수 라벨
+   - 하단 공학 메커니즘 박스 (배경 #0f172a, stroke #1e293b)
+5. 우측 분석 및 밸류체인 영역 (x: 480 ~ 740, y: 55 ~ 385, width: 260, height: 330):
+   - 배경 박스: fill="#0b1329", stroke="#1e293b", stroke-width="1.5", rx="6"
+   - 상단: 기존 기술(예: 유기물 FC-BGA) vs 신기술 비교 박스
+   - 하단: 핵심 생태계 밸류체인 (글로벌 챔피언 및 국내 실제 상장사 실명)
+6. 하단 엔지니어링 메트릭 바 (x: 20 ~ 740, y: 395 ~ 465, width: 720, height: 70):
+   - 배경: fill="#0f172a", stroke="#1e293b", rx="4"
+   - 첫째 줄: 3대 물리/공학 규격 (컬러 사각형 인디케이터 포함)
+   - 둘째 줄: 3대 성능 개선 효과 (예: 휨 현상 50% 개선, 초미세 I/O 밀도 10배, 전력 손실 30% 감소)
+`;
+
+        const deepTechJsonSchema = {
+            type: "OBJECT",
+            properties: {
+                id: { type: "STRING", description: "기술 식별자 (영문소문자_언더바)" },
+                name: { type: "STRING", description: "기술 공식 명칭 (한글/원어 병기)" },
+                abbr: { type: "STRING", description: "기술 영문 약어" },
+                badge: { type: "STRING", description: "기술 분류 카테고리 배지" },
+                summary: { type: "STRING", description: "1~2문장의 학술/엔지니어링 핵심 정의" },
+                diagram: { type: "STRING", description: "Mermaid.js graph TD 아키텍처 다이어그램 코드" },
                 framework: {
-                    fundamentals: `${keyword} 기술은 기존 시스템의 전력 소모 및 전송 지연 병목을 획기적으로 개선하기 위해 탄생한 차세대 물리 인터페이스 기술입니다.`,
-                    process_tech: `나노 단위 정밀 공정 ➡️ 인터포저/기판 접합 ➡️ 고신뢰성 검사 및 패키징 모듈화 공정으로 구성됩니다.`,
-                    bottlenecks: `수율 확보 및 공정 원가 절감, 글로벌 표준화 기구의 규격 통일이 핵심 상용화 과제입니다.`,
-                    roadmap: `2025~2026년 시제품 검증 ➡️ 2027년 글로벌 빅테크 데이터센터 대규모 상용화 예정`
+                    type: "OBJECT",
+                    properties: {
+                        fundamentals: { type: "STRING", description: "물리적/재료공학적 작동 원리 (유전율, 열팽창계수, 휨 현상 등 구체적 수치 명시)" },
+                        process_tech: { type: "STRING", description: "1단계부터 5단계까지의 정밀 제조 공정 흐름" },
+                        bottlenecks: { type: "STRING", description: "핵심 공학적 난제 및 수율 한계 (미세 크랙, 레이저 가공, 열충격 등)" },
+                        roadmap: { type: "STRING", description: "기술 상용화 및 양산 로드맵" }
+                    },
+                    required: ["fundamentals", "process_tech", "bottlenecks", "roadmap"]
                 },
-                nodes: [
-                    {
-                        id: `${newId}_core`,
-                        name: `${keyword} Core Architecture (핵심 기술)`,
-                        tag: '상용화 개발',
-                        desc: `${keyword}의 핵심 동작 원리를 구현한 차세대 공학 표준 아키텍처.`,
-                        tech_specs: '기존 대비 전력 효율 40% 개선, 데이터 전송 대역폭 2배 확장',
-                        company_strategy: '글로벌 1위 파운드리 및 팹리스 기업들이 독점 공급망 형성 중',
-                        chain: {
-                            'champion': '글로벌 선도 빅테크',
-                            'foundry': 'TSMC, 삼성전자 파운드리',
-                            'equipment': '한미반도체, ASML, 테라다인',
-                            'materials': '동진쎄미켐, 솔브레인'
-                        }
+                nodes: {
+                    type: "ARRAY",
+                    items: {
+                        type: "OBJECT",
+                        properties: {
+                            id: { type: "STRING", description: "세부 기술 노드 ID (영문소문자_언더바)" },
+                            name: { type: "STRING", description: "세부 기술 노드 명칭" },
+                            tag: { type: "STRING", description: "개발 및 상용화 단계 태그" },
+                            desc: { type: "STRING", description: "학술/엔지니어링 상세 기술 설명 (물리적 원리 포함)" },
+                            tech_specs: { type: "STRING", description: "주요 공학 사양 및 수치 (피치, 종횡비, 대역폭 등)" },
+                            company_strategy: { type: "STRING", description: "글로벌/국내 선도 기업 상용화 전략" },
+                            chain: {
+                                type: "OBJECT",
+                                properties: {
+                                    champion: { type: "STRING", description: "글로벌 선도 칩메이커/파운드리" },
+                                    equipment: { type: "STRING", description: "핵심 제조/검사 장비사 (국내외 상장사)" },
+                                    materials: { type: "STRING", description: "원소재/부품사 (국내외 상장사)" }
+                                },
+                                required: ["champion", "equipment", "materials"]
+                            },
+                            blueprint_svg: { type: "STRING", description: "완전한 정밀 엔지니어링 CAD SVG 블루프린트 코드 (viewBox=\"0 0 760 480\" 준수)" }
+                        },
+                        required: ["id", "name", "tag", "desc", "tech_specs", "company_strategy", "chain", "blueprint_svg"]
                     }
-                ]
-            };
+                }
+            },
+            required: ["id", "name", "abbr", "badge", "summary", "diagram", "framework", "nodes"]
+        };
 
-            state.deepTechData.tech_list.push(newTech);
-            state.selectedTechId = newId;
-            state.selectedSubNodeId = `${newId}_core`;
+        const userPrompt = `분석할 첨단 기술 키워드: ${keyword}
+이 기술에 대해 학술 논문 및 백서 수준의 심층 엔지니어링 분석을 수행하고, 규격에 맞는 완전한 760x480 정밀 엔지니어링 CAD SVG 블루프린트를 포함한 DeepTechDossier JSON을 생성해 주십시오. 반드시 실제 공학 수치와 실제 소부장 상장사 밸류체인을 상세히 작성하십시오.`;
 
-            btn.disabled = false;
-            btn.innerHTML = '<span>⚡ 즉석 백서 생성</span>';
+        try {
+            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    system_instruction: {
+                        parts: [{ text: SYSTEM_INSTRUCTION }]
+                    },
+                    contents: [{
+                        parts: [{ text: userPrompt }]
+                    }],
+                    generationConfig: {
+                        response_mime_type: "application/json",
+                        response_schema: deepTechJsonSchema,
+                        temperature: 0.2
+                    }
+                })
+            });
+
+            if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                throw new Error(errData.error?.message || `API 호출 실패 (Status: ${response.status})`);
+            }
+
+            const resJson = await response.json();
+            const textContent = resJson.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (!textContent) throw new Error('Gemini 응답 내용이 비어 있습니다.');
+
+            const newTech = JSON.parse(textContent.trim());
+
+            // 동적 SVG 블루프린트 등록
+            if (window.EngineeringBlueprints && newTech.nodes) {
+                newTech.nodes.forEach(node => {
+                    if (node.blueprint_svg) {
+                        window.EngineeringBlueprints.registerDynamicSvg(node.id, node.blueprint_svg);
+                    }
+                });
+            }
+
+            // 기존 목록에서 같은 ID가 있으면 교체, 없으면 추가
+            const tlist = state.deepTechData.tech_list;
+            const idx = tlist.findIndex(t => t.id === newTech.id || t.abbr.toUpperCase() === newTech.abbr.toUpperCase());
+            if (idx >= 0) {
+                tlist[idx] = newTech;
+            } else {
+                tlist.push(newTech);
+            }
+
+            state.selectedTechId = newTech.id;
+            state.selectedSubNodeId = newTech.nodes && newTech.nodes[0] ? newTech.nodes[0].id : '';
+
             input.value = '';
-
             renderDeepTechTabs();
             renderDeepTechContent();
-            alert(`🎉 [${keyword}] 심층 공학 백서가 성공적으로 생성 및 등록되었습니다!`);
-        }, 1200);
+
+            alert(`🎉 [${newTech.name}] 심층 공학 백서 및 정밀 CAD 도면이 성공적으로 생성 및 등록되었습니다!`);
+        } catch (error) {
+            console.error('Gemini Generation Error:', error);
+            alert(`⚠️ 백서 생성 중 오류가 발생했습니다:\n${error.message}\n\nAPI Key와 네트워크 상태를 확인해 주세요.`);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = '<span>⚡ 즉석 백서 생성</span>';
+        }
     };
 
     if (btn && input) {
@@ -810,6 +1013,15 @@ function closeBlueprintModal() {
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeBlueprintModal();
+        closeGeminiApiModal();
     }
 });
+
+window.openBlueprintModal = openBlueprintModal;
+window.closeBlueprintModal = closeBlueprintModal;
+window.openGeminiApiModal = openGeminiApiModal;
+window.closeGeminiApiModal = closeGeminiApiModal;
+window.saveGeminiApiKey = saveGeminiApiKey;
+window.clearGeminiApiKey = clearGeminiApiKey;
+window.toggleApiKeyVisibility = toggleApiKeyVisibility;
 

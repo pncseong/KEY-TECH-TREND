@@ -1371,4 +1371,44 @@ body {
     color: #64748b;
 }
 
+/* API 설정 버튼 및 상태 뱃지 */
+.api-config-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94a3b8;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.api-config-btn:hover {
+    background: rgba(51, 65, 85, 0.9);
+    border-color: #38bdf8;
+    color: #38bdf8;
+}
+
+.api-config-btn svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.api-status-badge {
+    font-size: 0.75rem;
+}
+
+.api-status-badge.connected {
+    color: #10b981;
+}
+
+.api-status-badge.disconnected {
+    color: #94a3b8;
+}
+
 
