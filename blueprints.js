@@ -40,6 +40,8 @@ window.EngineeringBlueprints = {
                 return getAiSmrMicrogridSvg();
             case 'tgv_glass_core_substrate':
                 return getGlassSubstrateSvg();
+            case 'cowos_s':
+                return getCowosSSvg();
             default:
                 return null;
         }
@@ -2269,5 +2271,151 @@ function getAiSmrMicrogridSvg() {
 function getGlassSubstrateSvg() {
     return `
 <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg"><defs><style>.heavy{font-weight:700;fill:#38bdf8;}.light{font-weight:400;fill:#64748b;}.label{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:#94a3b8;}.dim-line{stroke:#475569;stroke-width:1;stroke-dasharray:3,3;}.dim-arrow{fill:#475569;}.data-label{font-size:10px;fill:#cbd5e1;}.data-value{font-size:10px;fill:#f1f5f9;font-weight:600;}.comp-title{font-size:10px;font-weight:600;fill:#e2e8f0;}.comp-text{font-size:9px;fill:#94a3b8;}.metric-title{font-size:9px;fill:#94a3b8;}.metric-value{font-size:11px;font-weight:600;fill:#f1f5f9;}</style><pattern id="grid-tgv_glass_core_substrate" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/></pattern></defs><rect width="100%" height="100%" fill="#070c14"/><rect width="100%" height="100%" fill="url(#grid-tgv_glass_core_substrate)"/><g class="header" transform="translate(20, 15)"><text x="0" y="15" class="heavy" font-size="12">[TECH-CODE-GCS01] GLASS CORE SUBSTRATE w/ TGV</text><text x="0" y="29" class="light" font-size="9">Core Thickness: 200µm / TGV Pitch: 50µm / RDL L/S: 2/2µm</text><g transform="translate(620, 2)"><rect width="100" height="22" rx="4" fill="#1e293b"/><text x="50" y="15" text-anchor="middle" font-size="9" font-weight="600" fill="#94a3b8">CLICK TO ZOOM</text></g></g><g class="main-view" transform="translate(20, 55)"><rect width="435" height="330" rx="6" fill="#0b1329" stroke="#1e293b" stroke-width="1.5"/><g class="cross-section" transform="translate(20, 20)"><rect x="0" y="250" width="395" height="20" fill="#334155"/><text x="197.5" y="264" text-anchor="middle" class="label">PCB Mainboard</text><path d="M100 240 L100 250 M120 240 L120 250 M140 240 L140 250 M255 240 L255 250 M275 240 L275 250 M295 240 L295 250" stroke="#f59e0b" stroke-width="1.5"/><circle cx="100" cy="235" r="5" fill="#f59e0b"/><circle cx="120" cy="235" r="5" fill="#f59e0b"/><circle cx="140" cy="235" r="5" fill="#f59e0b"/><circle cx="255" cy="235" r="5" fill="#f59e0b"/><circle cx="275" cy="235" r="5" fill="#f59e0b"/><circle cx="295" cy="235" r="5" fill="#f59e0b"/><text x="197.5" y="225" text-anchor="middle" class="label">BGA Solder Ball</text><rect x="20" y="100" width="355" height="120" fill="#1e40af" fill-opacity="0.3" stroke="#3b82f6" stroke-width="1"/><text x="197.5" y="164" text-anchor="middle" class="label" fill="#60a5fa">Glass Core (200µm)</text><rect x="20" y="80" width="355" height="20" fill="#0f172a"/><rect x="20" y="220" width="355" height="20" fill="#0f172a"/><path d="M50 80 v160 M80 80 v160 M110 80 v160 M285 80 v160 M315 80 v160 M345 80 v160" stroke="#f43f5e" stroke-width="2"/><text x="80" y="165" text-anchor="middle" class="label" transform="rotate(-90, 80, 165)" fill="#fda4af">TGV (Cu Filled)</text><path d="M40 85 h315 M40 95 h315 M40 225 h315 M40 235 h315" stroke="#a78bfa" stroke-width="0.5"/><text x="380" y="90" text-anchor="end" class="label">RDL Layers</text><text x="380" y="230" text-anchor="end" class="label">RDL Layers</text><rect x="150" y="40" width="180" height="40" fill="#475569" stroke="#94a3b8" stroke-width="1"/><text x="240" y="65" text-anchor="middle" class="label">GPU Die (Si)</text><rect x="40" y="50" width="80" height="30" fill="#475569" stroke="#94a3b8" stroke-width="1"/><text x="80" y="68" text-anchor="middle" class="label">HBM Die (Si)</text><path d="M50 80 l0 -5 M65 80 l0 -5 M80 80 l0 -5 M95 80 l0 -5 M110 80 l0 -5 M170 80 l0 -5 M190 80 l0 -5 M210 80 l0 -5 M230 80 l0 -5 M250 80 l0 -5 M270 80 l0 -5 M290 80 l0 -5 M310 80 l0 -5" stroke="#34d399" stroke-width="1"/><circle cx="50" cy="75" r="1.5" fill="#34d399"/><circle cx="65" cy="75" r="1.5" fill="#34d399"/><circle cx="80" cy="75" r="1.5" fill="#34d399"/><circle cx="95" cy="75" r="1.5" fill="#34d399"/><circle cx="110" cy="75" r="1.5" fill="#34d399"/><circle cx="170" cy="75" r="1.5" fill="#34d399"/><circle cx="190" cy="75" r="1.5" fill="#34d399"/><circle cx="210" cy="75" r="1.5" fill="#34d399"/><circle cx="230" cy="75" r="1.5" fill="#34d399"/><circle cx="250" cy="75" r="1.5" fill="#34d399"/><circle cx="270" cy="75" r="1.5" fill="#34d399"/><circle cx="290" cy="75" r="1.5" fill="#34d399"/><circle cx="310" cy="75" r="1.5" fill="#34d399"/><text x="197.5" y="30" text-anchor="middle" class="label">Micro-Bumps (Pitch: 40µm)</text></g><g class="mechanism" transform="translate(20, 280)"><rect x="0" y="0" width="180" height="40" fill="#0f172a" stroke="#1e293b"/><text x="90" y="15" text-anchor="middle" class="data-label">CTE Matching Mechanism</text><text x="90" y="30" text-anchor="middle" class="label">Si (~2.6) ≈ Glass (3-8) &lt;&lt; Organic (~17)</text></g><g class="dimensions" transform="translate(400, 80)"><line x1="0" y1="20" x2="0" y2="160" class="dim-line"/><path d="M0 20 l-3 3 v-6 l3 3 M0 160 l-3 3 v-6 l3 3" class="dim-arrow"/><text x="-10" y="95" text-anchor="end" class="label" transform="rotate(-90, -10, 95)">Substrate Height: 240µm</text><line x1="-320" y1="140" x2="-290" y2="140" class="dim-line"/><path d="M-320 140 l3 -3 h6 l-9 3 M-290 140 l-3 -3 h-6 l9 3" class="dim-arrow"/><text x="-305" y="150" text-anchor="middle" class="label">TGV Pitch: 50µm</text></g></g><g class="analysis-view" transform="translate(480, 55)"><rect width="260" height="330" rx="6" fill="#0b1329" stroke="#1e293b" stroke-width="1.5"/><g class="comparison" transform="translate(15, 15)"><rect x="0" y="0" width="230" height="120" fill="#0f172a" rx="4"/><text x="115" y="15" text-anchor="middle" class="comp-title">Technology Comparison</text><line x1="115" y1="22" x2="115" y2="110" stroke="#1e293b"/><text x="57.5" y="35" text-anchor="middle" class="data-label">Organic FC-BGA</text><text x="172.5" y="35" text-anchor="middle" class="data-label">Glass Core Substrate</text><text x="10" y="55" class="comp-text">Warpage</text><text x="57.5" y="55" text-anchor="middle" class="comp-text" fill="#f87171">High</text><text x="172.5" y="55" text-anchor="middle" class="comp-text" fill="#4ade80">Very Low</text><text x="10" y="70" class="comp-text">Signal Loss</text><text x="57.5" y="70" text-anchor="middle" class="comp-text" fill="#f87171">High</text><text x="172.5" y="70" text-anchor="middle" class="comp-text" fill="#4ade80">Low</text><text x="10" y="85" class="comp-text">I/O Density</text><text x="57.5" y="85" text-anchor="middle" class="comp-text" fill="#fbbf24">Limited</text><text x="172.5" y="85" text-anchor="middle" class="comp-text" fill="#4ade80">Very High</text><text x="10" y="100" class="comp-text">Cost</text><text x="57.5" y="100" text-anchor="middle" class="comp-text" fill="#4ade80">Low</text><text x="172.5" y="100" text-anchor="middle" class="comp-text" fill="#f87171">High</text></g><g class="value-chain" transform="translate(15, 150)"><rect x="0" y="0" width="230" height="165" fill="#0f172a" rx="4"/><text x="115" y="18" text-anchor="middle" class="comp-title">Core Value Chain</text><text x="15" y="40" class="data-label">CHAMPION</text><text x="215" y="40" text-anchor="end" class="data-value">Intel, NVIDIA</text><text x="15" y="65" class="data-label">MATERIALS</text><text x="215" y="65" text-anchor="end" class="data-value">앱솔릭스(SKC), Corning</text><text x="15" y="90" class="data-label">EQUIPMENT</text><text x="215" y="90" text-anchor="end" class="data-value">필옵틱스, 이오테크닉스</text><text x="15" y="115" class="data-label">SUBSTRATE</text><text x="215" y="115" text-anchor="end" class="data-value">삼성전기, DNP</text><text x="15" y="140" class="data-label">FOUNDRY</text><text x="215" y="140" text-anchor="end" class="data-value">TSMC, Samsung Foundry</text></g></g><g class="metrics-bar" transform="translate(20, 395)"><rect width="720" height="70" rx="4" fill="#0f172a" stroke="#1e293b"/><g class="engineering-specs" transform="translate(20, 15)"><rect x="0" y="0" width="4" height="12" fill="#22c55e" rx="1"/><text x="10" y="10" class="metric-title">CTE (ppm/°C)</text><text x="100" y="10" class="metric-value">3 - 8</text><rect x="180" y="0" width="4" height="12" fill="#22c55e" rx="1"/><text x="190" y="10" class="metric-title">Dielectric Constant (Dk @10GHz)</text><text x="350" y="10" class="metric-value">&lt; 4.0</text><rect x="430" y="0" width="4" height="12" fill="#22c55e" rx="1"/><text x="440" y="10" class="metric-title">Surface Roughness (Ra)</text><text x="580" y="10" class="metric-value">&lt; 1 nm</text></g><g class="performance-gains" transform="translate(20, 40)"><text x="0" y="10" class="metric-value">휨 현상 (Warpage) 80% 개선</text><text x="240" y="10" class="metric-value">초미세 I/O 밀도 10배+</text><text x="480" y="10" class="metric-value">고주파 신호 손실 50% 감소</text></g></g></svg>
+    `;
+}
+
+// 14. CoWoS-S 실리콘 인터포저 2.5D 패키징 정밀 엔지니어링 단면도
+function getCowosSSvg() {
+    return `
+<svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid-cowos_s" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#070c14"/>
+  <rect width="100%" height="100%" fill="url(#grid-cowos_s)"/>
+  
+  <!-- Header -->
+  <g class="header" transform="translate(20, 25)">
+    <text x="0" y="10" fill="#38bdf8" font-size="13" font-family="monospace" font-weight="bold">ENGINEERING CAD BLUEPRINT // CoWoS-S (Silicon Interposer 2.5D Packaging)</text>
+    <text x="720" y="10" text-anchor="end" fill="#10b981" font-size="10" font-family="monospace" font-weight="bold">PRECISION CROSS-SECTION ARCHITECTURE</text>
+  </g>
+
+  <!-- Main Cross-Section -->
+  <g class="main-cross-section" transform="translate(20, 55)">
+    <rect width="440" height="330" fill="#090e1a" stroke="#1e293b" stroke-width="1.5" rx="6"/>
+    
+    <!-- Heat Spreader / Lid -->
+    <rect x="30" y="25" width="380" height="30" fill="#1e293b" stroke="#475569" stroke-width="1" rx="3"/>
+    <text x="220" y="44" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="bold">Heat Spreader / Copper Lid (방열 커버)</text>
+    
+    <!-- TIM Layer -->
+    <rect x="40" y="58" width="360" height="6" fill="#0284c7" opacity="0.8"/>
+    <text x="220" y="63" text-anchor="middle" fill="#e0f2fe" font-size="7">TIM 1 (Thermal Interface Material)</text>
+    
+    <!-- Logic Die (GPU) -->
+    <rect x="50" y="68" width="160" height="45" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5" rx="2"/>
+    <text x="130" y="94" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="bold">Logic Die (GPU / AI ASIC)</text>
+    
+    <!-- HBM Stack 1 -->
+    <rect x="230" y="68" width="80" height="45" fill="#312e81" stroke="#6366f1" stroke-width="1.5" rx="2"/>
+    <text x="270" y="88" text-anchor="middle" fill="#a5b4fc" font-size="9" font-weight="bold">HBM3E</text>
+    <text x="270" y="102" text-anchor="middle" fill="#818cf8" font-size="8">12-Hi Stack</text>
+
+    <!-- HBM Stack 2 -->
+    <rect x="325" y="68" width="80" height="45" fill="#312e81" stroke="#6366f1" stroke-width="1.5" rx="2"/>
+    <text x="365" y="88" text-anchor="middle" fill="#a5b4fc" font-size="9" font-weight="bold">HBM3E</text>
+    <text x="365" y="102" text-anchor="middle" fill="#818cf8" font-size="8">12-Hi Stack</text>
+    
+    <!-- Micro-Bumps Array -->
+    <g transform="translate(50, 115)">
+      <line x1="0" y1="5" x2="355" y2="5" stroke="#38bdf8" stroke-dasharray="2,2" stroke-width="1"/>
+      <circle cx="20" cy="5" r="2.5" fill="#38bdf8"/><circle cx="40" cy="5" r="2.5" fill="#38bdf8"/>
+      <circle cx="60" cy="5" r="2.5" fill="#38bdf8"/><circle cx="80" cy="5" r="2.5" fill="#38bdf8"/>
+      <circle cx="100" cy="5" r="2.5" fill="#38bdf8"/><circle cx="120" cy="5" r="2.5" fill="#38bdf8"/>
+      <circle cx="140" cy="5" r="2.5" fill="#38bdf8"/><circle cx="190" cy="5" r="2.5" fill="#38bdf8"/>
+      <circle cx="235" cy="5" r="2.5" fill="#38bdf8"/><circle cx="295" cy="5" r="2.5" fill="#38bdf8"/>
+      <circle cx="340" cy="5" r="2.5" fill="#38bdf8"/>
+      <text x="177" y="17" text-anchor="middle" fill="#38bdf8" font-size="8" font-family="monospace">Micro-Bumps (Pitch: 35-40µm, Sn-Ag/Cu)</text>
+    </g>
+    
+    <!-- Silicon Interposer with TSV -->
+    <rect x="35" y="138" width="370" height="60" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="3"/>
+    <text x="220" y="165" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="bold">Silicon Interposer (~100µm 박막 웨이퍼)</text>
+    <line x1="80" y1="140" x2="80" y2="196" stroke="#f59e0b" stroke-width="3"/>
+    <line x1="130" y1="140" x2="130" y2="196" stroke="#f59e0b" stroke-width="3"/>
+    <line x1="180" y1="140" x2="180" y2="196" stroke="#f59e0b" stroke-width="3"/>
+    <line x1="270" y1="140" x2="270" y2="196" stroke="#f59e0b" stroke-width="3"/>
+    <line x1="365" y1="140" x2="365" y2="196" stroke="#f59e0b" stroke-width="3"/>
+    <text x="220" y="184" text-anchor="middle" fill="#f59e0b" font-size="8">TSV (Through-Silicon Via) Cu 어레이 &amp; Sub-micron RDL</text>
+
+    <!-- C4 Bumps Array -->
+    <g transform="translate(35, 202)">
+      <circle cx="30" cy="8" r="5" fill="#f59e0b"/><circle cx="80" cy="8" r="5" fill="#f59e0b"/>
+      <circle cx="130" cy="8" r="5" fill="#f59e0b"/><circle cx="185" cy="8" r="5" fill="#f59e0b"/>
+      <circle cx="240" cy="8" r="5" fill="#f59e0b"/><circle cx="295" cy="8" r="5" fill="#f59e0b"/>
+      <circle cx="340" cy="8" r="5" fill="#f59e0b"/>
+      <text x="185" y="24" text-anchor="middle" fill="#f59e0b" font-size="8">C4 Bumps (Pitch: ~100-150µm)</text>
+    </g>
+
+    <!-- Package Substrate (FC-BGA) -->
+    <rect x="20" y="235" width="400" height="45" fill="#1e293b" stroke="#334155" stroke-width="1.5" rx="3"/>
+    <text x="220" y="258" text-anchor="middle" fill="#f1f5f9" font-size="10" font-weight="bold">Package Substrate (대형 유기물 FC-BGA 기판)</text>
+    <text x="220" y="272" text-anchor="middle" fill="#94a3b8" font-size="8">Multi-Layer Core &amp; ABF Build-up Layer (CTE: 15-17 ppm/°C)</text>
+
+    <!-- Bottom BGA Balls -->
+    <g transform="translate(20, 285)">
+      <circle cx="30" cy="8" r="6" fill="#94a3b8"/><circle cx="75" cy="8" r="6" fill="#94a3b8"/>
+      <circle cx="120" cy="8" r="6" fill="#94a3b8"/><circle cx="165" cy="8" r="6" fill="#94a3b8"/>
+      <circle cx="210" cy="8" r="6" fill="#94a3b8"/><circle cx="255" cy="8" r="6" fill="#94a3b8"/>
+      <circle cx="300" cy="8" r="6" fill="#94a3b8"/><circle cx="345" cy="8" r="6" fill="#94a3b8"/>
+      <circle cx="380" cy="8" r="6" fill="#94a3b8"/>
+      <text x="200" y="25" text-anchor="middle" fill="#64748b" font-size="8">BGA Solder Balls to Main PCB (Pitch: 0.8~1.0mm)</text>
+    </g>
+  </g>
+
+  <!-- Right Analysis Column -->
+  <g class="analysis-column" transform="translate(480, 55)">
+    <rect width="260" height="330" fill="#0b1329" stroke="#1e293b" stroke-width="1.5" rx="6"/>
+    
+    <!-- Comparison Box -->
+    <rect x="15" y="15" width="230" height="135" fill="#0f172a" stroke="#1e293b" rx="4"/>
+    <text x="130" y="32" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="bold">[Technology Comparison]</text>
+    <text x="25" y="52" fill="#94a3b8" font-size="8">항목</text><text x="110" y="52" fill="#ef4444" font-size="8">전통 FC-BGA</text><text x="190" y="52" fill="#10b981" font-size="8">CoWoS-S</text>
+    <line x1="25" y1="58" x2="235" y2="58" stroke="#334155"/>
+    <text x="25" y="73" fill="#cbd5e1" font-size="8">I/O 피치</text><text x="110" y="73" fill="#ef4444" font-size="8">130-150µm</text><text x="190" y="73" fill="#10b981" font-size="8">35-40µm</text>
+    <text x="25" y="91" fill="#cbd5e1" font-size="8">배선 밀도</text><text x="110" y="91" fill="#ef4444" font-size="8">낮음 (단층)</text><text x="190" y="91" fill="#10b981" font-size="8">초고밀도 (RDL)</text>
+    <text x="25" y="109" fill="#cbd5e1" font-size="8">CTE 휨 제어</text><text x="110" y="109" fill="#ef4444" font-size="8">심각 (17ppm)</text><text x="190" y="109" fill="#10b981" font-size="8">완벽 (2.6ppm)</text>
+    <text x="25" y="127" fill="#cbd5e1" font-size="8">대역폭</text><text x="110" y="127" fill="#ef4444" font-size="8">&lt; 500 GB/s</text><text x="190" y="127" fill="#10b981" font-size="8">&gt; 3.0 TB/s</text>
+
+    <!-- Value Chain Box -->
+    <rect x="15" y="165" width="230" height="150" fill="#0f172a" stroke="#1e293b" rx="4"/>
+    <text x="130" y="184" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="bold">[Core Ecosystem Chain]</text>
+    
+    <text x="25" y="205" fill="#38bdf8" font-size="8" font-weight="bold">► Foundry / Packaging</text>
+    <text x="35" y="219" fill="#f1f5f9" font-size="8">TSMC (점유율 90%+, CoWoS 독점)</text>
+    
+    <text x="25" y="240" fill="#38bdf8" font-size="8" font-weight="bold">► Equipment (핵심 장비)</text>
+    <text x="35" y="254" fill="#f1f5f9" font-size="8">한미반도체 (TC 본더), ASML, Besi</text>
+    
+    <text x="25" y="275" fill="#38bdf8" font-size="8" font-weight="bold">► Substrate / Materials</text>
+    <text x="35" y="289" fill="#f1f5f9" font-size="8">이수페타시스, 이비덴, 신에츠화학</text>
+    <text x="35" y="303" fill="#64748b" font-size="7">고다층 MLB 기판 &amp; 언더필 수지</text>
+  </g>
+
+  <!-- Bottom Metrics Bar -->
+  <g class="metrics-bar" transform="translate(20, 395)">
+    <rect width="720" height="70" fill="#0f172a" stroke="#1e293b" rx="4"/>
+    
+    <rect x="25" y="12" width="6" height="6" fill="#38bdf8"/>
+    <text x="37" y="18" fill="#94a3b8" font-size="8">인터포저 최대 면적:</text>
+    <text x="125" y="18" fill="#38bdf8" font-size="9" font-weight="bold">~3.5x Reticle (3,000mm²)</text>
+    
+    <rect x="260" y="12" width="6" height="6" fill="#f59e0b"/>
+    <text x="272" y="18" fill="#94a3b8" font-size="8">마이크로범프 최소 피치:</text>
+    <text x="380" y="18" fill="#f59e0b" font-size="9" font-weight="bold">35 ~ 40 µm</text>
+    
+    <rect x="490" y="12" width="6" height="6" fill="#10b981"/>
+    <text x="502" y="18" fill="#94a3b8" font-size="8">총 I/O 수:</text>
+    <text x="550" y="18" fill="#10b981" font-size="9" font-weight="bold">&gt; 20,000 Channels</text>
+    
+    <line x1="20" y1="36" x2="700" y2="36" stroke="#1e293b"/>
+    
+    <text x="60" y="52" fill="#10b981" font-size="9" font-weight="bold">⚡ CTE 완벽 일치로 접합 휨(Warpage) 90% 억제</text>
+    <text x="320" y="52" fill="#38bdf8" font-size="9" font-weight="bold">🚀 I/O 전송 대역폭 3.2 TB/s 돌파</text>
+    <text x="520" y="52" fill="#e2e8f0" font-size="9" font-weight="bold">🎯 패키지 높이 720µm 초슬림화</text>
+  </g>
+</svg>
     `;
 }

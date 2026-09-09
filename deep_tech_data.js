@@ -265,6 +265,37 @@ window.deepTechData = {
           "image_url": ""
         }
       ]
+    },
+    {
+      "id": "cowos",
+      "name": "칩-온-웨이퍼-온-서브스트레이트 (Chip-on-Wafer-on-Substrate)",
+      "abbr": "CoWoS",
+      "badge": "2.5D 어드밴스드 패키징",
+      "summary": "TSMC의 독자적인 2.5D 패키징 플랫폼으로 실리콘 인터포저 위에 GPU/CPU와 HBM을 나란히 배치하고 TSV로 연결하여 초고대역폭/초고속 I/O를 구현하는 핵심 기술",
+      "image_url": "",
+      "diagram": "graph TD\n    GPU[\"고성능 로직 칩 (GPU/CPU)\"] --- INTERPOSER[\"2.5D 실리콘 인터포저 (Si Interposer)\"]\n    HBM[\"고대역폭 메모리 (HBM3E / HBM4)\"] --- INTERPOSER\n    INTERPOSER --> TSV[\"TSV 실리콘 관통전극 & RDL 배선\"]\n    TSV --> SUBSTRATE[\"대면적 패키지 서브스트레이트 (FC-BGA)\"]\n    SUBSTRATE --> MAINBOARD[\"시스템 메인보드 (PCB)\"]",
+      "framework": {
+        "fundamentals": "CoWoS의 핵심은 실리콘(Si) 소재의 인터포저를 사용하는 데 있다. 실리콘 인터포저는 칩(Die)과 동일한 재료(Si)이므로 열팽창계수(CTE)가 약 2.6 ppm/°C로 거의 일치한다. 이는 유기 기판(Organic Substrate)의 CTE(약 15-17 ppm/°C) 대비 열응력 불일치를 근본적으로 해소하여 초미세 피치 접합부의 열 피로 파괴를 방지한다. 또한 서브미크론 수준의 초미세 RDL(재배선) 공정을 통해 1,000개 이상의 초고밀도 I/O 배선을 구현함으로써 수 TB/s급의 메모리 대역폭을 손실 없이 전달한다.",
+        "process_tech": "1. [Interposer Fab] 300mm 실리콘 웨이퍼에 TSV 홀을 식각하고 절연/전도성 물질을 채운 뒤, 전후면에 RDL(재배선층)을 형성하여 인터포저를 제작한다.\n2. [Chip-on-Wafer] 완성된 인터포저 웨이퍼 위에 테스트를 통과한 양품의 로직 다이(GPU/CPU)와 HBM 스택을 마이크로범프(Micro-bump)를 매개로 열압착(TCB) 본딩한다.\n3. [Wafer-on-Substrate] 다이가 실장된 인터포저를 얇게 연마(Thinning)한 후 소잉하여 대형 FC-BGA 유기 기판 위에 솔더볼(C4 Bump)로 실장한다.\n4. [Lid Attach & Test] 방열을 위한 히트 스프레더(Heat Spreader/Lid)를 씌우고 최종 언더필 및 전기적/열적 신뢰성 테스트를 완료한다.",
+        "bottlenecks": "가장 큰 난제는 실리콘 인터포저의 크기 한계이다. 반도체 노광장비의 레티클(Reticle) 최대 크기(약 858mm²) 제약으로 인해, 이보다 큰 인터포저를 제작하려면 여러 장의 마스크를 이어 붙이는 '스티칭(Stitching)' 공정이 필요하며 이는 수율 저하와 비용 급증을 유발한다. 또한 3단계 이상의 복합 열이력으로 인한 미세 휨(Warpage) 제어와 다이 간 언더필 보이드(Void) 제거가 양산 수율의 핵심 병목이다.",
+        "roadmap": "CoWoS-S(실리콘 인터포저)를 표준으로 하여, 유기 인터포저를 적용한 저비용 CoWoS-R, 브릿지 다이를 활용한 CoWoS-L로 다변화 중이다. 레티클 크기 또한 2024년 3.3배수(~3,000mm²)에서 2026년 이후 5.5배수(~4,700mm²) 이상으로 확장되어 차세대 루빈(Rubin) 및 초거대 AI 가속기 플랫폼을 독점 지원할 예정이다."
+      },
+      "nodes": [
+        {
+          "id": "cowos_s",
+          "name": "CoWoS-S (Silicon Interposer)",
+          "tag": "양산 적용 (Mass Production)",
+          "image_url": "",
+          "desc": "CoWoS-S는 단일 대면적 실리콘 인터포저를 기반으로 하는 CoWoS 기술의 표준 아키텍처이다. 로직 다이와 HBM 다이가 모두 실리콘 인터포저 위에 실장되어, 재료의 열팽창계수(CTE) 불일치로 인한 기계적 스트레스가 최소화된다. 이는 수만 개에 달하는 초미세 I/O의 접합 신뢰성을 보장하며, NVIDIA의 A100, H100, H200 등 최첨단 AI 가속기의 성능을 뒷받침하는 핵심적인 패키징 솔루션으로 자리매김했다.",
+          "tech_specs": "▶ 인터포저 최대 크기: ~3.5x Reticle Size (약 3,000mm²) ▶ 마이크로범프 최소 피치: 35-40µm ▶ TSV 종횡비(Aspect Ratio): > 10:1 ▶ 지원 HBM: HBM3, HBM3e (8-Hi, 12-Hi) ▶ 총 I/O 수: > 20,000개",
+          "company_strategy": "TSMC는 2.5D 어드밴스드 패키징 시장 점유율 90% 이상을 점유하며 엔비디아, AMD, 애플 등 빅테크 물량을 독점하고 있습니다. 2026년까지 CoWoS 생산 캐파(CAPA)를 연평균 60% 이상 공격적으로 증설 중입니다.",
+          "chain": {
+            "champion": "TSMC, NVIDIA, AMD, Apple",
+            "equipment": "한미반도체 (TC 본더 독점), ASML, 어플라이드 머티어리얼즈, 이오테크닉스",
+            "materials": "신에츠화학, SKC/앱솔릭스, 이수페타시스 (고다층 MLB 기판)"
+          }
+        }
+      ]
     }
   ]
 };

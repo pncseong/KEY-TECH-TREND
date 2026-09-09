@@ -31,6 +31,7 @@ const categoryClassMap = {
 function init() {
     try {
         state.deepTechData = window.deepTechData || { tech_list: [] };
+        loadCustomTechsFromStorage();
     } catch (e) {
         console.error("Init deepTechData error:", e);
     }
@@ -493,7 +494,127 @@ function setupViewSwitcher() {
     }
 }
 
-// 2. 4대 기술 퀵 셀렉터 탭 렌더링
+
+// ================= [영구 저장소 및 삭제 상태 동기화 엔진] =================
+const STORAGE_KEY_CUSTOM_TECHS = 'KEY_TECH_SAVED_CUSTOM_TECHS_V2';
+const STORAGE_KEY_CUSTOM_SVGS = 'KEY_TECH_SAVED_CUSTOM_SVGS_V2';
+const STORAGE_KEY_DELETED_TECHS = 'KEY_TECH_DELETED_TECH_IDS_V2';
+
+function loadCustomTechsFromStorage() {
+    try {
+        const deletedIds = JSON.parse(localStorage.getItem(STORAGE_KEY_DELETED_TECHS) || '[]');
+        
+        // 1. 사용자가 삭제한 기술 제외
+        if (deletedIds.length > 0 && state.deepTechData && state.deepTechData.tech_list) {
+            state.deepTechData.tech_list = state.deepTechData.tech_list.filter(t => !deletedIds.includes(t.id));
+        }
+
+        // 2. 저장된 커스텀 기술 복원
+        const savedCustoms = JSON.parse(localStorage.getItem(STORAGE_KEY_CUSTOM_TECHS) || '[]');
+        if (state.deepTechData && state.deepTechData.tech_list) {
+            savedCustoms.forEach(cTech => {
+                if (!deletedIds.includes(cTech.id)) {
+                    const idx = state.deepTechData.tech_list.findIndex(t => t.id === cTech.id);
+                    if (idx >= 0) {
+                        state.deepTechData.tech_list[idx] = cTech;
+                    } else {
+                        state.deepTechData.tech_list.push(cTech);
+                    }
+                }
+            });
+        }
+
+        // 3. 저장된 SVG 블루프린트 복원
+        const savedSvgs = JSON.parse(localStorage.getItem(STORAGE_KEY_CUSTOM_SVGS) || '{}');
+        if (window.EngineeringBlueprints && typeof window.EngineeringBlueprints.registerDynamicSvg === 'function') {
+            Object.keys(savedSvgs).forEach(nodeId => {
+                window.EngineeringBlueprints.registerDynamicSvg(nodeId, savedSvgs[nodeId]);
+            });
+        }
+    } catch (e) {
+        console.error("loadCustomTechsFromStorage error:", e);
+    }
+}
+
+function saveCustomTechToStorage(newTech) {
+    try {
+        let savedCustoms = JSON.parse(localStorage.getItem(STORAGE_KEY_CUSTOM_TECHS) || '[]');
+        const idx = savedCustoms.findIndex(t => t.id === newTech.id);
+        if (idx >= 0) {
+            savedCustoms[idx] = newTech;
+        } else {
+            savedCustoms.push(newTech);
+        }
+        localStorage.setItem(STORAGE_KEY_CUSTOM_TECHS, JSON.stringify(savedCustoms));
+
+        let deletedIds = JSON.parse(localStorage.getItem(STORAGE_KEY_DELETED_TECHS) || '[]');
+        deletedIds = deletedIds.filter(id => id !== newTech.id);
+        localStorage.setItem(STORAGE_KEY_DELETED_TECHS, JSON.stringify(deletedIds));
+
+        let savedSvgs = JSON.parse(localStorage.getItem(STORAGE_KEY_CUSTOM_SVGS) || '{}');
+        if (newTech.nodes) {
+            newTech.nodes.forEach(node => {
+                if (node.blueprint_svg) {
+                    savedSvgs[node.id] = node.blueprint_svg;
+                }
+            });
+        }
+        localStorage.setItem(STORAGE_KEY_CUSTOM_SVGS, JSON.stringify(savedSvgs));
+    } catch (e) {
+        console.error("saveCustomTechToStorage error:", e);
+    }
+}
+
+function removeCustomTechFromStorage(techId) {
+    try {
+        let deletedIds = JSON.parse(localStorage.getItem(STORAGE_KEY_DELETED_TECHS) || '[]');
+        if (!deletedIds.includes(techId)) {
+            deletedIds.push(techId);
+            localStorage.setItem(STORAGE_KEY_DELETED_TECHS, JSON.stringify(deletedIds));
+        }
+
+        let savedCustoms = JSON.parse(localStorage.getItem(STORAGE_KEY_CUSTOM_TECHS) || '[]');
+        savedCustoms = savedCustoms.filter(t => t.id !== techId);
+        localStorage.setItem(STORAGE_KEY_CUSTOM_TECHS, JSON.stringify(savedCustoms));
+    } catch (e) {
+        console.error("removeCustomTechFromStorage error:", e);
+    }
+}
+
+function deleteTechBlock(techId, e) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    
+    if (!state.deepTechData || !state.deepTechData.tech_list) return;
+    const targetTech = state.deepTechData.tech_list.find(t => t.id === techId);
+    const techName = targetTech ? (targetTech.abbr || targetTech.name) : techId;
+    
+    if (!confirm(`[${techName}] 기술 블록을 삭제하시겠습니까?`)) {
+        return;
+    }
+    
+    state.deepTechData.tech_list = state.deepTechData.tech_list.filter(t => t.id !== techId);
+    removeCustomTechFromStorage(techId);
+
+    if (state.selectedTechId === techId) {
+        if (state.deepTechData.tech_list.length > 0) {
+            state.selectedTechId = state.deepTechData.tech_list[0].id;
+            state.selectedSubNodeId = state.deepTechData.tech_list[0].nodes && state.deepTechData.tech_list[0].nodes[0] 
+                ? state.deepTechData.tech_list[0].nodes[0].id : '';
+        } else {
+            state.selectedTechId = '';
+            state.selectedSubNodeId = '';
+        }
+    }
+    
+    renderDeepTechTabs();
+    renderDeepTechContent();
+}
+window.deleteTechBlock = deleteTechBlock;
+
+// 2. 기술 퀵 셀렉터 탭 렌더링 (컴팩트 & 1줄 요약형 & 삭제 버튼 탑재)
 function renderDeepTechTabs() {
     const tabsContainer = document.getElementById('deep-tech-tabs');
     if (!tabsContainer || !state.deepTechData || !state.deepTechData.tech_list) return;
@@ -503,10 +624,17 @@ function renderDeepTechTabs() {
         const isActive = tech.id === state.selectedTechId;
         const card = document.createElement('div');
         card.className = `deep-tech-card-tab ${isActive ? 'active' : ''}`;
+        
+        const cleanSummary = (tech.summary || '').replace(/\s+/g, ' ').trim();
+        const displayName = tech.abbr || tech.name;
+
         card.innerHTML = `
-            <span class="tab-badge">${escapeHTML(tech.badge || '핵심 기술')}</span>
-            <h3>${escapeHTML(tech.abbr || tech.name)}</h3>
-            <p>${escapeHTML(tech.summary.slice(0, 48))}...</p>
+            <div class="tab-top-row">
+                <span class="tab-badge" title="${escapeHTML(tech.badge || '핵심 기술')}">${escapeHTML(tech.badge || '핵심 기술')}</span>
+                <button class="btn-delete-tech-tab" title="[${escapeHTML(displayName)}] 블록 삭제" onclick="deleteTechBlock('${tech.id}', event)">×</button>
+            </div>
+            <h3 title="${escapeHTML(displayName)}">${escapeHTML(displayName)}</h3>
+            <p title="${escapeHTML(cleanSummary)}">${escapeHTML(cleanSummary)}</p>
         `;
         card.addEventListener('click', () => {
             state.selectedTechId = tech.id;
@@ -1002,6 +1130,9 @@ async function handleGenerateTech() {
 
         state.selectedTechId = newTech.id;
         state.selectedSubNodeId = newTech.nodes && newTech.nodes[0] ? newTech.nodes[0].id : '';
+
+        // 영구 저장소에 자동 저장
+        saveCustomTechToStorage(newTech);
 
         if (input) input.value = '';
         renderDeepTechTabs();
