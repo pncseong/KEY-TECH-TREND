@@ -552,12 +552,18 @@ function renderDeepTechContent() {
         }
     }
 
+    // 서브 노드 전용 이미지 또는 기술 대표 이미지
+    const nodeImgUrl = (subNode && subNode.image_url) || tech.image_url || '';
+
     container.innerHTML = `
         <div class="deep-tech-main-card">
             <!-- 1. 헤더 요약 박스 -->
             <div class="dossier-header-box">
-                <h2>${escapeHTML(tech.name)}</h2>
-                <p class="dossier-summary">💡 ${escapeHTML(tech.summary)}</p>
+                <div class="dossier-header-left">
+                    <span class="tab-badge" style="margin-bottom: 0.5rem;">${escapeHTML(tech.badge || '핵심 공학 기술')}</span>
+                    <h2>${escapeHTML(tech.name)}</h2>
+                    <p class="dossier-summary">💡 ${escapeHTML(tech.summary)}</p>
+                </div>
             </div>
 
             <!-- 2. 6단계 공학 프레임워크 4개 핵심 카드 -->
@@ -584,53 +590,70 @@ function renderDeepTechContent() {
             <div class="tech-tree-section">
                 <div class="tech-tree-title">
                     <h3><i data-lucide="git-branch"></i> 5. 기술 진화 계통도 (Technical Chain)</h3>
-                    <span>* 아래 세부 기술 노드를 클릭하면 상세 구조도와 밸류체인이 펼쳐집니다.</span>
+                    <span>* 아래 세부 기술 노드를 클릭하면 해당 기술의 단면 구조도와 밸류체인이 펼쳐집니다.</span>
                 </div>
                 <div class="tree-nodes-wrapper">
                     ${treeNodesHTML}
                 </div>
 
-                <!-- 서브 노드 상세 드릴다운 패널 -->
+                <!-- [2열 매거진형 드릴다운 뷰어] -->
                 ${subNode ? `
-                    <div class="sub-node-detail-panel">
-                        <div class="sub-node-header">
-                            <h4>${escapeHTML(subNode.name)}</h4>
-                            <span class="node-tag">${escapeHTML(subNode.tag || '')}</span>
+                    <div class="sub-node-magazine-layout">
+                        <!-- 좌측 컬럼: 고해상도 공학 구조도 이미지 및 다이어그램 -->
+                        <div class="sub-node-visual-col">
+                            ${nodeImgUrl ? `
+                                <div class="visual-img-card">
+                                    <div class="visual-img-header">
+                                        <i data-lucide="image"></i>
+                                        <span>실제 패키징 단면 및 칩 아키텍처 실물도</span>
+                                    </div>
+                                    <div class="visual-img-wrap">
+                                        <img src="${nodeImgUrl}" alt="${escapeHTML(subNode.name)}" class="tech-dossier-img" onerror="this.style.display='none'">
+                                    </div>
+                                    <p class="img-caption">📌 ${escapeHTML(subNode.name)} 공학 구조 조감도</p>
+                                </div>
+                            ` : ''}
+
+                            ${tech.diagram ? `
+                                <div class="diagram-box">
+                                    <h4><i data-lucide="share-2"></i> 칩 내부 신호 흐름 벡터 구조도</h4>
+                                    <div class="mermaid-render-area">
+                                        <pre class="mermaid">${tech.diagram}</pre>
+                                    </div>
+                                </div>
+                            ` : ''}
                         </div>
-                        <p class="sub-node-desc">${escapeHTML(subNode.desc)}</p>
-                        
-                        <div class="sub-node-grid">
+
+                        <!-- 우측 컬럼: 정밀 공학 분석, 스펙, 기업전략, 소부장 밸류체인 -->
+                        <div class="sub-node-info-col">
+                            <div class="sub-node-header">
+                                <h4>${escapeHTML(subNode.name)}</h4>
+                                <span class="node-tag">${escapeHTML(subNode.tag || '')}</span>
+                            </div>
+                            <p class="sub-node-desc">${escapeHTML(subNode.desc)}</p>
+                            
                             <div class="sub-spec-box">
                                 <h5><i data-lucide="gauge"></i> 핵심 스펙 및 성능 지표</h5>
                                 <p>${escapeHTML(subNode.tech_specs || '상세 규격 정의 중')}</p>
                             </div>
-                            <div class="sub-spec-box">
-                                <h5><i data-lucide="award"></i> 기업별 추진 전략 및 경쟁 구도</h5>
-                                <p>${escapeHTML(subNode.company_strategy || '글로벌 선도 기업들이 표준 주도권 경쟁 중')}</p>
-                            </div>
-                        </div>
 
-                        <div class="sub-spec-box" style="margin-top: 0.5rem;">
-                            <h5><i data-lucide="network"></i> 6. 글로벌 공급망 (소부장 밸류체인 맵)</h5>
-                            <table class="chain-table">
-                                <tbody>
-                                    ${chainRowsHTML}
-                                </tbody>
-                            </table>
+                            <div class="sub-spec-box">
+                                <h5><i data-lucide="award"></i> 기업별 추진 전략 및 특허/수율 비교</h5>
+                                <p style="white-space: pre-line;">${escapeHTML(subNode.company_strategy || '글로벌 선도 기업들이 표준 주도권 경쟁 중')}</p>
+                            </div>
+
+                            <div class="sub-spec-box">
+                                <h5><i data-lucide="network"></i> 6. 글로벌 공급망 (소부장 밸류체인 맵)</h5>
+                                <table class="chain-table">
+                                    <tbody>
+                                        ${chainRowsHTML}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 ` : ''}
             </div>
-
-            <!-- 4. 공학 구조도 다이어그램 박스 (Mermaid.js) -->
-            ${tech.diagram ? `
-                <div class="diagram-box">
-                    <h4><i data-lucide="share-2"></i> 7. 인터랙티브 칩/시스템 공학 구조도</h4>
-                    <div class="mermaid-render-area">
-                        <pre class="mermaid">${tech.diagram}</pre>
-                    </div>
-                </div>
-            ` : ''}
         </div>
     `;
 
