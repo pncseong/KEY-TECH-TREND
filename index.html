@@ -211,12 +211,20 @@
                 sDeep.src = 'deep_tech_data.js' + vParam;
                 sDeep.async = false;
                 
-                // 3. app.js 로드
+                // 3. blueprints.js 로드
                 sDeep.onload = function() {
-                    var sApp = document.createElement('script');
-                    sApp.src = 'app.js' + vParam;
-                    sApp.async = false;
-                    document.body.appendChild(sApp);
+                    var sBp = document.createElement('script');
+                    sBp.src = 'blueprints.js' + vParam;
+                    sBp.async = false;
+                    
+                    // 4. app.js 로드
+                    sBp.onload = function() {
+                        var sApp = document.createElement('script');
+                        sApp.src = 'app.js' + vParam;
+                        sApp.async = false;
+                        document.body.appendChild(sApp);
+                    };
+                    document.head.appendChild(sBp);
                 };
                 document.head.appendChild(sDeep);
             };
