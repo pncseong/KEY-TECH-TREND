@@ -24,6 +24,12 @@ window.EngineeringBlueprints = {
                 return getCxlExpansionSvg();
             case 'cxl_pooling_fab':
                 return getCxlPoolingSvg();
+            case 'pwr_smr_nuscale':
+                return getPwrSmrSvg();
+            case 'sfr_terrapower_natrium':
+                return getSfrNatriumSvg();
+            case 'ai_datacenter_grid_link':
+                return getAiSmrMicrogridSvg();
             default:
                 return null;
         }
@@ -1613,6 +1619,636 @@ function getCxlPoolingSvg() {
                 <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 유휴 메모리 낭비: <tspan fill="#ffffff">Stranded Memory 0% 달성</tspan></text>
                 <text x="250" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 데이터센터 TCO: <tspan fill="#ffffff">총소유비용 30% 이상 절감</tspan></text>
                 <text x="505" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 스위치 리더: <tspan fill="#fef08a">Astera Labs Leo Fabric Switch 독점</tspan></text>
+            </g>
+        </g>
+    </svg>
+    `;
+}
+
+// 10. 경수로형 SMR (뉴스케일 VOYGR 77MWe) 정밀 일체형 RPV 단면도
+function getPwrSmrSvg() {
+    return `
+    <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="grid-smr-pwr" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+            </pattern>
+            <linearGradient id="grad-pool-water" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#0369a1" stop-opacity="0.5"/>
+            </linearGradient>
+            <linearGradient id="grad-cnv-vessel" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#334155"/>
+                <stop offset="50%" stop-color="#475569"/>
+                <stop offset="100%" stop-color="#334155"/>
+            </linearGradient>
+            <linearGradient id="grad-rpv-vessel" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1e293b"/>
+                <stop offset="50%" stop-color="#334155"/>
+                <stop offset="100%" stop-color="#1e293b"/>
+            </linearGradient>
+            <linearGradient id="grad-smr-core" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ef4444"/>
+                <stop offset="50%" stop-color="#f59e0b"/>
+                <stop offset="100%" stop-color="#dc2626"/>
+            </linearGradient>
+            <linearGradient id="grad-smr-helical" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#0284c7"/>
+            </linearGradient>
+            <filter id="pwr-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+        </defs>
+
+        <!-- 배경 그리드 -->
+        <rect width="100%" height="100%" fill="#070c14"/>
+        <rect width="100%" height="100%" fill="url(#grid-smr-pwr)"/>
+
+        <!-- 상단 도면 타이틀 & 스펙 태그 -->
+        <g transform="translate(20, 24)">
+            <text x="0" y="0" fill="#38bdf8" font-family="'Consolas', monospace" font-size="12" font-weight="700" letter-spacing="1.5">
+                [SMR-PWR-01] INTEGRAL PWR SMR ARCHITECTURE (NUSCALE VOYGR 77MWe)
+            </text>
+            <text x="0" y="15" fill="#64748b" font-family="'Consolas', monospace" font-size="9">
+                Dual-Vessel (RPV/CNV) | Helical-Coil SG | 100% Passive Safety Pool Cooling | Doosan Heavy Forging
+            </text>
+            <rect x="620" y="-12" width="100" height="22" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1" rx="3"/>
+            <text x="670" y="3" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CLICK TO ZOOM</text>
+        </g>
+
+        <!-- 좌측: 뉴스케일 VOYGR 일체형 원자로 정밀 단면도 (Integral SMR Cross-Section) -->
+        <g transform="translate(20, 55)">
+            <!-- 1. 지하 비상 냉각 수조 (Underground Safety Water Pool) -->
+            <rect x="0" y="0" width="435" height="330" fill="url(#grad-pool-water)" rx="6" stroke="#0284c7" stroke-width="1.5"/>
+            <!-- 수면 라인 -->
+            <line x1="0" y1="20" x2="435" y2="20" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="6,3"/>
+            <text x="15" y="15" fill="#7dd3fc" font-size="9" font-weight="700">■ 지하 피동 비상 냉각 수조 (무한 자연 방열원 - 멜트다운 0%)</text>
+
+            <!-- 2. 격납용기 (CNV: Containment Vessel - 외경 약 4.5m, 높이 약 25m 축소 도면) -->
+            <g transform="translate(130, 25)">
+                <!-- CNV 외벽 (고장력 탄소강 / 내부 고진공 유지) -->
+                <path d="M 20,15 C 20,5 155,5 155,15 L 165,260 C 165,285 10,285 10,260 Z" 
+                      fill="url(#grad-cnv-vessel)" stroke="#94a3b8" stroke-width="1.8"/>
+                <text x="87" y="14" fill="#cbd5e1" font-size="7" font-weight="700" text-anchor="middle">격납용기 (CNV, 진공 단열)</text>
+
+                <!-- 3. 원자로 압력용기 (RPV: Reactor Pressure Vessel - 두산에너빌리티 일체형 단조품) -->
+                <path d="M 35,25 C 35,18 140,18 140,25 L 148,245 C 148,265 27,265 27,245 Z" 
+                      fill="url(#grad-rpv-vessel)" stroke="#0ea5e9" stroke-width="2"/>
+                <text x="87" y="27" fill="#38bdf8" font-size="6.5" font-weight="800" text-anchor="middle">원자로 압력용기 (RPV)</text>
+
+                <!-- 3-1. 최상단: 내장형 가압기 (Integrated Pressurizer, 13.8 MPa) -->
+                <rect x="45" y="32" width="85" height="20" fill="#0f172a" stroke="#38bdf8" stroke-width="0.8" rx="2"/>
+                <text x="87" y="44" fill="#bae6fd" font-size="6.5" font-weight="700" text-anchor="middle">가압기 (Pressurizer 13.8MPa)</text>
+
+                <!-- 3-2. 제어봉 구동장치 (CRDM 관통선) -->
+                <line x1="75" y1="52" x2="75" y2="185" stroke="#f59e0b" stroke-width="1.2"/>
+                <line x1="99" y1="52" x2="99" y2="185" stroke="#f59e0b" stroke-width="1.2"/>
+
+                <!-- 3-3. 헬리컬 코일 증기발생기 (Helical-Coil Steam Generator, 양측 2세트) -->
+                <g fill="none" stroke="url(#grad-smr-helical)" stroke-width="1.6">
+                    <!-- 좌측 헬리컬 코일 -->
+                    <path d="M 40,75 Q 52,82 40,90 Q 52,98 40,106 Q 52,114 40,122 Q 52,130 40,138 Q 52,146 40,154"/>
+                    <path d="M 45,75 Q 57,82 45,90 Q 57,98 45,106 Q 57,114 45,122 Q 57,130 45,138 Q 57,146 45,154"/>
+                    <!-- 우측 헬리컬 코일 -->
+                    <path d="M 135,75 Q 123,82 135,90 Q 123,98 135,106 Q 123,114 135,122 Q 123,130 135,138 Q 123,146 135,154"/>
+                    <path d="M 130,75 Q 118,82 130,90 Q 118,98 130,106 Q 118,114 130,122 Q 118,130 130,138 Q 118,146 130,154"/>
+                </g>
+                <text x="87" y="112" fill="#38bdf8" font-size="7" font-weight="700" text-anchor="middle">중앙 라이저 (Riser)</text>
+                <text x="87" y="122" fill="#67e8f9" font-size="6" text-anchor="middle">고온 냉각재 자연 상승로</text>
+                <text x="36" y="68" fill="#38bdf8" font-size="6" font-weight="700">Helical SG</text>
+                <text x="115" y="68" fill="#38bdf8" font-size="6" font-weight="700">Helical SG</text>
+
+                <!-- 증기 방출 노즐 (터빈 발전기 연계) -->
+                <line x1="35" y1="62" x2="5" y2="62" stroke="#38bdf8" stroke-width="2"/>
+                <line x1="140" y1="62" x2="170" y2="62" stroke="#38bdf8" stroke-width="2"/>
+                <text x="5" y="58" fill="#bae6fd" font-size="5.5">Steam Out</text>
+                <text x="145" y="58" fill="#bae6fd" font-size="5.5">Feedwater In</text>
+
+                <!-- 3-4. 하단 노심 (Reactor Core: 37개 UO2/HALEU 핵연료 집합체) -->
+                <g transform="translate(52, 185)">
+                    <rect x="0" y="0" width="71" height="52" fill="url(#grad-smr-core)" stroke="#ef4444" stroke-width="1.5" rx="2" filter="url(#pwr-glow)"/>
+                    <text x="35" y="18" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle">SMR CORE</text>
+                    <text x="35" y="28" fill="#fef08a" font-size="6.5" font-weight="700" text-anchor="middle">37 Fuel Assemblies</text>
+                    <text x="35" y="38" fill="#fee2e2" font-size="6" text-anchor="middle">열출력 250MWth</text>
+                    <text x="35" y="47" fill="#ffffff" font-size="6" font-weight="800" text-anchor="middle">전기출력 77MWe</text>
+                </g>
+
+                <!-- 자연 순환 냉각재 순환 화살표 (Natural Circulation Arrows) -->
+                <!-- 중앙 상승류 (빨강) -->
+                <path d="M 87,175 L 87,80" stroke="#f87171" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+                <!-- 양측 하강류 (파랑 - 다운커머) -->
+                <path d="M 33,85 L 33,180" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <path d="M 142,85 L 142,180" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <text x="26" y="140" fill="#93c5fd" font-size="5" -webkit-writing-mode="vertical-rl" text-anchor="middle">Downcomer</text>
+            </g>
+
+            <!-- 좌측 하단 상세 스펙 박스 -->
+            <g transform="translate(15, 230)">
+                <rect x="0" y="0" width="130" height="85" fill="#0f172a" fill-opacity="0.85" rx="3" stroke="#1e293b" stroke-width="1"/>
+                <text x="10" y="15" fill="#38bdf8" font-size="7.5" font-weight="700">■ VOYGR 안전계통</text>
+                <text x="10" y="30" fill="#cbd5e1" font-size="6.5">• 무전원 자연대류 냉각</text>
+                <text x="10" y="43" fill="#cbd5e1" font-size="6.5">• 냉각재 펌프 없음 (No RCP)</text>
+                <text x="10" y="56" fill="#cbd5e1" font-size="6.5">• 배관 파단 사고(LOCA) 원천 배제</text>
+                <text x="10" y="69" fill="#10b981" font-size="6.5" font-weight="700">✓ 무기한 무전원 냉각 유지</text>
+            </g>
+
+            <!-- 우측 하단 두산에너빌리티 주기기 단조 박스 -->
+            <g transform="translate(290, 230)">
+                <rect x="0" y="0" width="130" height="85" fill="#0f172a" fill-opacity="0.85" rx="3" stroke="#1e293b" stroke-width="1"/>
+                <text x="10" y="15" fill="#f59e0b" font-size="7.5" font-weight="700">■ 두산에너빌리티 독점</text>
+                <text x="10" y="30" fill="#cbd5e1" font-size="6.5">• RPV 대형 단조품 단독 수주</text>
+                <text x="10" y="43" fill="#cbd5e1" font-size="6.5">• 증기발생기 튜브 용접 제작</text>
+                <text x="10" y="56" fill="#cbd5e1" font-size="6.5">• 연간 수십 기 공장 모듈 양산</text>
+                <text x="10" y="69" fill="#fcd34d" font-size="6.5" font-weight="700">✓ 글로벌 SMR 파운드리 1위</text>
+            </g>
+        </g>
+
+        <!-- 우측: 원자로 자연 순환 메커니즘 & 사업 모델 -->
+        <g transform="translate(465, 55)">
+            <rect x="0" y="0" width="275" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="22" fill="#94a3b8" font-size="11" font-weight="700">■ 자연 순환 원리 &amp; 밸류체인</text>
+
+            <!-- 1. 100% 무전원 피동 순환 원리 -->
+            <g transform="translate(15, 36)">
+                <rect x="0" y="0" width="245" height="75" fill="#082f49" stroke="#0284c7" stroke-width="1.2" rx="3"/>
+                <text x="10" y="16" fill="#38bdf8" font-size="8" font-weight="700">1. 무전원 자연대류 (Natural Circulation)</text>
+                <text x="10" y="32" fill="#cbd5e1" font-size="7">• 밀도 차이에 의한 자동 순환 (펌프 전력 0W)</text>
+                <text x="10" y="46" fill="#cbd5e1" font-size="7">• 노심 발열 ➡️ 비중 감소로 중앙 상승(Riser)</text>
+                <text x="10" y="60" fill="#cbd5e1" font-size="7">• 증기발생기 열교환 후 하강(Downcomer)</text>
+            </g>
+
+            <!-- 2. 공장 일괄 모듈 조립 (Shop Fabrication) -->
+            <g transform="translate(15, 120)">
+                <rect x="0" y="0" width="245" height="65" fill="#1e293b" stroke="#475569" stroke-width="1" rx="3"/>
+                <text x="10" y="16" fill="#f59e0b" font-size="8" font-weight="700">2. 공장 제작 &amp; 운송 (Modular Construction)</text>
+                <text x="10" y="32" fill="#94a3b8" font-size="7">• 부지 건설 공기: 10년 ➡️ 단 3~4년으로 단축</text>
+                <text x="10" y="46" fill="#94a3b8" font-size="7">• 바지선/트럭으로 완성형 모듈 운송 후 결합</text>
+                <text x="10" y="58" fill="#10b981" font-size="7">✓ 건설비 40% 절감 및 초기 리스크 최소화</text>
+            </g>
+
+            <!-- 3. 글로벌 밸류체인 및 수혜 기업 -->
+            <g transform="translate(15, 195)">
+                <rect x="0" y="0" width="245" height="120" fill="#0f172a" stroke="#1e293b" stroke-width="1" rx="3"/>
+                <text x="10" y="18" fill="#38bdf8" font-size="8.5" font-weight="700">■ 핵심 생태계 밸류체인</text>
+                <text x="10" y="36" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">설계 원천사:</tspan> 뉴스케일파워 (NuScale - SMR)</text>
+                <text x="10" y="50" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">주기기 단독 제작:</tspan> 두산에너빌리티 (단조/가공)</text>
+                <text x="10" y="64" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">EPC 건설 시공:</tspan> 삼성물산, 현대건설</text>
+                <text x="10" y="78" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">원전 설계/엔지니어링:</tspan> 한전기술, 한전KPS</text>
+                <rect x="10" y="90" width="225" height="20" fill="#1e1b4b" rx="2"/>
+                <text x="122" y="103" fill="#c7d2fe" font-size="6.5" font-weight="700" text-anchor="middle">
+                    미국 NRC 세계 최초 표준설계인가(SDA) 획득
+                </text>
+            </g>
+        </g>
+
+        <!-- 하단 메트릭 바 -->
+        <g transform="translate(20, 395)">
+            <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ 뉴스케일 VOYGR 경수로형 SMR 핵심 엔지니어링 지표</text>
+            <g transform="translate(15, 28)">
+                <rect x="0" y="2" width="10" height="10" fill="#0284c7" rx="2"/>
+                <text x="15" y="11" fill="#cbd5e1" font-size="10">모듈 출력: 모듈당 77MWe (12기 결합 시 924MWe)</text>
+                <rect x="260" y="2" width="10" height="10" fill="#10b981" rx="2"/>
+                <text x="275" y="11" fill="#cbd5e1" font-size="10">안전성: 100% 무전원 자연대류 냉각 (무기한 멜트다운 0%)</text>
+                <rect x="525" y="2" width="10" height="10" fill="#f59e0b" rx="2"/>
+                <text x="540" y="11" fill="#cbd5e1" font-size="10">주기기 제조: 두산에너빌리티 단독</text>
+            </g>
+            <g transform="translate(15, 52)">
+                <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 일체형 구조: <tspan fill="#ffffff">RPV 내 증기발생기/가압기 통합 (대형 배관 파단 배제)</tspan></text>
+                <text x="320" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 건설 공기: <tspan fill="#ffffff">공장 모듈 제작으로 3~4년 내 준공</tspan></text>
+                <text x="540" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 상용화: <tspan fill="#fef08a">루마니아 및 미국 데이터센터 공급</tspan></text>
+            </g>
+        </g>
+    </svg>
+    `;
+}
+
+// 11. 4세대 소듐냉각고속로 (테라파워 Natrium SFR) 정밀 아키텍처 구조도
+function getSfrNatriumSvg() {
+    return `
+    <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="grid-sfr-nat" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+            </pattern>
+            <linearGradient id="grad-liquid-na" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.85"/>
+                <stop offset="100%" stop-color="#d97706" stop-opacity="0.95"/>
+            </linearGradient>
+            <linearGradient id="grad-molten-salt" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ef4444"/>
+                <stop offset="50%" stop-color="#f97316"/>
+                <stop offset="100%" stop-color="#dc2626"/>
+            </linearGradient>
+            <linearGradient id="grad-cold-salt" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="100%" stop-color="#0369a1"/>
+            </linearGradient>
+            <linearGradient id="grad-natrium-vessel" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#334155"/>
+                <stop offset="50%" stop-color="#64748b"/>
+                <stop offset="100%" stop-color="#334155"/>
+            </linearGradient>
+            <filter id="natrium-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+        </defs>
+
+        <!-- 배경 그리드 -->
+        <rect width="100%" height="100%" fill="#070c14"/>
+        <rect width="100%" height="100%" fill="url(#grid-sfr-nat)"/>
+
+        <!-- 상단 도면 타이틀 & 스펙 태그 -->
+        <g transform="translate(20, 24)">
+            <text x="0" y="0" fill="#38bdf8" font-family="'Consolas', monospace" font-size="12" font-weight="700" letter-spacing="1.5">
+                [SMR-SFR-02] GEN-IV SODIUM FAST REACTOR &amp; MOLTEN-SALT STORAGE (NATRIUM)
+            </text>
+            <text x="0" y="15" fill="#64748b" font-family="'Consolas', monospace" font-size="9">
+                TerraPower &amp; GE Hitachi | Liquid Sodium (Atmospheric Pressure) | 345MWe Base ➡️ 500MWe Peak Boosting | 1GWh TES
+            </text>
+            <rect x="620" y="-12" width="100" height="22" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1" rx="3"/>
+            <text x="670" y="3" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CLICK TO ZOOM</text>
+        </g>
+
+        <!-- 좌측: 테라파워 Natrium 3계통 하이브리드 아키텍처 (Reactor + Salt TES + Power Block) -->
+        <g transform="translate(20, 55)">
+            <rect x="0" y="0" width="460" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="20" fill="#94a3b8" font-size="10.5" font-weight="700">■ Natrium SFR 원자로 + 기가와트시급 용융염 저장(TES) 연계 계통도</text>
+
+            <!-- 1. 1차 소듐 풀형 원자로 용기 (Primary Sodium Pool Reactor) -->
+            <g transform="translate(15, 32)">
+                <rect x="0" y="0" width="135" height="190" fill="#1e293b" stroke="#64748b" stroke-width="1.5" rx="4"/>
+                <text x="67" y="16" fill="#f59e0b" font-size="8" font-weight="800" text-anchor="middle">1차 풀형 원자로 용기</text>
+                <text x="67" y="26" fill="#cbd5e1" font-size="6.5" text-anchor="middle">대기압 운전 (고압폭발 0%)</text>
+
+                <!-- 액체 나트륨(소듐) 풀 (비등점 883°C, 550°C 운전) -->
+                <rect x="8" y="32" width="119" height="148" fill="url(#grad-liquid-na)" fill-opacity="0.3" stroke="#f59e0b" stroke-width="0.8" rx="2"/>
+                <text x="67" y="45" fill="#fef08a" font-size="7" font-weight="700" text-anchor="middle">액체 나트륨 풀 (550°C)</text>
+
+                <!-- 중간 열교환기 (IHX: Intermediate Heat Exchanger) -->
+                <rect x="15" y="55" width="42" height="65" fill="#082f49" stroke="#0284c7" stroke-width="1" rx="2"/>
+                <text x="36" y="85" fill="#38bdf8" font-size="7" font-weight="700" text-anchor="middle">중간열교환기</text>
+                <text x="36" y="96" fill="#bae6fd" font-size="6" text-anchor="middle">(IHX)</text>
+
+                <!-- 1차 전자기 펌프 (EM Pump - 구동부 없는 영구자석 방식) -->
+                <rect x="75" y="55" width="45" height="35" fill="#0f172a" stroke="#10b981" stroke-width="1" rx="2"/>
+                <text x="97" y="72" fill="#34d399" font-size="6.5" font-weight="700" text-anchor="middle">전자기 펌프</text>
+                <text x="97" y="82" fill="#a7f3d0" font-size="5.5" text-anchor="middle">(EM Pump)</text>
+
+                <!-- 고속로 노심 (HALEU 금속 연료 / 845MWth) -->
+                <rect x="25" y="130" width="85" height="42" fill="#dc2626" stroke="#ef4444" stroke-width="1.5" rx="2" filter="url(#natrium-glow)"/>
+                <text x="67" y="148" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle">HALEU 금속 노심</text>
+                <text x="67" y="159" fill="#fef08a" font-size="6.5" font-weight="700" text-anchor="middle">고에너지 고속 중성자</text>
+                <text x="67" y="168" fill="#fee2e2" font-size="5.5" text-anchor="middle">845 MWth 열출력</text>
+            </g>
+
+            <!-- 2차 중간 소듐 루프 배관 (Intermediate Loop) -->
+            <g stroke="#f59e0b" stroke-width="2.5" fill="none">
+                <path d="M 51,87 L 165,87 L 165,115 L 180,115"/>
+                <path d="M 180,135 L 165,135 L 165,145 L 51,145"/>
+            </g>
+            <text x="165" y="78" fill="#f59e0b" font-size="6.5" font-weight="700" text-anchor="middle">2차 소듐 루프</text>
+
+            <!-- 2. 용융염 열에너지 저장장치 (Molten Salt Energy Island, 1GWh급) -->
+            <g transform="translate(180, 45)">
+                <rect x="0" y="0" width="135" height="175" fill="#1e1b4b" stroke="#8b5cf6" stroke-width="1.2" rx="4"/>
+                <text x="67" y="16" fill="#c4b5fd" font-size="7.5" font-weight="800" text-anchor="middle">용융염 열에너지 저장 (TES)</text>
+                <text x="67" y="26" fill="#a78bfa" font-size="6.5" text-anchor="middle">1,000 MWh (1GWh) 버퍼</text>
+
+                <!-- 고온 용융염 탱크 (Hot Salt Tank: 565°C) -->
+                <rect x="12" y="35" width="111" height="52" fill="url(#grad-molten-salt)" stroke="#ef4444" stroke-width="1" rx="3"/>
+                <text x="67" y="58" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle">Hot Salt Tank</text>
+                <text x="67" y="70" fill="#fef08a" font-size="7" font-weight="700" text-anchor="middle">565°C 고온 질산염 저장</text>
+
+                <!-- 저온 용융염 탱크 (Cold Salt Tank: 290°C) -->
+                <rect x="12" y="100" width="111" height="52" fill="url(#grad-cold-salt)" stroke="#0284c7" stroke-width="1" rx="3"/>
+                <text x="67" y="123" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle">Cold Salt Tank</text>
+                <text x="67" y="135" fill="#bae6fd" font-size="7" font-weight="700" text-anchor="middle">290°C 회수 탱크</text>
+            </g>
+
+            <!-- 용융염 -> 증기발생기 연결관 -->
+            <g stroke="#ef4444" stroke-width="2" fill="none">
+                <path d="M 303,80 L 335,80"/>
+            </g>
+            <g stroke="#0284c7" stroke-width="2" fill="none">
+                <path d="M 335,145 L 303,145"/>
+            </g>
+
+            <!-- 3. 초임계 증기 터빈 발전기 파워 아일랜드 (Power Conversion Island) -->
+            <g transform="translate(335, 45)">
+                <rect x="0" y="0" width="110" height="175" fill="#082f49" stroke="#0ea5e9" stroke-width="1.2" rx="4"/>
+                <text x="55" y="18" fill="#38bdf8" font-size="7.5" font-weight="800" text-anchor="middle">초임계 터빈 발전기</text>
+
+                <!-- 증기발생기 (Steam Generator) -->
+                <rect x="10" y="28" width="90" height="38" fill="#0f172a" stroke="#38bdf8" stroke-width="1" rx="2"/>
+                <text x="55" y="47" fill="#bae6fd" font-size="7" font-weight="700" text-anchor="middle">증기발생기 (SG)</text>
+                <text x="55" y="58" fill="#94a3b8" font-size="6" text-anchor="middle">용융염 열 ➡️ 초임계 증기</text>
+
+                <!-- 터빈 & 발전기 블록 -->
+                <rect x="10" y="75" width="90" height="50" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.2" rx="2"/>
+                <text x="55" y="93" fill="#34d399" font-size="7.5" font-weight="800" text-anchor="middle">345MWe 상시 기저</text>
+                <text x="55" y="106" fill="#fef08a" font-size="8" font-weight="800" text-anchor="middle">➡️ 500MWe 부스팅</text>
+                <text x="55" y="118" fill="#ffffff" font-size="6" text-anchor="middle">(5.5시간 피크 공급)</text>
+
+                <!-- 냉각기 / 콘덴서 -->
+                <rect x="10" y="133" width="90" height="30" fill="#0f172a" stroke="#475569" stroke-width="0.8" rx="2"/>
+                <text x="55" y="152" fill="#94a3b8" font-size="6.5" text-anchor="middle">공랭식 콘덴서 (물 소비 없음)</text>
+            </g>
+
+            <!-- 하단 핵심 기술 해설 박스 -->
+            <g transform="translate(15, 230)">
+                <rect x="0" y="0" width="430" height="85" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+                <text x="12" y="18" fill="#38bdf8" font-size="8.5" font-weight="700">■ 테라파워 Natrium SFR의 결정적 공학 혁신</text>
+                <text x="12" y="34" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">대기압 상압 운전:</tspan> 물과 달리 끓는점이 883°C에 달해 가압용기 불필요, 고압 폭발 위험 원천 차단</text>
+                <text x="12" y="48" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">피크 전력 부스팅:</tspan> AI 데이터센터 급증 부하 시 용융염 열을 방출해 출력을 345MWe에서 <tspan fill="#f59e0b">500MWe로 45% 증폭</tspan></text>
+                <text x="12" y="62" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">방사성 폐기물 감축:</tspan> 고속 중성자로 핵분열 효율을 30배 이상 높여 장수명 폐기물 발생량 획기적 감소</text>
+                <text x="12" y="76" fill="#10b981" font-size="7">✓ 미국 와이오밍주 1호기 착공 완료, HD현대(선박 추진 원자로/지분) 및 SK그룹 전략 파트너십</text>
+            </g>
+        </g>
+
+        <!-- 우측: 원전 비교 & 생태계 밸류체인 -->
+        <g transform="translate(490, 55)">
+            <rect x="0" y="0" width="250" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="22" fill="#94a3b8" font-size="11" font-weight="700">■ 4세대 원전 차별성 &amp; 밸류체인</text>
+
+            <!-- 경수로 vs 소듐고속로 비교 표 -->
+            <g transform="translate(12, 36)">
+                <rect x="0" y="0" width="226" height="78" fill="#0f172a" stroke="#334155" stroke-width="1" rx="2"/>
+                <text x="8" y="16" fill="#38bdf8" font-size="7.5" font-weight="700">■ 냉각재 특성 비교</text>
+                <text x="8" y="32" fill="#94a3b8" font-size="6.5">• 냉각재: <tspan fill="#f87171">기존 경수로(경수 H2O)</tspan> vs <tspan fill="#34d399">SFR(액체 Na)</tspan></text>
+                <text x="8" y="46" fill="#94a3b8" font-size="6.5">• 운전 압력: <tspan fill="#f87171">150기압(초고압)</tspan> vs <tspan fill="#34d399">1기압(대기압)</tspan></text>
+                <text x="8" y="60" fill="#94a3b8" font-size="6.5">• 열효율: <tspan fill="#f87171">약 33%</tspan> vs <tspan fill="#34d399">40%+ (고온 초임계)</tspan></text>
+                <text x="8" y="72" fill="#10b981" font-size="6" font-weight="700">✓ 상압 운전으로 원자로 용기 두께/비용 1/3 축소</text>
+            </g>
+
+            <!-- 핵심 밸류체인 -->
+            <g transform="translate(12, 125)">
+                <rect x="0" y="0" width="226" height="190" fill="#0f172a" stroke="#1e293b" stroke-width="1" rx="3"/>
+                <text x="10" y="18" fill="#38bdf8" font-size="8.5" font-weight="700">■ 테라파워 Natrium 밸류체인</text>
+
+                <text x="10" y="36" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">설립자:</tspan> 빌 게이츠 (TerraPower)</text>
+                <text x="10" y="50" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">원자로 공동개발:</tspan> GE 히타치(GEH)</text>
+                <text x="10" y="66" fill="#94a3b8" font-size="7">• <tspan fill="#f59e0b" font-weight="700">HD현대그룹:</tspan></text>
+                <text x="18" y="78" fill="#cbd5e1" font-size="6.5">- 테라파워 지분 투자 및 전략적 제휴</text>
+                <text x="18" y="90" fill="#cbd5e1" font-size="6.5">- 해상 부유식 SMR 및 선박용 원전 개발</text>
+                <text x="18" y="102" fill="#cbd5e1" font-size="6.5">- HD현대일렉트릭 (초고압 전력 변전 계통)</text>
+                <text x="10" y="120" fill="#94a3b8" font-size="7">• <tspan fill="#f59e0b" font-weight="700">SK그룹:</tspan> 2.5억 달러 지분 투자</text>
+                <text x="10" y="136" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">원전 기기 제작:</tspan> 두산에너빌리티</text>
+                <text x="10" y="150" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">정부 지원:</tspan> 미국 DOE ARDP 20억$</text>
+
+                <rect x="8" y="162" width="210" height="20" fill="#1e1b4b" rx="2"/>
+                <text x="113" y="175" fill="#a5b4fc" font-size="6.5" font-weight="700" text-anchor="middle">
+                    2030년 상용화 목표 와이오밍 1호기 착공
+                </text>
+            </g>
+        </g>
+
+        <!-- 하단 메트릭 바 -->
+        <g transform="translate(20, 395)">
+            <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ 테라파워 Natrium 4세대 소듐고속로 핵심 엔지니어링 지표</text>
+            <g transform="translate(15, 28)">
+                <rect x="0" y="2" width="10" height="10" fill="#f59e0b" rx="2"/>
+                <text x="15" y="11" fill="#cbd5e1" font-size="10">냉각재: 액체 나트륨 (비등점 883°C / 1기압 대기압 운전)</text>
+                <rect x="270" y="2" width="10" height="10" fill="#10b981" rx="2"/>
+                <text x="285" y="11" fill="#cbd5e1" font-size="10">출력: 345MWe 상시 ➡️ 500MWe 피크 (1GWh TES)</text>
+                <rect x="540" y="2" width="10" height="10" fill="#8b5cf6" rx="2"/>
+                <text x="555" y="11" fill="#cbd5e1" font-size="10">열효율: 40% 이상 (초임계 증기 사이클)</text>
+            </g>
+            <g transform="translate(15, 52)">
+                <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 부하 추종성: <tspan fill="#ffffff">AI 연산 부하 급증 시 즉각 45% 출력 부스팅</tspan></text>
+                <text x="310" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 물 소비 제로: <tspan fill="#ffffff">사막·내륙 데이터센터 설치 가능(공랭식)</tspan></text>
+                <text x="540" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 국내 파트너: <tspan fill="#fef08a">HD현대 &amp; SK그룹 전략적 투자</tspan></text>
+            </g>
+        </g>
+    </svg>
+    `;
+}
+
+// 12. AI 데이터센터 직결 SMR 마이크로그리드 아키텍처 도면
+function getAiSmrMicrogridSvg() {
+    return `
+    <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="grid-ai-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+            </pattern>
+            <linearGradient id="grad-grid-smr" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="100%" stop-color="#0369a1"/>
+            </linearGradient>
+            <linearGradient id="grad-grid-sub" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#d97706"/>
+                <stop offset="50%" stop-color="#f59e0b"/>
+                <stop offset="100%" stop-color="#d97706"/>
+            </linearGradient>
+            <linearGradient id="grad-grid-dc" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#047857"/>
+                <stop offset="100%" stop-color="#065f46"/>
+            </linearGradient>
+            <filter id="grid-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+        </defs>
+
+        <!-- 배경 그리드 -->
+        <rect width="100%" height="100%" fill="#070c14"/>
+        <rect width="100%" height="100%" fill="url(#grid-ai-grid)"/>
+
+        <!-- 상단 도면 타이틀 & 스펙 태그 -->
+        <g transform="translate(20, 24)">
+            <text x="0" y="0" fill="#38bdf8" font-family="'Consolas', monospace" font-size="12" font-weight="700" letter-spacing="1.5">
+                [SMR-GRID-03] AI DATA CENTER DIRECT SMR MICROGRID ARCHITECTURE
+            </text>
+            <text x="0" y="15" fill="#64748b" font-family="'Consolas', monospace" font-size="9">
+                Behind-The-Meter (BTM) Direct PPA | 24/365 95%+ Capacity Factor | Zero Transmission Loss | Dedicated AI Island
+            </text>
+            <rect x="620" y="-12" width="100" height="22" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1" rx="3"/>
+            <text x="670" y="3" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CLICK TO ZOOM</text>
+        </g>
+
+        <!-- 좌측 메인: BTM 마이크로그리드 캠퍼스 토폴로지 (Campus Layout) -->
+        <g transform="translate(20, 55)">
+            <rect x="0" y="0" width="460" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="20" fill="#94a3b8" font-size="10.5" font-weight="700">■ AI 데이터센터 단지 구내 독립 마이크로그리드(Behind-The-Meter) 배치도</text>
+
+            <!-- 1. SMR 발전 아일랜드 (SMR Power Island - 400MWe) -->
+            <g transform="translate(15, 32)">
+                <rect x="0" y="0" width="130" height="185" fill="#082f49" stroke="#0ea5e9" stroke-width="1.5" rx="4"/>
+                <text x="65" y="16" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">SMR 파워 아일랜드</text>
+                <text x="65" y="26" fill="#bae6fd" font-size="6.5" text-anchor="middle">4기 결합 모듈 (308MWe)</text>
+
+                <!-- 4기 SMR 원자로 모듈 시각화 -->
+                <g transform="translate(12, 35)">
+                    <!-- 모듈 1 -->
+                    <rect x="0" y="0" width="48" height="42" fill="url(#grad-grid-smr)" stroke="#38bdf8" stroke-width="1" rx="2"/>
+                    <text x="24" y="18" fill="#ffffff" font-size="6.5" font-weight="700" text-anchor="middle">SMR #1</text>
+                    <text x="24" y="30" fill="#bae6fd" font-size="5.5" text-anchor="middle">77MWe</text>
+
+                    <!-- 모듈 2 -->
+                    <rect x="58" y="0" width="48" height="42" fill="url(#grad-grid-smr)" stroke="#38bdf8" stroke-width="1" rx="2"/>
+                    <text x="82" y="18" fill="#ffffff" font-size="6.5" font-weight="700" text-anchor="middle">SMR #2</text>
+                    <text x="82" y="30" fill="#bae6fd" font-size="5.5" text-anchor="middle">77MWe</text>
+
+                    <!-- 모듈 3 -->
+                    <rect x="0" y="48" width="48" height="42" fill="url(#grad-grid-smr)" stroke="#38bdf8" stroke-width="1" rx="2"/>
+                    <text x="24" y="66" fill="#ffffff" font-size="6.5" font-weight="700" text-anchor="middle">SMR #3</text>
+                    <text x="24" y="78" fill="#bae6fd" font-size="5.5" text-anchor="middle">77MWe</text>
+
+                    <!-- 모듈 4 -->
+                    <rect x="58" y="48" width="48" height="42" fill="url(#grad-grid-smr)" stroke="#38bdf8" stroke-width="1" rx="2"/>
+                    <text x="82" y="66" fill="#ffffff" font-size="6.5" font-weight="700" text-anchor="middle">SMR #4</text>
+                    <text x="82" y="78" fill="#bae6fd" font-size="5.5" text-anchor="middle">77MWe</text>
+                </g>
+
+                <!-- 터빈 및 고압 발전 출력단 -->
+                <rect x="12" y="135" width="106" height="40" fill="#0f172a" stroke="#0ea5e9" stroke-width="1" rx="2"/>
+                <text x="65" y="152" fill="#38bdf8" font-size="7" font-weight="700" text-anchor="middle">터빈 발전기 (TG Set)</text>
+                <text x="65" y="165" fill="#fef08a" font-size="6.5" font-weight="700" text-anchor="middle">24kV 3상 무탄소 기저발전</text>
+            </g>
+
+            <!-- 발전 -> 변전 직결 링크 (BTM 버스덕트) -->
+            <g stroke="#f59e0b" stroke-width="3" fill="none">
+                <line x1="145" y1="125" x2="175" y2="125"/>
+            </g>
+            <text x="160" y="118" fill="#f59e0b" font-size="6" font-weight="700" text-anchor="middle">송전손실 0%</text>
+
+            <!-- 2. 단지 내 초고압 독립 변전 및 지능형 EMS 배전센터 (On-Site Substation) -->
+            <g transform="translate(175, 45)">
+                <rect x="0" y="0" width="120" height="160" fill="#1e1b4b" stroke="#f59e0b" stroke-width="1.2" rx="4"/>
+                <text x="60" y="16" fill="#fef08a" font-size="7.5" font-weight="800" text-anchor="middle">구내 독립 변전소 (Substation)</text>
+                <text x="60" y="26" fill="#cbd5e1" font-size="6" text-anchor="middle">공공 송전망 완전 분리(BTM)</text>
+
+                <!-- 초고압 변압기 (Power Transformer) -->
+                <rect x="10" y="35" width="100" height="38" fill="#0f172a" stroke="#d97706" stroke-width="1" rx="2"/>
+                <text x="60" y="52" fill="#fcd34d" font-size="7" font-weight="700" text-anchor="middle">초고압 변압기 (154kV/24kV)</text>
+                <text x="60" y="63" fill="#cbd5e1" font-size="6" text-anchor="middle">HD현대일렉트릭 / 산일전기</text>
+
+                <!-- 스마트 EMS 및 전력 안정화 장치 -->
+                <rect x="10" y="80" width="100" height="34" fill="#0f172a" stroke="#10b981" stroke-width="1" rx="2"/>
+                <text x="60" y="96" fill="#34d399" font-size="7" font-weight="700" text-anchor="middle">지능형 EMS / PQC 장치</text>
+                <text x="60" y="106" fill="#a7f3d0" font-size="6" text-anchor="middle">전압 강하/주파수 왜곡 0%</text>
+
+                <!-- 공공 그리드 비상 연계 (Grid Tie Backfeed) -->
+                <rect x="10" y="120" width="100" height="30" fill="#1e293b" stroke="#475569" stroke-width="0.8" rx="2"/>
+                <text x="60" y="135" fill="#94a3b8" font-size="6" text-anchor="middle">외곽 공공 송전선로</text>
+                <text x="60" y="144" fill="#64748b" font-size="5.5" text-anchor="middle">(잉여 전력 역송전 또는 비상백업)</text>
+            </g>
+
+            <!-- 변전 -> 데이터센터 피더 라인 -->
+            <g stroke="#10b981" stroke-width="3" fill="none">
+                <line x1="295" y1="125" x2="325" y2="125"/>
+            </g>
+            <text x="310" y="118" fill="#10b981" font-size="6" font-weight="700" text-anchor="middle">직접 PPA</text>
+
+            <!-- 3. 하이퍼스케일 AI 데이터센터 빌딩 (Hyperscale AI DC Campus) -->
+            <g transform="translate(325, 32)">
+                <rect x="0" y="0" width="120" height="185" fill="url(#grad-grid-dc)" stroke="#10b981" stroke-width="1.5" rx="4"/>
+                <text x="60" y="16" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle">AI 하이퍼스케일 DC</text>
+                <text x="60" y="26" fill="#a7f3d0" font-size="6.5" text-anchor="middle">AWS / MS / 구글 / OpenAI</text>
+
+                <!-- GPU 서버 랙 클러스터 (B200 / H100 수만 대) -->
+                <g transform="translate(10, 35)">
+                    <rect x="0" y="0" width="100" height="65" fill="#064e3b" stroke="#34d399" stroke-width="1" rx="2"/>
+                    <text x="50" y="18" fill="#ffffff" font-size="7" font-weight="800" text-anchor="middle">GPU 클러스터 (수만 장)</text>
+                    <text x="50" y="32" fill="#a7f3d0" font-size="6.5" text-anchor="middle">LLM 거대 모델 24/365 학습</text>
+                    <text x="50" y="44" fill="#fef08a" font-size="7" font-weight="800" text-anchor="middle">전력소비: 100~300MW</text>
+                    <text x="50" y="56" fill="#ecfdf5" font-size="6" text-anchor="middle">연중 무휴 기저전력 공급</text>
+                </g>
+
+                <!-- PDU & 초고효율 액체 냉각(Liquid Cooling) -->
+                <rect x="10" y="108" width="100" height="35" fill="#0f172a" stroke="#0ea5e9" stroke-width="0.8" rx="2"/>
+                <text x="50" y="123" fill="#38bdf8" font-size="6.5" font-weight="700" text-anchor="middle">액체 냉각(CDU) &amp; PDU</text>
+                <text x="50" y="134" fill="#bae6fd" font-size="6" text-anchor="middle">원전 폐열 흡수식 냉각 연계</text>
+
+                <!-- 무정전 전원 공급기 (Flywheel / UPS) -->
+                <rect x="10" y="150" width="100" height="26" fill="#0f172a" stroke="#64748b" stroke-width="0.8" rx="2"/>
+                <text x="50" y="166" fill="#cbd5e1" font-size="6" text-anchor="middle">N+2 무정전 UPS 백업</text>
+            </g>
+
+            <!-- 하단 BTM 직결 핵심 메커니즘 박스 -->
+            <g transform="translate(15, 230)">
+                <rect x="0" y="0" width="430" height="85" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+                <text x="12" y="18" fill="#38bdf8" font-size="8.5" font-weight="700">■ Behind-The-Meter (BTM) 직결 전력 공급의 핵심 강점</text>
+                <text x="12" y="34" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">송전망 병목(Grid Bottleneck) 극복:</tspan> 미 전력망 접속 대기 5~7년 소요 ➡️ SMR 부지 내 직결로 <tspan fill="#34d399">즉각 전력 수급</tspan></text>
+                <text x="12" y="48" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">압도적 전력 가동률:</tspan> 태양광(25%), 풍력(35%)과 비교 불가한 <tspan fill="#fef08a">95%+ 연중무휴 기저전력(Base Load)</tspan></text>
+                <text x="12" y="62" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">전력 손실 제로:</tspan> 수백 km 장거리 고압 송전선 불필요 ➡️ 송전 손실 0% 및 송전망 사용료 전액 절감</text>
+                <text x="12" y="76" fill="#10b981" font-size="7">✓ AWS(탈렌 원전 인수), MS(스리마일 PPA), 오클로(샘 알트만 주도 데이터센터 직결 계약 체결)</text>
+            </g>
+        </g>
+
+        <!-- 우측: 에너지 공급원 비교 & 국내외 빅테크 생태계 -->
+        <g transform="translate(490, 55)">
+            <rect x="0" y="0" width="250" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="22" fill="#94a3b8" font-size="11" font-weight="700">■ 전력원 비교 &amp; 빅테크 밸류체인</text>
+
+            <!-- 에너지원별 가동률(Capacity Factor) 비교 바 차트 -->
+            <g transform="translate(12, 36)">
+                <rect x="0" y="0" width="226" height="95" fill="#0f172a" stroke="#334155" stroke-width="1" rx="2"/>
+                <text x="8" y="15" fill="#38bdf8" font-size="7.5" font-weight="700">■ 발전원별 연평균 가동률(CF) 비교</text>
+
+                <!-- 태양광 바 (25%) -->
+                <text x="8" y="32" fill="#94a3b8" font-size="6.5">태양광 (Solar)</text>
+                <rect x="68" y="24" width="38" height="10" fill="#f59e0b" rx="1"/>
+                <text x="112" y="32" fill="#f59e0b" font-size="6.5" font-weight="700">25% (날씨 의존)</text>
+
+                <!-- 풍력 바 (35%) -->
+                <text x="8" y="48" fill="#94a3b8" font-size="6.5">풍력 (Wind)</text>
+                <rect x="68" y="40" width="53" height="10" fill="#0ea5e9" rx="1"/>
+                <text x="127" y="48" fill="#0ea5e9" font-size="6.5" font-weight="700">35% (바람 간헐성)</text>
+
+                <!-- SMR 원전 바 (95%+) -->
+                <text x="8" y="66" fill="#10b981" font-size="7" font-weight="800">SMR 원자력</text>
+                <rect x="68" y="58" width="145" height="12" fill="#10b981" rx="1" filter="url(#grid-glow)"/>
+                <text x="135" y="67" fill="#ffffff" font-size="7" font-weight="800">95%+ (24/365 기저)</text>
+
+                <text x="8" y="86" fill="#67e8f9" font-size="6">※ AI GPU는 24시간 풀가동되므로 기저전력 필수</text>
+            </g>
+
+            <!-- 핵심 기업 및 밸류체인 -->
+            <g transform="translate(12, 140)">
+                <rect x="0" y="0" width="226" height="175" fill="#0f172a" stroke="#1e293b" stroke-width="1" rx="3"/>
+                <text x="10" y="18" fill="#38bdf8" font-size="8.5" font-weight="700">■ 빅테크-SMR 핵심 공급망</text>
+
+                <text x="10" y="36" fill="#cbd5e1" font-size="7">• <tspan fill="#ffffff" font-weight="700">빅테크 수요처:</tspan></text>
+                <text x="18" y="48" fill="#94a3b8" font-size="6.5">- Amazon AWS (탈렌 6.5억$ 원전 캠퍼스 인수)</text>
+                <text x="18" y="60" fill="#94a3b8" font-size="6.5">- Microsoft (컨스텔레이션 20년 원전 PPA)</text>
+                <text x="18" y="72" fill="#94a3b8" font-size="6.5">- OpenAI (샘 알트만 주도 Oklo 원전 계약)</text>
+
+                <text x="10" y="90" fill="#cbd5e1" font-size="7">• <tspan fill="#f59e0b" font-weight="700">SMR 혁신 개발사:</tspan></text>
+                <text x="18" y="102" fill="#94a3b8" font-size="6.5">- 오클로 (Oklo - OKLO), 테라파워, 뉴스케일</text>
+
+                <text x="10" y="120" fill="#cbd5e1" font-size="7">• <tspan fill="#10b981" font-weight="700">구내 변전/배전 전력망 수혜:</tspan></text>
+                <text x="18" y="132" fill="#94a3b8" font-size="6.5">- HD현대일렉트릭, 효성중공업 (초고압 변압기)</text>
+                <text x="18" y="144" fill="#94a3b8" font-size="6.5">- 산일전기, 일진전기, 제룡전기 (배전 변압기)</text>
+
+                <rect x="8" y="152" width="210" height="18" fill="#1e1b4b" rx="2"/>
+                <text x="113" y="164" fill="#a5b4fc" font-size="6" font-weight="700" text-anchor="middle">
+                    AI 전력 인프라 슈퍼사이클의 최정점
+                </text>
+            </g>
+        </g>
+
+        <!-- 하단 메트릭 바 -->
+        <g transform="translate(20, 395)">
+            <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ AI 데이터센터 직결 SMR 마이크로그리드 핵심 엔지니어링 지표</text>
+            <g transform="translate(15, 28)">
+                <rect x="0" y="2" width="10" height="10" fill="#10b981" rx="2"/>
+                <text x="15" y="11" fill="#cbd5e1" font-size="10">공급 안정성: 가동률 95%+ 무정전 기저전력 (24/365)</text>
+                <rect x="270" y="2" width="10" height="10" fill="#f59e0b" rx="2"/>
+                <text x="285" y="11" fill="#cbd5e1" font-size="10">송전 손실: 0% (부지 내 Behind-The-Meter 직결)</text>
+                <rect x="525" y="2" width="10" height="10" fill="#0284c7" rx="2"/>
+                <text x="540" y="11" fill="#cbd5e1" font-size="10">탄소 배출: 0g (100% 무탄소 청정 에너지)</text>
+            </g>
+            <g transform="translate(15, 52)">
+                <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 송전망 인허가: <tspan fill="#ffffff">공공망 대기(5~7년) 완전 우회 즉시 전력화</tspan></text>
+                <text x="310" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 열병합 시너지: <tspan fill="#ffffff">원전 고온 폐열을 흡수식 DC 냉각에 재활용</tspan></text>
+                <text x="540" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 빅테크 PPA: <tspan fill="#fef08a">Amazon, Microsoft, OpenAI 체결</tspan></text>
             </g>
         </g>
     </svg>
