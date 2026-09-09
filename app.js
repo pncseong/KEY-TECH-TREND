@@ -481,8 +481,8 @@ function renderDeepTechTabs() {
 
 // 정밀 엔지니어링 SVG 구조 단면도 생성기 (blueprints.js 모듈 연동)
 function getEngineeringSvg(nodeId) {
-    if (window.getEngineeringSvg) {
-        return window.getEngineeringSvg(nodeId);
+    if (window.EngineeringBlueprints && typeof window.EngineeringBlueprints.getSvg === 'function') {
+        return window.EngineeringBlueprints.getSvg(nodeId);
     }
     return null;
 }

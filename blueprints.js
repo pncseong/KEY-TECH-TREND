@@ -3,18 +3,20 @@
 // 반도체 패키징, 관통전극(TSV), 직접접합(Hybrid Bonding), V-NAND 수직적층 정밀 도면
 // ============================================================================
 
-window.getEngineeringSvg = function(nodeId) {
-    switch(nodeId) {
-        case 'hbm4_foundry':
-            return getHbm4Svg();
-        case 'hbm3e':
-            return getHbm3eSvg();
-        case 'hybrid_hbm_samsung':
-            return getHybridHbmSvg();
-        case 'hbf_flash':
-            return getHbfSvg();
-        default:
-            return null;
+window.EngineeringBlueprints = {
+    getSvg: function(nodeId) {
+        switch(nodeId) {
+            case 'hbm4_foundry':
+                return getHbm4Svg();
+            case 'hbm3e':
+                return getHbm3eSvg();
+            case 'hybrid_hbm_samsung':
+                return getHybridHbmSvg();
+            case 'hbf_flash':
+                return getHbfSvg();
+            default:
+                return null;
+        }
     }
 };
 
