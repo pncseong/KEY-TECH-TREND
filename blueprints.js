@@ -20,6 +20,10 @@ window.EngineeringBlueprints = {
                 return getCpoSvg();
             case 'els_module':
                 return getElsSvg();
+            case 'cxl_expansion':
+                return getCxlExpansionSvg();
+            case 'cxl_pooling_fab':
+                return getCxlPoolingSvg();
             default:
                 return null;
         }
@@ -1097,6 +1101,518 @@ function getElsSvg() {
                 <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 수명 연장(MTBF): <tspan fill="#ffffff">고열 분리로 10배 연장</tspan></text>
                 <text x="230" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 광출력: <tspan fill="#ffffff">채널당 100mW+ CW 파워</tspan></text>
                 <text x="460" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 유지보수: <tspan fill="#fef08a">무중단 핫스왑(Hot-Swap) 교체</tspan></text>
+            </g>
+        </g>
+    </svg>
+    `;
+}
+
+// 8. CXL 2.0 메모리 확장 (CMM-D / EDSFF E3.S) 정밀 단면 & 모듈 구조도
+function getCxlExpansionSvg() {
+    return `
+    <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="grid-cxl-exp" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+            </pattern>
+            <linearGradient id="grad-cxl-heatsink" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#475569" stop-opacity="0.95"/>
+                <stop offset="100%" stop-color="#1e293b" stop-opacity="0.95"/>
+            </linearGradient>
+            <linearGradient id="grad-cxl-ctrl" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="50%" stop-color="#0369a1"/>
+                <stop offset="100%" stop-color="#075985"/>
+            </linearGradient>
+            <linearGradient id="grad-cxl-dram" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#312e81"/>
+                <stop offset="100%" stop-color="#1e1b4b"/>
+            </linearGradient>
+            <linearGradient id="grad-cxl-pcb" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#064e3b"/>
+                <stop offset="50%" stop-color="#065f46"/>
+                <stop offset="100%" stop-color="#064e3b"/>
+            </linearGradient>
+            <linearGradient id="grad-cxl-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#fef08a"/>
+                <stop offset="50%" stop-color="#f59e0b"/>
+                <stop offset="100%" stop-color="#b45309"/>
+            </linearGradient>
+            <filter id="cxl-glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+        </defs>
+
+        <!-- 배경 그리드 -->
+        <rect width="100%" height="100%" fill="#070c14"/>
+        <rect width="100%" height="100%" fill="url(#grid-cxl-exp)"/>
+
+        <!-- 상단 도면 타이틀 & 스펙 태그 -->
+        <g transform="translate(20, 24)">
+            <text x="0" y="0" fill="#38bdf8" font-family="'Consolas', monospace" font-size="12" font-weight="700" letter-spacing="1.5">
+                [CXL-EXP-01] CXL 2.0 CMM-D MEMORY EXPANDER (EDSFF E3.S FORM FACTOR)
+            </text>
+            <text x="0" y="15" fill="#64748b" font-family="'Consolas', monospace" font-size="9">
+                Cross-Section &amp; Architecture Blueprint | PCIe 5.0 x8/x16 (32~64GB/s) | DDR5 8-Channel Buffer Bridge
+            </text>
+            <rect x="620" y="-12" width="100" height="22" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1" rx="3"/>
+            <text x="670" y="3" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CLICK TO ZOOM</text>
+        </g>
+
+        <!-- 좌측: EDSFF E3.S 모듈 정밀 단면 & 어셈블리 (Cross-Section & Top Assembly) -->
+        <g transform="translate(20, 55)">
+            <rect x="0" y="0" width="430" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="22" fill="#94a3b8" font-size="11" font-weight="700">■ EDSFF E3.S CMM-D 모듈 기구 및 단면 구조도</text>
+
+            <!-- 치수 보조선 (EDSFF E3.S: 76mm x 112.75mm) -->
+            <line x1="25" y1="36" x2="405" y2="36" stroke="#475569" stroke-dasharray="3,3" stroke-width="1"/>
+            <text x="215" y="33" fill="#64748b" font-size="8" text-anchor="middle">EDSFF E3.S 표준 길이 (112.75mm)</text>
+
+            <!-- 1. 알루미늄 방열핀 (Extruded Aluminum Fin Heat Sink) -->
+            <g transform="translate(30, 45)">
+                <!-- 방열핀 베이스 -->
+                <rect x="0" y="0" width="370" height="10" fill="url(#grad-cxl-heatsink)" stroke="#64748b" stroke-width="1" rx="1"/>
+                <!-- 다층 방열핀 어레이 -->
+                <g fill="#475569" stroke="#334155" stroke-width="0.5">
+                    <rect x="10" y="-18" width="6" height="18"/>
+                    <rect x="25" y="-18" width="6" height="18"/>
+                    <rect x="40" y="-18" width="6" height="18"/>
+                    <rect x="55" y="-18" width="6" height="18"/>
+                    <rect x="70" y="-18" width="6" height="18"/>
+                    <rect x="85" y="-18" width="6" height="18"/>
+                    <rect x="100" y="-18" width="6" height="18"/>
+                    <rect x="115" y="-18" width="6" height="18"/>
+                    <rect x="130" y="-18" width="6" height="18"/>
+                    <rect x="145" y="-18" width="6" height="18"/>
+                    <rect x="160" y="-18" width="6" height="18"/>
+                    <rect x="175" y="-18" width="6" height="18"/>
+                    <rect x="190" y="-18" width="6" height="18"/>
+                    <rect x="205" y="-18" width="6" height="18"/>
+                    <rect x="220" y="-18" width="6" height="18"/>
+                    <rect x="235" y="-18" width="6" height="18"/>
+                    <rect x="250" y="-18" width="6" height="18"/>
+                    <rect x="265" y="-18" width="6" height="18"/>
+                    <rect x="280" y="-18" width="6" height="18"/>
+                    <rect x="295" y="-18" width="6" height="18"/>
+                    <rect x="310" y="-18" width="6" height="18"/>
+                    <rect x="325" y="-18" width="6" height="18"/>
+                    <rect x="340" y="-18" width="6" height="18"/>
+                    <rect x="355" y="-18" width="6" height="18"/>
+                </g>
+                <text x="185" y="-6" fill="#94a3b8" font-size="8" font-weight="700" text-anchor="middle">고밀도 알루미늄 압출 방열판 (Heat Sink Fin Array, 25W TDP 해소)</text>
+            </g>
+
+            <!-- 써멀 인터페이스 패드 (TIM: Thermal Interface Material) -->
+            <rect x="30" y="57" width="370" height="5" fill="#0284c7" fill-opacity="0.4" stroke="#0ea5e9" stroke-width="0.8" stroke-dasharray="2,2"/>
+            <text x="405" y="62" fill="#38bdf8" font-size="7">TIM (6.5 W/mK)</text>
+
+            <!-- 2. 모듈 부품 실장층 (Components Layer) -->
+            <!-- 2-1. 좌측 DDR5 DRAM 어레이 (채널 0~3) -->
+            <g transform="translate(35, 68)">
+                <rect x="0" y="0" width="38" height="50" fill="url(#grad-cxl-dram)" stroke="#6366f1" stroke-width="1.2" rx="2"/>
+                <text x="19" y="24" fill="#a5b4fc" font-size="7" font-weight="700" text-anchor="middle">DDR5</text>
+                <text x="19" y="34" fill="#c7d2fe" font-size="6.5" text-anchor="middle">D1a DRAM</text>
+                <text x="19" y="44" fill="#818cf8" font-size="6" text-anchor="middle">CH #0</text>
+
+                <rect x="44" y="0" width="38" height="50" fill="url(#grad-cxl-dram)" stroke="#6366f1" stroke-width="1.2" rx="2"/>
+                <text x="63" y="24" fill="#a5b4fc" font-size="7" font-weight="700" text-anchor="middle">DDR5</text>
+                <text x="63" y="34" fill="#c7d2fe" font-size="6.5" text-anchor="middle">D1a DRAM</text>
+                <text x="63" y="44" fill="#818cf8" font-size="6" text-anchor="middle">CH #1</text>
+
+                <rect x="88" y="0" width="38" height="50" fill="url(#grad-cxl-dram)" stroke="#6366f1" stroke-width="1.2" rx="2"/>
+                <text x="107" y="24" fill="#a5b4fc" font-size="7" font-weight="700" text-anchor="middle">DDR5</text>
+                <text x="107" y="34" fill="#c7d2fe" font-size="6.5" text-anchor="middle">D1a DRAM</text>
+                <text x="107" y="44" fill="#818cf8" font-size="6" text-anchor="middle">CH #2</text>
+            </g>
+
+            <!-- 2-2. 중앙 핵심: CXL 2.0 메모리 컨트롤러 ASIC (BGA) -->
+            <g transform="translate(170, 65)">
+                <rect x="0" y="0" width="90" height="56" fill="url(#grad-cxl-ctrl)" stroke="#38bdf8" stroke-width="1.8" rx="3" filter="url(#cxl-glow)"/>
+                <!-- 실리콘 다이 코어 -->
+                <rect x="8" y="8" width="74" height="40" fill="#0f172a" stroke="#0ea5e9" stroke-width="1"/>
+                <text x="45" y="22" fill="#ffffff" font-size="8.5" font-weight="800" text-anchor="middle">CXL 2.0 ASIC</text>
+                <text x="45" y="33" fill="#38bdf8" font-size="7" font-weight="700" text-anchor="middle">Memory Controller</text>
+                <text x="45" y="43" fill="#94a3b8" font-size="6.5" text-anchor="middle">PCIe 5.0 PHY + DDR5 Hub</text>
+
+                <!-- BGA 솔더볼 어레이 (하단) -->
+                <g fill="#94a3b8">
+                    <circle cx="15" cy="59" r="1.8"/>
+                    <circle cx="27" cy="59" r="1.8"/>
+                    <circle cx="39" cy="59" r="1.8"/>
+                    <circle cx="51" cy="59" r="1.8"/>
+                    <circle cx="63" cy="59" r="1.8"/>
+                    <circle cx="75" cy="59" r="1.8"/>
+                </g>
+            </g>
+
+            <!-- 2-3. 우측 DDR5 DRAM 어레이 (채널 4~7) & PMIC -->
+            <g transform="translate(268, 68)">
+                <rect x="0" y="0" width="38" height="50" fill="url(#grad-cxl-dram)" stroke="#6366f1" stroke-width="1.2" rx="2"/>
+                <text x="19" y="24" fill="#a5b4fc" font-size="7" font-weight="700" text-anchor="middle">DDR5</text>
+                <text x="19" y="34" fill="#c7d2fe" font-size="6.5" text-anchor="middle">D1a DRAM</text>
+                <text x="19" y="44" fill="#818cf8" font-size="6" text-anchor="middle">CH #3</text>
+
+                <rect x="44" y="0" width="38" height="50" fill="url(#grad-cxl-dram)" stroke="#6366f1" stroke-width="1.2" rx="2"/>
+                <text x="63" y="24" fill="#a5b4fc" font-size="7" font-weight="700" text-anchor="middle">DDR5</text>
+                <text x="63" y="34" fill="#c7d2fe" font-size="6.5" text-anchor="middle">D1a DRAM</text>
+                <text x="63" y="44" fill="#818cf8" font-size="6" text-anchor="middle">CH #4</text>
+
+                <!-- PMIC 및 전원 인덕터 -->
+                <rect x="90" y="5" width="34" height="42" fill="#7f1d1d" stroke="#ef4444" stroke-width="1" rx="2"/>
+                <text x="107" y="22" fill="#fca5a5" font-size="7" font-weight="700" text-anchor="middle">CXL PMIC</text>
+                <text x="107" y="33" fill="#fecaca" font-size="6" text-anchor="middle">12V -> VDD/VPP</text>
+                <text x="107" y="42" fill="#f87171" font-size="5.5" text-anchor="middle">Power Supply</text>
+            </g>
+
+            <!-- 3. 고다층 초저손실 모듈 PCB 기판 (14-Layer Ultra Low Loss PCB) -->
+            <g transform="translate(30, 130)">
+                <rect x="0" y="0" width="370" height="22" fill="url(#grad-cxl-pcb)" stroke="#059669" stroke-width="1.2" rx="1"/>
+                <line x1="0" y1="5" x2="370" y2="5" stroke="#10b981" stroke-width="0.6" stroke-dasharray="4,2"/>
+                <line x1="0" y1="11" x2="370" y2="11" stroke="#10b981" stroke-width="0.6" stroke-dasharray="4,2"/>
+                <line x1="0" y1="17" x2="370" y2="17" stroke="#10b981" stroke-width="0.6" stroke-dasharray="4,2"/>
+                <text x="185" y="14" fill="#ecfdf5" font-size="7.5" font-weight="700" text-anchor="middle">14-Layer High-Tg Low-Loss Module PCB (티엘비 전용 기판)</text>
+            </g>
+
+            <!-- 4. 하단 PCIe 5.0 x8/x16 EDSFF 골드 핑거 커넥터 (Gold Fingers) -->
+            <g transform="translate(70, 153)">
+                <!-- 커넥터 베이스 서브스트레이트 -->
+                <polygon points="0,0 290,0 280,24 10,24" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+                <!-- 골드 핑거 핀 어레이 -->
+                <g fill="url(#grad-cxl-gold)" stroke="#b45309" stroke-width="0.4">
+                    <rect x="20" y="2" width="4" height="20" rx="1"/>
+                    <rect x="28" y="2" width="4" height="20" rx="1"/>
+                    <rect x="36" y="2" width="4" height="20" rx="1"/>
+                    <rect x="44" y="2" width="4" height="20" rx="1"/>
+                    <rect x="52" y="2" width="4" height="20" rx="1"/>
+                    <rect x="60" y="2" width="4" height="20" rx="1"/>
+                    <rect x="68" y="2" width="4" height="20" rx="1"/>
+                    <rect x="76" y="2" width="4" height="20" rx="1"/>
+                    <rect x="84" y="2" width="4" height="20" rx="1"/>
+                    <rect x="92" y="2" width="4" height="20" rx="1"/>
+                    <!-- 중간 키 홈 (Key Notch) -->
+                    <rect x="108" y="2" width="4" height="20" rx="1"/>
+                    <rect x="116" y="2" width="4" height="20" rx="1"/>
+                    <rect x="124" y="2" width="4" height="20" rx="1"/>
+                    <rect x="132" y="2" width="4" height="20" rx="1"/>
+                    <rect x="140" y="2" width="4" height="20" rx="1"/>
+                    <rect x="148" y="2" width="4" height="20" rx="1"/>
+                    <rect x="156" y="2" width="4" height="20" rx="1"/>
+                    <rect x="164" y="2" width="4" height="20" rx="1"/>
+                    <rect x="172" y="2" width="4" height="20" rx="1"/>
+                    <rect x="180" y="2" width="4" height="20" rx="1"/>
+                    <rect x="188" y="2" width="4" height="20" rx="1"/>
+                    <rect x="196" y="2" width="4" height="20" rx="1"/>
+                    <rect x="204" y="2" width="4" height="20" rx="1"/>
+                    <rect x="212" y="2" width="4" height="20" rx="1"/>
+                    <rect x="220" y="2" width="4" height="20" rx="1"/>
+                    <rect x="228" y="2" width="4" height="20" rx="1"/>
+                    <rect x="236" y="2" width="4" height="20" rx="1"/>
+                    <rect x="244" y="2" width="4" height="20" rx="1"/>
+                    <rect x="252" y="2" width="4" height="20" rx="1"/>
+                    <rect x="260" y="2" width="4" height="20" rx="1"/>
+                </g>
+                <text x="145" y="36" fill="#f59e0b" font-size="8" font-weight="700" text-anchor="middle">
+                    PCIe 5.0 x8 / x16 Gold Finger Interface (32GT/s NRZ 차동 신호 핀 어레이)
+                </text>
+            </g>
+
+            <!-- 세부 부품 라벨 및 신호 경로 설명 박스 -->
+            <g transform="translate(15, 205)">
+                <rect x="0" y="0" width="400" height="110" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+                <text x="12" y="18" fill="#38bdf8" font-size="9" font-weight="700">■ CXL 2.0 CMM-D 하드웨어 핵심 기술 포인트</text>
+                <text x="12" y="36" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">CXL 컨트롤러 ASIC:</tspan> 호스트 PCIe 5.0 신호를 수신해 DDR5 채널로 초저지연 직렬 변환</text>
+                <text x="12" y="52" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">추가 지연시간(Latency):</tspan> 직접 부착 DDR5 대비 단 <tspan fill="#38bdf8">+50~70ns</tspan> 수준의 오버헤드로 극소화</text>
+                <text x="12" y="68" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">핫플러그(Hot-Plug) 지원:</tspan> 서버 무중단 상태에서 메모리 모듈 탈부착 및 용량 동적 증설</text>
+                <text x="12" y="84" fill="#cbd5e1" font-size="8">• <tspan fill="#ffffff" font-weight="700">국내 제조 밸류체인:</tspan> 삼성전자(CMM-D 양산), SK하이닉스, 티엘비(PCB), 파두(컨트롤러)</text>
+                <text x="12" y="100" fill="#10b981" font-size="8">✓ 1U/2U 랙 서버의 DIMM 슬롯 수 제약(최대 16~32개)을 돌파하여 메모리 테라바이트급 확장</text>
+            </g>
+        </g>
+
+        <!-- 우측: CXL 프로토콜 스택 및 호스트 인터페이스 구조 (Protocol & Flow Architecture) -->
+        <g transform="translate(465, 55)">
+            <rect x="0" y="0" width="275" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="22" fill="#94a3b8" font-size="11" font-weight="700">■ CXL 통신 프로토콜 계층도</text>
+
+            <!-- 호스트 CPU 블록 -->
+            <g transform="translate(15, 36)">
+                <rect x="0" y="0" width="245" height="42" fill="#1e293b" stroke="#0284c7" stroke-width="1.5" rx="3"/>
+                <text x="122" y="18" fill="#ffffff" font-size="9" font-weight="700" text-anchor="middle">호스트 CPU (인텔 Xeon / AMD EPYC)</text>
+                <text x="122" y="32" fill="#38bdf8" font-size="7.5" text-anchor="middle">CXL Root Complex / Direct Memory Map</text>
+            </g>
+
+            <!-- 연결 신호선 화살표 -->
+            <line x1="80" y1="78" x2="80" y2="105" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3,2"/>
+            <line x1="180" y1="78" x2="180" y2="105" stroke="#10b981" stroke-width="2"/>
+
+            <!-- CXL Dual Protocol Dual-Channel -->
+            <g transform="translate(15, 105)">
+                <!-- CXL.io 블록 -->
+                <rect x="0" y="0" width="118" height="65" fill="#0f172a" stroke="#0284c7" stroke-width="1.2" rx="3"/>
+                <text x="59" y="18" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">CXL.io</text>
+                <text x="59" y="32" fill="#94a3b8" font-size="7" text-anchor="middle">표준 PCIe 프로토콜 호환</text>
+                <text x="59" y="44" fill="#64748b" font-size="6.5" text-anchor="middle">• 장치 검색 및 열거</text>
+                <text x="59" y="55" fill="#64748b" font-size="6.5" text-anchor="middle">• RAS 에러 핸들링/구성</text>
+
+                <!-- CXL.mem 블록 -->
+                <rect x="127" y="0" width="118" height="65" fill="#0f172a" stroke="#10b981" stroke-width="1.5" rx="3"/>
+                <text x="186" y="18" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="middle">CXL.mem</text>
+                <text x="186" y="32" fill="#6ee7b7" font-size="7" font-weight="700" text-anchor="middle">초저지연 메모리 트랜잭션</text>
+                <text x="186" y="44" fill="#a7f3d0" font-size="6.5" text-anchor="middle">• 바이트 단위 직접 로드/스토어</text>
+                <text x="186" y="55" fill="#a7f3d0" font-size="6.5" text-anchor="middle">• Host-Managed Device Mem</text>
+            </g>
+
+            <!-- CXL 컨트롤러 하드웨어 로직 레이어 -->
+            <g transform="translate(15, 185)">
+                <rect x="0" y="0" width="245" height="60" fill="#0284c7" fill-opacity="0.15" stroke="#38bdf8" stroke-width="1.2" rx="3"/>
+                <text x="122" y="16" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">CXL Controller Protocol Engine</text>
+                <rect x="10" y="24" width="68" height="28" fill="#1e293b" stroke="#475569" stroke-width="0.8" rx="2"/>
+                <text x="44" y="41" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Address Map</text>
+
+                <rect x="88" y="24" width="68" height="28" fill="#1e293b" stroke="#475569" stroke-width="0.8" rx="2"/>
+                <text x="122" y="41" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Retry/ECC Log</text>
+
+                <rect x="166" y="24" width="68" height="28" fill="#1e293b" stroke="#475569" stroke-width="0.8" rx="2"/>
+                <text x="200" y="41" fill="#cbd5e1" font-size="6.5" text-anchor="middle">DDR5 PHY/Hub</text>
+            </g>
+
+            <!-- 최하단: CMM-D DDR5 로컬 메모리 -->
+            <g transform="translate(15, 260)">
+                <rect x="0" y="0" width="245" height="55" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5" rx="3"/>
+                <text x="122" y="18" fill="#c7d2fe" font-size="8.5" font-weight="700" text-anchor="middle">CMM-D Local DDR5 DRAM 풀</text>
+                <text x="122" y="32" fill="#a5b4fc" font-size="7" text-anchor="middle">단일 모듈당 128GB ~ 최대 512GB 고용량 구성</text>
+                <text x="122" y="45" fill="#818cf8" font-size="6.5" text-anchor="middle">DDR5-5600/6400 MT/s 8채널 병렬 인터리빙</text>
+            </g>
+        </g>
+
+        <!-- 하단 메트릭 바 -->
+        <g transform="translate(20, 395)">
+            <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ CXL 2.0 메모리 확장(CMM-D) 핵심 기술 규격 요약</text>
+            <g transform="translate(15, 28)">
+                <rect x="0" y="2" width="10" height="10" fill="#0284c7" rx="2"/>
+                <text x="15" y="11" fill="#cbd5e1" font-size="10">폼팩터: EDSFF E3.S (76 × 112.75 × 7.5 mm)</text>
+                <rect x="250" y="2" width="10" height="10" fill="#10b981" rx="2"/>
+                <text x="265" y="11" fill="#cbd5e1" font-size="10">대역폭: PCIe 5.0 x8 (32GB/s) / x16 (64GB/s)</text>
+                <rect x="505" y="2" width="10" height="10" fill="#f59e0b" rx="2"/>
+                <text x="520" y="11" fill="#cbd5e1" font-size="10">확장 용량: 모듈당 최대 512GB DDR5</text>
+            </g>
+            <g transform="translate(15, 52)">
+                <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 추가 지연시간: <tspan fill="#ffffff">+50~70ns (DDR5 대비 미미한 지연)</tspan></text>
+                <text x="250" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 핫플러그(Hot-Plug): <tspan fill="#ffffff">서버 무중단 실시간 장착 지원</tspan></text>
+                <text x="505" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 시장 적용: <tspan fill="#fef08a">인텔 Xeon 4/5/6세대, AMD EPYC 4/5세대</tspan></text>
+            </g>
+        </g>
+    </svg>
+    `;
+}
+
+// 9. CXL 3.0 메모리 풀링 & 스위치 (Memory Pooling Fabric) 정밀 아키텍처 구조도
+function getCxlPoolingSvg() {
+    return `
+    <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="grid-cxl-pool" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+            </pattern>
+            <linearGradient id="grad-cxl-switch" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0891b2"/>
+                <stop offset="50%" stop-color="#0e7490"/>
+                <stop offset="100%" stop-color="#155e75"/>
+            </linearGradient>
+            <linearGradient id="grad-host-cpu" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="100%" stop-color="#0369a1"/>
+            </linearGradient>
+            <linearGradient id="grad-host-gpu" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#10b981"/>
+                <stop offset="100%" stop-color="#047857"/>
+            </linearGradient>
+            <linearGradient id="grad-host-ai" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#6d28d9"/>
+            </linearGradient>
+            <linearGradient id="grad-cxl-pool-mem" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#b45309"/>
+                <stop offset="50%" stop-color="#d97706"/>
+                <stop offset="100%" stop-color="#b45309"/>
+            </linearGradient>
+            <filter id="cxl-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+        </defs>
+
+        <!-- 배경 그리드 -->
+        <rect width="100%" height="100%" fill="#070c14"/>
+        <rect width="100%" height="100%" fill="url(#grid-cxl-pool)"/>
+
+        <!-- 상단 도면 타이틀 & 스펙 태그 -->
+        <g transform="translate(20, 24)">
+            <text x="0" y="0" fill="#38bdf8" font-family="'Consolas', monospace" font-size="12" font-weight="700" letter-spacing="1.5">
+                [CXL-FABRIC-02] CXL 3.0 MULTI-HOST MEMORY POOLING &amp; SWITCH FABRIC
+            </text>
+            <text x="0" y="15" fill="#64748b" font-family="'Consolas', monospace" font-size="9">
+                Disaggregated Composable Architecture | PCIe 6.0 64GT/s PAM4 | Dynamic Memory Sharing &amp; Hardware Coherency
+            </text>
+            <rect x="620" y="-12" width="100" height="22" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1" rx="3"/>
+            <text x="670" y="3" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CLICK TO ZOOM</text>
+        </g>
+
+        <!-- 좌측 메인: CXL 3.0 다중 호스트 메모리 풀링 토폴로지 (3-Tier Fabric Topology) -->
+        <g transform="translate(20, 55)">
+            <rect x="0" y="0" width="455" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="20" fill="#94a3b8" font-size="10.5" font-weight="700">■ CXL 3.0 멀티 호스트 동적 풀링 패브릭 구조도</text>
+
+            <!-- 계층 1: Multi-Host Compute Nodes (독립 서버 노드들) -->
+            <g transform="translate(15, 32)">
+                <!-- Host 1: General CPU Cluster -->
+                <rect x="0" y="0" width="130" height="52" fill="url(#grad-host-cpu)" stroke="#38bdf8" stroke-width="1.2" rx="3"/>
+                <text x="65" y="18" fill="#ffffff" font-size="8.5" font-weight="800" text-anchor="middle">Host #1: Xeon/EPYC</text>
+                <text x="65" y="30" fill="#bae6fd" font-size="7" text-anchor="middle">CPU Computing Cluster</text>
+                <rect x="15" y="36" width="100" height="12" fill="#082f49" rx="1"/>
+                <text x="65" y="45" fill="#38bdf8" font-size="6.5" font-weight="700" text-anchor="middle">CXL 3.0 Root Port</text>
+
+                <!-- Host 2: GPU AI Training Cluster -->
+                <rect x="145" y="0" width="135" height="52" fill="url(#grad-host-gpu)" stroke="#34d399" stroke-width="1.2" rx="3"/>
+                <text x="212" y="18" fill="#ffffff" font-size="8.5" font-weight="800" text-anchor="middle">Host #2: B200 / H100</text>
+                <text x="212" y="30" fill="#a7f3d0" font-size="7" text-anchor="middle">GPU AI Training Cluster</text>
+                <rect x="162" y="36" width="100" height="12" fill="#064e3b" rx="1"/>
+                <text x="212" y="45" fill="#34d399" font-size="6.5" font-weight="700" text-anchor="middle">CXL 3.0 Root Port</text>
+
+                <!-- Host 3: AI Inference NPU -->
+                <rect x="290" y="0" width="135" height="52" fill="url(#grad-host-ai)" stroke="#a78bfa" stroke-width="1.2" rx="3"/>
+                <text x="357" y="18" fill="#ffffff" font-size="8.5" font-weight="800" text-anchor="middle">Host #3: NPU / AI Accel</text>
+                <text x="357" y="30" fill="#ddd6fe" font-size="7" text-anchor="middle">Large Model Inference</text>
+                <rect x="307" y="36" width="100" height="12" fill="#2e1065" rx="1"/>
+                <text x="357" y="45" fill="#a78bfa" font-size="6.5" font-weight="700" text-anchor="middle">CXL 3.0 Root Port</text>
+            </g>
+
+            <!-- 패브릭 상하 링크 버스 (PCIe 6.0 64GT/s PAM4 Link) -->
+            <g stroke="#06b6d4" stroke-width="2">
+                <line x1="80" y1="84" x2="130" y2="110"/>
+                <line x1="227" y1="84" x2="227" y2="110"/>
+                <line x1="372" y1="84" x2="325" y2="110"/>
+            </g>
+            <text x="227" y="102" fill="#67e8f9" font-size="7" font-weight="700" text-anchor="middle">PCIe 6.0 64GT/s PAM4 링크 (포트당 양방향 128GB/s)</text>
+
+            <!-- 계층 2: 중앙 CXL 3.0 고속 패브릭 스위치 코어 (Astera Labs Leo Platform Core) -->
+            <g transform="translate(45, 110)">
+                <rect x="0" y="0" width="365" height="74" fill="url(#grad-cxl-switch)" stroke="#22d3ee" stroke-width="1.8" rx="4" filter="url(#cxl-glow-cyan)"/>
+                <!-- 스위치 타이틀 -->
+                <text x="182" y="18" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">
+                    CXL 3.0 Fabric Switch (Astera Labs Leo Platform Core)
+                </text>
+
+                <!-- 내부 엔진 블록 3개 -->
+                <rect x="12" y="26" width="105" height="38" fill="#083344" stroke="#06b6d4" stroke-width="1" rx="2"/>
+                <text x="64" y="41" fill="#67e8f9" font-size="7.5" font-weight="700" text-anchor="middle">Dynamic Allocator</text>
+                <text x="64" y="53" fill="#cbd5e1" font-size="6.5" text-anchor="middle">실시간 메모리 가상화 슬라이싱</text>
+
+                <rect x="130" y="26" width="105" height="38" fill="#083344" stroke="#06b6d4" stroke-width="1" rx="2"/>
+                <text x="182" y="41" fill="#67e8f9" font-size="7.5" font-weight="800" text-anchor="middle">Hardware Coherency</text>
+                <text x="182" y="53" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Back-Invalidation (BI) 엔진</text>
+
+                <rect x="248" y="26" width="105" height="38" fill="#083344" stroke="#06b6d4" stroke-width="1" rx="2"/>
+                <text x="300" y="41" fill="#67e8f9" font-size="7.5" font-weight="700" text-anchor="middle">Multi-Head Router</text>
+                <text x="300" y="53" fill="#cbd5e1" font-size="6.5" text-anchor="middle">P2P 다이렉트 바이패스 라우팅</text>
+            </g>
+
+            <!-- 패브릭 하부 링크 -->
+            <g stroke="#f59e0b" stroke-width="2">
+                <line x1="140" y1="184" x2="100" y2="210"/>
+                <line x1="227" y1="184" x2="227" y2="210"/>
+                <line x1="315" y1="184" x2="355" y2="210"/>
+            </g>
+            <text x="227" y="202" fill="#fcd34d" font-size="7" font-weight="700" text-anchor="middle">MHD(Multi-Headed Device) 메모리 풀 직결 연결</text>
+
+            <!-- 계층 3: 거대 공유 분산 메모리 풀 (Disaggregated Pooled Memory Sleds) -->
+            <g transform="translate(15, 210)">
+                <rect x="0" y="0" width="425" height="108" fill="#1e1b4b" fill-opacity="0.6" stroke="#f59e0b" stroke-width="1.5" rx="4"/>
+                <text x="15" y="18" fill="#fbbf24" font-size="9" font-weight="700">■ Disaggregated Memory Pool (CMM-D / CMM-B 고밀도 랙 어레이)</text>
+
+                <!-- 메모리 슬라이스 시각화 (동적 할당 현황) -->
+                <!-- 슬라이스 1: Host #1 할당 -->
+                <rect x="15" y="28" width="115" height="42" fill="#0369a1" stroke="#38bdf8" stroke-width="1" rx="2"/>
+                <text x="72" y="44" fill="#ffffff" font-size="7.5" font-weight="700" text-anchor="middle">Host #1 전용 풀 (640GB)</text>
+                <text x="72" y="56" fill="#bae6fd" font-size="6.5" text-anchor="middle">OS 커널 / DB 인메모리 버퍼</text>
+
+                <!-- 슬라이스 2: Host #2 GPU AI 학습 할당 -->
+                <rect x="135" y="28" width="155" height="42" fill="#047857" stroke="#34d399" stroke-width="1" rx="2"/>
+                <text x="212" y="44" fill="#ffffff" font-size="7.5" font-weight="700" text-anchor="middle">Host #2 AI 학습 풀 (1.5TB)</text>
+                <text x="212" y="56" fill="#a7f3d0" font-size="6.5" text-anchor="middle">LLM 가중치 캐시 및 KV-Cache 공유</text>
+
+                <!-- 슬라이스 3: Host #3 추론 및 유동 여유 풀 -->
+                <rect x="295" y="28" width="115" height="42" fill="#6d28d9" stroke="#a78bfa" stroke-width="1" rx="2"/>
+                <text x="352" y="44" fill="#ffffff" font-size="7.5" font-weight="700" text-anchor="middle">Host #3 전용 풀 (800GB)</text>
+                <text x="352" y="56" fill="#ddd6fe" font-size="6.5" text-anchor="middle">배치 추론 동적 스케일아웃</text>
+
+                <!-- 유휴 메모리 0% (Zero Stranded Memory) 알림 바 -->
+                <rect x="15" y="76" width="395" height="22" fill="#0f172a" stroke="#10b981" stroke-width="1" rx="2"/>
+                <circle cx="28" cy="87" r="4" fill="#10b981"/>
+                <text x="38" y="90" fill="#34d399" font-size="7.5" font-weight="700">
+                    Zero Stranded Memory: 서버별 고정 할당 방식 대비 유휴 메모리 낭비 제로화 (활용률 95%+ 달성)
+                </text>
+            </g>
+        </g>
+
+        <!-- 우측: 기존 방식 vs CXL 3.0 풀링 비교 및 밸류체인 -->
+        <g transform="translate(485, 55)">
+            <rect x="0" y="0" width="255" height="330" fill="#0b1329" rx="6" stroke="#1e293b" stroke-width="1.5"/>
+            <text x="15" y="22" fill="#94a3b8" font-size="11" font-weight="700">■ CXL 3.0 핵심 혁신 비교</text>
+
+            <!-- 비교 1: 기존 서버 아키텍처 (메모리 고립) -->
+            <g transform="translate(15, 36)">
+                <rect x="0" y="0" width="225" height="60" fill="#1e293b" stroke="#64748b" stroke-width="1" rx="3"/>
+                <text x="10" y="16" fill="#ef4444" font-size="8" font-weight="700">[기존] 사일로(Silo) 메모리 구조</text>
+                <text x="10" y="32" fill="#94a3b8" font-size="7">• 각 서버 DIMM 슬롯에 물리적 고정</text>
+                <text x="10" y="44" fill="#94a3b8" font-size="7">• 유휴 메모리 타 서버 공유 불가 (30% 낭비)</text>
+                <text x="10" y="54" fill="#f87171" font-size="6.5">⚠️ Memory Stranding으로 인프라 비용 급증</text>
+            </g>
+
+            <!-- 비교 2: CXL 3.0 풀링 패브릭 (동적 공유) -->
+            <g transform="translate(15, 105)">
+                <rect x="0" y="0" width="225" height="70" fill="#083344" stroke="#06b6d4" stroke-width="1.2" rx="3"/>
+                <text x="10" y="16" fill="#22d3ee" font-size="8" font-weight="700">[CXL 3.0] 동적 메모리 풀링</text>
+                <text x="10" y="32" fill="#cbd5e1" font-size="7">• 중앙 스위치에서 테라바이트급 풀 구성</text>
+                <text x="10" y="44" fill="#cbd5e1" font-size="7">• 서버 필요량에 따라 실시간 할당/회수</text>
+                <text x="10" y="56" fill="#34d399" font-size="7.5" font-weight="700">✓ 데이터센터 TCO 30% 이상 절감</text>
+            </g>
+
+            <!-- 밸류체인 및 핵심 수혜 기업 -->
+            <g transform="translate(15, 185)">
+                <rect x="0" y="0" width="225" height="135" fill="#0f172a" stroke="#1e293b" stroke-width="1" rx="3"/>
+                <text x="10" y="18" fill="#38bdf8" font-size="8.5" font-weight="700">■ CXL 3.0 핵심 생태계 밸류체인</text>
+
+                <text x="10" y="36" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">패브릭 스위치 독점:</tspan> 아스테라랩스 (ALAB)</text>
+                <text x="10" y="50" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">메모리 모듈 양산:</tspan> 삼성전자, SK하이닉스</text>
+                <text x="10" y="64" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">차세대 검사 장비:</tspan> 엑시콘, 네오셈</text>
+                <text x="10" y="78" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">초고속 모듈 기판:</tspan> 티엘비 (CXL 기판 공급)</text>
+                <text x="10" y="92" fill="#94a3b8" font-size="7">• <tspan fill="#ffffff" font-weight="700">인터페이스 IP:</tspan> 오픈엣지테크놀로지</text>
+
+                <rect x="10" y="104" width="205" height="22" fill="#1e1b4b" rx="2"/>
+                <text x="112" y="118" fill="#a5b4fc" font-size="6.5" font-weight="700" text-anchor="middle">
+                    차세대 AI 데이터센터 메모리 병목의 최종 해법
+                </text>
+            </g>
+        </g>
+
+        <!-- 하단 메트릭 바 -->
+        <g transform="translate(20, 395)">
+            <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+            <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ CXL 3.0 메모리 풀링 &amp; 스위치 패브릭 핵심 엔지니어링 지표</text>
+            <g transform="translate(15, 28)">
+                <rect x="0" y="2" width="10" height="10" fill="#0891b2" rx="2"/>
+                <text x="15" y="11" fill="#cbd5e1" font-size="10">물리 계층: PCIe 6.0 기반 64GT/s PAM4 (Flit 모드)</text>
+                <rect x="250" y="2" width="10" height="10" fill="#10b981" rx="2"/>
+                <text x="265" y="11" fill="#cbd5e1" font-size="10">코히런시: 다중 호스트 하드웨어 캐시 일관성</text>
+                <rect x="505" y="2" width="10" height="10" fill="#f59e0b" rx="2"/>
+                <text x="520" y="11" fill="#cbd5e1" font-size="10">대역폭: 포트당 양방향 최대 128GB/s</text>
+            </g>
+            <g transform="translate(15, 52)">
+                <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 유휴 메모리 낭비: <tspan fill="#ffffff">Stranded Memory 0% 달성</tspan></text>
+                <text x="250" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 데이터센터 TCO: <tspan fill="#ffffff">총소유비용 30% 이상 절감</tspan></text>
+                <text x="505" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 스위치 리더: <tspan fill="#fef08a">Astera Labs Leo Fabric Switch 독점</tspan></text>
             </g>
         </g>
     </svg>
