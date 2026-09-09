@@ -11,7 +11,7 @@ const state = {
     currentView: 'feed',
     deepTechData: window.deepTechData || { tech_list: [] },
     selectedTechId: 'hbm',
-    selectedSubNodeId: 'hbm3e'
+    selectedSubNodeId: 'hbm4_foundry'
 };
 
 // 카테고리 이름과 CSS 클래스 맵핑
@@ -476,10 +476,269 @@ function renderDeepTechTabs() {
                 state.selectedSubNodeId = tech.nodes[0].id;
             }
             renderDeepTechTabs();
-            renderDeepTechContent();
-        });
-        tabsContainer.appendChild(card);
-    });
+// 정밀 엔지니어링 SVG 구조 단면도 생성기 (CAD/반도체 공학 규격)
+function getEngineeringSvg(nodeId) {
+    if (nodeId === 'hbm4_foundry') {
+        return `
+        <svg viewBox="0 0 760 480" class="engineering-svg-blueprint" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!-- 배경 격자 패턴 -->
+                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#162238" stroke-width="0.8"/>
+                </pattern>
+                
+                <!-- 그라디언트 정의 -->
+                <linearGradient id="grad-gpu" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.85"/>
+                    <stop offset="100%" stop-color="#047857" stop-opacity="0.95"/>
+                </linearGradient>
+                <linearGradient id="grad-hbm-die" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+                </linearGradient>
+                <linearGradient id="grad-base-die" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#0284c7" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#0369a1" stop-opacity="0.95"/>
+                </linearGradient>
+                <linearGradient id="grad-interposer" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#475569" stop-opacity="0.9"/>
+                    <stop offset="50%" stop-color="#64748b" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#475569" stop-opacity="0.9"/>
+                </linearGradient>
+                <linearGradient id="grad-substrate" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#334155" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#1e293b" stop-opacity="0.95"/>
+                </linearGradient>
+                <linearGradient id="grad-tsv" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#d97706"/>
+                </linearGradient>
+            </defs>
+
+            <!-- 1. 배경 및 외곽 프레임 -->
+            <rect width="100%" height="100%" fill="#070c14" rx="8"/>
+            <rect width="100%" height="100%" fill="url(#grid)" rx="8"/>
+            <rect x="1" y="1" width="758" height="478" fill="none" stroke="#1e293b" stroke-width="1.5" rx="8"/>
+
+            <!-- 상단 헤더 바 -->
+            <rect x="12" y="12" width="736" height="32" fill="#0f172a" rx="4" stroke="#334155" stroke-width="1"/>
+            <text x="24" y="33" fill="#38bdf8" font-size="12" font-weight="700" font-family="'Outfit', sans-serif">HBM4 16-Hi 3D DRAM STACK ON 2.5D CoWoS-L SCHEMATIC</text>
+            <text x="520" y="33" fill="#94a3b8" font-size="11" font-family="monospace">[JEDEC 720µm Limit / 2048-bit Bus]</text>
+
+            <!-- ================= [좌측: System Integration 2.5D Overview] ================= -->
+            <g transform="translate(20, 55)">
+                <!-- 섹션 타이틀 -->
+                <text x="0" y="15" fill="#e2e8f0" font-size="12" font-weight="600">■ 2.5D CoWoS-L 온패키지 통합 조감도</text>
+
+                <!-- 패키지 기판 (Package Substrate) -->
+                <rect x="0" y="240" width="280" height="28" fill="url(#grad-substrate)" stroke="#475569" stroke-width="1" rx="2"/>
+                <text x="140" y="258" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="middle">FC-BGA Package Substrate (PCB)</text>
+
+                <!-- BGA Solder Balls -->
+                <g fill="#94a3b8">
+                    <circle cx="20" cy="278" r="6"/> <circle cx="50" cy="278" r="6"/>
+                    <circle cx="80" cy="278" r="6"/> <circle cx="110" cy="278" r="6"/>
+                    <circle cx="140" cy="278" r="6"/> <circle cx="170" cy="278" r="6"/>
+                    <circle cx="200" cy="278" r="6"/> <circle cx="230" cy="278" r="6"/>
+                    <circle cx="260" cy="278" r="6"/>
+                </g>
+
+                <!-- C4 Bumps (기판-인터포저 사이) -->
+                <g fill="#cbd5e1">
+                    <rect x="15" y="233" width="6" height="7" rx="1"/> <rect x="35" y="233" width="6" height="7" rx="1"/>
+                    <rect x="55" y="233" width="6" height="7" rx="1"/> <rect x="75" y="233" width="6" height="7" rx="1"/>
+                    <rect x="95" y="233" width="6" height="7" rx="1"/> <rect x="115" y="233" width="6" height="7" rx="1"/>
+                    <rect x="135" y="233" width="6" height="7" rx="1"/> <rect x="155" y="233" width="6" height="7" rx="1"/>
+                    <rect x="175" y="233" width="6" height="7" rx="1"/> <rect x="195" y="233" width="6" height="7" rx="1"/>
+                    <rect x="215" y="233" width="6" height="7" rx="1"/> <rect x="235" y="233" width="6" height="7" rx="1"/>
+                    <rect x="255" y="233" width="6" height="7" rx="1"/>
+                </g>
+
+                <!-- 2.5D Silicon Interposer / RDL -->
+                <rect x="10" y="212" width="260" height="20" fill="url(#grad-interposer)" stroke="#64748b" stroke-width="1" rx="2"/>
+                <text x="140" y="226" fill="#f8fafc" font-size="10" font-weight="700" text-anchor="middle">2.5D Silicon Interposer / High-Density RDL</text>
+
+                <!-- Micro Bumps (인터포저-칩 사이) -->
+                <g fill="#f59e0b">
+                    <!-- GPU 아래 -->
+                    <rect x="20" y="206" width="4" height="6" rx="1"/> <rect x="32" y="206" width="4" height="6" rx="1"/>
+                    <rect x="44" y="206" width="4" height="6" rx="1"/> <rect x="56" y="206" width="4" height="6" rx="1"/>
+                    <rect x="68" y="206" width="4" height="6" rx="1"/> <rect x="80" y="206" width="4" height="6" rx="1"/>
+                    <rect x="92" y="206" width="4" height="6" rx="1"/>
+                    <!-- HBM 아래 -->
+                    <rect x="160" y="206" width="4" height="6" rx="1"/> <rect x="172" y="206" width="4" height="6" rx="1"/>
+                    <rect x="184" y="206" width="4" height="6" rx="1"/> <rect x="196" y="206" width="4" height="6" rx="1"/>
+                    <rect x="208" y="206" width="4" height="6" rx="1"/> <rect x="220" y="206" width="4" height="6" rx="1"/>
+                    <rect x="232" y="206" width="4" height="6" rx="1"/> <rect x="244" y="206" width="4" height="6" rx="1"/>
+                    <rect x="256" y="206" width="4" height="6" rx="1"/>
+                </g>
+
+                <!-- 좌측 칩: AI GPU (NVIDIA Rubin / TSMC 3nm) -->
+                <rect x="15" y="105" width="90" height="100" fill="url(#grad-gpu)" stroke="#34d399" stroke-width="1.5" rx="3"/>
+                <text x="60" y="145" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">AI Host</text>
+                <text x="60" y="162" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">GPU</text>
+                <text x="60" y="180" fill="#a7f3d0" font-size="9" text-anchor="middle">(NVIDIA Rubin)</text>
+
+                <!-- 우측 칩: HBM4 16단 스택 (간략 조감) -->
+                <rect x="150" y="45" width="115" height="160" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3,3" rx="3"/>
+                
+                <!-- 16단 스택 표현 레이어들 -->
+                <rect x="155" y="50" width="105" height="125" fill="#1e293b" stroke="#0ea5e9" stroke-width="1" rx="2"/>
+                <text x="207" y="105" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">HBM4 Stack</text>
+                <text x="207" y="122" fill="#93c5fd" font-size="10" text-anchor="middle">(16-Hi DRAM)</text>
+                <text x="207" y="140" fill="#fbbf24" font-size="9" text-anchor="middle">48GB / 2.0+ TB/s</text>
+
+                <!-- TSMC 3nm Base Die -->
+                <rect x="155" y="178" width="105" height="27" fill="url(#grad-base-die)" stroke="#38bdf8" stroke-width="1.2" rx="2"/>
+                <text x="207" y="195" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">TSMC 3nm Base Die</text>
+
+                <!-- 초고속 데이터 전송 라인 (RDL 배선 화살표) -->
+                <path d="M 95 218 L 160 218" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-dasharray="4,2"/>
+                <polygon points="160,214 168,218 160,222" fill="#f59e0b"/>
+                <polygon points="95,214 87,218 95,222" fill="#f59e0b"/>
+                <text x="127" y="210" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">2048-bit Wide Bus</text>
+                <text x="127" y="235" fill="#fef08a" font-size="8" text-anchor="middle">&lt; 5ns Latency</text>
+            </g>
+
+            <!-- 중앙 세로 구분선 -->
+            <line x1="320" y1="55" x2="320" y2="465" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+            <!-- ================= [우측: HBM4 16-Hi Micro Cross-Section 정밀 단면도] ================= -->
+            <g transform="translate(340, 55)">
+                <!-- 섹션 타이틀 -->
+                <text x="0" y="15" fill="#e2e8f0" font-size="12" font-weight="600">■ HBM4 16-Hi DRAM 스택 정밀 단면 구조 (Cross-Section)</text>
+
+                <!-- 16단 DRAM 스택 영역 -->
+                <!-- 상단 방열 캡 / 더미 다이 -->
+                <rect x="30" y="32" width="250" height="14" fill="#334155" stroke="#64748b" stroke-width="1" rx="1"/>
+                <text x="155" y="43" fill="#cbd5e1" font-size="9" font-weight="600" text-anchor="middle">Top Dummy / Heat Dissipation Layer</text>
+
+                <!-- 16단 DRAM 다이들 (각 다이 + TSV + Bump) -->
+                <!-- Die 16 ~ Die 1 반복 렌더링 -->
+                <g>
+                    <!-- Die 16 -->
+                    <rect x="30" y="48" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 15 -->
+                    <rect x="30" y="60" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 14 -->
+                    <rect x="30" y="72" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 13 -->
+                    <rect x="30" y="84" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 12 -->
+                    <rect x="30" y="96" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 11 -->
+                    <rect x="30" y="108" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 10 -->
+                    <rect x="30" y="120" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 9 -->
+                    <rect x="30" y="132" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 8 -->
+                    <rect x="30" y="144" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 7 -->
+                    <rect x="30" y="156" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 6 -->
+                    <rect x="30" y="168" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 5 -->
+                    <rect x="30" y="180" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 4 -->
+                    <rect x="30" y="192" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 3 -->
+                    <rect x="30" y="204" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 2 -->
+                    <rect x="30" y="216" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                    <!-- Die 1 -->
+                    <rect x="30" y="228" width="250" height="10" fill="url(#grad-hbm-die)" stroke="#38bdf8" stroke-width="0.7"/>
+                </g>
+
+                <!-- Cu TSV (수직 관통전극 구리선 어레이) -->
+                <!-- 4개 수직 전송 채널 기둥 표현 -->
+                <g fill="url(#grad-tsv)">
+                    <rect x="70" y="48" width="5" height="190" rx="1"/>
+                    <rect x="125" y="48" width="5" height="190" rx="1"/>
+                    <rect x="180" y="48" width="5" height="190" rx="1"/>
+                    <rect x="235" y="48" width="5" height="190" rx="1"/>
+                </g>
+
+                <!-- 층간 미세 범프 및 충진재 (Micro-Bumps / Epoxy MUF) -->
+                <g fill="#f59e0b">
+                    <!-- 수평 본딩선 점들 -->
+                    <circle cx="72.5" cy="59" r="1.5"/><circle cx="127.5" cy="59" r="1.5"/><circle cx="182.5" cy="59" r="1.5"/><circle cx="237.5" cy="59" r="1.5"/>
+                    <circle cx="72.5" cy="119" r="1.5"/><circle cx="127.5" cy="119" r="1.5"/><circle cx="182.5" cy="119" r="1.5"/><circle cx="237.5" cy="119" r="1.5"/>
+                    <circle cx="72.5" cy="179" r="1.5"/><circle cx="127.5" cy="179" r="1.5"/><circle cx="182.5" cy="179" r="1.5"/><circle cx="237.5" cy="179" r="1.5"/>
+                    <circle cx="72.5" cy="227" r="1.5"/><circle cx="127.5" cy="227" r="1.5"/><circle cx="182.5" cy="227" r="1.5"/><circle cx="237.5" cy="227" r="1.5"/>
+                </g>
+
+                <!-- TSMC 3nm 파운드리 베이스 로직 다이 (Custom Base Die) -->
+                <rect x="25" y="244" width="260" height="38" fill="url(#grad-base-die)" stroke="#38bdf8" stroke-width="2" rx="3"/>
+                <text x="155" y="262" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">TSMC 3nm Custom Base Logic Die</text>
+                <text x="155" y="275" fill="#e0f2fe" font-size="9" text-anchor="middle">2048-bit Wide-I/O PHY + BIST + Power Logic</text>
+
+                <!-- Micro-Bumps to Interposer -->
+                <g fill="#f59e0b">
+                    <rect x="45" y="283" width="5" height="8" rx="1"/> <rect x="75" y="283" width="5" height="8" rx="1"/>
+                    <rect x="105" y="283" width="5" height="8" rx="1"/> <rect x="135" y="283" width="5" height="8" rx="1"/>
+                    <rect x="165" y="283" width="5" height="8" rx="1"/> <rect x="195" y="283" width="5" height="8" rx="1"/>
+                    <rect x="225" y="283" width="5" height="8" rx="1"/> <rect x="255" y="283" width="5" height="8" rx="1"/>
+                </g>
+
+                <!-- 2.5D Silicon Interposer Slice -->
+                <rect x="15" y="292" width="280" height="18" fill="url(#grad-interposer)" stroke="#64748b" stroke-width="1" rx="2"/>
+                <text x="155" y="305" fill="#f8fafc" font-size="9" font-weight="700" text-anchor="middle">CoWoS-L Silicon Interposer with LSI Bridge</text>
+
+                <!-- ================= [치수선 및 엔지니어링 콜아웃] ================= -->
+                <!-- 전체 높이 720µm 치수선 (우측) -->
+                <line x1="295" y1="32" x2="295" y2="282" stroke="#ef4444" stroke-width="1.5"/>
+                <line x1="290" y1="32" x2="300" y2="32" stroke="#ef4444" stroke-width="1.5"/>
+                <line x1="290" y1="282" x2="300" y2="282" stroke="#ef4444" stroke-width="1.5"/>
+                <text x="303" y="155" fill="#f87171" font-size="10" font-weight="700" transform="rotate(90, 303, 155)" text-anchor="middle">JEDEC Spec: 720 µm Max</text>
+
+                <!-- 단일 다이 두께 30µm 콜아웃 (좌측 상단) -->
+                <line x1="15" y1="88" x2="28" y2="88" stroke="#38bdf8" stroke-width="1"/>
+                <text x="12" y="86" fill="#38bdf8" font-size="8" text-anchor="end">DRAM Die ~30µm</text>
+                <text x="12" y="96" fill="#94a3b8" font-size="7" text-anchor="end">(Backside CMP)</text>
+
+                <!-- TSV 피치 콜아웃 -->
+                <line x1="127" y1="20" x2="127" y2="45" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2,2"/>
+                <text x="127" y="15" fill="#fbbf24" font-size="8" text-anchor="middle">TSV Array (13~25µm Pitch)</text>
+            </g>
+
+            <!-- ================= [하단 범례 및 공학 메트릭 바] ================= -->
+            <g transform="translate(20, 395)">
+                <rect x="0" y="0" width="720" height="70" fill="#0f172a" rx="4" stroke="#1e293b" stroke-width="1"/>
+                
+                <text x="15" y="18" fill="#94a3b8" font-size="10" font-weight="700">■ 엔지니어링 범례 & 공정 핵심 규격 (Key Process Parameters)</text>
+                
+                <!-- 범례 아이템들 -->
+                <g transform="translate(15, 28)">
+                    <!-- 1. Cu TSV -->
+                    <rect x="0" y="2" width="10" height="10" fill="#f59e0b" rx="2"/>
+                    <text x="15" y="11" fill="#cbd5e1" font-size="10">Cu TSV (수직 관통전극)</text>
+
+                    <!-- 2. DRAM Die -->
+                    <rect x="150" y="2" width="10" height="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1" rx="2"/>
+                    <text x="165" y="11" fill="#cbd5e1" font-size="10">1c-nm DRAM (30µm 박막)</text>
+
+                    <!-- 3. TSMC 3nm Base Die -->
+                    <rect x="310" y="2" width="10" height="10" fill="#0284c7" rx="2"/>
+                    <text x="325" y="11" fill="#cbd5e1" font-size="10">TSMC 3nm Logic Base Die</text>
+
+                    <!-- 4. CoWoS-L Interposer -->
+                    <rect x="500" y="2" width="10" height="10" fill="#64748b" rx="2"/>
+                    <text x="515" y="11" fill="#cbd5e1" font-size="10">2.5D CoWoS-L Interposer</text>
+                </g>
+
+                <!-- 정량 스펙 지표 -->
+                <g transform="translate(15, 52)">
+                    <text x="0" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 버스 폭: <tspan fill="#ffffff">2048-bit (2x)</tspan></text>
+                    <text x="140" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 단일 스택 대역폭: <tspan fill="#ffffff">2.0+ TB/s</tspan></text>
+                    <text x="310" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 적층 단수: <tspan fill="#ffffff">16-Hi (48GB)</tspan></text>
+                    <text x="470" y="8" fill="#38bdf8" font-size="10" font-weight="600">• 열/두께 제약: <tspan fill="#ef4444">720µm JEDEC Strict Limit</tspan></text>
+                </g>
+            </g>
+        </svg>
+        `;
+    }
+    return null;
 }
 
 // 3. 심층 기술 백서 및 인터랙티브 테크 트리 본문 렌더링
@@ -601,7 +860,18 @@ function renderDeepTechContent() {
                     <div class="sub-node-magazine-layout">
                         <!-- 좌측 컬럼: 고해상도 공학 구조도 이미지 및 다이어그램 -->
                         <div class="sub-node-visual-col">
-                            ${nodeImgUrl ? `
+                            ${getEngineeringSvg(subNode.id) ? `
+                                <div class="engineering-svg-card">
+                                    <div class="visual-img-header">
+                                        <i data-lucide="microchip"></i>
+                                        <span>정밀 패키징 공학 단면 구조도 (Engineering Blueprint)</span>
+                                    </div>
+                                    <div class="engineering-svg-wrap">
+                                        ${getEngineeringSvg(subNode.id)}
+                                    </div>
+                                    <p class="img-caption">📌 ${escapeHTML(subNode.name)} 3D 패키징 & 2.5D 인터포저 단면도 (JEDEC 720µm / 2048-bit 버스)</p>
+                                </div>
+                            ` : (nodeImgUrl ? `
                                 <div class="visual-img-card">
                                     <div class="visual-img-header">
                                         <i data-lucide="image"></i>
@@ -612,7 +882,7 @@ function renderDeepTechContent() {
                                     </div>
                                     <p class="img-caption">📌 ${escapeHTML(subNode.name)} 공학 구조 조감도</p>
                                 </div>
-                            ` : ''}
+                            ` : '')}
 
                             ${tech.diagram ? `
                                 <div class="diagram-box">

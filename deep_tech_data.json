@@ -34,7 +34,7 @@
           "id": "hbm4_foundry",
           "name": "HBM4 (SK하이닉스 & TSMC 연합 / 3nm 파운드리 베이스다이)",
           "tag": "2026년 양산 개시",
-          "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+          "image_url": "",
           "desc": "메모리 산업 역사상 최초로 로직 베이스 다이(Base Die)를 자체 메모리 공정이 아닌 TSMC의 첨단 3nm/5nm 파운드리 공정으로 외주 위탁 생산. 인터페이스 버스를 기존 1024-bit에서 2048-bit로 2배 확장하여 속도와 전력 효율을 획기적으로 개선.",
           "tech_specs": "대역폭: 2.0 TB/s 돌파 | I/O 버스: 2048-bit (2배 확장) | 적층 단수: 16단 (48GB 용량) | 베이스다이 공정: TSMC 3nm FinFET / N3P",
           "company_strategy": "• SK하이닉스-TSMC: CoWoS-L 파운드리 연합 구축으로 NVIDIA 차세대 Rubin(루빈) GPU 아키텍처 수주 확정.\n• 삼성전자: 파운드리-메모리-패키징 원스톱 턴키(SAINT-D) 솔루션으로 3nm GAA 베이스다이 자체 조달 승부수.",
