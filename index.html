@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260909_02">
 </head>
 <body>
     <div class="app-container">
@@ -140,7 +140,7 @@
                     <div class="generator-input-wrap">
                         <i data-lucide="sparkles"></i>
                         <input type="text" id="generator-input" placeholder="새로운 첨단 기술 약어 입력 (예: 유리기판, CoWoS, 뉴로모픽, 전고체배터리...)">
-                        <button id="btn-generate-tech" class="generator-btn">
+                        <button id="btn-generate-tech" class="generator-btn" onclick="handleGenerateTech()">
                             <span>⚡ 즉석 백서 생성</span>
                         </button>
                         <button id="btn-gemini-config" class="api-config-btn" onclick="openGeminiApiModal()" title="Gemini API Key 설정">
