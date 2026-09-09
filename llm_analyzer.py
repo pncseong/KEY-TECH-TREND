@@ -54,12 +54,15 @@ except ImportError:
 
 def get_gemini_analysis(title, content):
     """Gemini API를 사용하여 요약 및 인사이트 추출"""
+    # API Timeout 방지를 위해 본문 길이를 20,000자로 제한
+    content_trunc = content[:20000] if content else ""
+
     prompt = f"""
     당신은 최첨단 기술 분야(반도체, 2차전지, 전력망, 광통신, AI 로봇)의 전문 기술 투자 분석가입니다.
     다음 기술 정보(기사 또는 논문)를 분석하여 투자 관점의 요약 및 평가를 제공하세요.
 
     제목: {title}
-    본문/요약: {content}
+    본문/요약: {content_trunc}
 
     반드시 아래의 JSON 포맷으로만 응답해야 합니다. 다른 텍스트 설명은 제외하세요:
     {{
@@ -158,11 +161,15 @@ def analyze_articles(limit=20):
     
     # 분석 대상 기사 조회 (insights 테이블에 존재하지 않는 아티클)
     cursor.execute("""
-        SELECT a.id, a.title, a.content_raw 
-        FROM articles a
-        LEFT JOIN insights i ON a.id = i.article_id
-        WHERE i.article_id IS NULL
-        ORDER BY a.category_id DESC, a.id DESC
+        SELECT id, title, content_raw FROM (
+            SELECT a.id, a.title, a.content_raw, a.category_id,
+                   ROW_NUMBER() OVER (PARTITION BY a.category_id ORDER BY a.published_at DESC) as rn
+            FROM articles a
+            LEFT JOIN insights i ON a.id = i.article_id
+            WHERE i.article_id IS NULL
+        )
+        WHERE rn <= 3
+        ORDER BY rn ASC, category_id ASC
         LIMIT ?
     """, (limit,))
     
@@ -182,8 +189,8 @@ def analyze_articles(limit=20):
         # API 사용 가능 여부에 따라 분기
         analysis = None
         if GEMINI_AVAILABLE:
-            # API 할당량 초과 방지를 위한 딜레이
-            time.sleep(1)
+            # API 할당량 초과(1분당 15회 한도) 방지를 위한 딜레이 확대
+            time.sleep(4)
             analysis = get_gemini_analysis(title, content)
             
         if not analysis:

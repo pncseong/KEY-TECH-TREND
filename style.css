@@ -661,3 +661,433 @@ body {
     background: var(--accent-color);
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.35);
 }
+
+/* ==========================================================
+   🔬 심층 기술 백서 (Deep-Tech Dossier) 전용 스타일
+   ========================================================== */
+
+/* 1. 메인 뷰 스위처 바 */
+.main-view-switcher {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.view-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.5rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.view-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.view-btn.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(161, 140, 209, 0.8));
+    border-color: rgba(0, 242, 254, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
+}
+
+/* 2. 심층 기술 헤더 및 약어 생성기 */
+.deep-tech-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+}
+
+.deep-tech-title-wrap h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    background: linear-gradient(90deg, #fff, var(--color-semiconductors));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.deep-tech-title-wrap p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+.deep-tech-generator-bar {
+    margin-top: 0.5rem;
+}
+
+.generator-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.generator-input-wrap svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-semiconductors);
+}
+
+.generator-input-wrap input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.generator-input-wrap input::placeholder {
+    color: var(--text-muted);
+}
+
+.generator-btn {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    border: none;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+.generator-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+}
+
+/* 3. 4대 기술 퀵 셀렉터 카드 탭 */
+.deep-tech-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.deep-tech-card-tab {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.deep-tech-card-tab:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(0, 242, 254, 0.3);
+    transform: translateY(-3px);
+}
+
+.deep-tech-card-tab.active {
+    background: rgba(19, 26, 42, 0.95);
+    border: 1px solid var(--color-semiconductors);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
+}
+
+.deep-tech-card-tab .tab-badge {
+    align-self: flex-start;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(0, 242, 254, 0.15);
+    color: var(--color-semiconductors);
+}
+
+.deep-tech-card-tab h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.deep-tech-card-tab p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* 4. 심층 백서 본문 컨테이너 */
+.deep-tech-main-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    backdrop-filter: blur(12px);
+}
+
+.dossier-header-box {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+
+.dossier-header-box h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.dossier-header-box .dossier-summary {
+    font-size: 1rem;
+    color: var(--color-cooling);
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* 5. 6단계 공학 프레임워크 그리드 */
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+}
+
+.framework-card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.framework-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-semiconductors);
+}
+
+.framework-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 6. 인터랙티브 기술 계통도 (Tech Chain Tree) */
+.tech-tree-section {
+    background: rgba(10, 15, 29, 0.7);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.tech-tree-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tech-tree-title h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tech-tree-title span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.tree-nodes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.tree-node-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.2s ease;
+}
+
+.tree-node-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-semiconductors);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.tree-node-btn.active {
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(59, 130, 246, 0.3));
+    border-color: var(--color-semiconductors);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.35);
+}
+
+.tree-node-btn .node-tag {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    background: rgba(0, 242, 254, 0.2);
+    color: var(--color-semiconductors);
+}
+
+/* 7. 서브 노드 상세 드릴다운 패널 */
+.sub-node-detail-panel {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sub-node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.sub-node-header h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-semiconductors);
+}
+
+.sub-node-desc {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.sub-node-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.sub-spec-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.sub-spec-box h5 {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.sub-spec-box p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* 밸류체인 소부장 맵 테이블 */
+.chain-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+.chain-table td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.chain-table td.chain-key {
+    color: var(--color-cooling);
+    font-weight: 700;
+    width: 35%;
+}
+
+.chain-table td.chain-val {
+    color: var(--text-primary);
+}
+
+/* 8. 다이어그램 박스 */
+.diagram-box {
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.diagram-box h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-optical);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mermaid-render-area {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    overflow-x: auto;
+}
+

@@ -34,86 +34,132 @@
             </div>
         </header>
 
-        <!-- 상단 대시보드 요약 정보 (Stats Dashboard) -->
-        <section class="stats-container">
-            <div class="stat-card total-news">
-                <div class="stat-icon-wrapper"><i data-lucide="newspaper"></i></div>
-                <div class="stat-details">
-                    <h3>수집된 총 정보</h3>
-                    <p id="stat-total-count">0</p>
-                </div>
-            </div>
-            <div class="stat-card avg-impact">
-                <div class="stat-icon-wrapper"><i data-lucide="zap"></i></div>
-                <div class="stat-details">
-                    <h3>평균 투자 영향도</h3>
-                    <p id="stat-avg-impact">0.0</p>
-                </div>
-            </div>
-            <div class="stat-card commercial-ratio">
-                <div class="stat-icon-wrapper"><i data-lucide="shopping-bag"></i></div>
-                <div class="stat-details">
-                    <h3>상용화 단계 비중</h3>
-                    <p id="stat-commercial-ratio">0%</p>
-                </div>
-            </div>
-        </section>
+        <!-- 메인 뷰 전환 탭 (트렌드 모니터 vs 심층 기술 백서) -->
+        <div class="main-view-switcher">
+            <button class="view-btn active" id="btn-view-feed">
+                <i data-lucide="radio"></i> 실시간 트렌드 모니터
+            </button>
+            <button class="view-btn" id="btn-view-deeptech">
+                <i data-lucide="book-open-check"></i> 심층 기술 백서 (Deep-Tech Dossier)
+            </button>
+        </div>
 
-        <!-- 필터 콘솔 컨트롤 영역 -->
-        <section class="filter-console">
-            <div class="search-box">
-                <i data-lucide="search" class="search-icon"></i>
-                <input type="text" id="search-input" placeholder="키워드, 기사 제목, 관련 주식 티커 검색...">
-            </div>
-            <div class="filter-controls">
-                <div class="slider-group">
-                    <label for="impact-slider">최소 영향도 (Impact): <span id="impact-val">1</span>점</label>
-                    <input type="range" id="impact-slider" min="1" max="10" value="1">
+        <!-- ================= [VIEW 1: 실시간 트렌드 모니터] ================= -->
+        <div id="view-feed-section" class="view-section active">
+            <!-- 상단 대시보드 요약 정보 (Stats Dashboard) -->
+            <section class="stats-container">
+                <div class="stat-card total-news">
+                    <div class="stat-icon-wrapper"><i data-lucide="newspaper"></i></div>
+                    <div class="stat-details">
+                        <h3>수집된 총 정보</h3>
+                        <p id="stat-total-count">0</p>
+                    </div>
                 </div>
-                <div class="select-group">
-                    <label for="stage-filter">기술 성숙도:</label>
-                    <select id="stage-filter">
-                        <option value="all">전체 단계</option>
-                        <option value="Laboratory">연구실 (Laboratory)</option>
-                        <option value="Pilot">시제품 (Pilot)</option>
-                        <option value="Commercial">상용화 (Commercial)</option>
-                    </select>
+                <div class="stat-card avg-impact">
+                    <div class="stat-icon-wrapper"><i data-lucide="zap"></i></div>
+                    <div class="stat-details">
+                        <h3>평균 투자 영향도</h3>
+                        <p id="stat-avg-impact">0.0</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+                <div class="stat-card commercial-ratio">
+                    <div class="stat-icon-wrapper"><i data-lucide="shopping-bag"></i></div>
+                    <div class="stat-details">
+                        <h3>상용화 단계 비중</h3>
+                        <p id="stat-commercial-ratio">0%</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- 정렬 모드 전환 바 -->
-        <section class="sort-bar">
-            <div class="sort-tabs">
-                <button class="sort-tab active" data-sort-by="impact" id="btn-sort-impact">
-                    <i data-lucide="zap"></i> 중요도 순
-                </button>
-                <button class="sort-tab" data-sort-by="date" id="btn-sort-date">
-                    <i data-lucide="clock"></i> 실시간 최신순
-                </button>
-            </div>
-        </section>
+            <!-- 필터 콘솔 컨트롤 영역 -->
+            <section class="filter-console">
+                <div class="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="search-input" placeholder="키워드, 기사 제목, 관련 주식 티커 검색...">
+                </div>
+                <div class="filter-controls">
+                    <div class="slider-group">
+                        <label for="impact-slider">최소 영향도 (Impact): <span id="impact-val">1</span>점</label>
+                        <input type="range" id="impact-slider" min="1" max="10" value="1">
+                    </div>
+                    <div class="select-group">
+                        <label for="stage-filter">기술 성숙도:</label>
+                        <select id="stage-filter">
+                            <option value="all">전체 단계</option>
+                            <option value="Laboratory">연구실 (Laboratory)</option>
+                            <option value="Pilot">시제품 (Pilot)</option>
+                            <option value="Commercial">상용화 (Commercial)</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
 
-        <!-- 카테고리 내비게이션 탭 -->
-        <nav class="category-nav">
-            <div class="nav-scroll-wrapper" id="category-tabs">
-                <!-- 동적으로 카테고리 탭 생성됨 -->
-                <button class="tab-btn active" data-category-id="all">
-                    <i data-lucide="layers"></i> 전체 분석
-                </button>
-            </div>
-        </nav>
+            <!-- 정렬 모드 전환 바 -->
+            <section class="sort-bar">
+                <div class="sort-tabs">
+                    <button class="sort-tab active" data-sort-by="impact" id="btn-sort-impact">
+                        <i data-lucide="zap"></i> 중요도 순
+                    </button>
+                    <button class="sort-tab" data-sort-by="date" id="btn-sort-date">
+                        <i data-lucide="clock"></i> 실시간 최신순
+                    </button>
+                </div>
+            </section>
 
-        <!-- 아티클 카드 리스트 영역 -->
-        <main class="content-area">
-            <div class="articles-grid" id="articles-container">
-                <!-- 동적으로 카드 렌더링됨 -->
+            <!-- 카테고리 내비게이션 탭 -->
+            <nav class="category-nav">
+                <div class="nav-scroll-wrapper" id="category-tabs">
+                    <button class="tab-btn active" data-category-id="all">
+                        <i data-lucide="layers"></i> 전체 분석
+                    </button>
+                </div>
+            </nav>
+
+            <!-- 아티클 카드 리스트 영역 -->
+            <main class="content-area">
+                <div class="articles-grid" id="articles-container">
+                    <div class="loading-state">
+                        <div class="spinner"></div>
+                        <p>인사이트를 로드하는 중입니다...</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- ================= [VIEW 2: 심층 기술 백서 & 테크 트리] ================= -->
+        <div id="view-deeptech-section" class="view-section" style="display: none;">
+            <!-- 심층 기술 헤더 및 셀렉터 바 -->
+            <section class="deep-tech-header">
+                <div class="deep-tech-title-wrap">
+                    <h2>🔬 첨단 공학 심층 백서 (Deep-Tech Dossier)</h2>
+                    <p>원천 공학 원리 ➡️ 세부 제조 공정 ➡️ 기업별 기술 계통도(Technical Chain) ➡️ 소부장 밸류체인 맵</p>
+                </div>
+                
+                <!-- 신규 약어 즉석 백서 생성기 -->
+                <div class="deep-tech-generator-bar">
+                    <div class="generator-input-wrap">
+                        <i data-lucide="sparkles"></i>
+                        <input type="text" id="generator-input" placeholder="새로운 첨단 기술 약어 입력 (예: CoWoS, LPO, 유리기판, BSS...)">
+                        <button id="btn-generate-tech" class="generator-btn">
+                            <span>⚡ 즉석 백서 생성</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4대 기술 퀵 셀렉터 카드 탭 -->
+            <div class="deep-tech-selector-grid" id="deep-tech-tabs">
+                <!-- 동적으로 HBM, CPO, CXL, SMR 버튼 생성됨 -->
+            </div>
+
+            <!-- 선택된 기술의 심층 백서 대시보드 메인 영역 -->
+            <div class="deep-tech-content-container" id="deep-tech-content">
                 <div class="loading-state">
                     <div class="spinner"></div>
-                    <p>인사이트를 로드하는 중입니다...</p>
+                    <p>심층 기술 데이터를 준비 중입니다...</p>
                 </div>
             </div>
-        </main>
+        </div>
 
         <!-- 하단 푸터 -->
         <footer class="app-footer">
@@ -121,24 +167,38 @@
         </footer>
     </div>
 
+    <!-- Mermaid.js 다이어그램 렌더링 라이브러리 -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+    </script>
+
     <!-- 스크립트 로드 -->
     <script>
         (function() {
-            var script = document.createElement('script');
-            // 캐시 강제 차단을 위해 버전 파라미터를 무조건 주입합니다.
             var vParam = '?v=' + new Date().getTime();
-            script.src = 'data.js' + vParam;
-            script.async = false;
             
-            // data.js가 완전히 로드 및 실행된 후 app.js를 로드하여 순서를 보장합니다.
-            script.onload = function() {
-                var appScript = document.createElement('script');
-                appScript.src = 'app.js' + vParam;
-                appScript.async = false;
-                document.body.appendChild(appScript);
+            // 1. data.js 로드
+            var sData = document.createElement('script');
+            sData.src = 'data.js' + vParam;
+            sData.async = false;
+            
+            // 2. deep_tech_data.js 로드
+            sData.onload = function() {
+                var sDeep = document.createElement('script');
+                sDeep.src = 'deep_tech_data.js' + vParam;
+                sDeep.async = false;
+                
+                // 3. app.js 로드
+                sDeep.onload = function() {
+                    var sApp = document.createElement('script');
+                    sApp.src = 'app.js' + vParam;
+                    sApp.async = false;
+                    document.body.appendChild(sApp);
+                };
+                document.head.appendChild(sDeep);
             };
-            
-            document.head.appendChild(script);
+            document.head.appendChild(sData);
         })();
     </script>
 </body>
