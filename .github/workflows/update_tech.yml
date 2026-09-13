@@ -39,6 +39,11 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add data.js tech_monitor.db
-        # 변경사항이 있는 경우에만 커밋 및 푸시
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update tech data [skip ci]" && git push)
+        git add -- data.js
+        # 추적 중인 생성 파일에 변경사항이 있는 경우에만 커밋 및 푸시
+        if git diff --cached --quiet; then
+          echo "No tracked generated changes to commit."
+        else
+          git commit -m "Auto-update tech data [skip ci]"
+          git push
+        fi
