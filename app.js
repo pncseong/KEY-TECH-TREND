@@ -849,7 +849,7 @@ function renderDeepTechContent() {
 }
 
 // ================= [Gemini API Key 관리 및 상태 제어] =================
-const DEFAULT_GEMINI_KEY = 'AIzaSyDI3vpA5q9P9vEdUAJiN7xC8PQomiMThhg';
+const DEFAULT_GEMINI_KEY = '';
 
 function getStoredGeminiApiKey() {
     return localStorage.getItem('KEY_TECH_GEMINI_API_KEY') || DEFAULT_GEMINI_KEY;
