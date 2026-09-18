@@ -921,6 +921,30 @@ function updateApiStatusBadge() {
     }
 }
 
+// 제외 대상 특수 목적 패밀리 및 카테고리 키워드
+const SPECIAL_PURPOSE_FAMILIES = [
+    'nano-banana',
+    'omni',
+    'image',
+    'imagen',
+    'veo',
+    'video',
+    'lyria',
+    'music',
+    'audio',
+    'tts',
+    'transcribe',
+    'live-audio',
+    'robotics',
+    'robot',
+    'computer-use',
+    'antigravity',
+    'deep-research',
+    'embedding',
+    'embed',
+    'aqa'
+];
+
 // 중앙화된 Deep-Tech 보고서/CAD 생성 적격 일반 텍스트 모델 판정 함수
 function isEligibleGeneralTextModel(m) {
     if (!m) return false;
@@ -932,24 +956,18 @@ function isEligibleGeneralTextModel(m) {
 
     const id = (m.name || '').replace(/^models\//, '').toLowerCase();
     const displayName = (m.displayName || '').toLowerCase();
+    const description = (m.description || '').toLowerCase();
 
     // 2. 공식 셧다운 및 해당 계정 404 확인 모델 배제
     if (OFFICIALLY_SHUTDOWN_MODELS.includes(id)) return false;
     if (id === 'gemini-2.5-pro') return false; // 계정별 404 확인된 모델 배제
     if (id.startsWith('gemini-1.5') || id.startsWith('gemini-1.0')) return false;
 
-    // 3. 특수 목적 모델 제외 (이미지, 음성/TTS, 로봇, 에이전트, deep-research, 임베딩, 비디오 등)
-    if (id.includes('image') || id.includes('imagen') || id.includes('vision-only') || displayName.includes('image') || displayName.includes('imagen')) {
-        return false;
-    }
-    if (id.includes('tts') || id.includes('audio') || id.includes('transcribe') || id.includes('speech') || id.includes('voice') || id.includes('sound') || displayName.includes('tts') || displayName.includes('audio') || displayName.includes('voice')) {
-        return false;
-    }
-    if (id.includes('robot') || id.includes('agent') || id.includes('deep-research') || id.includes('computer-use') || id.includes('embodied') || displayName.includes('robot') || displayName.includes('agent') || displayName.includes('deep research')) {
-        return false;
-    }
-    if (id.includes('embedding') || id.includes('embed') || id.includes('video') || id.includes('music') || id.includes('veo') || displayName.includes('embedding') || displayName.includes('video')) {
-        return false;
+    // 3. 특수 목적 모델 (nano-banana, omni, lyria, image, video, music, audio, tts, robotics, agent, embedding 등) 전면 배제
+    for (const family of SPECIAL_PURPOSE_FAMILIES) {
+        if (id.includes(family) || displayName.includes(family) || description.includes(family)) {
+            return false;
+        }
     }
 
     return true;
@@ -1112,7 +1130,7 @@ async function fetchAvailableGeminiModels(apiKey) {
                              ((m.displayName || '').toLowerCase().includes('preview'));
             
             let label = m.displayName ? `${m.displayName} (${id})` : id;
-            if (isPreview && !label.toUpperCase().includes('PREVIEW')) {
+            if (isPreview && !label.includes('[PREVIEW]')) {
                 label = `[PREVIEW] ${label}`;
             }
             if (id === chosenDefaultModel) {
