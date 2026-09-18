@@ -7,3 +7,8 @@ __pycache__/
 *.ps1
 test_dedup.py
 check_db.py
+
+# Credential and private-key material
+.env.*
+*.pem
+*.key
