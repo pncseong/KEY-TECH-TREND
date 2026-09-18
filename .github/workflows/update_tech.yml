@@ -35,21 +35,41 @@ jobs:
         python init_db.py
         python run_pipeline.py
 
-    - name: 업데이트된 파일 검증 및 깃허브 푸시 (과거 데이터 손실 방지 가드)
+    - name: data.js 무결성 및 역사 데이터 검증 (Fail-Closed Safety Guard)
       run: |
         python -c "
         import json, sys
-        with open('data.js', 'r', encoding='utf-8') as f:
-            c = f.read()
-        idx = c.find('window.techData =')
-        if idx != -1:
-            d = json.loads(c[idx+17:].strip().rstrip(';'))
-            cnt = len(d.get('articles', []))
-            print(f'Generated articles count: {cnt}')
-            if cnt < 1000:
-                print('SAFETY GUARD: Article count truncated (< 1000). Aborting push to prevent historical data loss.')
+        try:
+            with open('data.js', 'r', encoding='utf-8') as f:
+                c = f.read()
+            idx = c.find('window.techData =')
+            if idx == -1:
+                print('FATAL GUARD ERROR: missing \"window.techData =\" marker in data.js')
                 sys.exit(1)
-        " || exit 0
+            raw_json = c[idx+17:].strip().rstrip(';')
+            d = json.loads(raw_json)
+            articles = d.get('articles', [])
+            cnt = len(articles)
+            print(f'SAFETY GUARD: Validating {cnt} articles in data.js')
+            if cnt < 1000:
+                print(f'FATAL GUARD ERROR: Article count {cnt} is less than threshold 1000. Aborting push.')
+                sys.exit(1)
+            ids = [a.get('id') for a in articles if 'id' in a]
+            if len(ids) != cnt:
+                print(f'FATAL GUARD ERROR: Missing ID in {cnt - len(ids)} articles. Aborting push.')
+                sys.exit(1)
+            unique_ids = set(ids)
+            if len(unique_ids) != cnt:
+                print(f'FATAL GUARD ERROR: Duplicate IDs detected ({cnt} articles, {len(unique_ids)} unique IDs). Aborting push.')
+                sys.exit(1)
+            print(f'PASS: data.js integrity verified ({cnt} articles, 0 duplicate IDs). Safe to push.')
+        except Exception as e:
+            print(f'FATAL GUARD ERROR: Malformed data.js or parse failure: {e}')
+            sys.exit(1)
+        "
+
+    - name: 깃허브 푸시 (검증 통과 시에만 실행)
+      run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add data.js

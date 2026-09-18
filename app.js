@@ -211,6 +211,35 @@ function renderCategories() {
     lucide.createIcons();
 }
 
+// 혼합 날짜 포맷(RFC 2822, ISO 8601, 공백/점 구분자 등)을 안전하게 파싱하여 밀리초 반환
+// 파싱 실패 또는 유효하지 않은 날짜는 -1을 반환하여 최신순 정렬 시 항상 가장 뒤로 보냄
+function parseCanonicalDate(dateStr) {
+    if (!dateStr) return -1;
+    const s = String(dateStr).trim();
+    
+    // 1. 표준 날짜 생성자 시도 (RFC 2822: "Wed, 26 Aug 2026 07:00:00 GMT" 및 ISO 8601)
+    const d = new Date(s);
+    const t = d.getTime();
+    if (!isNaN(t) && t > 0) return t;
+    
+    // 2. 공백 구분 포맷 ("2024-01-09 16:44:17" 등)
+    if (s.includes(' ') && !s.includes(',')) {
+        const dIso = new Date(s.replace(' ', 'T'));
+        const tIso = dIso.getTime();
+        if (!isNaN(tIso) && tIso > 0) return tIso;
+    }
+    
+    // 3. 점(.) 구분자 포맷 ("2024.01.09")
+    if (s.includes('.')) {
+        const cleaned = s.replace(/\./g, '-').replace(/\s+/g, ' ').trim();
+        const dDot = new Date(cleaned);
+        const tDot = dDot.getTime();
+        if (!isNaN(tDot) && tDot > 0) return tDot;
+    }
+    
+    return -1;
+}
+
 // 필터링 적용된 기사 리스트 계산
 function getFilteredArticles() {
     const filtered = state.allArticles.filter(article => {
@@ -257,25 +286,8 @@ function getFilteredArticles() {
         sortedResult.sort((a, b) => (b.investment_impact || 0) - (a.investment_impact || 0));
     } else if (state.sortBy === 'date') {
         sortedResult.sort((a, b) => {
-            const parseTime = (dateStr) => {
-                if (!dateStr) return 0;
-                const cleaned = String(dateStr).trim().replace(' ', 'T');
-                const d = new Date(cleaned);
-                return isNaN(d.getTime()) ? 0 : d.getTime();
-            };
-            
-            const timeA = parseTime(a.published_at);
-            const timeB = parseTime(b.published_at);
-            
-            // 날짜 변환이 실패했을 때를 대비하여 안전한 문자열 사전식 비교로 백업 처리
-            if (timeA === 0 || timeB === 0) {
-                const strA = String(a.published_at || "").trim().replace(' ', 'T');
-                const strB = String(b.published_at || "").trim().replace(' ', 'T');
-                if (strB > strA) return 1;
-                if (strB < strA) return -1;
-                return 0;
-            }
-            
+            const timeA = parseCanonicalDate(a.published_at);
+            const timeB = parseCanonicalDate(b.published_at);
             return timeB - timeA;
         });
     }
@@ -858,6 +870,9 @@ function renderDeepTechContent() {
 
 // ================= [Gemini API Key 관리 및 보안 제어 (Session Only)] =================
 // 보안 규정: 하드코딩 금지, 서버 키 자동탐색 금지, 로컬스토리지 영구저장 금지 (세션 전용)
+// 셧다운 모델 목록 (구글 정책에 따라 종료/사용 불가)
+const SHUTDOWN_GEMINI_MODELS = ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.0-pro'];
+
 function getStoredGeminiApiKey() {
     try {
         // 오직 브라우저 세션(sessionStorage)에서만 읽음 (탭 종료 시 자동 소멸)
@@ -869,10 +884,13 @@ function getStoredGeminiApiKey() {
 
 function getStoredGeminiModel() {
     try {
-        // 기본 모델: 안정적인 Gemini 1.5 Pro 지원
-        return sessionStorage.getItem('KEY_TECH_GEMINI_MODEL') || 'gemini-1.5-pro';
+        const stored = sessionStorage.getItem('KEY_TECH_GEMINI_MODEL');
+        if (stored && !SHUTDOWN_GEMINI_MODELS.includes(stored.toLowerCase())) {
+            return stored;
+        }
+        return 'gemini-2.5-pro';
     } catch (e) {
-        return 'gemini-1.5-pro';
+        return 'gemini-2.5-pro';
     }
 }
 
@@ -892,16 +910,146 @@ function updateApiStatusBadge() {
     }
 }
 
+// x-goog-api-key 헤더를 사용하여 계정별 지원 모델 목록을 동적으로 조회
+async function fetchAvailableGeminiModels(apiKey) {
+    const modelSelect = document.getElementById('gemini-model-select');
+    const statusEl = document.getElementById('model-select-status');
+    if (!modelSelect) return [];
+
+    if (!apiKey) {
+        modelSelect.innerHTML = '<option value="">API Key를 입력하면 사용 가능한 모델이 로드됩니다</option>';
+        if (statusEl) {
+            statusEl.textContent = '💡 API Key를 입력 후 모델 목록을 조회해 주세요.';
+            statusEl.style.color = 'var(--text-muted)';
+        }
+        return [];
+    }
+
+    if (statusEl) {
+        statusEl.textContent = '⏳ 계정에서 사용 가능한 Gemini 모델 목록을 실시간 조회 중...';
+        statusEl.style.color = 'var(--color-semiconductors)';
+    }
+
+    try {
+        // URL 파라미터가 아닌 x-goog-api-key 헤더 사용
+        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models', {
+            method: 'GET',
+            headers: {
+                'x-goog-api-key': apiKey
+            }
+        });
+
+        if (!response.ok) {
+            const errJson = await response.json().catch(() => ({}));
+            throw new Error(errJson.error?.message || `모델 목록 조회 실패 (Status: ${response.status})`);
+        }
+
+        const data = await response.json();
+        const rawModels = data.models || [];
+
+        // generateContent 지원 모델만 필터링하고 셧다운 모델 배제
+        const capableModels = rawModels.filter(m => {
+            const isGenerateContent = Array.isArray(m.supportedGenerationMethods) && 
+                                     m.supportedGenerationMethods.includes('generateContent');
+            if (!isGenerateContent) return false;
+            const modelId = (m.name || '').replace(/^models\//, '').toLowerCase();
+            return !SHUTDOWN_GEMINI_MODELS.includes(modelId);
+        });
+
+        if (capableModels.length === 0) {
+            modelSelect.innerHTML = '<option value="">사용 가능한 텍스트 생성 모델이 없습니다.</option>';
+            if (statusEl) {
+                statusEl.textContent = '⚠️ 계정에 generateContent 권한을 가진 활성 모델이 없습니다.';
+                statusEl.style.color = 'var(--color-batteries)';
+            }
+            return [];
+        }
+
+        // 우선순위 결정:
+        // 1. 기존 선택된 모델이 목록에 있으면 유지
+        // 2. gemini-2.5-pro 존재 시 최우선 기본값
+        // 3. 없으면 gemini-2.5-flash
+        // 4. 없으면 gemini-3.1-pro-preview 등 최신 지원 모델
+        const currentSelected = getStoredGeminiModel();
+        let defaultChoice = '';
+
+        const modelIds = capableModels.map(m => m.name.replace(/^models\//, ''));
+        if (modelIds.includes(currentSelected)) {
+            defaultChoice = currentSelected;
+        } else if (modelIds.includes('gemini-2.5-pro')) {
+            defaultChoice = 'gemini-2.5-pro';
+        } else if (modelIds.includes('gemini-2.5-flash')) {
+            defaultChoice = 'gemini-2.5-flash';
+        } else if (modelIds.some(id => id.includes('3.1-pro') || id.includes('3-pro'))) {
+            defaultChoice = modelIds.find(id => id.includes('3.1-pro') || id.includes('3-pro'));
+        } else {
+            defaultChoice = modelIds[0];
+        }
+
+        // 셀렉터 옵션 동적 생성
+        modelSelect.innerHTML = '';
+        capableModels.forEach(m => {
+            const id = m.name.replace(/^models\//, '');
+            const isPreview = id.toLowerCase().includes('preview') || 
+                             ((m.displayName || '').toLowerCase().includes('preview'));
+            
+            let label = m.displayName ? `${m.displayName} (${id})` : id;
+            if (isPreview && !label.toUpperCase().includes('PREVIEW')) {
+                label = `[PREVIEW] ${label}`;
+            }
+
+            const opt = document.createElement('option');
+            opt.value = id;
+            opt.textContent = label;
+            if (id === defaultChoice) {
+                opt.selected = true;
+            }
+            modelSelect.appendChild(opt);
+        });
+
+        if (statusEl) {
+            statusEl.textContent = `✅ 사용 가능한 모델 ${capableModels.length}개 로드 완료 (선택: ${defaultChoice})`;
+            statusEl.style.color = 'var(--color-power-grid)';
+        }
+
+        return capableModels;
+    } catch (err) {
+        console.error('Gemini 모델 목록 조회 실패:', err);
+        modelSelect.innerHTML = `<option value="gemini-2.5-pro">Gemini 2.5 Pro (기본 폴백)</option>`;
+        if (statusEl) {
+            statusEl.textContent = `❌ 모델 목록 조회 실패: ${err.message}`;
+            statusEl.style.color = 'var(--color-batteries)';
+        }
+        return [];
+    }
+}
+
+async function handleFetchModelsClick() {
+    const input = document.getElementById('gemini-api-key-input');
+    const key = input ? input.value.trim() : '';
+    if (!key) {
+        alert('먼저 Gemini API Key를 입력해 주세요.');
+        if (input) input.focus();
+        return;
+    }
+    await fetchAvailableGeminiModels(key);
+}
+
 function openGeminiApiModal() {
     const modal = document.getElementById('gemini-api-modal');
     const input = document.getElementById('gemini-api-key-input');
     const modelSelect = document.getElementById('gemini-model-select');
     if (!modal) return;
     
+    const key = getStoredGeminiApiKey();
     if (input) {
-        input.value = getStoredGeminiApiKey();
+        input.value = key;
     }
-    if (modelSelect) modelSelect.value = getStoredGeminiModel();
+    
+    // 키가 있으면 즉시 모델 목록 동적 조회
+    if (key) {
+        fetchAvailableGeminiModels(key);
+    }
     
     modal.style.display = 'flex';
     setTimeout(() => {
@@ -941,7 +1089,7 @@ function toggleApiKeyVisibility() {
     if (window.lucide) lucide.createIcons();
 }
 
-function saveGeminiApiKey() {
+async function saveGeminiApiKey() {
     const input = document.getElementById('gemini-api-key-input');
     const modelSelect = document.getElementById('gemini-model-select');
     if (!input) return;
@@ -952,11 +1100,18 @@ function saveGeminiApiKey() {
         return;
     }
     
+    let chosenModel = modelSelect ? modelSelect.value : '';
+    if (!chosenModel) {
+        // 모델 목록이 아직 비어있다면 조회 시도
+        await fetchAvailableGeminiModels(key);
+        chosenModel = modelSelect ? modelSelect.value : 'gemini-2.5-pro';
+    }
+
     // 세션 스토리지에만 저장 (브라우저/탭 닫으면 소멸)
     try {
         sessionStorage.setItem('KEY_TECH_GEMINI_API_KEY', key);
-        if (modelSelect) {
-            sessionStorage.setItem('KEY_TECH_GEMINI_MODEL', modelSelect.value);
+        if (chosenModel) {
+            sessionStorage.setItem('KEY_TECH_GEMINI_MODEL', chosenModel);
         }
     } catch (e) {}
 
@@ -967,17 +1122,27 @@ function saveGeminiApiKey() {
     
     updateApiStatusBadge();
     closeGeminiApiModal();
-    alert('✅ Gemini API Key가 현재 탭 세션에 등록되었습니다.\n(브라우저 탭을 닫으면 자동으로 완전히 삭제됩니다.)');
+    alert(`✅ Gemini API Key 및 모델(${chosenModel || 'gemini-2.5-pro'})이 현재 탭 세션에 등록되었습니다.\n(브라우저 탭을 닫으면 자동으로 완전히 삭제됩니다.)`);
 }
 
 function clearGeminiApiKey() {
     if (confirm('현재 세션에 등록된 Gemini API Key를 삭제하시겠습니까?')) {
         try {
             sessionStorage.removeItem('KEY_TECH_GEMINI_API_KEY');
+            sessionStorage.removeItem('KEY_TECH_GEMINI_MODEL');
             localStorage.removeItem('KEY_TECH_GEMINI_API_KEY');
         } catch (e) {}
         const input = document.getElementById('gemini-api-key-input');
         if (input) input.value = '';
+        const modelSelect = document.getElementById('gemini-model-select');
+        if (modelSelect) {
+            modelSelect.innerHTML = '<option value="">API Key를 입력하면 사용 가능한 모델이 로드됩니다</option>';
+        }
+        const statusEl = document.getElementById('model-select-status');
+        if (statusEl) {
+            statusEl.textContent = '💡 generateContent가 지원되는 실제 활성 모델을 계정 권한에 맞춰 실시간 조회합니다.';
+            statusEl.style.color = 'var(--text-muted)';
+        }
         updateApiStatusBadge();
         closeGeminiApiModal();
         alert('API Key가 삭제되었습니다.');
@@ -1113,10 +1278,13 @@ async function handleGenerateTech() {
 이 기술에 대해 학술 논문 및 백서 수준의 심층 엔지니어링 분석을 수행하고, 규격에 맞는 완전한 760x480 정밀 엔지니어링 CAD SVG 블루프린트를 포함한 DeepTechDossier JSON을 생성해 주십시오. 반드시 실제 공학 수치와 실제 소부장 상장사 밸류체인을 상세히 작성하십시오.`;
 
     try {
-        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent`;
         const response = await fetch(endpoint, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'x-goog-api-key': apiKey
+            },
             body: JSON.stringify({
                 system_instruction: {
                     parts: [{ text: SYSTEM_INSTRUCTION }]
