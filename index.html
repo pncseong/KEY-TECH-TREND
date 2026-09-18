@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css?v=20260909_03">
+    <link rel="stylesheet" href="style.css?v=20260919_01">
 </head>
 <body>
     <div class="app-container">
@@ -51,7 +51,7 @@
                 <div class="stat-card total-news">
                     <div class="stat-icon-wrapper"><i data-lucide="newspaper"></i></div>
                     <div class="stat-details">
-                        <h3>수집된 총 정보</h3>
+                        <h3>누적 분석 정보</h3>
                         <p id="stat-total-count">0</p>
                     </div>
                 </div>
@@ -220,15 +220,16 @@
                         </button>
                     </div>
                     <small class="form-tip">
-                        🔒 키는 외부 서버로 전송되지 않으며, 고객님의 브라우저(로컬스토리지)에만 안전하게 보관됩니다.
+                        🔒 입력하신 키는 KTT 서버로 전송되지 않으며 현재 브라우저 탭 세션(SessionStorage)에만 임시 유지됩니다. 탭을 닫으면 즉시 자동 소멸합니다. (정적 브라우저 기능이므로 사용자 브라우저의 개발자 도구 및 네트워크 탭에서는 확인 가능합니다.)
                     </small>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">사용 모델 (ENGINE MODEL)</label>
                     <select id="gemini-model-select" class="form-select">
-                        <option value="gemini-2.5-pro">Gemini 2.5 Pro (추천 - 최고 품질의 학술 백서 및 정밀 CAD 도면)</option>
-                        <option value="gemini-2.5-flash">Gemini 2.5 Flash (초고속 생성 모드)</option>
+                        <option value="gemini-1.5-pro" selected>Gemini 1.5 Pro (추천 - 고품질 학술 백서 및 정밀 CAD 도면)</option>
+                        <option value="gemini-1.5-flash">Gemini 1.5 Flash (초고속 생성 모드)</option>
+                        <option value="gemini-2.0-flash">Gemini 2.0 Flash (최신 세대 고속 모델)</option>
                     </select>
                 </div>
 

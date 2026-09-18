@@ -1,11 +1,11 @@
 name: 5대 핵심 기술 대시보드 자동 업데이트
 
 on:
-  schedule:
-    # 매일 한국시간 오전 9시 18분(UTC 00:18)에 실행 (지연 실행 방지를 위해 18분으로 빗겨 설계)
-    - cron: '18 0 * * *'
+  # schedule:
+  #   # 프로덕션 서버(/home/ubuntu/KEY_TECH_TREND) cron과 이중 실행 및 빈 DB 덮어쓰기 방지를 위해 비활성화
+  #   - cron: '18 0 * * *'
   workflow_dispatch:
-    # 깃허브 웹에서 수동으로도 즉시 작동시킬 수 있게 설정
+    # 깃허브 웹에서 수동으로 작동시킬 때만 사용
 
 permissions:
   contents: write
@@ -35,10 +35,23 @@ jobs:
         python init_db.py
         python run_pipeline.py
 
-    - name: 업데이트된 파일 저장 및 깃허브 푸시
+    - name: 업데이트된 파일 검증 및 깃허브 푸시 (과거 데이터 손실 방지 가드)
       run: |
+        python -c "
+        import json, sys
+        with open('data.js', 'r', encoding='utf-8') as f:
+            c = f.read()
+        idx = c.find('window.techData =')
+        if idx != -1:
+            d = json.loads(c[idx+17:].strip().rstrip(';'))
+            cnt = len(d.get('articles', []))
+            print(f'Generated articles count: {cnt}')
+            if cnt < 1000:
+                print('SAFETY GUARD: Article count truncated (< 1000). Aborting push to prevent historical data loss.')
+                sys.exit(1)
+        " || exit 0
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add data.js tech_monitor.db
+        git add data.js
         # 변경사항이 있는 경우에만 커밋 및 푸시
         git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update tech data [skip ci]" && git push)

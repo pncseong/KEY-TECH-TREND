@@ -287,26 +287,34 @@ function getFilteredArticles() {
     return sortedResult;
 }
 
-// 대시보드 통계 수치 갱신
+// 대시보드 통계 수치 갱신 (누적 총계 및 필터 뷰 명확화)
 function renderStats() {
     const filtered = getFilteredArticles();
-    const totalCount = filtered.length;
+    const filteredCount = filtered.length;
+    const accumulatedTotal = (state.allArticles && state.allArticles.length) || 0;
     
     // 평균 영향도 점수
     let avgImpact = 0;
-    if (totalCount > 0) {
+    if (filteredCount > 0) {
         const sum = filtered.reduce((acc, curr) => acc + (curr.investment_impact || 0), 0);
-        avgImpact = (sum / totalCount).toFixed(1);
+        avgImpact = (sum / filteredCount).toFixed(1);
     }
     
     // 상용화 비율
     let commRatio = 0;
-    if (totalCount > 0) {
+    if (filteredCount > 0) {
         const commCount = filtered.filter(a => a.tech_stage === 'Commercial').length;
-        commRatio = Math.round((commCount / totalCount) * 100);
+        commRatio = Math.round((commCount / filteredCount) * 100);
     }
     
-    document.getElementById('stat-total-count').textContent = totalCount.toLocaleString();
+    const countElem = document.getElementById('stat-total-count');
+    if (countElem) {
+        if (filteredCount === accumulatedTotal || state.selectedCategory === 'all' && state.minImpact === 1 && state.selectedStage === 'all' && !state.searchQuery) {
+            countElem.textContent = accumulatedTotal.toLocaleString();
+        } else {
+            countElem.innerHTML = `${filteredCount.toLocaleString()} <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">/ ${accumulatedTotal.toLocaleString()}건 (누적)</span>`;
+        }
+    }
     document.getElementById('stat-avg-impact').textContent = avgImpact;
     document.getElementById('stat-commercial-ratio').textContent = `${commRatio}%`;
 }
@@ -848,15 +856,24 @@ function renderDeepTechContent() {
     lucide.createIcons();
 }
 
-// ================= [Gemini API Key 관리 및 상태 제어] =================
-const DEFAULT_GEMINI_KEY = 'AIzaSyDI3vpA5q9P9vEdUAJiN7xC8PQomiMThhg';
-
+// ================= [Gemini API Key 관리 및 보안 제어 (Session Only)] =================
+// 보안 규정: 하드코딩 금지, 서버 키 자동탐색 금지, 로컬스토리지 영구저장 금지 (세션 전용)
 function getStoredGeminiApiKey() {
-    return localStorage.getItem('KEY_TECH_GEMINI_API_KEY') || DEFAULT_GEMINI_KEY;
+    try {
+        // 오직 브라우저 세션(sessionStorage)에서만 읽음 (탭 종료 시 자동 소멸)
+        return sessionStorage.getItem('KEY_TECH_GEMINI_API_KEY') || '';
+    } catch (e) {
+        return '';
+    }
 }
 
 function getStoredGeminiModel() {
-    return localStorage.getItem('KEY_TECH_GEMINI_MODEL') || 'gemini-2.5-pro';
+    try {
+        // 기본 모델: 안정적인 Gemini 1.5 Pro 지원
+        return sessionStorage.getItem('KEY_TECH_GEMINI_MODEL') || 'gemini-1.5-pro';
+    } catch (e) {
+        return 'gemini-1.5-pro';
+    }
 }
 
 function updateApiStatusBadge() {
@@ -864,11 +881,13 @@ function updateApiStatusBadge() {
     const key = getStoredGeminiApiKey();
     if (badge) {
         if (key) {
-            badge.textContent = '🟢 API 연동됨';
+            badge.textContent = '🟢 세션 연동됨';
             badge.className = 'api-status-badge connected';
+            badge.title = '현재 탭 세션에 Gemini API Key가 등록되어 있습니다 (탭 닫을 시 자동 소멸)';
         } else {
             badge.textContent = '⚪ API 키 설정';
             badge.className = 'api-status-badge disconnected';
+            badge.title = '즉석 백서 생성을 위해 Gemini API Key를 입력하세요';
         }
     }
 }
@@ -933,19 +952,30 @@ function saveGeminiApiKey() {
         return;
     }
     
-    localStorage.setItem('KEY_TECH_GEMINI_API_KEY', key);
-    if (modelSelect) {
-        localStorage.setItem('KEY_TECH_GEMINI_MODEL', modelSelect.value);
-    }
+    // 세션 스토리지에만 저장 (브라우저/탭 닫으면 소멸)
+    try {
+        sessionStorage.setItem('KEY_TECH_GEMINI_API_KEY', key);
+        if (modelSelect) {
+            sessionStorage.setItem('KEY_TECH_GEMINI_MODEL', modelSelect.value);
+        }
+    } catch (e) {}
+
+    // 이전 버전의 localStorage 잔여 키 완전 삭제
+    try {
+        localStorage.removeItem('KEY_TECH_GEMINI_API_KEY');
+    } catch (e) {}
     
     updateApiStatusBadge();
     closeGeminiApiModal();
-    alert('✅ Gemini API Key가 브라우저에 안전하게 저장되었습니다!');
+    alert('✅ Gemini API Key가 현재 탭 세션에 등록되었습니다.\n(브라우저 탭을 닫으면 자동으로 완전히 삭제됩니다.)');
 }
 
 function clearGeminiApiKey() {
-    if (confirm('저장된 Gemini API Key를 삭제하시겠습니까?')) {
-        localStorage.removeItem('KEY_TECH_GEMINI_API_KEY');
+    if (confirm('현재 세션에 등록된 Gemini API Key를 삭제하시겠습니까?')) {
+        try {
+            sessionStorage.removeItem('KEY_TECH_GEMINI_API_KEY');
+            localStorage.removeItem('KEY_TECH_GEMINI_API_KEY');
+        } catch (e) {}
         const input = document.getElementById('gemini-api-key-input');
         if (input) input.value = '';
         updateApiStatusBadge();
@@ -953,6 +983,11 @@ function clearGeminiApiKey() {
         alert('API Key가 삭제되었습니다.');
     }
 }
+
+// 레거시 localStorage 키 자동 소탕
+try {
+    localStorage.removeItem('KEY_TECH_GEMINI_API_KEY');
+} catch (e) {}
 
 // 전역 단독 실행 가능한 즉석 백서 생성 함수
 async function handleGenerateTech() {
@@ -1140,8 +1175,11 @@ async function handleGenerateTech() {
 
         alert(`🎉 [${newTech.name}] 심층 공학 백서 및 정밀 CAD 도면이 성공적으로 생성 및 등록되었습니다!`);
     } catch (error) {
-        console.error('Gemini Generation Error:', error);
-        alert(`⚠️ 백서 생성 중 오류가 발생했습니다:\n${error.message}\n\nAPI Key와 네트워크 상태를 확인해 주세요.`);
+        // 보안: 오류 메시지 내 API Key 패턴 마스킹
+        const safeMsg = (error && error.message ? error.message : String(error))
+            .replace(/AIza[0-9A-Za-z-_]{35}/g, '[REDACTED_API_KEY]');
+        console.error('Gemini Generation Error occurred');
+        alert(`⚠️ 백서 생성 중 오류가 발생했습니다:\n${safeMsg}\n\n입력하신 API Key와 지원 모델, 네트워크 상태를 확인해 주세요.`);
     } finally {
         if (btn) {
             btn.disabled = false;
