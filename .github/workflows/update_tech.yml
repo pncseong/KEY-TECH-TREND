@@ -54,15 +54,34 @@ jobs:
             if cnt < 1000:
                 print(f'FATAL GUARD ERROR: Article count {cnt} is less than threshold 1000. Aborting push.')
                 sys.exit(1)
-            ids = [a.get('id') for a in articles if 'id' in a]
-            if len(ids) != cnt:
-                print(f'FATAL GUARD ERROR: Missing ID in {cnt - len(ids)} articles. Aborting push.')
-                sys.exit(1)
+            ids = []
+            for i, a in enumerate(articles):
+                if 'id' not in a:
+                    print(f'FATAL GUARD ERROR: Article index {i} is missing \"id\" property. Aborting push.')
+                    sys.exit(1)
+                aid = a['id']
+                if aid is None:
+                    print(f'FATAL GUARD ERROR: Article index {i} has id: null. Aborting push.')
+                    sys.exit(1)
+                # bool is subclass of int in Python, check bool first
+                if isinstance(aid, bool):
+                    print(f'FATAL GUARD ERROR: Article index {i} has boolean id: {aid}. Aborting push.')
+                    sys.exit(1)
+                if isinstance(aid, str):
+                    if not aid.strip():
+                        print(f'FATAL GUARD ERROR: Article index {i} has empty string id. Aborting push.')
+                        sys.exit(1)
+                elif isinstance(aid, int):
+                    pass
+                else:
+                    print(f'FATAL GUARD ERROR: Article index {i} has invalid id type {type(aid).__name__}. Aborting push.')
+                    sys.exit(1)
+                ids.append(aid)
             unique_ids = set(ids)
             if len(unique_ids) != cnt:
                 print(f'FATAL GUARD ERROR: Duplicate IDs detected ({cnt} articles, {len(unique_ids)} unique IDs). Aborting push.')
                 sys.exit(1)
-            print(f'PASS: data.js integrity verified ({cnt} articles, 0 duplicate IDs). Safe to push.')
+            print(f'PASS: data.js integrity verified ({cnt} articles, all valid scalar unique non-null IDs). Safe to push.')
         except Exception as e:
             print(f'FATAL GUARD ERROR: Malformed data.js or parse failure: {e}')
             sys.exit(1)
