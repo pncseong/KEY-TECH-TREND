@@ -942,10 +942,17 @@ const SPECIAL_PURPOSE_FAMILIES = [
     'deep-research',
     'embedding',
     'embed',
-    'aqa'
+    'aqa',
+    'customtools',
+    'custom-tools',
+    'custom tools',
+    'tool-use',
+    'tool use',
+    'tooling',
+    'function-calling-specialized'
 ];
 
-// 중앙화된 Deep-Tech 보고서/CAD 생성 적격 일반 텍스트 모델 판정 함수
+// 중앙화된 Deep-Tech 보고서/CAD 생성 적격 일반 텍스트 모델 판정 함수 (Fail-Closed)
 function isEligibleGeneralTextModel(m) {
     if (!m) return false;
     
@@ -958,16 +965,29 @@ function isEligibleGeneralTextModel(m) {
     const displayName = (m.displayName || '').toLowerCase();
     const description = (m.description || '').toLowerCase();
 
-    // 2. 공식 셧다운 및 해당 계정 404 확인 모델 배제
+    // 2. Positive General-Text Family Check (승인된 일반 텍스트 패밀리: gemini- 또는 gemma- 계열 필수)
+    if (!id.startsWith('gemini-') && !id.startsWith('gemma-')) {
+        return false;
+    }
+
+    // 3. 공식 셧다운 및 해당 계정 404 확인 모델 배제
     if (OFFICIALLY_SHUTDOWN_MODELS.includes(id)) return false;
     if (id === 'gemini-2.5-pro') return false; // 계정별 404 확인된 모델 배제
     if (id.startsWith('gemini-1.5') || id.startsWith('gemini-1.0')) return false;
 
-    // 3. 특수 목적 모델 (nano-banana, omni, lyria, image, video, music, audio, tts, robotics, agent, embedding 등) 전면 배제
+    // 4. 특수 목적 모델 (nano-banana, omni, lyria, image, video, music, audio, tts, robotics, agent, embedding 등) 전면 배제
     for (const family of SPECIAL_PURPOSE_FAMILIES) {
         if (id.includes(family) || displayName.includes(family) || description.includes(family)) {
             return false;
         }
+    }
+
+    // 5. 툴 전용 특수 엔드포인트 배제 (id 서픽스 -tools, -tool-use 등 및 custom tool 설명 검사)
+    if (id.endsWith('-tools') || id.endsWith('-tool') || id.includes('-tools-') || id.includes('customtool')) {
+        return false;
+    }
+    if (description.includes('optimized for custom tool') || description.includes('specialized for tool')) {
+        return false;
     }
 
     return true;
