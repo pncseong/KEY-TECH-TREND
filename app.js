@@ -11,7 +11,9 @@ const state = {
     currentView: 'feed',
     deepTechData: window.deepTechData || { tech_list: [] },
     selectedTechId: 'hbm',
-    selectedSubNodeId: 'hbm4_foundry'
+    selectedSubNodeId: 'hbm4_foundry',
+    currentPage: 1,
+    pageSize: 30
 };
 
 // 카테고리 이름과 CSS 클래스 맵핑
@@ -26,6 +28,11 @@ const categoryClassMap = {
     "우주 통신 (Space & LEO Comm.)": "cat-space",
     "양자 컴퓨터 (Quantum Computing)": "cat-quantum"
 };
+
+// 영구 저장소 및 삭제 상태 동기화 상수 (TDZ 방지를 위해 상단 배치)
+const STORAGE_KEY_CUSTOM_TECHS = 'KEY_TECH_SAVED_CUSTOM_TECHS_V2';
+const STORAGE_KEY_CUSTOM_SVGS = 'KEY_TECH_SAVED_CUSTOM_SVGS_V2';
+const STORAGE_KEY_DELETED_TECHS = 'KEY_TECH_DELETED_TECH_IDS_V2';
 
 // 초기 데이터 로딩 및 이벤트 바인딩
 function init() {
@@ -107,6 +114,7 @@ function setupEventListeners() {
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             state.searchQuery = e.target.value.toLowerCase().trim();
+            state.currentPage = 1;
             renderArticles();
             renderStats();
         });
@@ -119,6 +127,7 @@ function setupEventListeners() {
         impactSlider.addEventListener('input', (e) => {
             state.minImpact = parseInt(e.target.value);
             impactVal.textContent = state.minImpact;
+            state.currentPage = 1;
             renderArticles();
             renderStats();
         });
@@ -129,6 +138,7 @@ function setupEventListeners() {
     if (stageFilter) {
         stageFilter.addEventListener('change', (e) => {
             state.selectedStage = e.target.value;
+            state.currentPage = 1;
             renderArticles();
             renderStats();
         });
@@ -144,6 +154,7 @@ function setupEventListeners() {
                 target.classList.add('active');
                 
                 state.sortBy = target.dataset.sortBy;
+                state.currentPage = 1;
                 console.log("Sort mode changed to:", state.sortBy);
                 renderArticles();
                 renderStats();
@@ -203,6 +214,7 @@ function renderCategories() {
             target.classList.add('active');
             
             state.selectedCategory = target.dataset.categoryId;
+            state.currentPage = 1;
             renderArticles();
             renderStats();
         });
@@ -353,33 +365,50 @@ function formatDate(isoString) {
     }
 }
 
-// 아티클 목록 렌더링
+// 아티클 목록 렌더링 (고정 30개 페이지네이션 및 경량 정적 SVG 최적화)
 function renderArticles() {
     const container = document.getElementById('articles-container');
+    if (!container) return;
+
     const filtered = getFilteredArticles();
-    
-    if (filtered.length === 0) {
+    const totalItems = filtered.length;
+    const totalPages = Math.ceil(totalItems / state.pageSize) || 1;
+
+    // 페이지 범위 유효성 보정
+    if (state.currentPage > totalPages) {
+        state.currentPage = totalPages;
+    }
+    if (state.currentPage < 1) {
+        state.currentPage = 1;
+    }
+
+    if (totalItems === 0) {
         container.innerHTML = `
             <div class="empty-state">
-                <i data-lucide="folder-open"></i>
+                <svg class="lucide-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); margin-bottom: 1rem;"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>
                 <h3>분석된 정보가 없습니다</h3>
                 <p>필터 설정을 확인하시거나 새로운 키워드로 크롤러를 작동시켜보세요.</p>
             </div>
         `;
-        lucide.createIcons();
+        renderPaginationControls(0, 1);
+        updateDebugInfo([], filtered);
         return;
     }
-    
+
+    const startIndex = (state.currentPage - 1) * state.pageSize;
+    const pageArticles = filtered.slice(startIndex, startIndex + state.pageSize);
+
+    // DOM 컨테이너 초기화
     container.innerHTML = '';
-    
-    filtered.forEach(article => {
+
+    pageArticles.forEach(article => {
         const card = document.createElement('div');
-        
+
         // 카테고리 매칭 클래스 설정
         const catName = article.category_name || '';
         const catClass = categoryClassMap[catName] || 'cat-semiconductors';
         card.className = `article-card ${catClass}`;
-        
+
         // AI 요약 줄바꿈 분리하여 HTML 생성
         let summaryHTML = '';
         if (article.summary) {
@@ -388,12 +417,12 @@ function renderArticles() {
         } else {
             summaryHTML = '<p>AI 요약 대기 중...</p>';
         }
-        
+
         // 티커 태그 빌드
         const tickersHTML = (article.key_tickers || [])
             .map(ticker => `<span class="ticker-tag">$${escapeHTML(ticker)}</span>`)
             .join('');
-            
+
         // 성숙도 배지 클래스
         let stageClass = 'stage-pilot';
         let stageText = '시제품';
@@ -404,7 +433,8 @@ function renderArticles() {
             stageClass = 'stage-comm';
             stageText = '상용화';
         }
-        
+
+        // 카드 내부 아이콘: Lucide 전체 document 파싱 오버헤드를 원천 제거하기 위해 경량 인라인 SVG 적용
         card.innerHTML = `
             <div class="card-header">
                 <span class="source-info">${escapeHTML(extractDomain(article.source_url))}</span>
@@ -413,24 +443,24 @@ function renderArticles() {
                     <span class="badge impact-score">Impact ${article.investment_impact || 'N/A'}</span>
                 </div>
             </div>
-            
+
             <a href="${article.source_url}" target="_blank" class="card-title-link">
                 <h2 class="card-title">${escapeHTML(article.title)}</h2>
             </a>
-            
+
             <div class="ai-insight-box">
                 <div class="ai-insight-header">
-                    <i data-lucide="sparkles"></i>
+                    <svg class="lucide-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
                     <span>AI Insight Summary</span>
                 </div>
                 <div class="ai-summary">
                     ${summaryHTML}
                 </div>
             </div>
-            
+
             <div class="card-footer">
                 <div class="published-date">
-                    <i data-lucide="calendar"></i>
+                    <svg class="lucide-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
                     <span>${formatDate(article.published_at)}</span>
                 </div>
                 <div class="ticker-tags">
@@ -438,12 +468,73 @@ function renderArticles() {
                 </div>
             </div>
         `;
-        
+
         container.appendChild(card);
     });
-    
-    lucide.createIcons();
-    updateDebugInfo(filtered);
+
+    // 페이지네이션 컨트롤 렌더링
+    renderPaginationControls(totalItems, totalPages);
+    updateDebugInfo(pageArticles, filtered);
+}
+
+// 고정 페이지네이션 컨트롤러 렌더링
+function renderPaginationControls(totalItems, totalPages) {
+    const controls = document.getElementById('pagination-controls');
+    if (!controls) return;
+
+    if (totalItems <= 0) {
+        controls.innerHTML = '';
+        controls.style.display = 'none';
+        return;
+    }
+
+    controls.style.display = 'flex';
+    const isPrevDisabled = state.currentPage <= 1;
+    const isNextDisabled = state.currentPage >= totalPages;
+
+    controls.innerHTML = `
+        <button id="btn-page-prev" class="pagination-btn" ${isPrevDisabled ? 'disabled aria-disabled="true"' : ''} title="이전 페이지">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            이전
+        </button>
+        <span class="pagination-info" aria-live="polite">
+            <strong>${state.currentPage}</strong> / ${totalPages} 페이지 <span style="font-size: 0.85rem; color: var(--text-muted);">(총 ${totalItems.toLocaleString()}건)</span>
+        </span>
+        <button id="btn-page-next" class="pagination-btn" ${isNextDisabled ? 'disabled aria-disabled="true"' : ''} title="다음 페이지">
+            다음
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+    `;
+
+    const btnPrev = document.getElementById('btn-page-prev');
+    if (btnPrev && !isPrevDisabled) {
+        btnPrev.addEventListener('click', () => {
+            if (state.currentPage > 1) {
+                state.currentPage--;
+                renderArticles();
+                scrollToFeedTop();
+            }
+        });
+    }
+
+    const btnNext = document.getElementById('btn-page-next');
+    if (btnNext && !isNextDisabled) {
+        btnNext.addEventListener('click', () => {
+            if (state.currentPage < totalPages) {
+                state.currentPage++;
+                renderArticles();
+                scrollToFeedTop();
+            }
+        });
+    }
+}
+
+function scrollToFeedTop() {
+    const nav = document.querySelector('.category-nav');
+    if (nav) {
+        const topPos = nav.getBoundingClientRect().top + window.scrollY - 20;
+        window.scrollTo({ top: Math.max(0, topPos), behavior: 'smooth' });
+    }
 }
 
 // XSS 방지용 HTML 이스케이프
@@ -457,17 +548,18 @@ function escapeHTML(str) {
         .replace(/'/g, '&#039;');
 }
 
-function updateDebugInfo(renderedList) {
+function updateDebugInfo(renderedList, fullList) {
     const dbg = document.getElementById('debug-info');
-    if (dbg && renderedList) {
-        const invalidCount = renderedList.filter(a => {
+    const targetList = fullList || renderedList;
+    if (dbg && targetList) {
+        const invalidCount = targetList.filter(a => {
             const dateStr = a.published_at;
             if (!dateStr) return true;
             const cleaned = String(dateStr).trim().replace(' ', 'T');
             return isNaN(new Date(cleaned).getTime());
         }).length;
 
-        const top3 = renderedList.slice(0, 3).map(a => `${a.title.slice(0,6)}(${formatDate(a.published_at)}/S:${a.investment_impact})`).join(' | ');
+        const top3 = targetList.slice(0, 3).map(a => `${a.title.slice(0,6)}(${formatDate(a.published_at)}/S:${a.investment_impact})`).join(' | ');
         dbg.textContent = `[진단] 깨진날짜: ${invalidCount}개 | 정렬: ${state.sortBy === 'impact' ? '중요도' : '최신순'} | 탑3: ${top3}`;
     }
 }
@@ -516,10 +608,6 @@ function setupViewSwitcher() {
 
 
 // ================= [영구 저장소 및 삭제 상태 동기화 엔진] =================
-const STORAGE_KEY_CUSTOM_TECHS = 'KEY_TECH_SAVED_CUSTOM_TECHS_V2';
-const STORAGE_KEY_CUSTOM_SVGS = 'KEY_TECH_SAVED_CUSTOM_SVGS_V2';
-const STORAGE_KEY_DELETED_TECHS = 'KEY_TECH_DELETED_TECH_IDS_V2';
-
 function loadCustomTechsFromStorage() {
     try {
         const deletedIds = JSON.parse(localStorage.getItem(STORAGE_KEY_DELETED_TECHS) || '[]');
