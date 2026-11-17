@@ -1,5 +1,5 @@
 window.techData = {
-  "last_updated": "2026-11-16 09:13:55",
+  "last_updated": "2026-11-17 09:12:56",
   "categories": [
     {
       "id": 1,
@@ -3092,6 +3092,57 @@ window.techData = {
         "005930.KS",
         "NVDA",
         "TSM"
+      ]
+    },
+    {
+      "id": 58041,
+      "category_id": 5,
+      "title": "[싱귤래리티헙] 초소형 자기 로봇이 약물 치료보다 6배 더 빠르게 혈전을 용해하는 데 도움을 준다. 로봇은 혈관을 따라 이동하면서 정체된 혈액을 휘저어 약물을 혈전 쪽으로 밀어내 - AI넷",
+      "source_url": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE5YdFp1MGtwRU92WWI3ektEWk1mN3VGQlpQcUNFUEg1TlBXZjRMcGpDd24zT0pKeG13OHpZSkNObnM?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:43:00 GMT",
+      "summary": "1. 초소형 자기 로봇은 기존 약물 치료 대비 혈전 용해 속도를 6배 향상시키는 혁신적인 치료 접근법을 제시합니다.\n2. 혈관 내 정체된 혈액을 효과적으로 휘저어 약물 전달 효율을 높이는 기전을 통해 혈전증 치료의 패러다임을 바꿀 잠재력을 가집니다.\n3. 이는 정밀 의료 및 최소 침습 수술 분야의 발전을 가속화하며, 관련 의료 기기 및 제약 시장에 상당한 투자 기회를 창출할 수 있습니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 9,
+      "key_tickers": []
+    },
+    {
+      "id": 57820,
+      "category_id": 1,
+      "title": "[분석] 반도체 ’빅2’ 유동성 329조원 돌파…AI 메모리 투자·주주환원 총력전 By FinancialPost - Investing.com 한국어",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5pV3R4bUFlSXVtTWpNMkVNeVNmZ01rd2g2UTVnZWlUWVVOWXpzTnVsVjB1b0hRVDJnbU5xN3dIY3BKS0FmYWRGWFlLbGtfRTlkVms5SUV4QkJfSzJJcnBVNE1LNEcxcGxLY0dYT1dWLVQ?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:41:00 GMT",
+      "summary": "1. 반도체 '빅2' 기업들의 유동성이 329조원을 돌파하여 AI 메모리 투자를 위한 재정적 기반을 마련했습니다.\n2. 이들 기업은 AI 메모리 분야에 대규모 투자를 집중하며 미래 성장 동력을 확보하고 있습니다.\n3. 동시에 주주환원 정책을 강화하여 투자자 가치 제고에도 총력을 기울이고 있습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 9,
+      "key_tickers": [
+        "005930.KS",
+        "000660.KS"
+      ]
+    },
+    {
+      "id": 57856,
+      "category_id": 2,
+      "title": "LFP 양산 이후 또다시 잭팟…삼성SDI, 美 주피터파워 16GWh 수주 - 이코노미톡뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9lWEVjR3VFTHFsaElMZmxTbFBWMldzNjBvSS1VUjYxQ1c4dWN4UEFKUmxqVGt2U29Da3FRblJIRkpyeTZpSlc2NldfdTB4T2hyY24zRTlzQzVtNGNMV1pxUndyb0l6TGlIM1lVbg?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:00:04 GMT",
+      "summary": "1. 삼성SDI가 미국 주피터파워로부터 16GWh 규모의 대규모 배터리 수주를 확보했다.\n2. 이는 삼성SDI가 LFP 배터리 양산을 시작한 이후 얻은 중요한 사업 성과로 평가된다.\n3. 이번 수주는 삼성SDI의 미국 에너지 저장장치(ESS) 시장 내 입지 강화 및 LFP 배터리 사업 확대를 시사한다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 9,
+      "key_tickers": [
+        "006400.KS"
+      ]
+    },
+    {
+      "id": 58198,
+      "category_id": 8,
+      "title": "아마존, 지상 640km에 우주 인터넷망 구축…인공지능 시대 글로벌 통신 인프라 확장 - 인공지능신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5sakxJbFltS1FaVjNoUjNqbGJBRm1hdGlwRl9NaEpHci1rV0xpbWhIY2F3ZG13a254YnluWUdDSEZGekVsRHQ3dVQ2dzNLbHBiRDdLWF9paUdTT3MtSlR2cUJSaC1SbW8?oc=5",
+      "published_at": "Mon, 16 Nov 2026 11:57:31 GMT",
+      "summary": "1. 아마존이 지상 640km 고도에 글로벌 우주 인터넷망을 구축하고 있습니다.\n2. 이 프로젝트는 전 세계 통신 인프라를 확장하는 것을 목표로 합니다.\n3. 해당 통신 인프라 확장은 특히 인공지능 시대에 중요한 발전으로 평가됩니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 9,
+      "key_tickers": [
+        "AMZN"
       ]
     },
     {
@@ -14884,6 +14935,147 @@ window.techData = {
       "published_at": "Mon, 19 Oct 2026 00:01:06 GMT",
       "summary": "1. 서울에서 870km 떨어진 중국 상하이에서 수술 로봇을 이용한 장거리 원격 수술 실증이 성공적으로 진행되었습니다.\n2. 이는 원격 의료 분야에서 수술 로봇 기술의 적용 가능성을 실제 사례로 입증한 것입니다.\n3. 지리적 제약을 넘어선 전문 의료 서비스 제공 및 접근성 향상에 대한 잠재력을 시사합니다.",
       "tech_stage": "Pilot",
+      "investment_impact": 8,
+      "key_tickers": []
+    },
+    {
+      "id": 57926,
+      "category_id": 2,
+      "title": "삼성SDI, 미국 주피터파워와 16GWh 규모 LFP 배터리 공급 계약 - 데이터투자",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFB0Vk9HR0MxMng2cFpMSVE4MnltWGJfbFNHRUdqZHBGQlNjdHJnM3BMOUFXUVZ2YzFkTDBWeW5ZNGNiaWhUczZONUZUa3V6R0lGRlZfTjhRWHc5Rkl5QXd5MmN3RmszMlVYV2xFWEN5SkZCUk0?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:53:16 GMT",
+      "summary": "1. 삼성SDI가 미국 주피터파워와 16GWh 규모의 LFP 배터리 공급 계약을 체결했습니다.\n2. 이는 삼성SDI가 기존 주력 제품 외 LFP 배터리 시장으로 사업 영역을 확대하고 있음을 나타냅니다.\n3. 이번 계약을 통해 삼성SDI는 미국 시장에서 LFP 배터리 공급 역량을 강화하게 될 것으로 예상됩니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "006400.KS"
+      ]
+    },
+    {
+      "id": 57778,
+      "category_id": 1,
+      "title": "삼전 29만원↓·하이닉스 180만원↓…키움, 목표가 하향 - 자본시장뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBNd3NCWEVtUTdVYVlEd0lOTmJ6U1h1Qk1WTnAxTUU2d0RFaWxxY3ZGVDlLbGdVbXdGUHpQTEJydlNMSlEtbDVnU1hqTXBRcDhjQmJYY1F2NDBlSERsd0tqaS1LZFd6eGc?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:51:12 GMT",
+      "summary": "1. 키움증권이 국내 주요 반도체 기업인 삼성전자와 SK하이닉스의 목표가를 하향 조정했습니다.\n2. 삼성전자의 목표가는 29만원, SK하이닉스의 목표가는 180만원으로 제시되었으며, 이는 이전 대비 낮은 수준입니다.\n3. 이번 목표가 하향은 해당 기업들의 단기적인 주가와 투자 심리에 부정적인 영향을 미칠 수 있음을 시사합니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "005930",
+        "000660"
+      ]
+    },
+    {
+      "id": 58205,
+      "category_id": 9,
+      "title": "엔비디아, IBM·페르미랩과 양자컴퓨터 공동 설계 - 솔루션뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0waFFRZXFvZjItZC1ZTWVaRno1Z2lmbXlyak9BTk4wOW5iaWxwMkxydVVFVFBKUW9OcERYRWJIM25wNmN3YmxYYnBWdGdLOWhhSVJiYzdhTUZ1Sm1QQ19FX0tFdi1XemhjbUow?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:41:00 GMT",
+      "summary": "1. 엔비디아(NVIDIA)가 IBM 및 페르미랩과 협력하여 양자 컴퓨터 설계에 참여하며, 이는 엔비디아가 GPU 기반 AI 분야를 넘어 차세대 컴퓨팅 기술인 양자 컴퓨팅 분야로 전략적 확장 가능성을 시사합니다.\n2. IBM은 양자 컴퓨팅 분야의 선두 주자이며, 페르미랩은 고에너지 물리학 연구소로서, 이들 간의 협력은 양자 컴퓨터 기술 개발의 신뢰성과 잠재력을 높이는 요인으로 작용할 것입니다.\n3. 이번 공동 설계는 양자 컴퓨터의 하드웨어 및 소프트웨어 아키텍처 발전에 기여할 것으로 보이며, 향후 양자 컴퓨팅 생태계 내에서 엔비디아의 영향력 확대와 새로운 시장 기회 창출에 긍정적인 신호입니다.",
+      "tech_stage": "Laboratory",
+      "investment_impact": 8,
+      "key_tickers": [
+        "NVDA",
+        "IBM"
+      ]
+    },
+    {
+      "id": 58154,
+      "category_id": 6,
+      "title": "[특파원] AI 냉각 ‘수요 폭발·마진 하락’의 역설…“성장성 아닌 수익성이 문제” - 알파경제",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBhaUdBV0lBdmN5SXNFMEZWRGhVVEpUeWFfelhuR1ppRWtXTEd3YzJBSTM3QWZZSWRHVlAtS0NqSlc5eE5JbUZaQTFhQVp2QnYtNGRMRGN1SlRZejBKMW5rSHVVUGg3ZkdpcGwzeFhn?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:35:04 GMT",
+      "summary": "1. AI 냉각 시장은 AI 기술 발전과 함께 폭발적인 수요 증가를 경험하고 있습니다.\n2. 그러나 이러한 수요 증가에도 불구하고 관련 기업들의 마진은 하락하고 있어, 성장성 대비 수익성 악화라는 역설적인 상황에 직면해 있습니다.\n3. 이는 AI 냉각 산업의 성장 잠재력에도 불구하고, 치열한 경쟁이나 가격 압력 등으로 인해 실질적인 수익 창출에 어려움이 있음을 시사하며, 투자 시 수익성 모델과 경쟁 우위 확보 여부를 면밀히 분석해야 함을 강조합니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": []
+    },
+    {
+      "id": 58182,
+      "category_id": 7,
+      "title": "세미어낼러시스 “AI 가속기 수요증가 둔화”[월가월부] - 매일경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5fVkVTdk9pTFhHUThQbFRxR3JxTVhDNEVZQlhSU2FtRWVkdW5WWXE1WGo2ODlvZGpOM3VjU2hlal9JcEpMY1JoZjk4V3JDdlZWeXc?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:20:55 GMT",
+      "summary": "1. 세미어낼러시스(SemiAnalysis)에 따르면, AI 가속기 시장의 수요 증가세가 둔화될 조짐을 보이고 있습니다.\n2. 이는 폭발적인 성장을 보이던 AI 인프라 투자 시장의 과열이 진정되거나 초기 예상보다 느린 속도로 전개될 가능성을 시사합니다.\n3. 해당 정보는 엔비디아(NVIDIA), AMD 등 AI 가속기 주요 공급 기업 및 관련 반도체 산업의 투자 심리와 주가에 부정적인 영향을 미칠 수 있는 중요한 지표입니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "NVDA",
+        "AMD",
+        "INTC"
+      ]
+    },
+    {
+      "id": 58147,
+      "category_id": 6,
+      "title": "[GAM]엔비디아 '루빈 시대' 숨은 강자 AAON ② 북미 냉각 판도 흔든다 - 뉴스핌",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA0Sm1BTmluTFdqTmRrcDB5VzFvWE05aXZDYXUzWDhpeXN0QTk2U1Fib0ZaMlI4ZEwxT1F4Ml9KV0E1YmNKUVFMUGFpZDdTQXdTNGlpRnJnZC1OQTVo?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:01:00 GMT",
+      "summary": "1. AAON은 엔비디아의 '루빈 시대'와 관련된 고성능 AI 컴퓨팅 인프라를 위한 냉각 솔루션 분야에서 핵심적인 '숨은 강자'로 부각되고 있습니다.\n2. AAON의 기술은 북미 냉각 시장의 판도를 크게 변화시킬 것으로 예상됩니다.\n3. 엔비디아와 같은 기업의 강력한 AI 프로세서 채택이 증가함에 따라 효율적인 냉각 시스템에 대한 수요가 커지며 AAON과 같은 관련 기업의 성장을 견인할 것입니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "AAON",
+        "NVDA"
+      ]
+    },
+    {
+      "id": 57974,
+      "category_id": 3,
+      "title": "[CEO Effect] 구자은의 선제 투자, 변압기 호황으로 돌아오다…다음 승부수는 '메탈플러스' - 녹색경제신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1udkRuRGNJYmQxdDQ3cGgzWUdpTW1QWTBTZnF6cEVWdnltejU5RGJ1LUtjbzNLbGdrbzhhSEQyUWFERWNWN1MzN284T2g0dktKZk9WbVlpb3VadjE1MFdVRzEwVDl2aGha?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:00:00 GMT",
+      "summary": "1. 구자은 CEO의 선제적인 변압기 투자가 현재 시장 호황과 맞물려 상당한 성과를 거두고 있습니다.\n2. 이는 CEO의 전략적 선견지명과 투자 결정이 성공적이었음을 증명하는 사례입니다.\n3. 회사의 다음 주요 성장 동력 또는 전략적 투자 분야로 '메탈플러스'가 지목되었습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "010120"
+      ]
+    },
+    {
+      "id": 58150,
+      "category_id": 6,
+      "title": "LG그룹, AI 인프라 사업 성과 가시화…냉각·전력·데이터센터 전방위 확장 - 파이낸셜뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE44eVdJUlM2MnltMjMtZ1RxWUw4Z0NRS25hM2xoeVRxVFZtWHZkZ3hadkthdDZJckthQWp5ODhqRjhwSVF6WTcwWHl5cjF4ZGRyQTB6T0ZrWW9SZw?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:59:00 GMT",
+      "summary": "1. LG그룹이 AI 인프라 사업 분야에서 가시적인 성과를 창출하며 시장 진입 및 확장에 속도를 내고 있습니다.\n2. 냉각, 전력, 데이터센터 등 AI 구동에 필수적인 핵심 인프라 영역 전반으로 사업을 확장하고 있어, 종합적인 AI 인프라 솔루션 제공 역량을 강화하고 있습니다.\n3. 이는 AI 시장 성장에 따른 인프라 수요 증가에 대응하는 LG그룹의 전략적 움직임으로, 관련 기업들의 주가 및 업계 판도에 긍정적 영향을 미칠 잠재력이 있습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": [
+        "003550",
+        "066570"
+      ]
+    },
+    {
+      "id": 57947,
+      "category_id": 3,
+      "title": "미국 원전 인허가 속도전…SMR 상용화, 건설비가 발목 - 에너지안전신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBQNHJvbHZEdmUxZ003MUpSNW5OLWY3VEtkdXJXdHpVczhtOXJfQVpvZnAyT3kzelV4M3ZRSDlFR3BZa3ZzZFhjaVFMaEM3eFcySVNRT21RaDNwbzBKbnRjWjF1U1M?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:44:22 GMT",
+      "summary": "1. 미국에서 SMR(소형모듈원전) 상용화를 위한 원전 인허가 절차가 가속화되고 있습니다.\n2. SMR 기술의 상용화에 있어 가장 큰 걸림돌은 높은 건설 비용입니다.\n3. 이는 SMR 기술이 시장에 성공적으로 도입되기 위한 경제성 확보의 중요성을 강조합니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 8,
+      "key_tickers": []
+    },
+    {
+      "id": 58204,
+      "category_id": 9,
+      "title": "佛탈레스 \"양자기술, 이제 활용 가능한 수준... 韓과 협력 추진\" - 조선일보",
+      "source_url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdUl4Q2gyLWNMWnFteTJHa0Y5c0hKbzViZ1BNVG1KSVVjWDVnTDJ5ZFZxT29GeHQxd1RvUVVhR2NRT3Qybm1GY2phWllMYUhISHQyNW1uTWFXSGpieDF5NzMtOFg5TEVfQ2FtUnhIYU80Rm8ySDRweTRDV2hZaEpkZkcwRU55c01yaUI3b2VjTGFpUFNTQ05IUmQyMUdmUQ?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:38:00 GMT",
+      "summary": "1. 프랑스 주요 방위산업 및 기술 기업인 탈레스(Thales)가 양자기술이 이제 실제로 '활용 가능한 수준'에 도달했다고 평가했습니다.\n2. 이는 양자기술이 순수 연구 단계를 넘어 실제 산업 및 상업적 적용을 위한 준비 단계에 진입했음을 시사합니다.\n3. 탈레스는 이러한 양자기술의 발전과 상용화 가능성에 발맞춰 한국과의 기술 협력을 적극적으로 추진할 계획임을 밝혔습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 8,
+      "key_tickers": []
+    },
+    {
+      "id": 58184,
+      "category_id": 7,
+      "title": "[반도체포커스] AI 투자 낙관론 위기?…세미애널리시스 전망 하향에 반도체 업계 '수요 다변화' - 이코노미트리뷴",
+      "source_url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE44ZWVyYWV1Y1JZQUNydUdLdWdFazRuTWFzNjlCWUE5X2VSNDJNaXQ4R1JfUlQtNG5oU0N6LWNLS1cwbzIxTG9EYVF2NjJ2SW4zUS13TTYwQzJYSzR4MjBBelg2QnBld1I1MjQ0b2xuOU8xWWJmeHhR?oc=5",
+      "published_at": "Mon, 16 Nov 2026 17:58:31 GMT",
+      "summary": "1. 세미애널리시스의 AI 투자 전망 하향으로 인해 AI 투자 낙관론에 대한 위기감이 고조되고 있습니다.\n2. 이러한 시장 분석 변화는 반도체 업계에 직접적인 영향을 미치고 있습니다.\n3. 반도체 업계는 AI 수요 변동성에 대응하기 위해 전반적인 수요 다변화 전략을 가속화하고 있습니다.",
+      "tech_stage": "Commercial",
       "investment_impact": 8,
       "key_tickers": []
     },
@@ -28557,6 +28749,17 @@ window.techData = {
       ]
     },
     {
+      "id": 57734,
+      "category_id": 8,
+      "title": "젤렌스키 \"스페이스X 위성 제한에 러 드론 요격 차질\"…해제 촉구 - 뉴시스",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5COVVSVVQyVk9sNVVDRDhPYVlKUnk2alBvV2phSUROWER2ZWFoYlFjeTVhT1h3MU5BZFp6Yk56Q1M0U1NlV0RXSDRwZjAwck1LYkpVZGpFTWVUUHVJUEdMNNIBeEFVX3lxTE1id0QyNTNzc21xVllGdEg1LS1zZVA5ODdFbHloWnVZZ2ttcWtzSW0xbHhVM2J4cnV4Y0NvWk0yT1AtbFZ0QTBQOXJvOWEyT202QUpaRWRIdWlLd2ZfSHNLaENfSXFWdEZEVEFialJqclFVS01WZE1LMQ?oc=5",
+      "published_at": "Sun, 15 Nov 2026 19:42:20 GMT",
+      "summary": "1. 젤렌스키 대통령이 스페이스X의 위성 서비스 제한으로 러시아 드론 요격에 차질이 생기고 있다고 언급했습니다.\n2. 젤렌스키 대통령은 스페이스X에 해당 위성 서비스 제한을 해제해 줄 것을 촉구했습니다.\n3. 본 사안은 상업용 위성 통신 기술이 현대 전쟁 및 국제 안보에 미치는 전략적 중요성과 민간 기업의 지정학적 영향력을 부각시킵니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 7,
+      "key_tickers": []
+    },
+    {
       "id": 36079,
       "category_id": 5,
       "title": "한국스트라이커, 환자 맞춤형 로봇수술 시대 이끈다 - 병원신문",
@@ -29535,6 +29738,84 @@ window.techData = {
       ]
     },
     {
+      "id": 57794,
+      "category_id": 1,
+      "title": "키움證 “삼성전자 35만→29만원·SK하이닉스 210만→180만원…목표가 동반 하향” - 이투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1zUmhkUGNpVEJpOWNMWWNMM3FZZl9hOWliZF9xTlIyaENiZl9mdk9OcVU1TFcyM19IOVpNYmo0dmUwT2VITnJWVHM4WXR2YUFpOUtLYlhMQlNvTWNsTkwwbGt5bXhWYjdhNi1pNGlB?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:56:00 GMT",
+      "summary": "1. 키움증권이 삼성전자와 SK하이닉스의 목표주가를 동반 하향 조정했습니다.\n2. 삼성전자의 목표주가는 35만원에서 29만원으로, SK하이닉스는 210만원에서 180만원으로 각각 낮아졌습니다.\n3. 이는 주요 증권사가 반도체 산업 내 핵심 기업들에 대해 보수적인 투자 전망을 제시하고 있음을 시사합니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 7,
+      "key_tickers": [
+        "005930",
+        "000660"
+      ]
+    },
+    {
+      "id": 58061,
+      "category_id": 5,
+      "title": "\"MDS테크, 휴머노이드 프로젝트 수주…피지컬 AI 성과 가시화\" - 마켓인",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5xQXVPWW5jcU1CVkJpaWFVVFNadk1odG1keEFyYzlMS3hWeGNJNkhZMTVYZ3hMUExseXNpV2VJTThRMzdPX1c5OVZ4VnhTT19YS2NCYWJQenE3NFl6MlUyMk5SamJwT2Q0bHpFX2x2NmhrUGs?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:48:03 GMT",
+      "summary": "1. MDS테크가 휴머노이드 프로젝트를 수주하며 AI 로봇 분야에서의 경쟁력을 강화하고 있습니다.\n2. 이번 프로젝트 수주는 피지컬 AI 기술의 구체적인 성과가 가시화되고 있음을 보여줍니다.\n3. 이는 MDS테크의 AI 로봇 시장 내 입지를 공고히 하고 관련 기술 투자 기회를 부각시키는 계기가 될 수 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "086960"
+      ]
+    },
+    {
+      "id": 58076,
+      "category_id": 5,
+      "title": "\"MDS테크, 휴머노이드 프로젝트 수주…피지컬 AI 성과 가시화\" - 이데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQakc4MENHZ1RwUU1td1lSazNUV3QwOE5EQzc0MFRreTVwOTZXWV9wY2NCNm9ELWdhQTFXaHMxR3F3R0lCZ1JMa21PYURBOWFJYUFqTTd2eHJPNzZZMUJDS3JDREhfRjFOYk1BZnF0eXJfUUdqemFZaUFHcG1NbE0wZA?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:48:03 GMT",
+      "summary": "1. MDS테크가 휴머노이드 관련 프로젝트를 수주하며 피지컬 AI 분야에서의 구체적인 성과를 가시화했습니다.\n2. 이번 프로젝트 수주는 임베디드 솔루션 전문 기업인 MDS테크가 AI 로봇 분야, 특히 휴머노이드 영역에서 기술력과 시장 경쟁력을 확보하고 있음을 보여줍니다.\n3. 해당 프로젝트는 피지컬 AI 기술이 단순 연구 단계를 넘어 실제 적용 및 시범 운영 단계에 진입하고 있음을 시사합니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "086960"
+      ]
+    },
+    {
+      "id": 57863,
+      "category_id": 2,
+      "title": "삼성SDI·SK온, 7.08GWh ESS 입찰 맞대결…NCA·LFP 경쟁 본격화 - 핀포인트뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9VN0VldnNIQ3JMLVF6MGlsd1I0WjRHMWdMZVpaUGlxZXJpRkREVXBOcW9za2NsRzNpb1JUS3M1dlpZaU1wNjdBTzdKNTloSmZIWlRET3lYMk5MNmdBYnhYc3VWV0NsUmpDOUNqZDVyVHZZT1XSAXdBVV95cUxNd1BRNGNGNEs3dzZqd21mNFpYbExhUU9DTHhrbXNtMEZqZ1ZvY0RnZTNvYUp0Sl9GNnhyLVFjTEdncUpwQThuNVhQT0hzVkhDQ3lPdGJYU3BvcVpGVGR5U1Fkdm5kb2RxLTR2QlBnN3FrajFrVXEzRQ?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:10:00 GMT",
+      "summary": "1. 삼성SDI와 SK온이 7.08GWh 규모의 대규모 ESS(에너지 저장 시스템) 입찰에서 맞붙으며 관련 시장 경쟁이 심화되고 있습니다.\n2. 이번 입찰은 NCA와 LFP 배터리 기술 간의 경쟁을 본격화하여, ESS 시장 내 기술 선택과 비용 효율성 확보의 중요성을 부각합니다.\n3. 대규모 ESS 프로젝트 수주 여부는 2차전지 기업들에게 중요한 매출 및 시장 점유율 확보 기회가 되며, 향후 배터리 기술 표준화에도 영향을 미칠 수 있습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 7,
+      "key_tickers": [
+        "006400",
+        "096770"
+      ]
+    },
+    {
+      "id": 57984,
+      "category_id": 3,
+      "title": "늘어나는 지붕 위 발전소…재생에너지 시장 한 축 맡는다 - 디지털투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0ySFRvUDJFU0dYQWE3OFZvS3NnWnpHZGQ5UFFjWWhMMDZMbFVMWVlNX3U1YkVUbEg1WHlqSkc1SFh5VmJ1N215MjVWYVFaT0FYLTIyWmlOcFZ2QS1DSExWODdxV0tFYWtfRWt4LW1qMldCYm8?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:30:00 GMT",
+      "summary": "1. 지붕 위 발전소(주로 옥상 태양광)의 설치 및 보급이 지속적으로 확대되고 있습니다.\n2. 이는 전체 재생에너지 시장에서 중요한 한 축을 담당하며 시장 내 입지를 강화하고 있습니다.\n3. 지붕 위 발전소의 확장은 재생에너지 공급원을 다변화하고 분산형 에너지 시스템 구축에 기여하고 있습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 7,
+      "key_tickers": []
+    },
+    {
+      "id": 58197,
+      "category_id": 8,
+      "title": "Forty Amazon space-communication satellites go ‘missing’… setback in the pursuit of ‘Starlink’ - 경향신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9Ic0I3X0hEQjJTempiYXNuNVNrUGF6NmdOWHJ6SWhrZ1ZtcDE2NDc0Z3RyVUFLMFdSRVFUbjd1WHR1cnJRb1RSSTZNNXBnODJIeUMtb3VHSzA5bzZZSXc?oc=5",
+      "published_at": "Mon, 16 Nov 2026 04:05:00 GMT",
+      "summary": "1. 아마존의 저궤도 위성 인터넷 프로젝트 'Project Kuiper'가 위성 40기 실종이라는 중대한 기술적/운영적 차질을 겪으며 사업 전개에 난항이 예상됩니다.\n2. 이번 사건은 스타링크(Starlink)와의 경쟁에서 아마존이 선두 주자를 따라잡으려는 노력에 상당한 지연을 초래할 것이며, 이는 아마존의 우주 통신 사업 전략에 대한 투자자 우려를 증폭시킬 수 있습니다.\n3. 대규모 위성군 구축 및 운영의 내재된 리스크를 부각시키며, 저궤도 위성 통신 시장 전반의 투자 심리에 간접적인 영향을 미칠 수 있습니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": [
+        "AMZN"
+      ]
+    },
+    {
       "id": 36519,
       "category_id": 4,
       "title": "[버핏 리포트] 두산, 네트워크보드용·광모듈향 CCL 매출 3Q부터 급증… 4Q 중국 공장 증설 효과로 전자BG 매출 성장 – NH - 버핏연구소",
@@ -30478,6 +30759,30 @@ window.techData = {
       "tech_stage": "Commercial",
       "investment_impact": 7,
       "key_tickers": []
+    },
+    {
+      "id": 56763,
+      "category_id": 4,
+      "title": "[2026 하반기 혁신특허 기술대상] 스마트에너지, 태양광 모듈로 국방·모빌리티 시장 확대 - 중앙일보",
+      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9FT2pZSU95WHVPODNZSUdtV2YwZEk5MkRiRlpUbkJMTjZWRFk1SHVJNlNMVWY5SEtLcDA1U1JxWG1QQ25oM0RJcUFGZDFfZE9feFFvNmR3?oc=5",
+      "published_at": "Fri, 13 Nov 2026 08:55:00 GMT",
+      "summary": "1. 2026년 하반기를 목표로 하는 혁신 특허 기술이 스마트에너지 분야에서 주목받고 있습니다.\n2. 핵심 기술은 태양광 모듈이며, 이를 통해 에너지 솔루션이 제공될 예정입니다.\n3. 해당 태양광 모듈 기술은 국방 및 모빌리티 시장으로 적용 범위를 확대할 계획입니다.",
+      "tech_stage": "Pilot",
+      "investment_impact": 7,
+      "key_tickers": []
+    },
+    {
+      "id": 56765,
+      "category_id": 4,
+      "title": "\"폴리실리콘부터 인버터까지\" OCI파워, 美 RE+서 그룹 태양광 공급망 소개 - 전기신문",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1HRFBYLVpMX0J1OWtqUW5aank1cDI4V19zR0hGeDRLUXpwd1FzY3dZSWZFaExCaWxVazZpYUZDUUlyX1NIbkFjcVBuOVhKaVFCT2RtX3VNNm9iVHBMSldfR1VUc1hlZnhiRVBPSA?oc=5",
+      "published_at": "Fri, 13 Nov 2026 08:44:43 GMT",
+      "summary": "1. OCI파워는 미국 RE+ 전시회에서 폴리실리콘부터 인버터까지 아우르는 그룹 차원의 포괄적인 태양광 공급망을 소개했습니다.\n2. 이는 OCI그룹이 태양광 발전의 핵심 소재부터 최종 전력 변환 장치까지 전반적인 가치 사슬 역량을 보유하고 있음을 보여줍니다.\n3. 이번 발표는 OCI그룹이 미국 태양광 에너지 시장에서 점유율을 확대하고 경쟁력을 강화하려는 전략적 움직임으로 해석됩니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 7,
+      "key_tickers": [
+        "010060.KS"
+      ]
     },
     {
       "id": 35433,
@@ -44174,6 +44479,19 @@ window.techData = {
       "key_tickers": []
     },
     {
+      "id": 58186,
+      "category_id": 7,
+      "title": "Nvidia는 젠슨 황 논란 이전부터 어려움을 겪고 있었다 - GeekNews",
+      "source_url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUFd5Y2VBdjEwYThzQ2kyb1pwMlBfdTJOeHNPRzBaNlZLU1NOLUhDaHpaVXpIVFVleldmdk93a3RmUHY0TmxYWllSMVMzTjhxOXJ0UzhNbTZiRmlEZUxSWDdZSHB2Q1NXVlJrUXJMbGZ5Y2syN21pWGE1UFMxQ3dYQ2lnOHZxVFhCdjIyUHVZc2VvUQ?oc=5",
+      "published_at": "Mon, 16 Nov 2026 18:33:25 GMT",
+      "summary": "1. 본 기술 정보는 엔비디아가 젠슨 황 관련 논란 발생 이전부터 이미 경영상 어려움을 겪고 있었다고 언급하고 있습니다.\n2. 이는 특정 기업(엔비디아)의 과거 비즈니스 상황에 대한 간략한 진술입니다.\n3. 제공된 정보는 엔비디아의 구체적인 어려움의 원인이나 현재 또는 미래의 영향에 대한 세부 내용을 포함하고 있지 않습니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 6,
+      "key_tickers": [
+        "NVDA"
+      ]
+    },
+    {
       "id": 36791,
       "category_id": 6,
       "title": "삼성·LG, 북미 냉각 사업 조직 확대…전력망·주민 반발 변수 - IT조선",
@@ -52067,6 +52385,19 @@ window.techData = {
       "tech_stage": "Pilot",
       "investment_impact": 5,
       "key_tickers": []
+    },
+    {
+      "id": 56773,
+      "category_id": 4,
+      "title": "[옴니사 원 도쿄 2026] 랑가라잔 옴니사 CPO “韓 금융권서 가상 데스크톱 '호라이즌' 역할 커질 것” - 전자신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9VWGM3ZzFEYm45RnZRY18tRlVmLXpPLXQxNGVQTlRFWTBzdlUwUTlGTG1KR3BFMldBcW8zSEJFajRWb2J5SGxJZ1VCdWdSZw?oc=5",
+      "published_at": "Fri, 13 Nov 2026 08:00:00 GMT",
+      "summary": "1. 한국 금융권에서 가상 데스크톱 인프라(VDI) 솔루션인 VMware '호라이즌'의 역할이 증대될 것이라는 전망이 나왔습니다.\n2. 이는 금융 산업의 디지털 전환 가속화 및 보안 강화, 그리고 유연한 근무 환경 구축 수요 증가에 따른 VDI 기술 도입 확대 가능성을 시사합니다.\n3. VDI 솔루션 공급업체 및 관련 클라우드 서비스, 시스템 통합(SI) 기업들에게 한국 금융 시장 내에서 새로운 사업 기회 및 매출 성장이 기대됩니다.",
+      "tech_stage": "Commercial",
+      "investment_impact": 5,
+      "key_tickers": [
+        "AVGO"
+      ]
     },
     {
       "id": 35753,
@@ -70449,330 +70780,330 @@ window.techData = {
       ]
     },
     {
-      "id": 57456,
-      "category_id": 2,
-      "title": "삼성SDI, 美 주피터파워에 ESS용 LFP 배터리 16GWh 공급 - 디일렉",
-      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9QQXBpMlFxZF9YZGhDUUUxYjgtTEktUkFVRmp2SDlWbkdPWjBMd1VRRWVEQVpQZ0FNcDdiR3lfMFY5T3hMcjRrbkRtS1hyUElKX3lVcmhhWndwVGVfRXhyZDYza0pCUQ?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:47:51 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57579,
+      "id": 58089,
       "category_id": 5,
-      "title": "삼성서울병원, 로봇 뇌전증 수술 109례 달성 - 간호사신문",
-      "source_url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hcWRFeGxWQmt0NGNrYkhoYUtZSDM4UnQzZjZlV0dfSnp4a1VJb3M5QUtmSGJod2w5cEluZ3l4WmNUMVFmUnhkM1I1NDk4N3o2aGp5LXZ2b3JqNWlaVFh2dXpMSDZvX3kzZy1hbnBB?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:47:24 GMT",
+      "title": "한국투자증권 \"삼현, 휴머노이드 수주 가시화…2028년 로봇 매출 1600억 전망\" - 컨슈머타임스",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE80UXk2VjROYzUycy1UQjQ0S211cXdtNHkyb016a2RFYjRiSFBqZlhjM3F1MHlnSjN2dFRqT2dXNGJlNGRTOHEta3BsdkU3ZWdjdjB2ZE1VOHczMEJBOGZvQlVfNkpHS2w1cVE?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:39:59 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57443,
-      "category_id": 2,
-      "title": "엠플러스, '전고체 배터리' 양산시장 뚫었다…글로벌 기업서 200억대 수주 - 파이낸셜뉴스",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE41dVBoUGR3OWEySG1Qbjh3YlhCa3dCM0JKcFRRV2pkNjRqOFpVbzZTeTlXejN2OVBLbGlicEtjdEJrcHVscnY3LWUxQ2VBX2plY21qcVEyUUlaZw?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:46:51 GMT",
+      "id": 57774,
+      "category_id": 1,
+      "title": "SK하이닉스, 美 매출 1년 새 102조원 급증…전체 매출 60% - 서울경제TV",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1la2NXaDZrdmxadUM1aGdvZ1p5bUNSN0NPNlk5Y0oyQmdrWURYWkQ5a1ZpNXNGblg5bXVzZTljNmZWNW0tQXlpOGdqSlk1TW5HcHJCQ1lzTDBBNldIWFVqRUJEenM?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:38:07 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57611,
+      "id": 57791,
+      "category_id": 1,
+      "title": "키움證, SK하이닉스 목표가 180만원으로 하향…\"연말 조정 후 반등\" - 연합인포맥스",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE95SG5QbWRjRzBNWmo1U21ydUtfbkFSQnhIUnh3R0o2ZjcxMVRWaUhpQ0dZbW1HcFljUlcyZHRZR2pmYnhPQlZXN0R0ODZUbEtDbUdsU0lwTjhjaGdNRExOZmNUUW9xbFk2TFBUTFhQUFA?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:35:42 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 58064,
       "category_id": 5,
-      "title": "사람은 색, 로봇은 적외선…KAIST '전자표지' - 충청일보",
-      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9PNVcxd0xEVzRHYUR4R1F1Znk5RG1lS1FZdVUydzVpSy1qajU0N0dGbHJaQ0NkTXBhMFZSUFFXTGpMbWVOSHNZUjNodVRxSGN2bkdkV1EzU2VndVpONkxRRmNGS3REdm45UTR6NmNrTVA?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:46:45 GMT",
+      "title": "[모닝 리포트] \"로보티즈, 유럽 공급 확대·휴머노이드 출하 기대\" - 뉴스핌",
+      "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBiV1dJbVIwUVQ5N21jME9RekRBb1d2QUNqRVBRU3JQTkR2c293ZGpwWEFESXVZMlFhS3dRcVVzNFBFVTl4aUlnUWJWbEFUVmVBN3pjTGk0bTJVVEVU?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:27:00 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57468,
-      "category_id": 2,
-      "title": "삼성SDI, 美에 ESS용 16GWh LFP 배터리 공급…2조 이상 추정(종합) - 뉴스1",
-      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBwRVpRZFJwWVIyWmYxZHZJcG43QXRROFhDbTIwMTV6SDZwOHN1SzQ4Q05aWkUyUkt3SVJBUHJKTndQV1FzeHJVd2J5VE9VV2pSOUFFc2ExLUVnSUdwd2dRSm9paFk?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:46:21 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57682,
+      "id": 58001,
       "category_id": 5,
-      "title": "‘적자 지속’ 두산로보틱스, 신제품 'Made in USA‘ 북미 공급 - 금융소비자뉴스",
-      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBmSllBaTVTcW9IN2s4NGVaMUhNWWVtY0dKTTZZTDRfUmxxalc2SlNfeDMzN2xrSmZ2V21KdWZqNG9NbnV1bXYyd25XdnNOS0RWcVBFbmp3TWhoeEZ3WjZPdFhkRTlyZWZQaUE?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:46:00 GMT",
+      "title": "중부발전, ‘지능형 로봇 챌린지’ 개최··· 발전소 현장 피지컬 AI 기술 발굴 - 일렉트릭파워",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBmVjdsWnVMQTZXd3BjNDlHQzNGbjNhbUthaHRia0pjY04wQTc0clJiVVA2VE9uamR2cUV6ZmFqalpPLWI4WnQyZDVNZnpvZkxPNXFuaDJjMWxtREhsWUYzUkRkaTk?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:26:00 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57676,
+      "id": 57766,
+      "category_id": 1,
+      "title": "젠슨 황 떠난 엔비디아…삼전·닉스, HBM 고객 다변화 기회 될까 - 글로벌이코노믹",
+      "source_url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQdzQxV1ByM2ZPZUVxNlFwRnZRZkE0cjAwcmpyWVlyZ2JhYXhNUG1JX2c1b0JjWjhkMTY2aGNEUFNnM0VkZkpoN2VEQXlURXFDVWtJNDU3dEtIY0lOTldCbWFaajJtSi1QYm1SdHFJSFl1V2d3ZUhvQlBwZGtkdkhOQkV3U1FIVmNR?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:25:36 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57812,
+      "category_id": 1,
+      "title": "\"젠슨 황 퇴진에도 메모리 수요 견조…韓 반도체 산업 긍정적\"-한화 - 한국경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB5ckhuWGU5VXFoWG9oZTNFMkVGOHROWmYxaEhmVV9xeDBRUGdjR3BwZXppNHBBdGM3Y2diN3F1TmZtUGtfY2ttTWpXTWxTOHNhb1FlQ3VNbGxwdw?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:15:22 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57786,
+      "category_id": 1,
+      "title": "삼성·SK하이닉스 곳간, 현금 329조…1년 새 193조 불었다 - OBC 뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9ic3dHSFd6alptaGh5a3hCT3hkcXI4bFVDTHUtNkluYjBsZXR1UkhfUUN2czloV1RteDVZNFlNaVFIMEhRaF9xb2JoUUZ2OE1yUDFaZklhZFFtNUZsdjBNNWphMGZ1YWR0RFE?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:08:23 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57777,
+      "category_id": 1,
+      "title": "지엘리서치 “SFA, 반도체 전공정 진입 본격화…HBM 검사장비·해외 수주 확대 기대” - 이투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5GSmpZX28weURLcnU0OEVCZm9zSEk0MVJzbmMwQk5yN1pJa0NSUU1WZGxnQ1FnTDNMbTQ5SW5zckpBYWFpTTRxVE9DWVBmUFFwNmhqbw?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:07:00 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 58083,
       "category_id": 5,
-      "title": "김하온, AI 휴머노이드와 7일간 대결… “AI가 와도 못 베껴” (‘나의 이방인’) - mhnse.com",
-      "source_url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1NVWtoUFJkWXdRbHNvMDdfMUVkOWh6SzBUbHBwTDBlZm5CYS1fc0dScXE1TUVtUTVWb3F5SEx4LU1BUG1JMGZXSXFjUF9oN2FlVFVxV2REemdsWUJaYVAtamxSNA?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:44:45 GMT",
+      "title": "삼현, 북미 휴머노이드 액추에이터 공급 임박…내년 로봇 매출 200억 전망-한투 - 이데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUFZReW1KenA5LU5rbDJ6ZDFaRHVUNy1iUmkwa294Y0w0SExYWnBEQVQzUEM0elk2NGVpalVUdmQ5WV85RjRDMDBLeW8xN2NIakhEYklqVWdlSmM5M1VxOWQ5MVQ3MUxYYndwRXU3YkVYdDMwejktcVJTSUoxMV9qbQ?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:06:20 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57569,
+      "id": 58060,
       "category_id": 5,
-      "title": "삼성서울병원, 뇌전증 로봇수술 'ROSA' 109례 달성 - 메디칼업저버",
-      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB2RENzUEdocG1FaElCUHYtNUNEdXpuUXBtRS1lZnF2UzFoYWx0NGVyY3JOcWZkVHRWTVN2eVc0Q0hVUUxyY2JpdnFUVGNZSGFxVXptTHBpN3Nldi01dHFUN0dQUk1oakoyXzgw?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:44:26 GMT",
+      "title": "삼현, 북미 휴머노이드 액추에이터 공급 임박…내년 로봇 매출 200억 전망-한투 - 마켓인",
+      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFB3SmFyMWFBVktqb0RQTHNfNzJPV0wwTmJGVnlXMGZQTXhJVFVlaUlXYWFzNmVaYU92R1MzRk16bGFsVTRVYzQwaE02Nk9wSE5DdTVyejNNRUFuNlRNNjNIWUZQUjJPbHItd2xRTHQzaWlrME0?oc=5",
+      "published_at": "Mon, 16 Nov 2026 23:06:20 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57626,
+      "id": 57822,
+      "category_id": 1,
+      "title": "[1117개장체크] 美 증시, 엔비디아 리더십 공백 및 중국 AI 칩 규제에 반도체 폭락 By 인포스탁데일리 - Investing.com 한국어",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBLWWNGQlFpWF8wbVNrNjBUQUZZM2I3MDZISzdNczh1QnVRRWRrVFA0Z20xcC1KNkk1Z1RXYW9HMjhjT1EwSVl1bExPaHRrV3NBUXR2bEZKSE9vU2F4UFVLS2pkV1RQdlZRNjVncmlka1o?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:59:00 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 58069,
       "category_id": 5,
-      "title": "\"로봇 수술도 결국 집도의 판단이 핵심\"…이정훈 힘찬병원 의무원장, 무릎 수술 노하우 공개 - 스포츠조선",
-      "source_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBXb1BKTFQzNG5feHUyNmdHa20tRWQ5RDhtR2FJYlI4V3d0eGpCS2tFMTIxYU9hbXFsbE1wU3M0QjdFWUQtOVZjZU1zUGdSZjZsRmEyLWJaMDNwODUtQWhGQTdyRDVjaXhLOFpHSkdyQzBHd0J2V2Q3Xw?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:44:24 GMT",
+      "title": "[인터뷰] 동운아나텍 박진 그룹장 \"휴머노이드 로봇 반도체 박차\" - 파이낸셜뉴스",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jaWxsYzNEVnFxU1EySmNJbWJqdVdzRUdtbGZYUExtNE9GdjVkSUp1eFZpdWVqQzJxa3dZNEpZVmRjSW9tUUZQLUR2bzNhbGhaakozUF9oSWY5UQ?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:50:33 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57595,
+      "id": 57770,
+      "category_id": 1,
+      "title": "한화證 “젠슨 황 떠나도 HBM 수요는 남는다…中 규제는 韓 메모리에 호재” - 이투데이",
+      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBibjZRT0VPM2VMdmMwVFIyc2hCVkxSREFUMldsMWdYR1BLOEVvdzFqejlDUElLREZnMElqUzJkUXFOeVU4SFZaUEUzbGRrU05jOW85RA?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:47:00 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 58134,
       "category_id": 5,
-      "title": "전진건설로봇, 3분기 영업이익 56억…전년比 13.1%↑ - 뉴시스",
-      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1UTE45RjRwMktEb0xDVUZlY2JjTFNyMl9ybWJremY5S2U5eU1EWVhiUVhocXF6ejhBc3EzaF9VelJzdndTTjd6S3ZOeDl6U0ZWX3F2TFFkbnYwUTVfTEZPcNIBeEFVX3lxTE43Ny0xOWYtZ0V6WnNCdEFTRXE1ZUVFZ194U01ic2JHX3ppdmxLVXE1MWJQZVJjRUdrby1FTi1Rbmd3blZWQUZJQjhSOVlvQUtfOWl2UkZKX3VWakkyc0FNRngwd2NqTDV6Uy05UzZQU1hSNWEzVVhXTQ?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:43:38 GMT",
+      "title": "Preferred Networks, MN-Core L2000으로 AI 추론 속도 향상 추진 - Unite.AI",
+      "source_url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQU0prOVN2SHJfX0UyaTA5c3hLbXVJZzhpbFN0WHc4VDNSam4wOGE3N3B6NzMwNDJNSUdOM3lBcURxZEJiVDJDbHZqeU9lczhrR3ZwTTVRbjl6RThBNk51TWFmOHNaVm1oRG5YUmNQUjRLN1BsbmhUdkstbXBGZUhLeWVrZlVUdG14dzFuM2Y0Vm9aWEpp?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:23:02 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57474,
-      "category_id": 2,
-      "title": "삼성SDI, 미국 ESS 개발사와 수조원대 계약…양사 누적 공급 27GWh - 마켓잉크",
-      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBVVXhFblptTmc1YmpsX2NGc3hvT2VsbjBZWjZyeTFybVgtUEFOdTY0WGxnRDJocENIZEVsYlctbjhuZFN3Sk9NRGc0N1FxS2lVYzFUcmtuOHBVbkpiVVZxN3JfbVBmVEsxckFiVm5Xdw?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:43:12 GMT",
+      "id": 58203,
+      "category_id": 9,
+      "title": "해리포터가 통과한 '9와 4분의3 승강장'…\"엄연한 양자 과학\" - 사이언스타임즈",
+      "source_url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNldoeDN3QkxUdVFzNXY1eG95RDJLUncyR0hwclpQeHJmVURlRDJiUEkzNHZIU3k0UFB5WVJNRW84enM0SUVaVEZ4NG1lNFh0WGxJZG00cGlxaFhWSnc2N1FaZHFjZDVrMzJXc0NyTzQtNWU1OXZKeV8wMXlaSEo5azBBSGR6UlhDR1RYaUlzOA?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:07:30 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57467,
-      "category_id": 2,
-      "title": "삼성SDI, 美 주피터파워와 ESS용 LFP 계약…3조~4조원대 추산 - 머니투데이 - 머니투데이",
-      "source_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE80Z2JGMHJPVlhqaDdVNEdVeUNtOUlITzI3dmtqdTdGM3IwajBTM1hkdHF5dUNOYnFKamRRTHBJMjg1X3lBZjRyV21BOUg5MkdrUktqUmZjWGlBR1hZMjM3WFhuRU9EbHVpSUdzUmp5bzUybWpRSE40Rkhn0gF_QVVfeXFMT3VoRG5VUVE3ZWp4cHRMWXZHNHpqNjZaYjRiQTdWTmc4dElMaHF1a1FoVU1kSDVOV3RvRVBMQktxWl9UX1BBbVB3LU1qNHAxRkRuVnJFb0pVZFhodkpfOFZsT0JYampETDRzT3JwQ3Ewb3JCNV94a2dmWFRnTURtYw?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:38:38 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57590,
+      "id": 58095,
       "category_id": 5,
-      "title": "전진건설로봇, 3분기 누적 매출 1288억원…전년比 13%↑ - 아시아경제",
-      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95RkVjc0VEdy1mWlA0bWd4NllVUHZyVzZoUEMtVFpSVVlET3otS2hjSmZnRDZ2Z3B3anZrZHNYZzBVYnRZODV1TGRLRVF2aHg0NFpFVUMwWnYtemwwSXkzeQ?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:37:54 GMT",
+      "title": "휴머노이드가 신기하지 않아질 때 [기자수첩-산업] - 데일리안",
+      "source_url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPUTRWM0FfUVROQU5NOVpWbmFWazk3OVZWNUlfT0pCVFFMRXNQNEdKbmRCeG5EbmVrUUxXLUstOVp0ZW9SR0dQM2tNbDRNRGdZUXRRNmh6QlA5d04tbkhlSHVVUU5wRU93R3BUQkxLZnVLeF8wWDhfaUxFbUp4UDd3SjcydUtqR2JycnRZR1M4U0RNSkRtTGsxc1hkTFdhdDV1b01LNDFvaEs3WFVRNFB0NFBYSld6N2Q2N0F5X1hmaW9EdGpyNDU4NG1HS1dVY045VDVfWFdyV0tJem9qUnQtXzlQWUp0WlE5Wk9rOGkteUhQTkg0TWtMOUtaVHlrVDY5M25wNkZPa1hPRWwxeDQ2VFZlWE9jd3ZfN3Zwc2M5WlJaRjg?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:00:00 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57461,
-      "category_id": 2,
-      "title": "삼성SDI, 미국서 수조원대 에너지저장장치 배터리 수주 - 연합뉴스TV",
-      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB4eWlJVElsUFlwM0VzUkJjUXhUamp0T2ZaMHZla2dadTN0QkdwcWs0bXQyWGI3ZnROVUtMd0xYY1VlWkV5VmViUTBjRmxlek9DaFV5NXZHTmJudnB2TEo5OGFnMF9sS3M?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:35:00 GMT",
+      "id": 57800,
+      "category_id": 1,
+      "title": "중국 반도체 투톱 ‘솽창’의 10년…‘D램·낸드’ 삼전닉스 맹추격 - 한겨레",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1wZFlLVXFjWFdEQ2pRQUlDYm9CSWRBMFR2RGU1OWh3UlVaeTVNOUVlbFZiM3JnbnMtMXV6NTJsSkFNU1ZEd2xxUUxSYXM4bjFhVTQ5NTRVSDZqTjFXWWNUMXp4ZXlIM0tyTjNDXw?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:00:00 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57484,
-      "category_id": 2,
-      "title": "'탈중국' 삼성SDI, 美 주피터파워서 16GWh 수주..누적 27GWh LFP 공급 - 한국정경신문",
-      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE92XzhuWDlzZXJ6WjRLU1hRZE80aXdtNDdIS3h5aHpkTXJ2VWRreU9XZlFxdUJ4V21SMnUySkE1Wks3VmRqTmpMQk9sd1NtLTk5U1E?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:33:23 GMT",
+      "id": 57771,
+      "category_id": 1,
+      "title": "젠슨 황 복귀설에 K반도체 촉각…HBM 협력은 \"예정대로\" - 아이뉴스24",
+      "source_url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1xeEFaVFFJNU04ZU9yU1VPdzl4LWVaUnJqQ3FZSGVIeW5ZMW02YWY4T3o5ZW1GbUZSZ3NKWHdyblVpRlpWdGVDR2JXbw?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:00:00 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57572,
+      "id": 57769,
+      "category_id": 1,
+      "title": "젠슨 황 떠난 엔비디아, 삼성·SK 불안은 HBM 아닌 '중국 공장' - 네이버 프리미엄콘텐츠",
+      "source_url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPcEFwX0ViVV9TLTdENnhla3A2bVd0cndicS0ycUNKajUxY2p5SmIta2xRWTRMQVFpRk5wTkMzdURScUZaN3J1eU40TGdWWEtGVEJjQzlPTjlma3JjUEFISllnQ3ltWjNkemlpVGVpb1V1MERBaWtrdGZ1eWF3a0h6Qg?oc=5",
+      "published_at": "Mon, 16 Nov 2026 22:00:00 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57818,
+      "category_id": 1,
+      "title": "미·중 반도체 갈등에 자금 이동…CXMT 팔고 삼성전자 담았다 By EBN - Investing.com 한국어",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9kUnN4aTQ4Ukt3VXZ5dDRpRFc0Sk1qclVJb2NHV2pVMzN0SC1iU29WWWxZTnM5bWRlMS1hLUlZMEQ4dExPdllwYmg4QkRmQ3JRM0wxQkxSRGxJRnJCc3gwSFluQWUtTTI4NTRqU01wQ3M?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:55:00 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57815,
+      "category_id": 1,
+      "title": "엔비디아 4%·반도체지수 5% 급락…뉴욕증시, 실적 앞두고 AI주 투매 - https://www.theconnectmoney.com/",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8yLWJnOW81NGhXWVZpX210eS1ia3d6WnZnQ0JKOTJ1OEFSRDE0TTJVUGFIc3NvWTJoT1NIOWlNMS05LTFJVE42bkRaZ2ttOVF4ME8zT0lwOUpjTlZOVGIyYg?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:53:00 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57811,
+      "category_id": 1,
+      "title": "뉴욕증시, 젠슨 황 사임 여파에 일제히 하락…반도체지수 5.3% 급락 - 디지털데일리",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1xMnVSMktnLVMyd0cySEwtVEhUN3ZRcElBN01fV25sSWM1Z0p3MFpQMHBKNm5Uc21rV05kU3N0Snd3UTdlMEJmNWcxajRCUFNqMV9zVGI4RGZkZXF6dERoMlRQUDE?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:39:30 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57823,
+      "category_id": 1,
+      "title": "나스닥, 반도체 규제에 2.5% 후퇴… 필반 5% 급락 - IT조선",
+      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE80WXZ1WUxzeVEyeXgtR01mXzFDVGUtRFZacmFjanZsZXl2dVQxOHdHSFY4c0pWMERKb1VYbF9CY3RDaTJxdjkzeWFVcm1KS085Ykc4SEc4Rm4zdnRtM2FMV1lNY25pbjhOMllWWGhoOFPSAXRBVV95cUxQaDZ1dVRnQndmQlNBM0hRZENrNmtOeG1mdTg2eUpBMVowWDM3TGdORXFwQVByODk4cTBkRDRqR0loTGdCLTBrbmZib0c4YTZZZHB4NlRXM2J2S2VRRF81RW1zV1JVQTBnWU9WTWduc3E4ZjJGUw?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:33:33 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57973,
+      "category_id": 3,
+      "title": "LS전선, 해상풍력 해저케이블 수주 세계 공동 3위…유럽 3강과 경쟁 - 뉴스1",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBvd0s3NWdiVWcwQW9aRWJfQjROME92MG8zZUROTnkwQURZbWFLLVBIYTJaazRZeV8zWUIzU0ZhSnJpcjJDWnBSSzRoODdnc2VLNW9xWFBOSzlHbzhrUGRra3dHSGQ?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:30:00 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57938,
+      "category_id": 3,
+      "title": "뉴욕주 신규 원전 1GW 건설 시동…SMR 등 개발사 10곳 선정 - 에너지안전신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9BcUNaVHhJT2l5dFJPYktXd1FkX001S1hKbWtuekxEUWVkR09TWlFyaTYyLTBZQk1ibkhoZ1B6a0RubGZHRkhTN3hjY040azVXTzlXMUd3MmUyU184RUlXRkk2SDg?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:20:13 GMT",
+      "summary": null,
+      "tech_stage": null,
+      "investment_impact": null,
+      "key_tickers": []
+    },
+    {
+      "id": 57999,
       "category_id": 5,
-      "title": "\"점주 노동 하루 30분\"…에어크, 1억 미만 로봇 편의점 실증 - 동행일보",
-      "source_url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9Idl81TmVIdFJVS0lyOWsybk9jdnJnS3dpcW9rdTZDbEl4UmZISmlCd19iaVlhOEd6aWZNdjVjSlFpNEYwaWZlMFFLSUxhVko0REdRN2Z5RHhSbmx4dVhhTlFUNTlyN3pE?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:33:00 GMT",
+      "title": "로소타, AI 로봇에 외과의사 ‘술기’ 가르친다 [로보 인사이트] - 서울경제",
+      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1JYUpUSzdwX2dlWl84YVRuNEhCeGdYaUlXbXc2T1MxYW16bTdsVUhWcGJWZGNIdnQyaTJXVG5XUFNvOUMzOG9UWU41N3FiUGc3cFHSAVNBVV95cUxQVlRER0UwMElIaEs2Y2lzOTY4d1dYTXhoNF9jNW84Sm10ZkdaY0VJRExXQ3dWN3hVeURNVFVjTS1iX3EyMVdtbmRUSW9UaG9wWkxqZw?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:07:00 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57462,
-      "category_id": 2,
-      "title": "삼성SDI, 美 주피터파워에 LFP 배터리 16GWh 공급 - 아이뉴스24",
-      "source_url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1wVkN4OHJKOHRaMmFJYjFsOWdBTzlFZ2ZwYUJLc3J4U3V2VlBnbnFKSHh2dW4xWTF1RzVRX3dQVm95M3B6empmZWdSaw?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:32:46 GMT",
+      "id": 57773,
+      "category_id": 1,
+      "title": "엔비디아 독주 흔들리면 구글·AMD로 HBM 공급 분산… “삼성전자가 최대 수혜자” - Chosunbiz",
+      "source_url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNT1Jhang1bkJKcURhVkdlT0t3ckM3ZW44YTg3eHRxenUwM3FVWkJjVG1BUEU2UEROX3RqcFNJeWdXLWdHVU0yU3NVVmU4MExmaXpxQmYzVDZpQXQ5NG9RMndMVDZfbS00MFAyQ2J5YUNxa3AyYVI1ZUEyTERXQWx5SEhR0gGWAUFVX3lxTE1obFFDTnYwVEZSbG1HeXpMZW0xVExRU3JQLXhVOFlid1lCZWl4dTk0SjBpTkY0SFR5UUg4emJnMVN3ZDdBQnluSDRSa2FubUVxZ3RUVEV6cXBvcXl5UFk2cWFaSWtDUV9JU3RuN0xMNlJ2YmxGRUNnZmlIVHItNmFfT3RmaGNQWE1mWVJuMFRFZ0JrNG9Bdw?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:04:31 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57578,
+      "id": 58049,
       "category_id": 5,
-      "title": "다임테크놀로지 AI 자율제조…로봇 1천대 제어로 생산성 20%↑ - 뉴스톱",
-      "source_url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBQYjNESUt6MjY1RHI3VWxvVjVnRkxvTldJakN2dkhDcGpJQXItbXBkalFtc2VNQWUtb3Q2cU9NZVVUTlNUVVIyN196VkZxeGZjVnVEeHhQd2REdlpIYWVqcUhFa0tWRVVpRjFaNDJXMA?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:32:17 GMT",
+      "title": "호반그룹, 화물 운송·무인 경비 로봇 등 미래형 주거 서비스 시범 운영 - 더퍼블릭",
+      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9yOWltaTlJS3NSWU1EMjlqdjhZOGhGSnhWNTFsdlhuVm8xZmtaSFpIdmR6cjNUYmpWYlZ4aE9oTXRQdjZtdmdKcm94WWhSYkdiVE9fQ3FhTV9JRG5sZ25xRUhZM1phejcxSzVZ0gFvQVVfeXFMUDNqbktNVUdiYUF3VXVGMzlPZFBIRlBlMjN6SE8wZ3d4R0NCOG92QjJEMVRoeGpfVHUxcGlmeGhkejAwU1NNcmdFcHZrV2cxSEFGQ2tneEo3S2RLVVBHQlVVZW5RS1kyM3Jnc3JaMGlB?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:03:22 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
       "key_tickers": []
     },
     {
-      "id": 57483,
-      "category_id": 2,
-      "title": "삼성SDI, 美서 수조원대 ESS 배터리 수주…\"AI發 수요 선점 지속\" - 뉴시스",
-      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5oWEYxX1NHTnl4V2ZfaDB4aHd4QXAtM2tlNHBzYTVnWW1KZUpLWHk1NmQzSUgtT0pHZGp5VzF6UVBCdzVzWmhGcWVEYW05X1lpbS0zQkt1WG8talBXMVp6edIBeEFVX3lxTE9fOW9qd0hzRThZeG1sOC12NzI5QVJYaEhBdkNPSXZ5Y1VocVhGelFoV3FtTWxSbVByZG5Zb3M5NkloU1FPdGp0R3ZPbkNPWTAxcEV6SUlfVi1OMDVQd2x0OTY2a3ZOdVVLbFBsV0VKeW8wVThfQ05ITQ?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:31:15 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57560,
-      "category_id": 5,
-      "title": "'사람-로봇' 읽는 방식 달라도, 정보 인식은 동일…유연 디스플레이 구현 - 아시아경제",
-      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4wM2pZaFFVWU5oczBjQk5ZQy03QV9OSlMzcmNnTkRNamJsX3NTWUtfZGxwUVBzQXd2TW5tcVp1czd5TzZXV280QzNGUjJCNkozbHdpQXkyYlloX09sTzhINA?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:30:07 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57485,
-      "category_id": 2,
-      "title": "삼성SDI, 美서 수조원대 ESS 배터리 수주…탈중국 공급망 공략 가속 - 파이낸셜뉴스",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBMd1ByZVJkTlFodFNGckVkYjltRE1HeGdKNUs2ZjVibTc4UnJvQmQtcmtDeDFzaE9iWUVrbGlBQ3d4d3FCUGktUC0ydVZfS0NSdUxnYWJ0RHRsdw?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:28:30 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57465,
-      "category_id": 2,
-      "title": "삼성SDI, 美 주피터파워에 16GWh LFP 배터리 공급…수조원대 수주 - 인사이트코리아",
-      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1kdndSQnpCa3JsUU85Vjh4alNzYWtUUk1idFdqQ3N1X2xwamY4a25FM0E2NFM4U3M4WGY2RWdEUWdzV2p0eWNycmN3VHc0SHlBdzFEa09ZYVJPZ2trNEFTN3dTNjJ4UWMxUUZmZHpuc2JuTXPSAXdBVV95cUxQUWxkUldPWTJ3MVBHQUktcm12SmNURlVEWEFrN1poaUVQWUZ0NlpQVzFwRW9IaDJfbFZlb1FUYVpxN3ppUEVDeG9Fa003NHlTMUI1ajJQS0ZSMDI2eHZ4bWxxZjBNaG1FbmVGcVBTRkhXWkZlcGNaSQ?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:24:13 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57457,
-      "category_id": 2,
-      "title": "삼성SDI 해냈다…미국서 수조원대 LFP 배터리 공략 계약 체결 - 한국경제",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE13V2RhOGFvZ0lYcXJhMm5jRWVrY2cxVmgwLUpHcEZVY0s1Q3EwWGpLb0xuUjdaLU5DQjZYTW1mYlJTU0toZ0VPSVlkdFFTSkNkTC1JYkk0SEFiQQ?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:22:52 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57458,
-      "category_id": 2,
-      "title": "[속보] 삼성SDI, 美에서 '수조원대' ESS용 LFP 배터리 수주 - 머니투데이 - 머니투데이",
-      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE44d1k4S3ZPRGxhbmdZd3ZjLXZHY3ZmZG5hUnBYT25XYTUxSmNXTUt2SlNGNVY4YzJiWWw4VGxxdndqRE9vaTJaVF9rQ2MyUmFWYTdwSy1qV1pEUDNvUUN3cjFTcm9PMFhydS1MYdIBckFVX3lxTE85V0hlbmQ5R2Z0WG5ib3JlQUNoQmp5RnRDdjlJM1VEZl9sYUhCejVPSkZPN2pQaDY5Xy1OTFRUdDFjSzYwUGZESURhbTRzV0RjbXNuZjZSMUdBN2tNUFlFaGw1WHk4eFNvajhlOFBsYU9oZw?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:22:48 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57472,
-      "category_id": 2,
-      "title": "삼성SDI, 美 주피터파워에 LFP 배터리 16GWh 추가 수주 - 뉴스웨이",
-      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBTeDRqUURPcVhYU1RIN3pKUlVLZmh6UWpfaTg5eEZPNTcxMGN6NVQtZTJ2OVlYMEhhQUVtVEpMU2NDN3RnNlJxLURLWGNsMTlyWDJhSlkzbXJzUllpS3BSZ1FxZGQ1d3hFV3c?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:22:26 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57504,
-      "category_id": 2,
-      "title": "에코프로, 포항서 차세대 배터리 소재 기술 공개 - 이뉴스투데이",
-      "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBlWXU4dlVPcGRSX3lxNHpteWZyODVFWXgwUF9OTDdhbk9yYmNGRndrU0k4ajM1VzhrdTREUGIzVEtLbEJSQlhHb1ZoR0k1MnJLZ3ZOU2ZaTWF2ejlPTUxEUXA3ZHVMenp4NHZnNHpST0fSAXRBVV95cUxNeEZrQ1Z2WW9vb1VibmwyUnRkM2c3SjN5T2U2OWFoMmVmc0pQaktmcG80ZkpPdlFBLTJQYWhtZ0lNMDJFT21vRm1xZlNhYmJIMjlKNkRpWUk3STk4UVp6Z2ZDeFFYamlIWkp1WnpHS2RRa3U1bg?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:21:40 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57454,
-      "category_id": 2,
-      "title": "삼성SDI, 美 주피터파워에 16GWh LFP 배터리 공급…수조원 규모 - 마켓인",
-      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBRdXZ3MHp5NlQzZFhnRE0wRkpNRE5iRGxWUkRQaE1lX2lsdlltMndzaWYxaXVaQ1FCUTQxbDJIemcya1ZLM0pfeWEtWEM4TFNacmJrTU9aTHVUU0U0LXdwTFVlMzBSOHBZTG9CdEVYbUVDdEE?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:19:49 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57460,
-      "category_id": 2,
-      "title": "삼성SDI, 美 주피터파워에 16GWh LFP 배터리 공급…수조원 규모 - 아시아경제",
-      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1UTk1VSmZZRU01SXN5azYxYmRRWHdtZFU3WHlXakd4R1RNZHhobzJnamg0dGQ3Y1h1S1Y4eGZtTUdzblY4NDVyNXpjRGdVczVMX3ZiQnNpSW5wN093ZUtwZQ?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:19:21 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57594,
-      "category_id": 5,
-      "title": "“사람은 색으로, 로봇은 적외선으로”…KAIST, ‘전자 이름표’ 개발 - 헤럴드경제",
-      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8yckl2UGRKV3M4QTJaWGRPWVUtYXBsWjA3TXZFWTc4ZUVmdE53bHRYcmFMc1dXVVBrUkdBQmtSTmx2NlVBZnN5d2FacHJZQUdzWFRsNkp3?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:19:12 GMT",
-      "summary": null,
-      "tech_stage": null,
-      "investment_impact": null,
-      "key_tickers": []
-    },
-    {
-      "id": 57471,
-      "category_id": 2,
-      "title": "삼성SDI, 美서 16GWh 배터리 수주…계약 규모 수조원대 추산 - 서울경제TV",
-      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBjeGFXMXBQQ2pzYml6UURjYnFJbjVMS01jTXhKdXpDVzZkaThOVDlSSXRkNWJ4Mkk5b0FIMmpiRXNsaW16MEJqcGZVR1BfVTdjb0RpS3pTcmFxUmtsLXhoeWczUzk?oc=5",
-      "published_at": "Sun, 15 Nov 2026 23:18:28 GMT",
+      "id": 57951,
+      "category_id": 3,
+      "title": "경남 SMR 강소기업 6곳, 글로벌 공급망 진출 본격 시동 - 에너지안전신문",
+      "source_url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE14QWRmc0hrdF94cWlYb1NadXJBcW1ScExESHhJblByaXdqRlljUHlMTlQ1blhGck9HWEMwaldaSzFrWkFRWDgzdF95alIzVjF6cDJtNVlDMmdqMFhiVnk3Q1FWZ1Q?oc=5",
+      "published_at": "Mon, 16 Nov 2026 21:00:47 GMT",
       "summary": null,
       "tech_stage": null,
       "investment_impact": null,
