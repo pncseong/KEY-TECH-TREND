@@ -14,6 +14,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css?v=20260919_01">
+    <link rel="stylesheet" href="relationship_integration.css?v=20261121_01">
 </head>
 <body>
     <div class="app-container">
@@ -34,10 +35,13 @@
             </div>
         </header>
 
-        <!-- 메인 뷰 전환 탭 (트렌드 모니터 vs 심층 기술 백서) -->
+        <!-- 메인 뷰 전환 탭 (트렌드 모니터 vs 기술·기업 연결 vs 심층 기술 백서) -->
         <div class="main-view-switcher">
             <button class="view-btn active" id="btn-view-feed" onclick="switchMainView('feed')">
                 <i data-lucide="radio"></i> 실시간 트렌드 모니터
+            </button>
+            <button class="view-btn" id="btn-view-relationship" onclick="switchMainView('relationship')">
+                <i data-lucide="git-branch"></i> 기술·기업 연결
             </button>
             <button class="view-btn" id="btn-view-deeptech" onclick="switchMainView('deeptech')">
                 <i data-lucide="book-open-check"></i> 심층 기술 백서 (Deep-Tech Dossier)
@@ -126,6 +130,22 @@
                 <!-- 고정 페이지네이션 컨트롤러 영역 -->
                 <div id="pagination-controls" class="pagination-container" aria-label="기사 목록 페이지 이동"></div>
             </main>
+        </div>
+
+        <!-- ================= [VIEW 1.5: 기술·기업 연결 (Relationship MVP v1.1)] ================= -->
+        <div id="view-relationship-section" class="view-section" style="display: none;">
+            <div class="relationship-viewer-wrapper">
+                <iframe
+                    id="relationship-v11-iframe"
+                    class="relationship-v11-iframe"
+                    title="KTT Technology–Company Relationship Viewer v1.1"
+                    src="about:blank"
+                    data-src="relationship_mvp_v1_1/relationship_view_v11.html"
+                ></iframe>
+                <div id="relationship-fallback-error" class="relationship-fallback-error" style="display: none;">
+                    Relationship 데이터를 불러올 수 없습니다.
+                </div>
+            </div>
         </div>
 
         <!-- ================= [VIEW 2: 심층 기술 백서 & 테크 트리] ================= -->
@@ -291,6 +311,12 @@
                         var sApp = document.createElement('script');
                         sApp.src = 'app.js' + vParam;
                         sApp.async = false;
+                        sApp.onload = function() {
+                            var sRel = document.createElement('script');
+                            sRel.src = 'relationship_integration.js' + vParam;
+                            sRel.async = false;
+                            document.body.appendChild(sRel);
+                        };
                         document.body.appendChild(sApp);
                     };
                     document.head.appendChild(sBp);

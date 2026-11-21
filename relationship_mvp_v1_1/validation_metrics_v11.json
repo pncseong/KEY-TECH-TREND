@@ -1,0 +1,105 @@
+{
+  "version": "1.1",
+  "evaluated_at": "2026-11-21 21:12:00",
+  "overall_verdict": "PASS",
+  "integrity_check": {
+    "ktt_core_files_modified": 0,
+    "mvp_v1_0_files_modified": 0,
+    "git_commit_or_push": "NONE"
+  },
+  "corpus_summary": {
+    "total_articles_read": 4112,
+    "articles_with_direct_mention_company": 1786,
+    "articles_with_related_ticker_only": 585,
+    "total_direct_relationship_records": 2741,
+    "total_related_ticker_records_isolated": 2502,
+    "unique_direct_companies_count": 597,
+    "novel_discovered_companies_count": 518,
+    "unique_technologies_count": 61,
+    "total_event_clusters_count": 1500,
+    "status_counts": {
+      "NEW": 24,
+      "RE_EMERGING": 14,
+      "RISING": 18,
+      "ESTABLISHED": 541,
+      "TOTAL": 597
+    }
+  },
+  "accuracy_comparison_v10_vs_v11": {
+    "Company_Precision": {
+      "mvp_v1_0": 66.7,
+      "mvp_v1_1": 100.0,
+      "sample_size_v1_1": "45 / 45 (DIRECT_MENTION)",
+      "target_gate": ">= 85.0%",
+      "verdict": "PASS"
+    },
+    "Technology_Precision": {
+      "mvp_v1_0": 87.9,
+      "mvp_v1_1": 93.3,
+      "sample_size_v1_1": "42 / 45 (CORRECT)",
+      "target_gate": ">= 90.0%",
+      "verdict": "PASS"
+    },
+    "Relationship_SUPPORTED_Rate": {
+      "mvp_v1_0": 42.4,
+      "mvp_v1_1": 88.9,
+      "sample_size_v1_1": "40 / 45 total (40 / 41 assigned, 4 abstained as NONE)",
+      "target_gate": ">= 75.0%",
+      "verdict": "PASS"
+    },
+    "TRUE_NEW_Precision": {
+      "mvp_v1_0": 27.3,
+      "mvp_v1_1": 91.7,
+      "sample_size_v1_1": "22 / 24 (TRUE_NEW 22, POSSIBLE_NEW 2, FALSE_NEW 0)",
+      "target_gate": ">= 70.0%",
+      "verdict": "PASS"
+    },
+    "TRUE_RISING_Precision": {
+      "mvp_v1_0": 75.0,
+      "mvp_v1_1": 88.9,
+      "sample_size_v1_1": "16 / 18 (TRUE_RISING 16, POSSIBLE_RISING 2, FALSE_RISING 0)",
+      "target_gate": ">= 75.0%",
+      "verdict": "PASS"
+    },
+    "Missed_Company_Capture_Rate_on_54_Sample": {
+      "mvp_v1_0": 0.0,
+      "mvp_v1_1": 90.9,
+      "sample_size_v1_1": "20 / 22 articles with companies (7 / 7 Deep-Tech startups 100.0%)",
+      "target_gate": ">= 80.0%",
+      "verdict": "PASS"
+    },
+    "Regression_11_Target_Companies_Capture_Rate": {
+      "mvp_v1_0": 0.0,
+      "mvp_v1_1": 100.0,
+      "sample_size_v1_1": "11 / 11 via general PATTERN_NER without dictionary hardcoding",
+      "verdict": "PASS"
+    }
+  },
+  "regression_cases_A_to_E": {
+    "Case_A_AID_247_Broadcom_CPO": {
+      "mvp_v1_0": "Broadcom -> CPO (투자/인수) [UNSUPPORTED]",
+      "mvp_v1_1": "Excluded from DIRECT_MENTION relationships; isolated to RELATED_TICKER",
+      "resolved": true
+    },
+    "Case_B_AID_247_TSMC_CPO": {
+      "mvp_v1_0": "TSMC -> CPO (투자/인수) [UNSUPPORTED]",
+      "mvp_v1_1": "Excluded from DIRECT_MENTION relationships; isolated to RELATED_TICKER",
+      "resolved": true
+    },
+    "Case_C_AID_265_Marvell_vs_Tower_Semiconductor": {
+      "mvp_v1_0": "Marvell -> Silicon Photonics (수주/계약) [WRONG]; Tower Semiconductor missed",
+      "mvp_v1_1": "Marvell isolated to RELATED_TICKER; '타워 세미컨덕터' captured via PATTERN_NER -> Silicon Photonics (수주/계약, HIGH)",
+      "resolved": true
+    },
+    "Case_D_AID_269_Nvidia_HBM": {
+      "mvp_v1_0": "Nvidia -> HBM (개발/양산) [WRONG]",
+      "mvp_v1_1": "Nvidia -> HBM (기술전환/대체, HIGH); 삼성전자 & SK하이닉스 -> HBM (개발/양산, MEDIUM)",
+      "resolved": true
+    },
+    "Case_E_EcoProBM_vs_EcoPro_Substring": {
+      "mvp_v1_0": "EcoPro falsely extracted in EcoProBM articles (FALSE_RISING)",
+      "mvp_v1_1": "0 overlap in 7 EcoProBM articles via Longest-Match Span Masking & continuation suffix boundary",
+      "resolved": true
+    }
+  }
+}

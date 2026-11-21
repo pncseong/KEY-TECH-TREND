@@ -1,0 +1,35 @@
+/* ==========================================================
+   KTT Relationship MVP v1.1 - Minimal Integration Stylesheet
+   - 기존 KTT style.css와 완전히 격리된 전용 컨테이너 스타일
+   ========================================================== */
+
+#view-relationship-section {
+    width: 100%;
+}
+
+.relationship-viewer-wrapper {
+    width: 100%;
+    background: var(--bg-card, #131a2a);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.relationship-v11-iframe {
+    width: 100%;
+    min-height: 920px;
+    height: calc(100vh - 180px);
+    border: none;
+    display: block;
+    background-color: #0b0f19;
+}
+
+.relationship-fallback-error {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--text-secondary, #94a3b8);
+    background: var(--bg-card, rgba(19, 26, 42, 0.7));
+    font-size: 1.05rem;
+    font-weight: 600;
+}
